@@ -6,7 +6,7 @@ public abstract class Entidade {
     private int idade;
     private int humor;
 
-    //construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Entidade(String nome, int idade, int humor) {
         this.nome = nome;
@@ -14,32 +14,36 @@ public abstract class Entidade {
         this.humor = humor;
     }
 
-    // setters
+    // Nome  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    public String getNome(){
+        return this.nome;
+    }
+
+    // Idade  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public void setIdade(int idade) {
         this.idade = idade;
     }
 
-    public void setHumor(int humor) {
-        this.humor = humor;
+    public int getIdade() {
+        return this.idade;
     }
 
-    // getters
+    // Humor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public String getNome(){
-        return this.nome;
+    public void setHumor(int humor) {
+        this.humor = humor;
     }
 
     public int getHumor(){
         return this.humor;
     }
 
-    public int getIdade(){
-        return this.idade;
-    }
+
 
 }

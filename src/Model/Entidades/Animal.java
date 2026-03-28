@@ -4,58 +4,42 @@ public class Animal extends Entidade {
 
     private String especie;
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Animal(String nome, int idade, int humor, String especie) {
         super(nome, idade, humor);
         this.especie = especie;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setEspecie(String especie) {
         this.especie = especie;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getEspecie(){
         return this.especie;
     }
 
-    // métodos
+    // Métodos - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void acariciarAnimal(Jogador j) {
-        if (j.getEnergia() > 0) {
 
-            if (j.getEnergia() < 5) {
-                j.setEnergia(0);
-            }
-
-            j.setEnergia(j.getEnergia()-5);
+        if (getHumor() < 50) {
+            atacarJogador(j);
+            return;
         }
 
-        if (j.getMotivacao() < 100) {
-
-            if (j.getMotivacao()+5 > 100) {
-
-                int maxAdd = 100 - j.getMotivacao();
-                j.setMotivacao(j.getMotivacao() + maxAdd);
-            }
-
-            j.setMotivacao(j.getMotivacao()+5);
-
-        }
+        j.decrementarEnergia(5);
+        j.aumentarMotivacao(5);
     }
 
     public void atacarJogador(Jogador j) {
 
-        if (getHumor() < 50) {
-            if (j.getDinheiro() > 20) {
-                j.setSaude(j.getSaude()-20);
-            }
-
-
-        }
+        j.decrementarSaude(20);
+        j.decrementarEnergia(10);
+        j.decrementarMotivacao(10);
     }
 }
