@@ -12,10 +12,9 @@ public class PontoDeOnibus extends Local{
     }
 
     public String descreverLocal(){
-        return "Sabia que aqui é o lugar que você pode recarregar suas energias?";
-        // eu tenho a string descrição, mas estou em dúvida se esse atributo deve existir, se o jogador vai
-        //procurar a descrição ou ela aparece como uma mensagem aleatória como curiosidade...
-        // algo parecido com a tela de login do minecraft, várias mensagens aleatórias
-        // e se eu implementar isso para toda vez que o jogador mudar de lugar?
+        return "Boatos dizem que nos pontos de ônibus acontecem os piores derramamentos de lágrimas";
+
+        // Pensar num sistema para randomizar a descrição do local, como se fosse a tela inicial
+        // minecraft. Mas estou em dúvida se isso será enquanto estiver no local ou na troca de local.
     }
 }

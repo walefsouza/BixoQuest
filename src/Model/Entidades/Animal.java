@@ -34,6 +34,8 @@ public class Animal extends Entidade {
 
         j.decrementarEnergia(5);
         j.aumentarMotivacao(5);
+        aumentarHumor(5);
+
     }
 
     public void atacarJogador(Jogador j) {
@@ -42,4 +44,6 @@ public class Animal extends Entidade {
         j.decrementarEnergia(10);
         j.decrementarMotivacao(10);
     }
+
+
 }

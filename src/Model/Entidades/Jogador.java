@@ -1,32 +1,30 @@
 package Model.Entidades;
 
+import Model.Mapa.Local;
+
 public class Jogador {
 
     private String nome;
-    //private Local local;
-    private Atributo energia;
-    private Atributo levelConhecimento;
-    private Atributo motivacao;
-    private Atributo saude;
-    private Atributo desempenhoAcademico;
-    private Atributo dinheiro;
+    private Local local;
+    private int energia;
+    private int levelConhecimento;
+    private int motivacao;
+    private int saude;
+    private int desempenhoAcademico;
+    private double dinheiro;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Jogador(String nome, int energia, int levelConhecimento, int motivacao, int saude, int desempenhoAcademico, int dinheiro) {
+    public Jogador(String nome, int energia, int levelConhecimento, int motivacao, int saude,
+                   int desempenhoAcademico, double dinheiro, Local local) {
         this.nome = nome;
-        this.energia = new Atributo(energia);
-        this.levelConhecimento = new Atributo(levelConhecimento);
-        this.motivacao = new Atributo(motivacao);
-        this.saude = new Atributo(saude);
-        this.desempenhoAcademico = new Atributo(desempenhoAcademico);
-        this.dinheiro = new Atributo(dinheiro);
-        /*this.energia.setAtributo(energia);
-        this.levelConhecimento.setAtributo(levelConhecimento);
-        this.motivacao.setAtributo(motivacao);
-        this.saude.setAtributo(saude);
-        this.desempenhoAcademico.setAtributo(desempenhoAcademico);
-        this.dinheiro.setAtributo(dinheiro);*/
+        this.energia = energia;
+        this.levelConhecimento = levelConhecimento;
+        this.motivacao = motivacao;
+        this.saude = saude;
+        this.desempenhoAcademico = desempenhoAcademico;
+        this.dinheiro = dinheiro;
+        this.local = local;
     }
 
     // Nome  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -39,30 +37,16 @@ public class Jogador {
         return this.nome;
     }
 
-}
-/*
+    // Local  - - - - - - - - - - - - - - - - - - - - - - - -
 
-
-    private String nome;
-    //private Local local;
-    private int energia;
-    private int levelConhecimento;
-    private int motivacao;
-    private int saude;
-    private int desempenhoAcademico;
-    private double dinheiro;
-
-    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public Jogador(String nome, int energia, int levelConhecimento, int motivacao, int saude, int desempenhoAcademico, double dinheiro) {
-        this.nome = nome;
-        this.energia = energia;
-        this.levelConhecimento = levelConhecimento;
-        this.motivacao = motivacao;
-        this.saude = saude;
-        this.desempenhoAcademico = desempenhoAcademico;
-        this.dinheiro = dinheiro;
+    public void mudarLocal(Local l){
+        this.local = l;
     }
+
+    public Local getLocal(){
+        return this.local;
+    }
+
     // Energia  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setEnergia(int energia) {
@@ -88,7 +72,7 @@ public class Jogador {
         this.levelConhecimento = levelConhecimento;
     }
 
-    public int getLevelConhecimento(){
+    public int getLevelConhecimento() {
         return this.levelConhecimento;
     }
 
@@ -100,9 +84,7 @@ public class Jogador {
         this.levelConhecimento = Math.max(0, this.levelConhecimento - valor);
     }
 
-
     // Desempenho  - - - - - - - - - - - - - - - - - - - - - - - -
-
 
     public void setDesempenhoAcademico(int desempenhoAcademico) {
         this.desempenhoAcademico = desempenhoAcademico;
@@ -119,7 +101,6 @@ public class Jogador {
     public void decrementarDesempenhoAcademico(int valor) {
         this.desempenhoAcademico = Math.max(0, this.desempenhoAcademico - valor);
     }
-
 
     // Saúde - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -141,7 +122,6 @@ public class Jogador {
 
     // Dinheiro - - - - - - - - - - - - - - - - - - - - - - - -
 
-
     public void setDinheiro(double dinheiro) {
         this.dinheiro = dinheiro;
     }
@@ -151,7 +131,7 @@ public class Jogador {
     }
 
     public void aumentarDinheiro(double valor) {
-        this.dinheiro = Math.min(100, this.dinheiro + valor);
+        this.dinheiro = this.dinheiro + valor;
     }
 
     public void decrementarDinheiro(double valor) {
@@ -160,12 +140,11 @@ public class Jogador {
 
     // Motivação - - - - - - - - - - - - - - - - - - - - - - - -
 
-
     public void setMotivacao(int motivacao) {
         this.motivacao = motivacao;
-        }
+    }
 
-    public int getMotivacao(){
+    public int getMotivacao() {
         return this.motivacao;
     }
 
@@ -176,6 +155,6 @@ public class Jogador {
     public void decrementarMotivacao(int valor) {
         this.motivacao = Math.max(0, this.motivacao - valor);
     }
- */
+}
 
 

@@ -1,26 +1,76 @@
 package Model.Atividades;
+import Model.Entidades.Jogador;
 import Model.Mapa.Local;
 
-public class Atividade {
+public abstract class Atividade {
 
     private String nome;
     private String descricao;
-    private int progressoAtual;
-    private int progressoMax;
     private Local localAtividade;
 
-    public Atividade (String nome,String descricao, int progressoAtual, int progressoMax,Local localAtividade) {
+    private int impactoEnergia;
+    private int impactoConhecimento;
+    private int impactoMotivacao;
+    private int impactoSaude;
+    private int impactoDesempenho;
+    private double impactoDinheiro;
+
+
+    public Atividade (String nome,String descricao,Local localAtividade, int impactoEnergia,
+        int impactoConhecimento, int impactoMotivacao, int impactoSaude, int impactoDesempenho, double impactoDinheiro ) {
+
         this.nome = nome;
         this.descricao = descricao;
-        this.progressoAtual = progressoAtual;
-        this.progressoMax = progressoMax;
         this.localAtividade = localAtividade;
+
+        this.impactoEnergia = impactoEnergia;
+        this.impactoConhecimento = impactoConhecimento;
+        this.impactoMotivacao = impactoMotivacao;
+        this.impactoSaude = impactoSaude;
+        this.impactoDesempenho = impactoDesempenho;
+        this.impactoDinheiro = impactoDinheiro;
     }
 
     // métodos
 
-    /*PENSAR EM COMO INICIAR O EVENTO*/
+    public void executar(Jogador j) {
 
+        // Energia
+        if (impactoEnergia > 0)
+            j.aumentarEnergia(impactoEnergia);
+        else
+            j.decrementarEnergia(Math.abs(impactoEnergia));
+
+        // Conhecimento
+        if (impactoConhecimento > 0)
+            j.aumentarLevelConhecimento(impactoConhecimento);
+        else
+            j.decrementarLevelConhecimento(Math.abs(impactoConhecimento));
+
+        // Motivação
+        if (impactoMotivacao > 0)
+            j.aumentarMotivacao(impactoMotivacao);
+        else
+            j.decrementarMotivacao(Math.abs(impactoMotivacao));
+
+        // Saúde
+        if (impactoSaude > 0)
+            j.aumentarSaude(impactoSaude);
+        else
+            j.decrementarSaude(Math.abs(impactoSaude));
+
+        // Desempenho
+        if (impactoDesempenho > 0)
+            j.aumentarDesempenhoAcademico(impactoDesempenho);
+        else
+            j.decrementarDesempenhoAcademico(Math.abs(impactoDesempenho));
+
+        // Dinheiro (double)
+        if (impactoDinheiro > 0)
+            j.aumentarDinheiro(impactoDinheiro);
+        else
+            j.decrementarDinheiro(Math.abs(impactoDinheiro));
+    }
 
     // setters
 
@@ -30,14 +80,6 @@ public class Atividade {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public void setProgressoAtual(int progressoAtual) {
-        this.progressoAtual = progressoAtual;
-    }
-
-    public void setProgressoMax(int progressoMax) {
-        this.progressoMax = progressoMax;
     }
 
     public void setLocalAtividade(Local localAtividade) {
@@ -54,15 +96,9 @@ public class Atividade {
         return this.descricao;
     }
 
-    public int getProgressoAtual() {
-        return progressoAtual;
-    }
-
-    public int getProgressoMax() {
-        return progressoMax;
-    }
-
     public Local getLocalAtividade() {
         return localAtividade;
     }
+
+
 }

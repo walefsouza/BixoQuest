@@ -44,6 +44,14 @@ public abstract class Entidade {
         return this.humor;
     }
 
+    public void aumentarHumor(int valor) {
+        this.humor = Math.min(100, this.humor + valor);
+    }
+
+    public void decrementarHumor(int valor) {
+        this.humor = Math.max(0, this.humor - valor);
+    }
+
 
 
 }
