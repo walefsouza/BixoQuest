@@ -11,7 +11,8 @@ public class Cantina extends Local {
                 "Passou mal",
                 "Comeu algo estragado",
                 this, //acontece aqui mesmo
-                10, 0 , 0, -10, 0, 0,
+                10, 0 , 0, -10, 0, 0.0,
+                20, "categoria"
         ));
     }
 
