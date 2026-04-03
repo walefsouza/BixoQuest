@@ -1,6 +1,6 @@
 package Model.Academico;
 
-import Model.Atividades.Avaliacao;
+import Model.Atividades.EventoAvaliacao;
 import Model.Entidades.Jogador;
 import Model.Entidades.Professor;
 import Model.Mapa.SalaDeAula;
@@ -12,11 +12,11 @@ public class Disciplina {
     private int frequencia;
     private SalaDeAula local;
     private double mediaFinal;
-    private Avaliacao avaliacao;
+    private EventoAvaliacao avaliacao;
     private boolean aprovado;
 
     public Disciplina(String nome, Professor professor, int frequencia,
-                      double mediaFinal, Avaliacao avaliacao, SalaDeAula sala) {
+                      double mediaFinal, EventoAvaliacao avaliacao, SalaDeAula sala) {
 
         this.nome = nome;
         this.professor = professor;

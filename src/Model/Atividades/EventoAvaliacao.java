@@ -1,28 +1,28 @@
 package Model.Atividades;
 
+import Model.Academico.Semestre;
 import Model.Entidades.Jogador;
 import Model.Mapa.Local;
-
 import java.util.List;
 
-public class Avaliacao extends Evento {
+public class EventoAvaliacao extends Evento {
 
     private List<Pergunta> perguntas;
     private int notaMaxima;
     private int notaObtida;
     private boolean realizada;
 
-    public Avaliacao(String nome, String descricao, Local localAtividade,
-                     int impactoEnergia, int impactoConhecimento, int impactoMotivacao,
-                     int impactoSaude, int impactoDesempenho, double impactoDinheiro,
-                     int probabilidadeAtivacao, boolean condicaoAtivacao,
-                     int dificuldade, String categoria,
-                     List<Pergunta> perguntas, int notaMaxima) {
+    public EventoAvaliacao(String nome, String descricao, Local localAtividade,
+                           int impactoEnergia, int impactoConhecimento, int impactoMotivacao,
+                           int impactoSaude, int impactoDesempenho, double impactoDinheiro,
+                           int probabilidadeAtivacao,
+                           String categoria,
+                           List<Pergunta> perguntas, int notaMaxima) {
 
         super(nome, descricao, localAtividade,
                 impactoEnergia, impactoConhecimento, impactoMotivacao,
                 impactoSaude, impactoDesempenho, impactoDinheiro,
-                probabilidadeAtivacao, condicaoAtivacao, dificuldade, categoria);
+                probabilidadeAtivacao, categoria);
 
         this.perguntas = perguntas;
         this.notaMaxima = notaMaxima;
@@ -67,6 +67,10 @@ public class Avaliacao extends Evento {
     }
 
     // métodos
+
+    public boolean verificarCondicao(Semestre s, Jogador j){
+        return false;
+    }
 
     public int corrigirResposta(int indicePergunta, int resposta) {
         if (indicePergunta >= 0 && indicePergunta < perguntas.size()) {
