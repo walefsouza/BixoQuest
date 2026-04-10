@@ -1,6 +1,6 @@
-package Model.Entidades;
+package model.entidades;
 
-import Model.Academico.Disciplina;
+import model.academico.Disciplina;
 
 public class Professor extends Entidade {
 
@@ -13,7 +13,7 @@ public class Professor extends Entidade {
         this.disciplina = disciplina;
     }
 
-    // credibilidade
+    // Credibilidade  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setCredibilidade(int saude) {
         this.credibilidade = saude;
@@ -31,7 +31,7 @@ public class Professor extends Entidade {
         this.credibilidade = Math.max(0, this.credibilidade - valor);
     }
 
-    // disciplina
+    // Disciplina   - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setDisciplina(Disciplina d){
         this.disciplina = d;

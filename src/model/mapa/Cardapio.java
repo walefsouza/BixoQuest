@@ -1,4 +1,4 @@
-package Model.Mapa;
+package model.mapa;
 
 public enum Cardapio {
     COXINHA("Coxinha", 10),

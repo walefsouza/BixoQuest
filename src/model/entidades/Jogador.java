@@ -1,6 +1,6 @@
-package Model.Entidades;
+package model.entidades;
 
-import Model.Mapa.Local;
+import model.mapa.Local;
 
 public class Jogador {
 
@@ -68,7 +68,7 @@ public class Jogador {
 
     // Level Conhecimento  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public void setLevelconhecimento(int levelConhecimento) {
+    public void setLevelConhecimento(int levelConhecimento) {
         this.levelConhecimento = levelConhecimento;
     }
 

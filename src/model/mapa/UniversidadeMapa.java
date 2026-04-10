@@ -1,4 +1,4 @@
-package Model.Mapa;
+package model.mapa;
 
 import java.util.Date;
 import java.util.List;

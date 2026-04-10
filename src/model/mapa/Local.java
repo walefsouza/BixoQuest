@@ -1,8 +1,8 @@
-package Model.Mapa;
+package model.mapa;
 
-import Model.Atividades.Evento;
-import Model.Atividades.Task;
-import Model.Entidades.Entidade;
+import model.atividades.Evento;
+import model.atividades.Task;
+import model.entidades.Entidade;
 
 import java.util.List;
 
@@ -87,5 +87,4 @@ public abstract class Local {
             eventos.remove(e);
     }
 
-    public abstract String descreverLocal();
 }

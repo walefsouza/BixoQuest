@@ -1,4 +1,4 @@
-package Model.Entidades;
+package model.entidades;
 
 public abstract class Entidade {
 
