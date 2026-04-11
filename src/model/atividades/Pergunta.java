@@ -1,4 +1,4 @@
-package Model.Atividades;
+package model.atividades;
 
 public class Pergunta {
 

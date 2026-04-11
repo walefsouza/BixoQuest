@@ -1,8 +1,8 @@
-package Model.Atividades;
+package model.atividades;
 
-import Model.Academico.Semestre;
-import Model.Entidades.Jogador;
-import Model.Mapa.Local;
+import model.academico.Semestre;
+import model.entidades.Jogador;
+import model.mapa.Local;
 import java.util.List;
 
 public class EventoAvaliacao extends Evento {
@@ -16,7 +16,7 @@ public class EventoAvaliacao extends Evento {
                            int impactoEnergia, int impactoConhecimento, int impactoMotivacao,
                            int impactoSaude, int impactoDesempenho, double impactoDinheiro,
                            int probabilidadeAtivacao,
-                           String categoria,
+                           CategoriaEvento categoria,
                            List<Pergunta> perguntas, int notaMaxima) {
 
         super(nome, descricao, localAtividade,
@@ -68,12 +68,12 @@ public class EventoAvaliacao extends Evento {
 
     // métodos
 
-    public boolean verificarCondicao(Semestre s, Jogador j){
+    public boolean verificarCondicao(Semestre s, Jogador j, int nAleatorio){
         return false;
     }
 
     public int corrigirResposta(int indicePergunta, int resposta) {
-        if (indicePergunta >= 0 && indicePergunta < perguntas.size()) {
+        if (indicePergunta < 0 || indicePergunta >= perguntas.size()) {
             return getNotaObtida();
         }
 

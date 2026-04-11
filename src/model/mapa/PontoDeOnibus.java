@@ -24,6 +24,11 @@ public class PontoDeOnibus extends Local{
         return this.energiaPegarOnibus;
     }
 
+    @Override
+    public TipoLocal getTipo() {
+        return TipoLocal.PONTO_DE_ONIBUS;
+    }
+
     // setters
 
     public void setEnergiaPegarOnibus(int energiaPegarOnibus) {

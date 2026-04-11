@@ -1,22 +1,23 @@
-package Model.Academico;
+package model.academico;
 
-import Model.Atividades.EventoAvaliacao;
-import Model.Entidades.Jogador;
-import Model.Entidades.Professor;
-import Model.Mapa.SalaDeAula;
+import model.atividades.EventoAvaliacao;
+import model.entidades.Jogador;
+import model.entidades.Professor;
+import model.mapa.SalaDeAula;
+import repository.IGeneralGetNome;
 
-public class Disciplina {
+public class Disciplina implements IGeneralGetNome {
 
     private String nome;
     private Professor professor;
     private int frequencia;
     private SalaDeAula local;
-    private double mediaFinal;
+    private int mediaFinal;
     private EventoAvaliacao avaliacao;
     private boolean aprovado;
 
     public Disciplina(String nome, Professor professor, int frequencia,
-                      double mediaFinal, EventoAvaliacao avaliacao, SalaDeAula sala) {
+                      int mediaFinal, EventoAvaliacao avaliacao, SalaDeAula sala) {
 
         this.nome = nome;
         this.professor = professor;
@@ -32,14 +33,14 @@ public class Disciplina {
         this.professor = professor;
     }
 
-    public void setMediaFinal(double media){
+    public void setMediaFinal(int media){
         this.mediaFinal = media;
     }
 
     // getters
 
-    public String getCodigoSala() {
-        return local.getCodigoSala();
+    public String getNomeSala() {
+        return local.getNome();
     }
 
     public Professor getProfessor() {
@@ -54,7 +55,7 @@ public class Disciplina {
         return this.nome;
     }
 
-    public double getMediaFinal(){
+    public int getMediaFinal(){
         return this.mediaFinal;
     }
 
@@ -64,9 +65,18 @@ public class Disciplina {
 
     // métodos
 
-    public void participarAula(Jogador j){
+    @Override
+    public String capturarNome() {
+        return this.getNome();
+    }
+
+    public void participarAula(Jogador j) {
         j.aumentarLevelConhecimento(5);
-        this.frequencia+=1;
+        this.frequencia += 1;
+
+        if (this.professor != null) {
+            this.professor.setCredibilidade(this.professor.getCredibilidade() + 2);
+        }
     }
 
     public void iniciarAvaliacao(Jogador j) {
@@ -74,9 +84,9 @@ public class Disciplina {
     }
 
     public int calcularFinal() {
-        int resultado = frequencia * 4 + avaliacao.getNotaObtida() * 6;
-        this.mediaFinal = resultado;
-        return resultado;
+        int somaPesos = this.frequencia * 10+avaliacao.getNotaObtida() * 6;
+        this.mediaFinal = somaPesos/10;
+        return this.mediaFinal;
     }
 
     public void concluirDisciplina() {
@@ -87,6 +97,18 @@ public class Disciplina {
         }
 
         this.aprovado = false;
+    }
+
+    public void resetarDisciplina() {
+
+        this.frequencia = 0;
+        this.mediaFinal = 0;
+        this.aprovado = false;
+
+        if (this.avaliacao != null) {
+            this.avaliacao.setRealizada(false);
+            this.avaliacao.setNotaObtida(0);
+        }
     }
 
 }

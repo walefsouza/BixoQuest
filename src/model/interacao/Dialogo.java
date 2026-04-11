@@ -2,9 +2,11 @@ package model.interacao;
 
 import model.entidades.Entidade;
 import model.mapa.TipoLocal;
+import repository.IGeneralGetNome;
 
-public class Dialogo {
+public class Dialogo implements IGeneralGetNome {
 
+    private String id;
     private Entidade npc;
     private String texto;
     private CategoriaDialogo categoria;
@@ -12,7 +14,8 @@ public class Dialogo {
 
     // construtor
 
-    public Dialogo(Entidade npc, String texto, CategoriaDialogo categoria, TipoLocal localDialogo){
+    public Dialogo(String id, Entidade npc, String texto, CategoriaDialogo categoria, TipoLocal localDialogo){
+        this.id = id;
         this.npc = npc;
         this.texto = texto;
         this.categoria = categoria;
@@ -35,6 +38,11 @@ public class Dialogo {
 
     public TipoLocal getLocalDialogo() {
         return this.localDialogo;
+    }
+
+    @Override
+    public String capturarNome() {
+        return this.id;
     }
 
     // setters

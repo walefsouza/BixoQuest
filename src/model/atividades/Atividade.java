@@ -1,8 +1,9 @@
-package Model.Atividades;
-import Model.Entidades.Jogador;
-import Model.Mapa.Local;
+package model.atividades;
+import model.entidades.Jogador;
+import model.mapa.Local;
+import repository.IGeneralGetNome;
 
-public abstract class Atividade {
+public abstract class Atividade implements IGeneralGetNome {
 
     private String nome;
     private String descricao;
@@ -98,6 +99,17 @@ public abstract class Atividade {
 
     public Local getLocalAtividade() {
         return localAtividade;
+    }
+
+    public int getImpactoEnergia(){
+        return this.impactoEnergia;
+    }
+
+    // métodos
+
+    @Override
+    public String capturarNome() {
+        return this.getNome();
     }
 
 

@@ -1,16 +1,16 @@
-package Model.Atividades;
+package model.atividades;
 
-import Model.Entidades.Jogador;
-import Model.Mapa.Local;
+import model.entidades.Jogador;
+import model.mapa.Local;
 
 public class Task extends Atividade {
 
     private boolean realizada;
-    private String categoria;
+    private CategoriaTask categoria;
 
     public Task(String nome, String descricao, Local localAtividade, int impactoEnergia,
                 int impactoConhecimento, int impactoMotivacao, int impactoSaude,
-                int impactoDesempenho, double impactoDinheiro, boolean realizada, String categoria) {
+                int impactoDesempenho, double impactoDinheiro, boolean realizada, CategoriaTask categoria) {
 
         super(nome, descricao, localAtividade, impactoEnergia, impactoConhecimento,
                 impactoMotivacao, impactoSaude, impactoDesempenho, impactoDinheiro);
@@ -20,7 +20,7 @@ public class Task extends Atividade {
 
     // getters
 
-    public String getCategoria() {
+    public CategoriaTask getCategoria() {
         return this.categoria;
     }
 
@@ -30,7 +30,7 @@ public class Task extends Atividade {
 
     // setters
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(CategoriaTask categoria) {
         this.categoria = categoria;
     }
 

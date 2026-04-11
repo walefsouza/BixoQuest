@@ -1,5 +1,7 @@
 package model.mapa;
 
+import repository.IGeneralGetNome;
+
 import java.util.Date;
 import java.util.List;
 

@@ -44,6 +44,11 @@ public class Borogodo extends Local {
         return nivelAglomeracao;
     }
 
+    @Override
+    public TipoLocal getTipo() {
+        return TipoLocal.BOROGODO;
+    }
+
     // setters
 
     public void setAtividadeAtiva(boolean atividadeAtiva) {

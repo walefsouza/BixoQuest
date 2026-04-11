@@ -1,14 +1,13 @@
-package Model.Game;
+package model.game;
 
-import Model.Academico.Semestre;
-import Model.Entidades.Jogador;
-import Model.Mapa.UniversidadeMapa;
+import model.academico.Semestre;
+import model.entidades.Jogador;
+import model.mapa.UniversidadeMapa;
+import repository.IGeneralGetNome;
 
-import java.util.Date;
+public class Game implements IGeneralGetNome {
 
-public class Game {
-
-    private String gameName;
+    private String nome;
     //private Date lastGameplay; decidir se vai ter ou não
     private Jogador jogador;
     private Semestre semestre;
@@ -17,8 +16,8 @@ public class Game {
 
     // construtor
 
-    public Game(String gameName, Jogador jogador, Semestre semestre, UniversidadeMapa mapa) {
-        this.gameName = gameName;
+    public Game(String nome, Jogador jogador, Semestre semestre, UniversidadeMapa mapa) {
+        this.nome = nome;
         //this.lastGameplay =; pensar para o futuro
         this.jogador = jogador;
         this.semestre = semestre;
@@ -28,6 +27,11 @@ public class Game {
 
     // métodos
 
+    @Override
+    public String capturarNome() {
+        return this.getNome();
+    }
+
     public int calcularProgresso(){
         int calculo = (semestre.getNumero() * 100) / TOTAL_SEMESTRES;
         return calculo;
@@ -35,15 +39,19 @@ public class Game {
 
     // setters
 
-    public void setGameName(String gameName){
-        this.gameName = gameName;
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public void setSemestre(Semestre semestre){
+        this.semestre = semestre;
     }
 
 
     // getters
 
-    public String getGameName(){
-        return this.gameName;
+    public String getNome(){
+        return this.nome;
     }
 
     public Jogador getJogador(){

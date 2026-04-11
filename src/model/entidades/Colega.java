@@ -23,7 +23,7 @@ public class Colega extends Entidade {
     public int calcularImpactoConversa() {
 
         if (this.getHumor() < 40) {
-            return -5; //diminui motivação
+            return -10; //diminui motivação
         }
         return this.nivelCarisma * 3; // aumenta a motivação
     }

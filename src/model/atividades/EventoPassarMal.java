@@ -1,19 +1,15 @@
-package Model.Mapa;
+package model.atividades;
 
-import Model.Academico.Semestre;
-import Model.Atividades.Evento;
-import Model.Atividades.Pergunta;
-import Model.Entidades.Jogador;
-
-import java.util.List;
-import java.util.Random;
+import model.academico.Semestre;
+import model.entidades.Jogador;
+import model.mapa.Local;
 
 public class EventoPassarMal extends Evento {
 
     public EventoPassarMal(String nome, String descricao, Local localAtividade,
                            int impactoEnergia, int impactoConhecimento, int impactoMotivacao,
                            int impactoSaude, int impactoDesempenho, double impactoDinheiro,
-                           int probabilidadeAtivacao, String categoria) {
+                           int probabilidadeAtivacao, CategoriaEvento categoria) {
 
         super(nome, descricao, localAtividade,
                 impactoEnergia, impactoConhecimento, impactoMotivacao,
@@ -22,7 +18,7 @@ public class EventoPassarMal extends Evento {
     }
 
     @Override
-    public boolean verificarCondicao(Semestre s, Jogador j) {
-        return new Random().nextInt(100) < getProbabilidadeAtivacao();
+    public boolean verificarCondicao(Semestre s, Jogador j, int nAleatorio) {
+        return nAleatorio < getProbabilidadeAtivacao();
     }
 }

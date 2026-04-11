@@ -15,6 +15,11 @@ public class SalaDeAula extends Local {
         return this.salaLivre;
     }
 
+    @Override
+    public TipoLocal getTipo() {
+        return TipoLocal.SALA_DE_AULA;
+    }
+
     // setter
     public void setSalaLivre(boolean salaLivre) {
         this.salaLivre = salaLivre;

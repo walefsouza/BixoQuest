@@ -25,6 +25,11 @@ public class Cantina extends Local {
         return tamanhoFila;
     }
 
+    @Override
+    public TipoLocal getTipo() {
+        return TipoLocal.CANTINA;
+    }
+
     // setters
 
     public void setTamanhoFila(int tamanhoFila) {

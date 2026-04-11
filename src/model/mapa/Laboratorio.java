@@ -26,6 +26,11 @@ public class Laboratorio extends Local {
         return this.multiplicadorEstudo;
     }
 
+    @Override
+    public TipoLocal getTipo() {
+        return TipoLocal.LABORATORIO;
+    }
+
     // setters
     public void setComputadoresDisponiveis(int computadoresDisponiveis) {
         this.nComputadores = computadoresDisponiveis;

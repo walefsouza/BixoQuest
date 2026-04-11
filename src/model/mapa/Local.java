@@ -3,10 +3,11 @@ package model.mapa;
 import model.atividades.Evento;
 import model.atividades.Task;
 import model.entidades.Entidade;
+import repository.IGeneralGetNome;
 
 import java.util.List;
 
-public abstract class Local {
+public abstract class Local implements IGeneralGetNome {
 
     private String nome;
     private List<Task> tasks;
@@ -63,9 +64,16 @@ public abstract class Local {
         return this.entidades;
     }
 
+    public abstract TipoLocal getTipo();
+
     // métodos
 
     //public abstract Entidade chamarEntidade();
+
+    @Override
+    public String capturarNome() {
+        return this.getNome();
+    }
 
     public void adicionarTask(Task t) {
         if (tasks != null)
@@ -86,5 +94,6 @@ public abstract class Local {
         if (eventos != null)
             eventos.remove(e);
     }
+
 
 }

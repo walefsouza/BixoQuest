@@ -26,6 +26,11 @@ public class Colegiado extends Local {
         return this.sistemaAtivo;
     }
 
+    @Override
+    public TipoLocal getTipo() {
+        return TipoLocal.COLEGIADO;
+    }
+
     // setters
 
     public void setSistemaAtivo(boolean sistemaAtivo) {

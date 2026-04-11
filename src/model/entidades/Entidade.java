@@ -1,6 +1,8 @@
 package model.entidades;
 
-public abstract class Entidade {
+import repository.IGeneralGetNome;
+
+public abstract class Entidade implements IGeneralGetNome {
 
     private String nome;
     private int idade;
@@ -50,6 +52,13 @@ public abstract class Entidade {
 
     public void decrementarHumor(int valor) {
         this.humor = Math.max(0, this.humor - valor);
+    }
+
+    // métodos
+
+    @Override
+    public String capturarNome() {
+        return this.getNome();
     }
 
 

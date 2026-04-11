@@ -1,13 +1,12 @@
-package Model.Academico;
+package model.academico;
 
-import Model.Atividades.Task;
-import Model.Entidades.Jogador;
+import model.atividades.Task;
+import repository.IGeneralGetNome;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class Semestre {
+public class Semestre implements IGeneralGetNome {
 
     private int numero;
     private List<Disciplina> disciplinas;
@@ -17,69 +16,14 @@ public class Semestre {
     private List<Task> bancoTasks;
 
     // construtor
+
     public Semestre (int numero) {
         this.numero = numero;
         this.semanaMax = 4;
-
         this.semanaAtual = 1;
         this.concluido = false;
-
         this.disciplinas = new ArrayList<>();
         this.bancoTasks = new ArrayList<>();
-    }
-
-    // métodos
-    public boolean avancarSemestre(Jogador j, boolean timeskip) {
-
-        //timeskip ignora todas as condições
-        if (timeskip) {
-            this.concluido = true;
-            return true;
-        }
-
-        //precisa cumprir os requisitos
-        boolean todasAprovadas = true;
-
-        for (Disciplina d : disciplinas) {
-            d.concluirDisciplina();
-            if (!d.getAprovado()) {
-                todasAprovadas = false;
-            }
-        }
-
-        boolean desempenhoOk = j.getDesempenhoAcademico() >= 70;
-
-        if (todasAprovadas && desempenhoOk) {
-            this.concluido = true;
-            return true;
-        }
-
-        this.concluido = false;
-        return false;
-    }
-
-    public void avancarSemana(Jogador j) {
-
-        if (semanaAtual < semanaMax) {
-            semanaAtual++;
-            gerarTasksDaSemana();
-            return;
-        }
-
-        if (semanaAtual == semanaMax) {
-            for (Disciplina d : disciplinas) {
-                d.iniciarAvaliacao(j);
-            }
-        }
-    }
-
-    public List<Task> gerarTasksDaSemana() {
-
-        int quantidade = Math.min(2, bancoTasks.size());
-
-        Collections.shuffle(bancoTasks);
-
-        return new ArrayList<>(bancoTasks.subList(0, quantidade));
     }
 
     // getters
@@ -133,4 +77,12 @@ public class Semestre {
     public void setBancoTasks(List<Task> t) {
         this.bancoTasks = t;
     }
+
+    // métodos
+
+    @Override
+    public String capturarNome() {
+        return String.valueOf(this.numero);
+    }
+
 }
