@@ -85,4 +85,10 @@ public class Semestre implements IGeneralGetNome {
         return String.valueOf(this.numero);
     }
 
+    public void avancarSemana() {
+        if (this.semanaAtual < this.semanaMax) {
+            this.semanaAtual++;
+        }
+    }
+
 }

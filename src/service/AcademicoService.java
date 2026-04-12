@@ -1,7 +1,7 @@
 package service;
 
 import model.atividades.Evento;
-import model.game.Game;
+import model.Game;
 import model.entidades.Jogador;
 import model.academico.Semestre;
 import model.academico.Disciplina;
@@ -105,6 +105,7 @@ public class AcademicoService {
             if (formatura != null) {
                 formatura.executar(jogoAtual.getJogador());
             }
+            jogoAtual.formarJogador();
 
             // pensar em alguma lógica para encerrar o jogo
         }

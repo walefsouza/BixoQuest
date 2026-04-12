@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
+
     private List<T> repository;
 
     // construtor
@@ -30,11 +31,15 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
     @Override
     public T buscar(String identificador) {
-        for (T objeto : repository) {
-            if (objeto.capturarNome().equals(identificador)) {
-                return objeto;
+
+        if (identificador != null) {
+            for (T objeto : repository) {
+                if (objeto.capturarNome().equals(identificador)) {
+                    return objeto;
+                }
             }
         }
+
         return null;
     }
 

@@ -1,6 +1,6 @@
 package service;
 
-import model.game.Game;
+import model.Game;
 import model.entidades.Jogador;
 import model.academico.Semestre;
 import model.atividades.Task;

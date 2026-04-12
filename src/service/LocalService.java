@@ -1,9 +1,7 @@
 package service;
 
 import model.academico.Semestre;
-import model.game.Game;
 import model.entidades.Jogador;
-import model.academico.Disciplina;
 import model.interacao.Dialogo;
 import model.mapa.*;
 import model.atividades.Evento;

@@ -33,10 +33,6 @@ public class Disciplina implements IGeneralGetNome {
         this.professor = professor;
     }
 
-    public void setMediaFinal(int media){
-        this.mediaFinal = media;
-    }
-
     // getters
 
     public String getNomeSala() {
@@ -61,6 +57,10 @@ public class Disciplina implements IGeneralGetNome {
 
     public boolean getAprovado(){
         return this.aprovado;
+    }
+
+    public EventoAvaliacao getAvaliacao(){
+        return this.avaliacao;
     }
 
     // métodos

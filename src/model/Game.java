@@ -1,4 +1,4 @@
-package model.game;
+package model;
 
 import model.academico.Semestre;
 import model.entidades.Jogador;
@@ -8,7 +8,7 @@ import repository.IGeneralGetNome;
 public class Game implements IGeneralGetNome {
 
     private String nome;
-    //private Date lastGameplay; decidir se vai ter ou não
+    private boolean formado;
     private Jogador jogador;
     private Semestre semestre;
     private UniversidadeMapa mapa;
@@ -22,6 +22,7 @@ public class Game implements IGeneralGetNome {
         this.jogador = jogador;
         this.semestre = semestre;
         this.mapa = mapa;
+        this.formado = false;
 
     }
 
@@ -47,6 +48,11 @@ public class Game implements IGeneralGetNome {
         this.semestre = semestre;
     }
 
+    public void formarJogador() {
+        this.formado = true;
+    }
+
+
 
     // getters
 
@@ -64,6 +70,10 @@ public class Game implements IGeneralGetNome {
 
     public Semestre getSemestre(){
         return this.semestre;
+    }
+
+    public boolean verificarFormado() {
+        return this.formado;
     }
 
 

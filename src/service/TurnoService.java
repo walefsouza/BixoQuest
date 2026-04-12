@@ -13,10 +13,10 @@ public class TurnoService {
 
     public boolean passarSemana(Semestre semestre, Jogador jogador) {
 
-        jogador.setEnergia(100);
+        jogador.aumentarEnergia(100);
         if (jogador.getSaude() < 100) jogador.aumentarSaude(10);
 
-        semestre.setSemanaAtual(semestre.getSemanaAtual() + 1);
+        semestre.avancarSemana();
 
         academicoService.verificarInicioAvaliacoes(semestre, jogador);
 

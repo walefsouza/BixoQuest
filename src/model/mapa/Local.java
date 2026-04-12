@@ -5,6 +5,7 @@ import model.atividades.Task;
 import model.entidades.Entidade;
 import repository.IGeneralGetNome;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Local implements IGeneralGetNome {
@@ -18,6 +19,9 @@ public abstract class Local implements IGeneralGetNome {
     public Local (String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
+        this.tasks = new ArrayList<>();
+        this.eventos = new ArrayList<>();
+        this.entidades = new ArrayList<>();
     }
 
     // setters

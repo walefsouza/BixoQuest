@@ -5,12 +5,10 @@ import model.academico.Disciplina;
 public class Professor extends Entidade {
 
     private int credibilidade;
-    private Disciplina disciplina;
 
-    public Professor (String nome, int idade, int humor, int credibilidade, Disciplina disciplina) {
+    public Professor (String nome, int idade, int humor, int credibilidade) {
         super(nome, idade, humor);
         this.credibilidade = credibilidade;
-        this.disciplina = disciplina;
     }
 
     // Credibilidade  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -31,13 +29,4 @@ public class Professor extends Entidade {
         this.credibilidade = Math.max(0, this.credibilidade - valor);
     }
 
-    // Disciplina   - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void setDisciplina(Disciplina d){
-        this.disciplina = d;
-    }
-
-    public Disciplina getDisciplina(){
-        return this.disciplina;
-    }
 }

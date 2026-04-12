@@ -9,11 +9,9 @@ public class UniversidadeMapa {
 
     private String nome;
     private List<Local> locais;
-    private Date fundacao;
 
-    public UniversidadeMapa(String nome, Date fundacao, List<Local> locais) {
-        this.nome = nome;
-        this.fundacao = fundacao;
+    public UniversidadeMapa(String nome, List<Local> locais) {
+        this.nome = nome;;
         this.locais = locais;
     }
 
@@ -23,9 +21,6 @@ public class UniversidadeMapa {
         this.nome = nome;
     }
 
-    public void setFundacao(Date fundacao) {
-        this.fundacao = fundacao;
-    }
 
     public void setLocais(List<Local> locais) {
         this.locais = locais;
@@ -37,9 +32,6 @@ public class UniversidadeMapa {
         return this.nome;
     }
 
-    public Date getFundacao() {
-        return this.fundacao;
-    }
 
     public List<Local> getLocais() {
         return this.locais;

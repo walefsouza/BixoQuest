@@ -8,7 +8,9 @@ public class JogadorService {
 
     public boolean estudarComColega(Jogador jogador, Colega colega) {
 
-        if (jogador.getEnergia() < 10) return false;
+        if (jogador.getEnergia() < 10) {
+            return false;
+        }
 
         int bonus = colega.calcularBonusDeEstudo();
         jogador.aumentarLevelConhecimento(10 + bonus);
