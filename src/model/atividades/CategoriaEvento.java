@@ -2,8 +2,8 @@ package model.atividades;
 
 public enum CategoriaEvento {
 
-    OBRIGATORIO,
-    IMPREVISTO,
-    OPORTUNIDADE
+    OBRIGATORIO,      // Eventos obrigatórios do BixoQuest
+    IMPREVISTO,       // Eventos aleatórios do BixoQuest
+    OPORTUNIDADE      // Eventos de oportunidades do BixoQuest
 
 }

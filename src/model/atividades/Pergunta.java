@@ -6,13 +6,15 @@ public class Pergunta {
     private String[] alternativas;
     private int respostaCorreta;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public Pergunta(String enunciado, String[] alternativas, int respostaCorreta) {
         this.enunciado = enunciado;
         this.alternativas = alternativas;
         this.respostaCorreta = respostaCorreta;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setEnunciado(String enunciado) {
         this.enunciado = enunciado;
@@ -26,7 +28,7 @@ public class Pergunta {
         this.respostaCorreta = respostaCorreta;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getEnunciado() {
         return this.enunciado;
@@ -40,7 +42,7 @@ public class Pergunta {
         return this.respostaCorreta;
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public boolean verificarResposta(int resposta) {
         return resposta == respostaCorreta;

@@ -14,7 +14,7 @@ public class JogadorServiceTest {
     private JogadorService service;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
 
         jogador = new Jogador("Maria", 50, 0, 50,
                 50, 50, 100.0, null);

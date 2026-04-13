@@ -16,6 +16,9 @@ public abstract class Atividade implements IGeneralGetNome {
     private int impactoDesempenho;
     private double impactoDinheiro;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+    // Atividades são classificadas em eventos e tasks, elas são a
+    // principal forma de conexão e ambientação do jogo com o jogador
 
     public Atividade (String nome,String descricao,Local localAtividade, int impactoEnergia,
         int impactoConhecimento, int impactoMotivacao, int impactoSaude, int impactoDesempenho, double impactoDinheiro ) {
@@ -32,8 +35,9 @@ public abstract class Atividade implements IGeneralGetNome {
         this.impactoDinheiro = impactoDinheiro;
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
+    // o executar é fundamental para aplicar os impactos de uma task/evento ao jogador
     public void executar(Jogador j) {
 
         // Energia
@@ -73,7 +77,7 @@ public abstract class Atividade implements IGeneralGetNome {
             j.decrementarDinheiro(Math.abs(impactoDinheiro));
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -87,7 +91,7 @@ public abstract class Atividade implements IGeneralGetNome {
         this.localAtividade = localAtividade;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome() {
         return this.nome;

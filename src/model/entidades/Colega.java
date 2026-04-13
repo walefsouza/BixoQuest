@@ -20,6 +20,7 @@ public class Colega extends Entidade {
         return this.nivelInteligencia * 2;
     }
 
+    // O humor do colega implica na motivação do jogador
     public int calcularImpactoConversa() {
 
         if (this.getHumor() < 40) {

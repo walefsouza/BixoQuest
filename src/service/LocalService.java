@@ -14,7 +14,7 @@ public class LocalService {
     private IRepository<Dialogo> dialogoRepository;
     private Random random;
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public LocalService(IRepository<Evento> eventoRepository, IRepository<Dialogo> dialogoRepository) {
         this.eventoRepository = eventoRepository;
@@ -22,9 +22,11 @@ public class LocalService {
         this.random = new Random();
     }
 
-    // Mudança de Local
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
+    // Mudança de Local
     public boolean viajar(Semestre semestre, Jogador jogador, Local destino) {
+
         int custoViagem = 5;
 
         if (jogador.getEnergia() >= custoViagem) {
@@ -33,6 +35,8 @@ public class LocalService {
             verificarEventoLocal(semestre, jogador, destino);
             return true;
         }
+
+        // Se o jogador estiver sem energia, o único lugar que pode ir é o checkpoint semanal
 
         else {
             if (destino instanceof PontoDeOnibus) {
@@ -45,8 +49,7 @@ public class LocalService {
         }
     }
 
-    // verificar se um evento acontece no Local
-
+    // Verificar algum evento acontece no local que o jogador viajou
     private void verificarEventoLocal(Semestre s, Jogador j, Local destino) {
         int sorteio = random.nextInt(100);
 
@@ -73,11 +76,13 @@ public class LocalService {
         Cantina cantina = (Cantina) localAtual;
         int fila = cantina.getTamanhoFila();
 
+        // A fila gasta energia do jogador
         if (fila > 0) {
             jogador.decrementarEnergia(fila);
             cantina.setTamanhoFila(fila - 1);
         }
 
+        // Se não tiver fila ele recebe um bônus
         else {
             jogador.aumentarEnergia(5);
         }
@@ -117,23 +122,28 @@ public class LocalService {
 
         lab.setComputadoresDisponiveis(lab.getComputadoresDisponiveis() - 1);
         jogador.decrementarEnergia(15);
-        double ganho = 10.0 * lab.getMultiplicadorEstudo();
+        double ganho = 10.0 * lab.getMultiplicadorEstudo(); // bôns de estudo do laboratório
         jogador.aumentarLevelConhecimento((int) ganho);
 
         return true;
     }
 
-    // colegiado
+    // O jogador usa o colegiado para resolver burocracias, isso cansa muito!
 
     public boolean resolverBurocracia(Jogador jogador, Local localAtual) {
-        if (!(localAtual instanceof Colegiado)) return false;
+        if (!(localAtual instanceof Colegiado)) {
+            return false;
+        }
 
         Colegiado colegiado = (Colegiado) localAtual;
 
-        if (jogador.getEnergia() < 10) return false;
+        if (jogador.getEnergia() < 10) {
+            return false;
+        }
 
         jogador.decrementarEnergia(10);
 
+        // Se o sistema estiver funcionando, ele ganha um bônus de conhecimento pela perda de energia
         if (colegiado.verificarAtendimento()) {
             jogador.aumentarLevelConhecimento(5);
             return true;
@@ -142,7 +152,8 @@ public class LocalService {
         return false;
     }
 
-    // ponto de ônibus
+    // O jogador pode escolher desistir da semana, zerando suas energias e fazendo avanças sem
+    // desenvolver seus atributos. Isso será uma escolha e ele lida com as consequências sozinho
 
     public boolean tentarEmbarcar(Jogador jogador, Local localAtual, boolean desistiuDaSemana) {
 

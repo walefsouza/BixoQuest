@@ -5,20 +5,21 @@ public class PontoDeOnibus extends Local{
 
     private int energiaPegarOnibus;
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public PontoDeOnibus(String nome, String descricao) {
         super(nome, descricao);
         this.energiaPegarOnibus = 20;
     }
 
-    // métodos
+    // Método  - - - - - - - - - - - - - - - - - - - - - - - -
 
+    // O ônibus, nosso checkpoint só pode estar no ponto se o jogador tiver gasto energia o suficiente
     public boolean onibusEstaNoPonto(int energiaDoJogador) {
         return energiaDoJogador <= this.energiaPegarOnibus;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public int getEnergiaPegarOnibus() {
         return this.energiaPegarOnibus;
@@ -29,7 +30,7 @@ public class PontoDeOnibus extends Local{
         return TipoLocal.PONTO_DE_ONIBUS;
     }
 
-    // setters
+    // Setter  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setEnergiaPegarOnibus(int energiaPegarOnibus) {
         this.energiaPegarOnibus = energiaPegarOnibus;

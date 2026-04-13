@@ -1,6 +1,7 @@
 package model.mapa;
 
 public enum TipoLocal {
+
     CANTINA,
     LABORATORIO,
     SALA_DE_AULA,
@@ -8,4 +9,5 @@ public enum TipoLocal {
     BOROGODO,
     COLEGIADO,
     QUALQUER_LUGAR
+
 }

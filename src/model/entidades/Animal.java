@@ -40,7 +40,7 @@ public class Animal extends Entidade {
     }
 
     public int calcularDanoAtaque() {
-        return 30;
+        return 30; // por enquanto é fixo
     }
 
     public int calcularGanhoMotivacao() {

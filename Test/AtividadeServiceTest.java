@@ -28,7 +28,7 @@ public class AtividadeServiceTest {
 
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         jogador = new Jogador("Padeiro", 50, 50,
                 50, 50, 50,
                 100.0, null);

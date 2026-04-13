@@ -5,19 +5,22 @@ public class Laboratorio extends Local {
     private int nComputadores;
     private double multiplicadorEstudo; // LEMBRAR DE FAZER CASTING QUANDO USAR NO SERVICE
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public Laboratorio(String nome, String descricao, int nComputadores, double multiplicadorEstudo) {
         super(nome, descricao);
         this.nComputadores = nComputadores;
         this.multiplicadorEstudo = multiplicadorEstudo;
     }
 
-    // métodos
+    // Método  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public boolean temComputadorLivre() {
         return this.nComputadores > 0;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public int getComputadoresDisponiveis() {
         return this.nComputadores;
     }
@@ -31,7 +34,8 @@ public class Laboratorio extends Local {
         return TipoLocal.LABORATORIO;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public void setComputadoresDisponiveis(int computadoresDisponiveis) {
         this.nComputadores = computadoresDisponiveis;
     }

@@ -5,12 +5,17 @@ import model.entidades.Jogador;
 
 public class TurnoService {
 
-    private final AcademicoService academicoService;
+    private AcademicoService academicoService;
+
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public TurnoService(AcademicoService academicoService) {
         this.academicoService = academicoService;
     }
 
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Aplica o reset da energia semanal, avança a semana e verfica o começo das avaliações
     public boolean passarSemana(Semestre semestre, Jogador jogador) {
 
         jogador.aumentarEnergia(100);

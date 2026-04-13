@@ -16,6 +16,8 @@ public abstract class Local implements IGeneralGetNome {
     private String descricao;
     private List<Entidade> entidades;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public Local (String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
@@ -24,7 +26,7 @@ public abstract class Local implements IGeneralGetNome {
         this.entidades = new ArrayList<>();
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -46,7 +48,7 @@ public abstract class Local implements IGeneralGetNome {
         this.entidades = entidades;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome(){
         return this.nome;
@@ -70,9 +72,8 @@ public abstract class Local implements IGeneralGetNome {
 
     public abstract TipoLocal getTipo();
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    //public abstract Entidade chamarEntidade();
 
     @Override
     public String capturarNome() {
@@ -98,6 +99,4 @@ public abstract class Local implements IGeneralGetNome {
         if (eventos != null)
             eventos.remove(e);
     }
-
-
 }

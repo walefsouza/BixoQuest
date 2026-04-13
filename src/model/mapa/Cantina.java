@@ -7,20 +7,20 @@ public class Cantina extends Local {
 
     private int tamanhoFila;
 
-    // construtor
-
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
     public Cantina(String nome, String descricao, int tamanhoFila) {
         super(nome, descricao);
         this.tamanhoFila = tamanhoFila;
     }
 
-    // métodos
+    // Método  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public int calcularTempoDeEspera() {
         return this.tamanhoFila * 2;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public int getTamanhoFila() {
         return tamanhoFila;
     }
@@ -30,7 +30,7 @@ public class Cantina extends Local {
         return TipoLocal.CANTINA;
     }
 
-    // setters
+    // Setter  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setTamanhoFila(int tamanhoFila) {
         this.tamanhoFila = tamanhoFila;

@@ -24,7 +24,7 @@ public class LocalServiceTest {
     private LocalService service;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         jogador = new Jogador("Silvano Sales", 50, 50, 50, 50, 50, 100.0, null);
         semestre = new Semestre(1);
         cantina = new Cantina("Cantina", "cantina", 0);

@@ -28,7 +28,7 @@ public class AcademicoServiceTest {
     private IRepository<Evento> eventoRepo;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         jogador = new Jogador("Chicó", 50, 0, 50, 50, 70, 100.0, null);
 
         Professor professor = new Professor("Florzinha", 40, 80, 50);

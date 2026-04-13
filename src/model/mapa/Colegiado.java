@@ -4,7 +4,7 @@ public class Colegiado extends Local {
 
     private boolean sistemaAtivo;
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Colegiado(String nome, String descricao, boolean sistemaAtivo) {
         super(nome, descricao);
@@ -20,7 +20,7 @@ public class Colegiado extends Local {
         return true;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public boolean getSistemaAtivo() {
         return this.sistemaAtivo;
@@ -31,7 +31,7 @@ public class Colegiado extends Local {
         return TipoLocal.COLEGIADO;
     }
 
-    // setters
+    // Setter  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setSistemaAtivo(boolean sistemaAtivo) {
         this.sistemaAtivo = sistemaAtivo;

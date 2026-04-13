@@ -16,6 +16,8 @@ public class Disciplina implements IGeneralGetNome {
     private EventoAvaliacao avaliacao;
     private boolean aprovado;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public Disciplina(String nome, Professor professor, int frequencia,
                       int mediaFinal, EventoAvaliacao avaliacao, SalaDeAula sala) {
 
@@ -27,13 +29,13 @@ public class Disciplina implements IGeneralGetNome {
         this.local = sala;
     }
 
-    //setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNomeSala() {
         return local.getNome();
@@ -63,7 +65,7 @@ public class Disciplina implements IGeneralGetNome {
         return this.avaliacao;
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Override
     public String capturarNome() {
@@ -74,6 +76,7 @@ public class Disciplina implements IGeneralGetNome {
         j.aumentarLevelConhecimento(5);
         this.frequencia += 1;
 
+        // se houver um professor, incrementa pontos de credibilidade
         if (this.professor != null) {
             this.professor.setCredibilidade(this.professor.getCredibilidade() + 2);
         }
@@ -83,9 +86,10 @@ public class Disciplina implements IGeneralGetNome {
         avaliacao.executarEvento(j);
     }
 
+    // Calcula a média final da disciplina com base na frequência com peso 10 e avaliação com peso 6
     public int calcularFinal() {
         int somaPesos = this.frequencia * 10+avaliacao.getNotaObtida() * 6;
-        this.mediaFinal = somaPesos/10;
+        this.mediaFinal = somaPesos/10; // o máximo da soma dos pesos é 100, isso resulta em 0 <= x <= 10
         return this.mediaFinal;
     }
 
@@ -99,6 +103,7 @@ public class Disciplina implements IGeneralGetNome {
         this.aprovado = false;
     }
 
+    // reinicia a disciplina se for necessário
     public void resetarDisciplina() {
 
         this.frequencia = 0;

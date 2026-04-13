@@ -5,7 +5,7 @@ public class Borogodo extends Local {
     private int nivelAglomeracao;
     private boolean atividadeAtiva;
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Borogodo(String nome, String descricao, int nivelAglomeracao, boolean atividadeAtiva) {
         super(nome, descricao);
@@ -13,8 +13,9 @@ public class Borogodo extends Local {
         this.atividadeAtiva = atividadeAtiva;
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
+    // Esse é o cassino que irei desenvolver para o jogador receber dinheiro =D
     public int sorteNoTriguinho(int valorApostado) {
 
         double sorte = Math.random();
@@ -34,7 +35,7 @@ public class Borogodo extends Local {
 
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public boolean getAtividadeAtiva() {
         return atividadeAtiva;
@@ -49,7 +50,7 @@ public class Borogodo extends Local {
         return TipoLocal.BOROGODO;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setAtividadeAtiva(boolean atividadeAtiva) {
         this.atividadeAtiva = atividadeAtiva;

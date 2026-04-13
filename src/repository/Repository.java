@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
-
     private List<T> repository;
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+    // Repositório genérico para qualquer objeto
 
     public Repository() {
         this.repository = new ArrayList<>();
     }
 
-    // implementações
+    // Implementações  - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Override
     public boolean salvar(T t) {
@@ -45,7 +45,7 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
     @Override
     public List<T> listar() {
-        // Retorna a lista íntegra para o seu Service trabalhar
+        // Retorna a lista para o Service trabalhar
         return new ArrayList<>(this.repository);
     }
 

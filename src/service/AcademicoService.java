@@ -12,14 +12,18 @@ public class AcademicoService {
     private IRepository<Semestre> semestreRepository;
     private IRepository<Evento> eventoRepository;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public AcademicoService(IRepository<Semestre> semestreRepository, IRepository<Evento> eventoRepository) {
         this.semestreRepository = semestreRepository;
         this.eventoRepository = eventoRepository;
     }
 
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public boolean assistirAula(Jogador jogador, Disciplina disciplina) {
         if (jogador.getEnergia() < 10) {
-            return false;
+            return false; // não pode assitir aula cansado
         }
 
         disciplina.participarAula(jogador);
@@ -28,7 +32,7 @@ public class AcademicoService {
         return true;
     }
 
-    // AcademicoService
+    // se chegar a última semana do semestre, dispara o evento de avaliações
     public void verificarInicioAvaliacoes(Semestre semestre, Jogador jogador) {
         if (semestre.getSemanaAtual() == semestre.getSemanaMax()) {
             for (Disciplina d : semestre.getDisciplinas()) {
@@ -42,7 +46,7 @@ public class AcademicoService {
         Jogador jogador = jogoAtual.getJogador();
         Semestre semestreAtual = jogoAtual.getSemestre();
 
-        // pular semestres por escolha própria
+        // o timeskip pula semestres por escolha do jogador/admin
         if (timeskip) {
             conduzirTransicao(jogoAtual, semestreAtual);
             return true;
@@ -50,6 +54,7 @@ public class AcademicoService {
 
         boolean todasAprovadas = true;
 
+        // se todas as diciplinas estiverem aprovadas...
         for (Disciplina d : semestreAtual.getDisciplinas()) {
             d.concluirDisciplina();
 
@@ -67,12 +72,14 @@ public class AcademicoService {
             return true;
         }
 
+        // Reprovando semestre
         else {
             aplicarReprovacao(jogador, semestreAtual);
             return false;
         }
     }
 
+    // A reprovação diminui os atributos e reseta as diciplinas para refazer o semestre
     private void aplicarReprovacao(Jogador jogador, Semestre semestreAtual) {
 
         semestreAtual.setSemanaAtual(1);
@@ -85,6 +92,7 @@ public class AcademicoService {
         }
     }
 
+    // Avança para o próximo semestre e verifica se é p último para realziar a formatura
     private void conduzirTransicao(Game jogoAtual, Semestre semestreAtual) {
 
         int numeroAtual = Integer.parseInt(semestreAtual.capturarNome());
@@ -106,8 +114,6 @@ public class AcademicoService {
                 formatura.executar(jogoAtual.getJogador());
             }
             jogoAtual.formarJogador();
-
-            // pensar em alguma lógica para encerrar o jogo
         }
     }
 }

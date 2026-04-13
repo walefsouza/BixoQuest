@@ -15,7 +15,7 @@ public class ModelEntidadesTest {
     private Animal animal;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
 
         jogador = new Jogador("João", 50, 50, 50,
                 50, 50, 100.0, null);

@@ -18,7 +18,7 @@ public class ModelAtividadesTest {
     private Jogador jogador;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         jogador = new Jogador("jogador",
                 50, 50, 50, 50, 50,
                 100.0, null);

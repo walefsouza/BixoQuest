@@ -6,6 +6,8 @@ public class Professor extends Entidade {
 
     private int credibilidade;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public Professor (String nome, int idade, int humor, int credibilidade) {
         super(nome, idade, humor);
         this.credibilidade = credibilidade;

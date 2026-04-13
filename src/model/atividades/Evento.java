@@ -9,6 +9,7 @@ public abstract class Evento extends Atividade {
     private int probabilidadeAtivacao;
     private CategoriaEvento categoria;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
     public Evento(String nome, String descricao, Local localAtividade,
                   int impactoEnergia, int impactoConhecimento, int impactoMotivacao,
                   int impactoSaude, int impactoDesempenho, double impactoDinheiro,
@@ -22,7 +23,7 @@ public abstract class Evento extends Atividade {
         this.categoria = categoria;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public int getProbabilidadeAtivacao() {
         return probabilidadeAtivacao;
@@ -32,7 +33,7 @@ public abstract class Evento extends Atividade {
         return categoria;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setProbabilidadeAtivacao(int probabilidadeAtivacao) {
         this.probabilidadeAtivacao = probabilidadeAtivacao;
@@ -42,8 +43,9 @@ public abstract class Evento extends Atividade {
         this.categoria = categoria;
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
+    // verifica a condição de começar um evento no jogador, é implementado nas subclasses
     public abstract boolean verificarCondicao(Semestre s, Jogador j, int nAleatorio);
 
     public void executarEvento(Jogador j) {

@@ -12,6 +12,8 @@ public class EventoAvaliacao extends Evento {
     private int notaObtida;
     private boolean realizada;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public EventoAvaliacao(String nome, String descricao, Local localAtividade,
                            int impactoEnergia, int impactoConhecimento, int impactoMotivacao,
                            int impactoSaude, int impactoDesempenho, double impactoDinheiro,
@@ -30,7 +32,7 @@ public class EventoAvaliacao extends Evento {
         this.realizada = false;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setPerguntas(List<Pergunta> perguntas) {
         this.perguntas = perguntas;
@@ -48,7 +50,7 @@ public class EventoAvaliacao extends Evento {
         this.realizada = realizada;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public List<Pergunta> getPerguntas() {
         return this.perguntas;
@@ -66,7 +68,7 @@ public class EventoAvaliacao extends Evento {
         return this.realizada;
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public boolean verificarCondicao(Semestre s, Jogador j, int nAleatorio){
         return false;

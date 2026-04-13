@@ -10,34 +10,34 @@ public class UniversidadeMapa {
     private String nome;
     private List<Local> locais;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public UniversidadeMapa(String nome, List<Local> locais) {
         this.nome = nome;;
         this.locais = locais;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-
     public void setLocais(List<Local> locais) {
         this.locais = locais;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome() {
         return this.nome;
     }
 
-
     public List<Local> getLocais() {
         return this.locais;
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void adicionarLocal(Local l) {
         if (locais != null)

@@ -6,6 +6,8 @@ import model.mapa.Local;
 
 public class EventoPassarMal extends Evento {
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public EventoPassarMal(String nome, String descricao, Local localAtividade,
                            int impactoEnergia, int impactoConhecimento, int impactoMotivacao,
                            int impactoSaude, int impactoDesempenho, double impactoDinheiro,
@@ -16,6 +18,8 @@ public class EventoPassarMal extends Evento {
                 impactoSaude, impactoDesempenho, impactoDinheiro,
                 probabilidadeAtivacao, categoria);
     }
+
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Override
     public boolean verificarCondicao(Semestre s, Jogador j, int nAleatorio) {

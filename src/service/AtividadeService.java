@@ -18,12 +18,17 @@ public class AtividadeService {
     private IRepository<Evento> eventoRepository;
     private Random random;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public AtividadeService(IRepository<Task> taskRepository, IRepository<Evento> eventoRepository) {
         this.taskRepository = taskRepository;
         this.eventoRepository = eventoRepository;
         this.random = new Random();
     }
 
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Embaralha uma cópia do banco e escolhe 6 tasks para o jogador realizar na semana
     public List<Task> escolherTasksDaSemana() {
         List<Task> todasAsTasks = taskRepository.listar();
 
@@ -34,6 +39,7 @@ public class AtividadeService {
         return new ArrayList<>(copiaTasks.subList(0, quantidade));
     }
 
+    // Verifica se o jogador ter energia para realizar a atividade
     public boolean executarTask(Task task, Jogador jogador) {
 
         int custo = task.getImpactoEnergia();
@@ -47,6 +53,7 @@ public class AtividadeService {
         return true;
     }
 
+    // Verifica se algum evento do repositório pode ser inicializado
     public boolean processarEventosDoDia(Game jogoAtual) {
 
         int sorteioDoDia = random.nextInt(100);

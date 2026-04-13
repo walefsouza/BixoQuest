@@ -8,6 +8,8 @@ public class Task extends Atividade {
     private boolean realizada;
     private CategoriaTask categoria;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public Task(String nome, String descricao, Local localAtividade, int impactoEnergia,
                 int impactoConhecimento, int impactoMotivacao, int impactoSaude,
                 int impactoDesempenho, double impactoDinheiro, boolean realizada, CategoriaTask categoria) {
@@ -18,7 +20,7 @@ public class Task extends Atividade {
         this.categoria = categoria;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public CategoriaTask getCategoria() {
         return this.categoria;
@@ -28,7 +30,7 @@ public class Task extends Atividade {
         return this.realizada;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setCategoria(CategoriaTask categoria) {
         this.categoria = categoria;
@@ -38,7 +40,7 @@ public class Task extends Atividade {
         this.realizada = realizada;
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void executarTask(Jogador j) {
         super.executar(j);

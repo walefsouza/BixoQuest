@@ -14,15 +14,20 @@ public class GameService {
     private IRepository<Game> gameRepository;
     private IRepository<Semestre> semestreRepository;
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public GameService(IRepository<Game> gameRepository, IRepository<Semestre> semestreRepository) {
         this.gameRepository = gameRepository;
         this.semestreRepository = semestreRepository;
     }
 
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public Game iniciarNovoJogo(String nomeJogo, String nomeJogador) {
 
         Semestre semestreInicial = semestreRepository.buscar("1");
 
+        // Se não houver semestre inicial, não pode começar um jogo!!!
         if (semestreInicial == null) {
             return null;
         }
@@ -53,6 +58,7 @@ public class GameService {
         return jogo.calcularProgresso();
     }
 
+    // Criando Mapa da Universidade
     private UniversidadeMapa criarMapa() {
         List<Local> locais = new ArrayList<>();
 

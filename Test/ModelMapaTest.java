@@ -13,7 +13,7 @@ public class ModelMapaTest {
     private PontoDeOnibus ponto;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
 
         cantina = new Cantina("Cantina", "Compre comida", 5);
         borogodo = new Borogodo("Borogodó", "Praça local", 3, true);

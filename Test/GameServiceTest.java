@@ -16,7 +16,7 @@ public class GameServiceTest {
     private GameService service;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
 
         gameRepo = new Repository<>();
 

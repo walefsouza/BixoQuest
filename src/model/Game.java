@@ -14,11 +14,10 @@ public class Game implements IGeneralGetNome {
     private UniversidadeMapa mapa;
     private static final int TOTAL_SEMESTRES = 8;
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Game(String nome, Jogador jogador, Semestre semestre, UniversidadeMapa mapa) {
         this.nome = nome;
-        //this.lastGameplay =; pensar para o futuro
         this.jogador = jogador;
         this.semestre = semestre;
         this.mapa = mapa;
@@ -26,7 +25,7 @@ public class Game implements IGeneralGetNome {
 
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Override
     public String capturarNome() {
@@ -38,7 +37,7 @@ public class Game implements IGeneralGetNome {
         return calculo;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setNome(String nome){
         this.nome = nome;
@@ -52,9 +51,7 @@ public class Game implements IGeneralGetNome {
         this.formado = true;
     }
 
-
-
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome(){
         return this.nome;

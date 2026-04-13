@@ -23,7 +23,7 @@ public class TurnoServiceTest {
     private TurnoService service;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         jogador = new Jogador("Bento", 30, 50,
                 50, 80, 50,
                 100.0, null);

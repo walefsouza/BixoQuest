@@ -14,14 +14,19 @@ import java.util.Random;
 
 public class InteracaoService {
 
-    private final IRepository<Dialogo> dialogoRepository;
-    private final Random random;
+    private IRepository<Dialogo> dialogoRepository;
+    private Random random;
+
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public InteracaoService(IRepository<Dialogo> dialogoRepository) {
         this.dialogoRepository = dialogoRepository;
         this.random = new Random();
     }
 
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Método base para buscar todas as falas de determinado local
     private List<Dialogo> buscarFalasDoLocal(Local localAtual) {
         TipoLocal tipoAtual = localAtual.getTipo();
         List<Dialogo> falasDoLocal = new ArrayList<>();
@@ -34,6 +39,7 @@ public class InteracaoService {
         return falasDoLocal;
     }
 
+    // Gera diálogos aleatórios sobre aquele local
     public Dialogo conversar(Local localAtual) {
         List<Dialogo> falas = buscarFalasDoLocal(localAtual);
         if (falas.isEmpty()) return null;
@@ -42,6 +48,7 @@ public class InteracaoService {
         return falas.get(nAleatorio);
     }
 
+    // Filtra falas por categoria, isso ajuda a segmentar as falas por contexto
     public Dialogo conversarPorCategoria(Local localAtual, CategoriaDialogo categoria) {
         List<Dialogo> falas = new ArrayList<>();
 
@@ -57,6 +64,7 @@ public class InteracaoService {
         return falas.get(nAleatorio);
     }
 
+    // O jogador pode acariciar um animal e se ele estiver raivoso vai ser penalizado
     public boolean interagirComAnimal(Jogador jogador, Animal animal) {
 
         if (jogador == null || animal == null) {

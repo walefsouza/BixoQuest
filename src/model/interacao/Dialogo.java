@@ -12,7 +12,7 @@ public class Dialogo implements IGeneralGetNome {
     private CategoriaDialogo categoria;
     private TipoLocal localDialogo;
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Dialogo(String id, Entidade npc, String texto, CategoriaDialogo categoria, TipoLocal localDialogo){
         this.id = id;
@@ -22,7 +22,7 @@ public class Dialogo implements IGeneralGetNome {
         this.localDialogo = localDialogo;
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Entidade getNpc() {
         return this.npc;
@@ -45,7 +45,7 @@ public class Dialogo implements IGeneralGetNome {
         return this.id;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setNpc(Entidade npc) {
         this.npc = npc;

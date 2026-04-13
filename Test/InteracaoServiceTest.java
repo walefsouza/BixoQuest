@@ -25,7 +25,7 @@ public class InteracaoServiceTest {
     private Professor npc;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
 
         jogador = new Jogador("JoaoGrilo", 50, 50,
                 50, 50, 50,

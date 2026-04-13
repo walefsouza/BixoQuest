@@ -5,7 +5,7 @@ import model.entidades.Colega;
 
 public class JogadorService {
 
-
+    // Estudar com alguém inteligente pode fazer o estudo render
     public boolean estudarComColega(Jogador jogador, Colega colega) {
 
         if (jogador.getEnergia() < 10) {
@@ -19,6 +19,7 @@ public class JogadorService {
         return true;
     }
 
+    // Se a pessoa estiver com mal humor, o impacto da conversa será ruim para a motivação
     public boolean interagirSocialmente(Jogador jogador, Colega colega) {
 
         int impacto = colega.calcularImpactoConversa();

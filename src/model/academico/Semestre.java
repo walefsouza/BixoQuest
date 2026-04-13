@@ -15,7 +15,7 @@ public class Semestre implements IGeneralGetNome {
     private int semanaMax;
     private List<Task> bancoTasks;
 
-    // construtor
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Semestre (int numero) {
         this.numero = numero;
@@ -26,7 +26,7 @@ public class Semestre implements IGeneralGetNome {
         this.bancoTasks = new ArrayList<>();
     }
 
-    // getters
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public int getNumero() {
         return this.numero;
@@ -52,7 +52,7 @@ public class Semestre implements IGeneralGetNome {
         return this.bancoTasks;
     }
 
-    // setters
+    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setNumero(int numero) {
         this.numero = numero;
@@ -78,7 +78,7 @@ public class Semestre implements IGeneralGetNome {
         this.bancoTasks = t;
     }
 
-    // métodos
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Override
     public String capturarNome() {
