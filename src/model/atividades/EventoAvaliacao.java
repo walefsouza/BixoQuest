@@ -1,8 +1,10 @@
 package model.atividades;
 
-import model.academico.Semestre;
 import model.entidades.Jogador;
 import model.mapa.Local;
+import model.Game; // Assumindo que você mudou para receber Game
+import model.mapa.TipoLocal;
+
 import java.util.List;
 
 public class EventoAvaliacao extends Evento {
@@ -12,20 +14,13 @@ public class EventoAvaliacao extends Evento {
     private int notaObtida;
     private boolean realizada;
 
-    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public EventoAvaliacao(String nome, String descricao, Local localAtividade,
-                           int impactoEnergia, int impactoConhecimento, int impactoMotivacao,
-                           int impactoSaude, int impactoDesempenho, double impactoDinheiro,
-                           int probabilidadeAtivacao,
-                           CategoriaEvento categoria,
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - -
+    public EventoAvaliacao(String nome, String descricao, TipoLocal localAtividade,
+                           CategoriaEvento categoria, RequisitoEvento requisito,
+                           String icon, List<Efeito> efeitos,
                            List<Pergunta> perguntas, int notaMaxima) {
 
-        super(nome, descricao, localAtividade,
-                impactoEnergia, impactoConhecimento, impactoMotivacao,
-                impactoSaude, impactoDesempenho, impactoDinheiro,
-                probabilidadeAtivacao, categoria);
-
+        super(nome, descricao, localAtividade, categoria, requisito, icon, efeitos);
         this.perguntas = perguntas;
         this.notaMaxima = notaMaxima;
         this.notaObtida = 0;
@@ -70,10 +65,7 @@ public class EventoAvaliacao extends Evento {
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public boolean verificarCondicao(Semestre s, Jogador j, int nAleatorio){
-        return false;
-    }
-
+    // Correção das respostas das avaliações
     public int corrigirResposta(int indicePergunta, int resposta) {
         if (indicePergunta < 0 || indicePergunta >= perguntas.size()) {
             return getNotaObtida();
@@ -88,10 +80,10 @@ public class EventoAvaliacao extends Evento {
         return getNotaObtida();
     }
 
+    // Sobrescrevendo executar para setar avaliação como realizada
     @Override
-    public void executarEvento(Jogador j) {
-        super.executarEvento(j);
-        setRealizada(true);
+    public ResultadoAcao executar(Game g) {
+        this.setRealizada(true);
+        return super.executar(g);
     }
-
 }

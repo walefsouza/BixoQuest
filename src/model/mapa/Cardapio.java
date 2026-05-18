@@ -23,8 +23,6 @@ public enum Cardapio {
         return nome;
     }
 
-    // Setter  - - - - - - - - - - - - - - - - - - - - - - - -
-
     public int getPreco() {
         return preco;
     }

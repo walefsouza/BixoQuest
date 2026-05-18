@@ -16,6 +16,8 @@ public class Pergunta {
 
     // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
+    // Avaliar se esses setters precisam continuar existindo
+
     public void setEnunciado(String enunciado) {
         this.enunciado = enunciado;
     }

@@ -23,7 +23,7 @@ public class GameService {
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Game iniciarNovoJogo(String nomeJogo, String nomeJogador) {
+    public Game iniciarNovoJogo(String nomeJogo, String nomeJogador, List<Local> locais) {
 
         Semestre semestreInicial = semestreRepository.buscar("1");
 
@@ -32,9 +32,9 @@ public class GameService {
             return null;
         }
 
-        Jogador jogador = new Jogador(nomeJogador, 100, 50, 50, 50, 50, 50.0, null);
+        Jogador jogador = new Jogador(nomeJogador, 100, 50, 50, 50, 50, 50.0, null, "imagem.png");
 
-        UniversidadeMapa mapa = criarMapa();
+        UniversidadeMapa mapa = new UniversidadeMapa("UEFS",locais, "imagem.png", "musica.png" );
 
         Game jogo = new Game(nomeJogo, jogador, semestreInicial, mapa);
         gameRepository.salvar(jogo);
@@ -58,17 +58,4 @@ public class GameService {
         return jogo.calcularProgresso();
     }
 
-    // Criando Mapa da Universidade
-    private UniversidadeMapa criarMapa() {
-        List<Local> locais = new ArrayList<>();
-
-        locais.add(new Cantina("Cantina", "Cantina universitária", 0));
-        locais.add(new Laboratorio("Laboratório", "Lab de computação", 10, 1.5));
-        locais.add(new Colegiado("Colegiado", "Secretaria do curso", true));
-        locais.add(new SalaDeAula("Sala de Aula", "Sala principal", true));
-        locais.add(new PontoDeOnibus("Ponto de Ônibus", "Ponto de Checkpoint"));
-        locais.add(new Borogodo("Borogodó", "Praça de convivência", 0, false));
-
-        return new UniversidadeMapa("UEFS", locais);
-    }
 }

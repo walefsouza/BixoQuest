@@ -1,32 +1,31 @@
 package model.interacao;
 
 import model.entidades.Entidade;
+import model.entidades.TipoEntidade;
 import model.mapa.TipoLocal;
 import repository.IGeneralGetNome;
 
 public class Dialogo implements IGeneralGetNome {
 
     private String id;
-    private Entidade npc;
+    private TipoEntidade tipo;
     private String texto;
     private CategoriaDialogo categoria;
     private TipoLocal localDialogo;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Dialogo(String id, Entidade npc, String texto, CategoriaDialogo categoria, TipoLocal localDialogo){
+    public Dialogo(String id, TipoEntidade tipo, String texto,
+                   CategoriaDialogo categoria, TipoLocal localDialogo) {
+
         this.id = id;
-        this.npc = npc;
+        this.tipo = tipo;
         this.texto = texto;
         this.categoria = categoria;
         this.localDialogo = localDialogo;
     }
 
     // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public Entidade getNpc() {
-        return this.npc;
-    }
 
     public String getTexto() {
         return this.texto;
@@ -46,10 +45,6 @@ public class Dialogo implements IGeneralGetNome {
     }
 
     // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void setNpc(Entidade npc) {
-        this.npc = npc;
-    }
 
     public void setTexto(String texto) {
         this.texto = texto;

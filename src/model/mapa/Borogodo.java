@@ -7,8 +7,10 @@ public class Borogodo extends Local {
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Borogodo(String nome, String descricao, int nivelAglomeracao, boolean atividadeAtiva) {
-        super(nome, descricao);
+    public Borogodo(String nome, String descricao,String imagemFundo, String musicaFundo,
+                    int nivelAglomeracao, boolean atividadeAtiva) {
+
+        super(nome, descricao, imagemFundo, musicaFundo);
         this.nivelAglomeracao = nivelAglomeracao;
         this.atividadeAtiva = atividadeAtiva;
     }

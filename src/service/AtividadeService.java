@@ -40,15 +40,17 @@ public class AtividadeService {
     }
 
     // Verifica se o jogador ter energia para realizar a atividade
-    public boolean executarTask(Task task, Jogador jogador) {
+    public boolean executarTask(Task task, Game game) {
 
-        int custo = task.getImpactoEnergia();
+        Jogador jogador = game.getJogador();
+
+        int custo = task.getCustoEnergia();
 
         if (custo < 0 && jogador.getEnergia() < Math.abs(custo)) {
             return false;
         }
 
-        task.executar(jogador);
+        task.executar(game);
 
         return true;
     }
@@ -62,8 +64,8 @@ public class AtividadeService {
         Semestre s = jogoAtual.getSemestre();
 
         for (Evento evento : eventoRepository.listar()) {
-            if (evento.verificarCondicao(s, j, sorteioDoDia)) {
-                evento.executar(j);
+            if (evento.verificarCondicao(jogoAtual)) {
+                evento.executar(jogoAtual);
                 return true;
             }
         }

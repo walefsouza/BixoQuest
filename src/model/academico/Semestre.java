@@ -54,24 +54,12 @@ public class Semestre implements IGeneralGetNome {
 
     // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
-    }
-
     public void setConcluido(boolean concluido) {
         this.concluido = concluido;
     }
 
     public void setSemanaAtual(int s) {
         this.semanaAtual = s;
-    }
-
-    public void setSemanaMax(int s) {
-        this.semanaMax = s;
     }
 
     public void setBancoTasks(List<Task> t) {

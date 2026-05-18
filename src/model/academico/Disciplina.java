@@ -3,7 +3,9 @@ package model.academico;
 import model.atividades.EventoAvaliacao;
 import model.entidades.Jogador;
 import model.entidades.Professor;
+import model.mapa.Local;
 import model.mapa.SalaDeAula;
+import model.mapa.TipoLocal;
 import repository.IGeneralGetNome;
 
 public class Disciplina implements IGeneralGetNome {
@@ -11,22 +13,24 @@ public class Disciplina implements IGeneralGetNome {
     private String nome;
     private Professor professor;
     private int frequencia;
-    private SalaDeAula local;
+    private TipoLocal local;
     private int mediaFinal;
     private EventoAvaliacao avaliacao;
     private boolean aprovado;
+    private String icone;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Disciplina(String nome, Professor professor, int frequencia,
-                      int mediaFinal, EventoAvaliacao avaliacao, SalaDeAula sala) {
+    public Disciplina(String nome, Professor professor, String icone,
+                      EventoAvaliacao avaliacao, TipoLocal sala) {
 
         this.nome = nome;
         this.professor = professor;
-        this.frequencia = frequencia;
-        this.mediaFinal = mediaFinal;
+        this.frequencia = 0;
+        this.mediaFinal = 0;
         this.avaliacao = avaliacao;
         this.local = sala;
+        this.icone = icone;
     }
 
     // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -36,10 +40,6 @@ public class Disciplina implements IGeneralGetNome {
     }
 
     // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public String getNomeSala() {
-        return local.getNome();
-    }
 
     public Professor getProfessor() {
         return this.professor;
@@ -65,6 +65,10 @@ public class Disciplina implements IGeneralGetNome {
         return this.avaliacao;
     }
 
+    public String getIcone(){
+        return this.icone;
+    }
+
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Override
@@ -72,18 +76,16 @@ public class Disciplina implements IGeneralGetNome {
         return this.getNome();
     }
 
+    // Participar da aula para aumentar frequência
     public void participarAula(Jogador j) {
         j.aumentarLevelConhecimento(5);
         this.frequencia += 1;
 
-        // se houver um professor, incrementa pontos de credibilidade
-        if (this.professor != null) {
-            this.professor.setCredibilidade(this.professor.getCredibilidade() + 2);
-        }
-    }
+        // Se houver um professor, incrementa pontos de credibilidade
 
-    public void iniciarAvaliacao(Jogador j) {
-        avaliacao.executarEvento(j);
+        if (this.professor != null) {
+            this.professor.aumentarCredibilidade(this.professor.getCredibilidade() + 2);
+        }
     }
 
     // Calcula a média final da disciplina com base na frequência com peso 10 e avaliação com peso 6
@@ -93,6 +95,7 @@ public class Disciplina implements IGeneralGetNome {
         return this.mediaFinal;
     }
 
+    // Concluir disciplina se estiver aprovado
     public void concluirDisciplina() {
 
         if (avaliacao.getRealizada() == true && calcularFinal() >= 5) {
@@ -103,7 +106,7 @@ public class Disciplina implements IGeneralGetNome {
         this.aprovado = false;
     }
 
-    // reinicia a disciplina se for necessário
+    // Reseta a disciplina em caso de recomeçar o semestre
     public void resetarDisciplina() {
 
         this.frequencia = 0;
@@ -115,5 +118,4 @@ public class Disciplina implements IGeneralGetNome {
             this.avaliacao.setNotaObtida(0);
         }
     }
-
 }

@@ -12,11 +12,13 @@ public class Jogador {
     private int saude;
     private int desempenhoAcademico;
     private double dinheiro;
+    private String aparencia;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Jogador(String nome, int energia, int levelConhecimento, int motivacao, int saude,
-                   int desempenhoAcademico, double dinheiro, Local local) {
+                   int desempenhoAcademico, double dinheiro, Local local, String aparencia) {
+
         this.nome = nome;
         this.energia = energia;
         this.levelConhecimento = levelConhecimento;
@@ -25,6 +27,7 @@ public class Jogador {
         this.desempenhoAcademico = desempenhoAcademico;
         this.dinheiro = dinheiro;
         this.local = local;
+        this.aparencia = aparencia;
     }
 
     // Nome  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -35,6 +38,16 @@ public class Jogador {
 
     public String getNome() {
         return this.nome;
+    }
+
+    // Aparência  - - - - - - - - - - - - - - - - - - - - - - - -
+
+    public void setAparencia(String aparecia) {
+        this.aparencia = aparencia;
+    }
+
+    public String getAparencia(){
+        return this.aparencia;
     }
 
     // Local  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -48,10 +61,6 @@ public class Jogador {
     }
 
     // Energia  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void setEnergia(int energia) {
-        this.energia = energia;
-    }
 
     public int getEnergia() {
         return this.energia;
@@ -68,10 +77,6 @@ public class Jogador {
 
     // Level Conhecimento  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public void setLevelConhecimento(int levelConhecimento) {
-        this.levelConhecimento = levelConhecimento;
-    }
-
     public int getLevelConhecimento() {
         return this.levelConhecimento;
     }
@@ -85,10 +90,6 @@ public class Jogador {
     }
 
     // Desempenho  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void setDesempenhoAcademico(int desempenhoAcademico) {
-        this.desempenhoAcademico = desempenhoAcademico;
-    }
 
     public int getDesempenhoAcademico() {
         return this.desempenhoAcademico;
@@ -104,10 +105,6 @@ public class Jogador {
 
     // Saúde - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public void setSaude(int saude) {
-        this.saude = saude;
-    }
-
     public int getSaude() {
         return this.saude;
     }
@@ -122,10 +119,6 @@ public class Jogador {
 
     // Dinheiro - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public void setDinheiro(double dinheiro) {
-        this.dinheiro = dinheiro;
-    }
-
     public double getDinheiro() {
         return this.dinheiro;
     }
@@ -139,10 +132,6 @@ public class Jogador {
     }
 
     // Motivação - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void setMotivacao(int motivacao) {
-        this.motivacao = motivacao;
-    }
 
     public int getMotivacao() {
         return this.motivacao;

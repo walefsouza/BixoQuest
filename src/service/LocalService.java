@@ -1,38 +1,47 @@
 package service;
 
+import model.Game;
 import model.academico.Semestre;
 import model.entidades.Jogador;
 import model.interacao.Dialogo;
 import model.mapa.*;
 import model.atividades.Evento;
 import repository.IRepository;
+
+import java.util.List;
 import java.util.Random;
 
 public class LocalService {
 
     private IRepository<Evento> eventoRepository;
     private IRepository<Dialogo> dialogoRepository;
+    private IRepository<Local> localRepository;
     private Random random;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public LocalService(IRepository<Evento> eventoRepository, IRepository<Dialogo> dialogoRepository) {
+    public LocalService(IRepository<Evento> eventoRepository,
+                        IRepository<Dialogo> dialogoRepository,
+                        IRepository<Local> localRepository) {
         this.eventoRepository = eventoRepository;
         this.dialogoRepository = dialogoRepository;
+        this.localRepository = localRepository;
         this.random = new Random();
     }
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     // Mudança de Local
-    public boolean viajar(Semestre semestre, Jogador jogador, Local destino) {
+    public boolean viajar(Game game, Local destino) {
+
+        Jogador jogador = game.getJogador();
 
         int custoViagem = 5;
 
         if (jogador.getEnergia() >= custoViagem) {
             jogador.decrementarEnergia(custoViagem);
             jogador.mudarLocal(destino);
-            verificarEventoLocal(semestre, jogador, destino);
+            verificarEventoLocal(game, destino);
             return true;
         }
 
@@ -50,12 +59,13 @@ public class LocalService {
     }
 
     // Verificar algum evento acontece no local que o jogador viajou
-    private void verificarEventoLocal(Semestre s, Jogador j, Local destino) {
-        int sorteio = random.nextInt(100);
+    private void verificarEventoLocal(Game game, Local destino) {
+
+        Jogador j = game.getJogador();
 
         for (Evento evento : destino.getEventos()) {
-            if (evento.verificarCondicao(s, j, sorteio)) {
-                evento.executar(j);
+            if (evento.verificarCondicao(game)) {
+                evento.executar(game);
                 return;
             }
         }
@@ -63,7 +73,9 @@ public class LocalService {
 
     //  Comprar Lanche na Cantina
 
-    public boolean comprarLanche(Semestre semestre, Jogador jogador, Local localAtual, Cardapio lanche) {
+    public boolean comprarLanche(Game game, Local localAtual, Cardapio lanche) {
+
+        Jogador jogador = game.getJogador();
 
         if (!(localAtual instanceof Cantina)) {
             return false;
@@ -89,15 +101,6 @@ public class LocalService {
 
         jogador.decrementarDinheiro(lanche.getPreco());
         jogador.aumentarSaude(10);
-
-        // Possibilidade de passar mal se comer na cantina
-
-        int sorteio = random.nextInt(100);
-        Evento passarMal =  eventoRepository.buscar("Passar Mal");
-
-        if (passarMal != null && passarMal.verificarCondicao(semestre, jogador, sorteio)) {
-            passarMal.executar(jogador);
-        }
 
         return true;
     }
@@ -175,4 +178,16 @@ public class LocalService {
 
         return ponto.onibusEstaNoPonto(jogador.getEnergia());
     }
+
+    // Repositório de Locais - - - - - - - - - - - - - - - - - - - - - - - -
+
+    public List<Local> listarLocais() {
+        return this.localRepository.listar();
+    }
+
+    public Local buscarLocal(String nome) {
+        return this.localRepository.buscar(nome);
+    }
+
+
 }

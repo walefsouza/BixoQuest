@@ -12,7 +12,7 @@ public class Game implements IGeneralGetNome {
     private Jogador jogador;
     private Semestre semestre;
     private UniversidadeMapa mapa;
-    private static final int TOTAL_SEMESTRES = 8;
+    private static final int TOTAL_SEMESTRES = 6;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 

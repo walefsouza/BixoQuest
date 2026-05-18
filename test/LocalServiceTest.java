@@ -1,7 +1,5 @@
 import model.academico.Semestre;
-import model.atividades.CategoriaEvento;
 import model.atividades.Evento;
-import model.atividades.EventoPassarMal;
 import model.entidades.Jogador;
 import model.mapa.*;
 import repository.IRepository;

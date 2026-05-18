@@ -2,10 +2,14 @@ package service;
 
 import model.atividades.Evento;
 import model.Game;
+import model.atividades.EventoAvaliacao;
 import model.entidades.Jogador;
 import model.academico.Semestre;
 import model.academico.Disciplina;
 import repository.IRepository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AcademicoService {
 
@@ -32,15 +36,24 @@ public class AcademicoService {
         return true;
     }
 
-    // se chegar a última semana do semestre, dispara o evento de avaliações
-    public void verificarInicioAvaliacoes(Semestre semestre, Jogador jogador) {
+    // se chegar a última semana do semestre, dispara o evento de avaliações e retorna
+    // a lista de provas que o jogador precisa fazer
+    public List<EventoAvaliacao> verificarInicioAvaliacoes(Semestre semestre) {
+
+        List<EventoAvaliacao> avaliacoesDaSemana = new ArrayList<>();
+
+        // Se for a semana de provas...
         if (semestre.getSemanaAtual() == semestre.getSemanaMax()) {
+
+            // Pega a prova de cada disciplina e coloca na lista
             for (Disciplina d : semestre.getDisciplinas()) {
-                d.iniciarAvaliacao(jogador);
+                avaliacoesDaSemana.add(d.getAvaliacao());
             }
         }
-    }
 
+        // Devolve a lista. Se não for semana de prova, devolve uma lista vazia.
+        return avaliacoesDaSemana;
+    }
     public boolean avancarSemestre(Game jogoAtual, boolean timeskip) {
 
         Jogador jogador = jogoAtual.getJogador();
@@ -107,13 +120,13 @@ public class AcademicoService {
         }
 
         // Se não houver próximo semestre, o jogo acabou.
-        else {
+        /*else {
             Evento formatura = eventoRepository.buscar("Formatura");
 
             if (formatura != null) {
                 formatura.executar(jogoAtual.getJogador());
             }
             jogoAtual.formarJogador();
-        }
+        }*/
     }
 }

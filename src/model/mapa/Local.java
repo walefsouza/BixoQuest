@@ -15,12 +15,16 @@ public abstract class Local implements IGeneralGetNome {
     private List<Evento> eventos;
     private String descricao;
     private List<Entidade> entidades;
+    private String imagemFundo;
+    private String musicaFundo;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Local (String nome, String descricao) {
+    public Local (String nome, String descricao, String imagemFundo, String musicaFundo) {
         this.nome = nome;
         this.descricao = descricao;
+        this.imagemFundo = imagemFundo;
+        this.musicaFundo = musicaFundo;
         this.tasks = new ArrayList<>();
         this.eventos = new ArrayList<>();
         this.entidades = new ArrayList<>();
@@ -48,6 +52,14 @@ public abstract class Local implements IGeneralGetNome {
         this.entidades = entidades;
     }
 
+    public void setImagemFundo(String imagemFundo) {
+        this.imagemFundo = imagemFundo;
+    }
+
+    public void setMusicaFundo(String MusicaFundo) {
+        this.musicaFundo = musicaFundo;
+    }
+
     // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome(){
@@ -71,6 +83,14 @@ public abstract class Local implements IGeneralGetNome {
     }
 
     public abstract TipoLocal getTipo();
+
+    public String getImagemFundo() {
+        return this.imagemFundo;
+    }
+
+    public String getMusicaFundo() {
+        return this.musicaFundo;
+    }
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 

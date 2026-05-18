@@ -6,8 +6,10 @@ public class SalaDeAula extends Local {
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public SalaDeAula(String nome, String descricao, boolean salaLivre) {
-        super(nome, descricao);
+    public SalaDeAula(String nome, String descricao, String imagemFundo,
+                      String musicaFundo, boolean salaLivre) {
+
+        super(nome, descricao, imagemFundo,musicaFundo);
         this.salaLivre = salaLivre;
     }
 

@@ -1,20 +1,36 @@
 package model.mapa;
 
 import repository.IGeneralGetNome;
-
-import java.util.Date;
 import java.util.List;
 
-public class UniversidadeMapa {
+public class UniversidadeMapa implements IGeneralGetNome {
 
     private String nome;
     private List<Local> locais;
+    private String imagemMapa;
+    private String musicaTema;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public UniversidadeMapa(String nome, List<Local> locais) {
-        this.nome = nome;;
+    public UniversidadeMapa(String nome, List<Local> locais, String imagemMapa, String musicaTema) {
+        this.nome = nome;
         this.locais = locais;
+        this.imagemMapa = imagemMapa;
+        this.musicaTema = musicaTema;
+    }
+
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
+
+    public void adicionarLocal(Local l) {
+        if (this.locais != null) {
+            this.locais.add(l);
+        }
+    }
+
+    public void removerLocal(Local l) {
+        if (this.locais != null) {
+            this.locais.remove(l);
+        }
     }
 
     // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -27,6 +43,14 @@ public class UniversidadeMapa {
         this.locais = locais;
     }
 
+    public void setImagemMapa(String imagemMapa) {
+        this.imagemMapa = imagemMapa;
+    }
+
+    public void setMusicaTema(String musicaTema) {
+        this.musicaTema = musicaTema;
+    }
+
     // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome() {
@@ -37,15 +61,18 @@ public class UniversidadeMapa {
         return this.locais;
     }
 
-    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void adicionarLocal(Local l) {
-        if (locais != null)
-            locais.add(l);
+    public String getImagemMapa() {
+        return this.imagemMapa;
     }
 
-    public void removerLocal(Local l) {
-        if (locais != null)
-            locais.remove(l);
+    public String getMusicaTema() {
+        return this.musicaTema;
+    }
+
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - -
+
+    @Override
+    public String capturarNome() {
+        return this.getNome();
     }
 }

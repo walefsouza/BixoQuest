@@ -1,6 +1,5 @@
 import model.atividades.CategoriaEvento;
 import model.atividades.EventoAvaliacao;
-import model.atividades.EventoPassarMal;
 import model.atividades.Pergunta;
 import model.entidades.Jogador;
 import org.junit.jupiter.api.BeforeEach;

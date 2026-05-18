@@ -7,8 +7,10 @@ public class Laboratorio extends Local {
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Laboratorio(String nome, String descricao, int nComputadores, double multiplicadorEstudo) {
-        super(nome, descricao);
+    public Laboratorio(String nome, String descricao,String imagemFundo,
+                       String musicaFundo, int nComputadores, double multiplicadorEstudo) {
+
+        super(nome, descricao, imagemFundo, musicaFundo);
         this.nComputadores = nComputadores;
         this.multiplicadorEstudo = multiplicadorEstudo;
     }

@@ -1,17 +1,32 @@
 package repository;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
     private List<T> repository;
+    private final String CAMINHOREPO;
+    private Gson gson;
+    private final Type tipoDadoLista;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
-    // Repositório genérico para qualquer objeto
+    // Repositório genérico para qualquer objeto, recebe o tipo da lista
+    // pois os generics não é capaz de lembrar do tipo T usado.
 
-    public Repository() {
-        this.repository = new ArrayList<>();
+    public Repository(String CAMINHOREPO, Type tipoDadoLista) {
+
+        this.gson = new com.google.gson.GsonBuilder().setPrettyPrinting().create(); // gson
+        this.CAMINHOREPO = CAMINHOREPO; // endereço do repositório. ex: src/dados/semestres.json
+        this.tipoDadoLista = tipoDadoLista; // codificação para evento, semestre, locais, etc
+        this.repository = carregarArquivo(); // carregar listas do repositório
     }
 
     // Implementações  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -21,17 +36,20 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
         T objetoExistente = buscar(t.capturarNome());
 
+        // se o objeto existir, remove e adiciona o novo
         if (objetoExistente != null) {
             repository.remove(objetoExistente);
         }
 
         this.repository.add(t);
+        salvarArquivo();
         return true;
     }
 
     @Override
     public T buscar(String identificador) {
 
+        // se o identificador existir, retorna o objeto
         if (identificador != null) {
             for (T objeto : repository) {
                 if (objeto.capturarNome().equals(identificador)) {
@@ -45,17 +63,58 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
     @Override
     public List<T> listar() {
-        // Retorna a lista para o Service trabalhar
-        return new ArrayList<>(this.repository);
+
+        // Retorna a copia da lista para o Service trabalhar
+
+        List<T> copia = repository;
+        return copia;
     }
 
     @Override
     public boolean remover(String identificador) {
+
         T objetoRemover = buscar(identificador);
+
+        // Remove objeto do repositório pelo identificador
+
         if (objetoRemover != null) {
             repository.remove(objetoRemover);
+            salvarArquivo();
             return true;
         }
         return false;
+    }
+
+    // Manipular JSON  - - - - - - - - - - - - - - - - - - - - - - - -
+
+    private void salvarArquivo() {
+
+        // Escreve objetos no repositório pelo caminho definido no construtor
+
+        try (FileWriter writer = new FileWriter(CAMINHOREPO)) {
+            gson.toJson(repository, writer);
+        }
+
+        catch (IOException e) {}
+    }
+
+    private List<T> carregarArquivo() {
+
+        try (FileReader arquivo = new FileReader(CAMINHOREPO)) {
+
+            // Na hora de capturar o tipo no construtor usamos isso:
+            // Type tipo = new TypeToken<ArrayList<T>>(){}.getType();
+            // O que permite reconstruir os objetos com o tipo certo.
+
+            List<T> listaCarregada = gson.fromJson(arquivo, this.tipoDadoLista);
+
+            if (listaCarregada != null) {
+                return listaCarregada;
+            }
+        }
+
+        catch (IOException e) {}
+
+        return new ArrayList<>();
     }
 }

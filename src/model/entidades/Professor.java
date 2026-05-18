@@ -8,16 +8,12 @@ public class Professor extends Entidade {
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Professor (String nome, int idade, int humor, int credibilidade) {
-        super(nome, idade, humor);
+    public Professor (String nome, int idade, int humor, String aparencia, int credibilidade) {
+        super(nome, idade, humor, aparencia);
         this.credibilidade = credibilidade;
     }
 
     // Credibilidade  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void setCredibilidade(int saude) {
-        this.credibilidade = saude;
-    }
 
     public int getCredibilidade() {
         return this.credibilidade;
@@ -29,6 +25,12 @@ public class Professor extends Entidade {
 
     public void decrementarCredibilidade(int valor) {
         this.credibilidade = Math.max(0, this.credibilidade - valor);
+    }
+
+    // Tipo Entidade  - - - - - - - - - - - - - - - - - - - - - - - -
+
+    public TipoEntidade getTipoEntidade() {
+        return TipoEntidade.PROFESSOR;
     }
 
 }

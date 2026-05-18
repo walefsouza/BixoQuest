@@ -6,8 +6,10 @@ public class Colegiado extends Local {
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Colegiado(String nome, String descricao, boolean sistemaAtivo) {
-        super(nome, descricao);
+    public Colegiado(String nome, String descricao,String imagemFundo,
+                     String musicaFundo, boolean sistemaAtivo) {
+
+        super(nome, descricao,imagemFundo, musicaFundo);
         this.sistemaAtivo = sistemaAtivo;
     }
 

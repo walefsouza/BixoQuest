@@ -1,15 +1,14 @@
 package model.mapa;
 
-import model.atividades.EventoPassarMal;
-import model.entidades.Jogador;
-
 public class Cantina extends Local {
 
     private int tamanhoFila;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
-    public Cantina(String nome, String descricao, int tamanhoFila) {
-        super(nome, descricao);
+    public Cantina(String nome, String descricao,String imagemFundo,
+                   String musicaFundo, int tamanhoFila) {
+
+        super(nome, descricao, imagemFundo, musicaFundo);
         this.tamanhoFila = tamanhoFila;
     }
 

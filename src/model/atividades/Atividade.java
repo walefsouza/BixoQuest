@@ -1,80 +1,48 @@
 package model.atividades;
+
+import model.Game;
 import model.entidades.Jogador;
 import model.mapa.Local;
+import model.mapa.TipoLocal;
 import repository.IGeneralGetNome;
+import java.util.List;
 
 public abstract class Atividade implements IGeneralGetNome {
 
     private String nome;
     private String descricao;
-    private Local localAtividade;
+    private TipoLocal localAtividade;
+    private String icone;
 
-    private int impactoEnergia;
-    private int impactoConhecimento;
-    private int impactoMotivacao;
-    private int impactoSaude;
-    private int impactoDesempenho;
-    private double impactoDinheiro;
+    // Lista que guarda as consequências de uma ação (físicas ou visuais)
+    protected List<Efeito> efeitos;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
-    // Atividades são classificadas em eventos e tasks, elas são a
-    // principal forma de conexão e ambientação do jogo com o jogador
-
-    public Atividade (String nome,String descricao,Local localAtividade, int impactoEnergia,
-        int impactoConhecimento, int impactoMotivacao, int impactoSaude, int impactoDesempenho, double impactoDinheiro ) {
+    public Atividade (String nome, String descricao, TipoLocal localAtividade, String icone, List<Efeito> efeitos) {
 
         this.nome = nome;
         this.descricao = descricao;
         this.localAtividade = localAtividade;
-
-        this.impactoEnergia = impactoEnergia;
-        this.impactoConhecimento = impactoConhecimento;
-        this.impactoMotivacao = impactoMotivacao;
-        this.impactoSaude = impactoSaude;
-        this.impactoDesempenho = impactoDesempenho;
-        this.impactoDinheiro = impactoDinheiro;
+        this.efeitos = efeitos;
+        this.icone = icone;
     }
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    // o executar é fundamental para aplicar os impactos de uma task/evento ao jogador
-    public void executar(Jogador j) {
+    // O executar retorna o DTO e aplica os efeitos de atributo no Jogador
+    public ResultadoAcao executar(Game game) {
 
-        // Energia
-        if (impactoEnergia > 0)
-            j.aumentarEnergia(impactoEnergia);
-        else
-            j.decrementarEnergia(Math.abs(impactoEnergia));
+        ResultadoAcao resultado = new ResultadoAcao(this.descricao);
 
-        // Conhecimento
-        if (impactoConhecimento > 0)
-            j.aumentarLevelConhecimento(impactoConhecimento);
-        else
-            j.decrementarLevelConhecimento(Math.abs(impactoConhecimento));
+        // Aplicando efeitos
+        if (this.efeitos != null) {
 
-        // Motivação
-        if (impactoMotivacao > 0)
-            j.aumentarMotivacao(impactoMotivacao);
-        else
-            j.decrementarMotivacao(Math.abs(impactoMotivacao));
+            for (Efeito e : this.efeitos) {
+                e.aplicar(game, resultado);
+            }
+        }
 
-        // Saúde
-        if (impactoSaude > 0)
-            j.aumentarSaude(impactoSaude);
-        else
-            j.decrementarSaude(Math.abs(impactoSaude));
-
-        // Desempenho
-        if (impactoDesempenho > 0)
-            j.aumentarDesempenhoAcademico(impactoDesempenho);
-        else
-            j.decrementarDesempenhoAcademico(Math.abs(impactoDesempenho));
-
-        // Dinheiro (double)
-        if (impactoDinheiro > 0)
-            j.aumentarDinheiro(impactoDinheiro);
-        else
-            j.decrementarDinheiro(Math.abs(impactoDinheiro));
+        return resultado;
     }
 
     // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -87,8 +55,16 @@ public abstract class Atividade implements IGeneralGetNome {
         this.descricao = descricao;
     }
 
-    public void setLocalAtividade(Local localAtividade) {
+    public void setLocalAtividade(TipoLocal localAtividade) {
         this.localAtividade = localAtividade;
+    }
+
+    public void setEfeitos(List<Efeito> efeitos) {
+        this.efeitos = efeitos;
+    }
+
+    public void setIcone(String icone) {
+        this.icone = icone;
     }
 
     // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -101,20 +77,22 @@ public abstract class Atividade implements IGeneralGetNome {
         return this.descricao;
     }
 
-    public Local getLocalAtividade() {
+    public TipoLocal getLocalAtividade() {
         return localAtividade;
     }
 
-    public int getImpactoEnergia(){
-        return this.impactoEnergia;
+    public List<Efeito> getEfeitos() {
+        return this.efeitos;
     }
 
-    // métodos
+    public String getIcone() {
+        return this.icone;
+    }
+
+    // Interface  - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Override
     public String capturarNome() {
         return this.getNome();
     }
-
-
 }

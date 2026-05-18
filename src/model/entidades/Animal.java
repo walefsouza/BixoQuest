@@ -7,8 +7,8 @@ public class Animal extends Entidade {
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Animal(String nome, int idade, int humor, String especie, int nivelFofura) {
-        super(nome, idade, humor);
+    public Animal(String nome, int idade, int humor, String aparencia, String especie, int nivelFofura) {
+        super(nome, idade, humor, aparencia);
         this.especie = especie;
         this.nivelFofura = nivelFofura;
     }
@@ -45,5 +45,11 @@ public class Animal extends Entidade {
 
     public int calcularGanhoMotivacao() {
         return this.nivelFofura * 2;
+    }
+
+    // Tipo Entidade  - - - - - - - - - - - - - - - - - - - - - - - -
+
+    public TipoEntidade getTipoEntidade() {
+        return TipoEntidade.ANIMAL;
     }
 }

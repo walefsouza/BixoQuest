@@ -7,8 +7,10 @@ public class PontoDeOnibus extends Local{
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public PontoDeOnibus(String nome, String descricao) {
-        super(nome, descricao);
+    public PontoDeOnibus(String nome, String descricao,
+                         String imagemFundo, String musicaFundo) {
+
+        super(nome, descricao, imagemFundo, musicaFundo);
         this.energiaPegarOnibus = 20;
     }
 

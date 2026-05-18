@@ -8,8 +8,8 @@ public class Colega extends Entidade {
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Colega (String nome, int idade, int humor, int nivelInteligencia, int nivelCarisma){
-        super(nome,idade, humor);
+    public Colega (String nome, int idade, int humor, String aparencia, int nivelInteligencia, int nivelCarisma){
+        super(nome,idade, humor, aparencia);
         this.nivelInteligencia = nivelInteligencia;
         this.nivelCarisma = nivelCarisma;
     }
@@ -47,5 +47,11 @@ public class Colega extends Entidade {
 
     public void setNivelInteligencia(int nivelInteligencia) {
         this.nivelInteligencia = nivelInteligencia;
+    }
+
+    // Tipo Entidade  - - - - - - - - - - - - - - - - - - - - - - - -
+
+    public TipoEntidade getTipoEntidade() {
+        return TipoEntidade.COLEGA;
     }
 }
