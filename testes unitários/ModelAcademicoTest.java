@@ -2,9 +2,11 @@ import model.academico.Disciplina;
 import model.academico.Semestre;
 import model.atividades.CategoriaEvento;
 import model.atividades.EventoAvaliacao;
+import model.atividades.RequisitoEvento;
 import model.entidades.Jogador;
 import model.entidades.Professor;
 import model.mapa.SalaDeAula;
+import model.mapa.TipoLocal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
@@ -21,29 +23,28 @@ public class ModelAcademicoTest {
 
     @BeforeEach
     public void setUp() {
-
         jogador = new Jogador("Jogador", 50,
                 0, 50,
                 50, 50,
-                100.0, null);
+                100.0, null, "img.png");
 
-        professor = new Professor("Professor", 40, 80, 50);
-        sala = new SalaDeAula("Sala 1", "Sala de teste", true);
+        professor = new Professor("Professor", 40, 80, "img.png", 50);
+
+        sala = new SalaDeAula("Sala 1", "Sala de teste", "img", "audio", true);
 
         avaliacao = new EventoAvaliacao(
-                "Prova", "Avaliação I", null,
-                -10, 0, 0,
-                0, 10, 0.0,
-                100, CategoriaEvento.OBRIGATORIO,
-                new ArrayList<>(), 10
+                "Prova", "Avaliação I", TipoLocal.SALA_DE_AULA,
+                CategoriaEvento.OBRIGATORIO, RequisitoEvento.NENHUM, "icone",
+                new ArrayList<>(), new ArrayList<>(), 10
         );
 
-        disciplina = new Disciplina("PBL", professor, 0, 0, avaliacao, sala);
+        disciplina = new Disciplina("PBL", professor, "icone", avaliacao, sala.getTipo());
+
         semestre = new Semestre(1);
         semestre.getDisciplinas().add(disciplina);
     }
 
-    // Semestre
+    // Semestre - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Test
     public void avancarSemanaNoLimite() {
@@ -59,7 +60,7 @@ public class ModelAcademicoTest {
         assertEquals(semestre.getSemanaMax(), semestre.getSemanaAtual());
     }
 
-    // Disciplina — participarAula
+    // Disciplina — participarAula - - - - - - - - - - - - - - - - - - -
 
     @Test
     public void participarAulaAumentarFrequencia() {
@@ -80,7 +81,7 @@ public class ModelAcademicoTest {
         assertTrue(professor.getCredibilidade() > antesParticipar);
     }
 
-    // Disciplina — concluirDisciplina
+    // Disciplina — concluirDisciplina - - - - - - - - - - - - - - - - -
 
     @Test
     public void concluirDisciplinaSendoAprovado() {
@@ -108,14 +109,14 @@ public class ModelAcademicoTest {
         assertFalse(disciplina.getAprovado());
     }
 
-    // Disciplina — resetarDisciplina
+    // Disciplina — resetarDisciplina - - - - - - - - - - - - - - - - - -
 
     @Test
     public void resetarDisciplinaZerarFrequencia() {
         disciplina.participarAula(jogador);
         disciplina.participarAula(jogador);
         disciplina.participarAula(jogador);
-        assertSame(disciplina.getFrequencia(), 3);
+        assertEquals(3, disciplina.getFrequencia());
         disciplina.resetarDisciplina();
         assertEquals(0, disciplina.getFrequencia());
     }
@@ -135,11 +136,11 @@ public class ModelAcademicoTest {
     }
 
     @Test
-    public void resetarDisciplinaRemoverAvaliacao() {
+    public void resetarDisciplinaRemoverAprovacao() {
         avaliacao.setRealizada(true);
         avaliacao.setNotaObtida(8);
-        disciplina.concluirDisciplina();
-        disciplina.resetarDisciplina();
-        assertFalse(disciplina.getAprovado());
+        disciplina.concluirDisciplina(); // O jogador é aprovado
+        disciplina.resetarDisciplina(); // O reset da disciplina
+        assertFalse(disciplina.getAprovado()); // Verifica se a aprovação foi removida
     }
 }

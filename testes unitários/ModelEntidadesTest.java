@@ -16,17 +16,17 @@ public class ModelEntidadesTest {
 
     @BeforeEach
     public void setUp() {
-
+        // Adicionando o parâmetro 'aparencia' exigido pelo novo construtor
         jogador = new Jogador("João", 50, 50, 50,
-                50, 50, 100.0, null);
+                50, 50, 100.0, null, "img_jogador.png");
 
-        professor = new Professor("JulioCesar", 40, 80, 50);
-        colega = new Colega("Creuzo", 20, 80, 4, 3);
-        animal = new Animal("Rex", 3, 70, "Cachorro", 4);
+        // Adicionando 'aparencia' nas entidades que herdam da classe abstrata Entidade
+        professor = new Professor("JulioCesar", 40, 80, "img_prof.png", 50);
+        colega = new Colega("Creuzo", 20, 80, "img_colega.png", 4, 3);
+        animal = new Animal("Rex", 3, 70, "img_animal.png", "Cachorro", 4);
     }
 
-
-    // Entidade — humor compartilhado por todas as entidades
+    // Entidade - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Test
     public void aumentarHumorEntidadeMaiorMAx() {
@@ -40,7 +40,7 @@ public class ModelEntidadesTest {
         assertEquals(0, professor.getHumor());
     }
 
-    // Colega — métodos especialistas
+    // Colega - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Test
     public void calcularBonusDeEstudoNivelInteligencia() {
@@ -49,29 +49,24 @@ public class ModelEntidadesTest {
 
     @Test
     public void calcularImpactoConversaHumorColega() {
-
-        // humor alto mais motivação
+        // Humor alto aumenta motivação (Carisma 3 * 3 = 9 > 0)
         colega.setHumor(80);
         assertTrue(colega.calcularImpactoConversa() > 0);
 
-        // humor baixo diminui motivação
-
+        // Humor baixo (menor que 40) diminui motivação em -10
         colega.setHumor(20);
         assertEquals(-10, colega.calcularImpactoConversa());
     }
 
-    // Animal — métodos especialistas
+    // Animal - - - - - - - - - - - - - - - - - - - - - - -
 
     @Test
     public void aceitaCarinhoDoJogadorHumor() {
-
-        // humor bom aceita carinho
-
+        // Humor bom aceita carinho
         animal.setHumor(60);
         assertTrue(animal.aceitaCarinho());
 
-        //humor ruim não aceita carinho
-
+        // Humor ruim não aceita carinho
         animal.setHumor(30);
         assertFalse(animal.aceitaCarinho());
     }

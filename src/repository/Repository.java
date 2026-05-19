@@ -65,9 +65,7 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
     public List<T> listar() {
 
         // Retorna a copia da lista para o Service trabalhar
-
-        List<T> copia = repository;
-        return copia;
+        return new ArrayList<>(repository);
     }
 
     @Override
