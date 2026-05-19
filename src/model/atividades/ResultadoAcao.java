@@ -83,4 +83,8 @@ public class ResultadoAcao {
     public void setIconeSobreposicao(String iconeSobreposicao) {
         this.iconeSobreposicao = iconeSobreposicao;
     }
+
+    public void setTextoNarrativo(String textoNarrativo){
+        this.textoNarrativo = textoNarrativo;
+    }
 }

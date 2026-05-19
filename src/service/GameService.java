@@ -23,35 +23,72 @@ public class GameService {
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Game iniciarNovoJogo(String nomeJogo, String nomeJogador, List<Local> locais) {
+    public Game iniciarNovoJogo(String nomeSave, String nomeJogador, List<Local> locaisDoMapa) {
 
         Semestre semestreInicial = semestreRepository.buscar("1");
 
-        // Se não houver semestre inicial, não pode começar um jogo!!!
         if (semestreInicial == null) {
-            return null;
+            throw new RuntimeException("Banco de semestres não encontrado!");
         }
 
-        Jogador jogador = new Jogador(nomeJogador, 100, 50, 50, 50, 50, 50.0, null, "imagem.png");
+        // Cria o Jogador (Status iniciais do Bixo da UEFS)
+        Jogador jogador = new Jogador(
+                nomeJogador,
+                100, // Energia
+                50,   // Conhecimento
+                100, // Motivação
+                100, // Saúde
+                100, // Desempenho
+                50.0,// Dinheiro
+                null, // Local
+                "src/resources/personagens/jogador-masculino.png"
+        );
 
-        UniversidadeMapa mapa = new UniversidadeMapa("UEFS",locais, "imagem.png", "musica.png" );
+        // Cria o Mapa com os locais passados como parâmetro
+        UniversidadeMapa mapa = new UniversidadeMapa("Campus UEFS",
+                locaisDoMapa,
+                "src/resources/locais/mapacentraluefs.png",
+                "src/resources/locais/audio/musica-tema-UEFS.mp3");
 
-        Game jogo = new Game(nomeJogo, jogador, semestreInicial, mapa);
+        Game jogo = new Game(nomeSave, jogador, semestreInicial, mapa);
+
         gameRepository.salvar(jogo);
 
         return jogo;
     }
 
+    // Salvar o jogo atual no repositório de jogos
+    public boolean salvarProgresso(Game jogo) {
+
+        if (jogo == null){
+            return false;
+        }
+
+        // Sobrescreve o JSON atual com os atributos novos (dinheiro, energia, etc)
+        gameRepository.salvar(jogo);
+        return true;
+    }
+
+    // Procura jogo salvo no repositório de jogos
+    public Game carregarJogo(String nome) {
+
+        Game save = gameRepository.buscar(nome);
+
+        // se o jogo não existir, retorna null
+        if (save == null) {
+            return null;
+        }
+
+        return save;
+    }
+
+    // Deletar um jogo do repositório de jogos
+    public boolean deletarSave(String nome) {
+        return gameRepository.remover(nome);
+    }
+
     public List<Game> listarJogos() {
         return gameRepository.listar();
-    }
-
-    public Game buscarJogo(String nome) {
-        return gameRepository.buscar(nome);
-    }
-
-    public boolean encerrarJogo(String nome) {
-        return gameRepository.remover(nome);
     }
 
     public int consultarProgresso(Game jogo) {

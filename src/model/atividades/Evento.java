@@ -35,6 +35,9 @@ public class Evento extends Atividade {
 
         switch (this.requisito) {
 
+            case SEMANA4:
+                return s.getSemanaAtual() == 4;
+
             case SEMANA1_SEMESTRE1:
                 return s.getNumero() == 1 && s.getSemanaAtual() == 1;
 
@@ -57,6 +60,8 @@ public class Evento extends Atividade {
                 return s.getNumero() == 6 && s.getSemanaAtual() == 4;
 
             case NENHUM:
+                return true;
+
             default:
                 return true;
         }

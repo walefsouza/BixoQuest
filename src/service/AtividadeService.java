@@ -1,16 +1,12 @@
 package service;
 
 import model.Game;
+import model.atividades.*;
 import model.entidades.Jogador;
-import model.academico.Semestre;
-import model.atividades.Task;
-import model.atividades.Evento;
+import model.mapa.TipoLocal;
 import repository.IRepository;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class AtividadeService {
 
@@ -28,47 +24,120 @@ public class AtividadeService {
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    // Embaralha uma cópia do banco e escolhe 6 tasks para o jogador realizar na semana
-    public List<Task> escolherTasksDaSemana() {
-        List<Task> todasAsTasks = taskRepository.listar();
+    public List<Task> escolherTasksDaSemana(Game game) {
 
-        List<Task> copiaTasks = new ArrayList<>(todasAsTasks);
-        Collections.shuffle(copiaTasks);
+        // Define um HashMap com as tasks separadas em categorias
+        List<Task> repositoryTasks = taskRepository.listar();
+        Map<CategoriaTask, List<Task>> mapTasks = new HashMap<>();
 
-        int quantidade = Math.min(6, copiaTasks.size());
-        return new ArrayList<>(copiaTasks.subList(0, quantidade));
+        // Separa as tasks não realizadas em listas por categoria
+        for (Task task : repositoryTasks) {
+
+            // Verifica se a task já foi realizada nos saves do game
+            if (!game.getTaskRealizada(task.getNome())) {
+
+                if (!mapTasks.containsKey(task.getCategoria())) {
+                    mapTasks.put(task.getCategoria(), new ArrayList<>());
+                }
+
+                mapTasks.get(task.getCategoria()).add(task);
+
+            }
+        }
+
+        // Lista para receber as tasks da semana (uma por categoria)
+        List<Task> tasksDaSemana = new ArrayList<>();
+
+        for (List<Task> lista : mapTasks.values()) {
+            if (!lista.isEmpty()) {
+                Collections.shuffle(lista);
+                tasksDaSemana.add(lista.get(0));
+            }
+        }
+
+        // Misturando para não ficarem sempre na mesma ordem na interface
+        Collections.shuffle(tasksDaSemana);
+        return tasksDaSemana;
     }
 
-    // Verifica se o jogador ter energia para realizar a atividade
-    public boolean executarTask(Task task, Game game) {
+    // Executando task e aplicando efeitos no jogador ou interface gráfica
+    public ResultadoAcao executarTask(Task task, Game game) {
 
         Jogador jogador = game.getJogador();
 
-        int custo = task.getCustoEnergia();
+        if (jogador.getEnergia() < task.getCustoEnergia()) {
 
-        if (custo < 0 && jogador.getEnergia() < Math.abs(custo)) {
-            return false;
+            // Se não tiver energia, sobrescreve o texto do DTO e não executa a task.
+            ResultadoAcao erro;
+            erro = new ResultadoAcao("Você está exausto demais para " + task.getNome() + ".");
+            erro.setTocarAudio("src/resources/atividades/audio/som-sem-energia.mp3");
+            return erro;
         }
 
-        task.executar(game);
+        // Aplicando efeitos nos atributos do jogador e enviando DTO para interface
+        ResultadoAcao resultado = task.executar(game);
+        game.setTasksRealizadas(task.getNome());
+        resultado.setTocarAudio("src/resources/atividades/audio/som-att-realizada.mp3");
 
-        return true;
+        return resultado;
     }
 
     // Verifica se algum evento do repositório pode ser inicializado
-    public boolean processarEventosDoDia(Game jogoAtual) {
+    public ResultadoAcao processarEventosObrigatorios(Game jogoAtual) {
 
-        int sorteioDoDia = random.nextInt(100);
+        List<Evento> todosEventos = eventoRepository.listar();
 
-        Jogador j = jogoAtual.getJogador();
-        Semestre s = jogoAtual.getSemestre();
+        // Eventos obrigatórios
+        for (Evento evento : todosEventos) {
 
-        for (Evento evento : eventoRepository.listar()) {
-            if (evento.verificarCondicao(jogoAtual)) {
-                evento.executar(jogoAtual);
-                return true;
+            // Se for obrigatório, o evento deve acontecer imediatamente desde que não tenha acontecido
+            if (evento.getCategoria() == CategoriaEvento.OBRIGATORIO && evento.verificarCondicao(jogoAtual)) {
+
+                if (!jogoAtual.getEventoRealizado(evento.getNome())) {
+
+                    ResultadoAcao resultado = evento.executar(jogoAtual);
+                    jogoAtual.setEventoRealizado(evento.getNome());
+                    return resultado;
+                }
             }
         }
-        return false;
+        return null;
+    }
+
+    // Retorna o evento surpresa ou NULL se nada acontecer ao viajar
+    public ResultadoAcao processarEventosAleatorios(Game game, TipoLocal destino) {
+
+        // Sorteando chance do evento acontecer
+        int chance = random.nextInt(100);
+
+        if (chance > 30) {
+            return null;
+        }
+
+        List<Evento> eventoSurpresa = new ArrayList<>();
+
+        // Selecionando eventos aleatórios
+        for (Evento evento : eventoRepository.listar()) {
+
+            boolean imprevisto = evento.getCategoria() == CategoriaEvento.IMPREVISTO;
+            boolean oportunidade = evento.getCategoria() == CategoriaEvento.OPORTUNIDADE;
+
+            if ((imprevisto || oportunidade) && evento.verificarCondicao(game)) {
+
+                if (evento.getLocalAtividade() == destino || evento.getLocalAtividade() == TipoLocal.QUALQUER_LUGAR) {
+                    eventoSurpresa.add(evento);
+                }
+            }
+        }
+
+        // Se nenhum evento caiu na probabilidade, retorna null
+        if (eventoSurpresa.isEmpty()){
+            return null;
+        }
+
+        // Sorteando um evento na lista de eventos surpresa
+        Evento eventoSorteado = eventoSurpresa.get(random.nextInt(eventoSurpresa.size()));
+
+        return eventoSorteado.executar(game);
     }
 }

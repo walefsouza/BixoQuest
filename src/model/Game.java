@@ -5,6 +5,9 @@ import model.entidades.Jogador;
 import model.mapa.UniversidadeMapa;
 import repository.IGeneralGetNome;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game implements IGeneralGetNome {
 
     private String nome;
@@ -13,6 +16,9 @@ public class Game implements IGeneralGetNome {
     private Semestre semestre;
     private UniversidadeMapa mapa;
     private static final int TOTAL_SEMESTRES = 6;
+    private List<String> eventosRealizados;
+    private List<String> tasksRealizadas;
+    private boolean flagSemana;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -22,6 +28,9 @@ public class Game implements IGeneralGetNome {
         this.semestre = semestre;
         this.mapa = mapa;
         this.formado = false;
+        this.tasksRealizadas = new ArrayList<>();
+        this.eventosRealizados = new ArrayList<>();
+        this.flagSemana = false;
 
     }
 
@@ -51,6 +60,20 @@ public class Game implements IGeneralGetNome {
         this.formado = true;
     }
 
+    public void setEventoRealizado (String nomeEvento) {
+        this.eventosRealizados.add(nomeEvento);
+    }
+
+    public void setTasksRealizadas (String nomeEvento) {
+        if (!tasksRealizadas.contains(nomeEvento)) {
+            this.tasksRealizadas.add(nomeEvento);
+        }
+    }
+
+    public void setFlagSemana(boolean flagSemana) {
+        this.flagSemana = flagSemana;
+    }
+
     // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome(){
@@ -73,5 +96,15 @@ public class Game implements IGeneralGetNome {
         return this.formado;
     }
 
+    public boolean getEventoRealizado (String nomeEvento) {
+        return eventosRealizados.contains(nomeEvento);
+    }
 
+    public boolean getTaskRealizada (String nomeEvento) {
+        return tasksRealizadas.contains(nomeEvento);
+    }
+
+    public boolean getFlagSemana() {
+        return this.flagSemana;
+    }
 }

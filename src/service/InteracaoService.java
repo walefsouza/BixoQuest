@@ -1,5 +1,6 @@
 package service;
 
+import model.atividades.ResultadoAcao;
 import model.entidades.Jogador;
 import model.entidades.Animal;
 import model.interacao.CategoriaDialogo;
@@ -40,16 +41,26 @@ public class InteracaoService {
     }
 
     // Gera diálogos aleatórios sobre aquele local
-    public Dialogo conversar(Local localAtual) {
-        List<Dialogo> falas = buscarFalasDoLocal(localAtual);
-        if (falas.isEmpty()) return null;
+    public ResultadoAcao conversar(Local localAtual) {
 
+        List<Dialogo> falas = buscarFalasDoLocal(localAtual);
+
+        // Se não houver ninguém para conversar
+        if (falas.isEmpty()) {
+            return new ResultadoAcao("Não há ninguém interessante para conversar aqui no momento.");
+        }
+
+        // Sorteando diálogo
         int nAleatorio = random.nextInt(falas.size());
-        return falas.get(nAleatorio);
+        Dialogo dialogo = falas.get(nAleatorio);
+
+        // Descompactando diálogo e retornando texto no DTO
+        ResultadoAcao resultado = new ResultadoAcao("Você puxa assunto... "+ dialogo.getTexto() + ".");
+        return resultado;
     }
 
     // Filtra falas por categoria, isso ajuda a segmentar as falas por contexto
-    public Dialogo conversarPorCategoria(Local localAtual, CategoriaDialogo categoria) {
+    public ResultadoAcao conversarPorCategoria(Local localAtual, CategoriaDialogo categoria) {
         List<Dialogo> falas = new ArrayList<>();
 
         for (Dialogo d : buscarFalasDoLocal(localAtual)) {
@@ -57,23 +68,39 @@ public class InteracaoService {
                 falas.add(d);
             }
         }
+        // Se não houver ninguém para conversar
+        if (falas.isEmpty()) {
+            return new ResultadoAcao("Ninguém quer falar sobre " + categoria.name() + " agora.");
+        }
 
-        if (falas.isEmpty()) return null;
-
+        // Sorteando diálogo
         int nAleatorio = random.nextInt(falas.size());
-        return falas.get(nAleatorio);
+        Dialogo dialogo = falas.get(nAleatorio);
+
+        // Descompactando diálogo e retornando texto no DTO
+        ResultadoAcao resultado = new ResultadoAcao("Você pergunta sobre: " +
+                categoria.name()+ dialogo.getTexto() + ".");
+
+        return resultado;
     }
 
     // O jogador pode acariciar um animal e se ele estiver raivoso vai ser penalizado
-    public boolean interagirComAnimal(Jogador jogador, Animal animal) {
+    public ResultadoAcao interagirComAnimal(Jogador jogador, Animal animal) {
 
+        ResultadoAcao resultado;
+
+        // Se não houver nenhum animal
         if (jogador == null || animal == null) {
-            return false;
+            return new ResultadoAcao("Não há nenhum animal aqui.");
         }
 
+        // Se o animal está aceitando carinho aumenta motivação
         if (animal.aceitaCarinho()) {
+
             jogador.aumentarMotivacao(animal.calcularGanhoMotivacao());
-            return true;
+            resultado = new ResultadoAcao("Você fez carinho no " + animal.getNome() + ". Sua motivação aumentou.");
+            resultado.setTocarAudio("src/resources/atividades/audio/animal-gato--miando.mp3");
+            return resultado;
         }
 
         // Se o animal atacar, dispara uma chuva de reduções a partir do danoBase
@@ -82,6 +109,10 @@ public class InteracaoService {
         jogador.decrementarEnergia(danoBase / 2);
         jogador.decrementarMotivacao(danoBase / 3);
 
-        return false;
+        resultado = new ResultadoAcao("CUIDADO! O " + animal.getNome() + " te atacou! Você perdeu saúde e energia.");
+        resultado.setTocarAudio("src/resources/atividades/audio/animal-gato-rosnando.mp3");
+        resultado.setTremerTela(true);
+
+        return resultado;
     }
 }
