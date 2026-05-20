@@ -61,7 +61,6 @@ public class AcademicoServiceTest {
 
         jogo = new Game("Partida1", jogador, semestre, new UniversidadeMapa("UEFS", new ArrayList<Local>(), "img", "audio"));
 
-        // 3. Injeção de dependência dos Mocks no Service
         service = new AcademicoService(semestreRepoFake, eventoRepoFake);
     }
 
