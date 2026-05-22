@@ -1,0 +1,42 @@
+[
+  {
+    "nivelInteligencia": 5,
+    "nivelCarisma": 3,
+    "nome": "Michele",
+    "idade": 22,
+    "humor": 75,
+    "aparencia": "src/resources/personagens/colega-michele.png"
+  },
+  {
+    "nivelInteligencia": 3,
+    "nivelCarisma": 1,
+    "nome": "Francisco",
+    "idade": 19,
+    "humor": 35,
+    "aparencia": "src/resources/personagens/colega-francisco.png"
+  },
+  {
+    "nivelInteligencia": 1,
+    "nivelCarisma": 5,
+    "nome": "Luana",
+    "idade": 21,
+    "humor": 95,
+    "aparencia": "src/resources/personagens/colega-luana.png"
+  },
+  {
+    "nivelInteligencia": 4,
+    "nivelCarisma": 4,
+    "nome": "Gustavo",
+    "idade": 25,
+    "humor": 60,
+    "aparencia": "src/resources/personagens/colega-gustavo.png"
+  },
+  {
+    "nivelInteligencia": 2,
+    "nivelCarisma": 2,
+    "nome": "Cabral",
+    "idade": 22,
+    "humor": 50,
+    "aparencia": "src/resources/personagens/colega-cabral.png"
+  }
+]

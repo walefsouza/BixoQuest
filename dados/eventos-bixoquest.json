@@ -1,0 +1,648 @@
+[
+  {
+    "categoria": "OBRIGATORIO",
+    "requisito": "SEMANA3_SEMESTRE3",
+    "nome": "Greve Geral da UEFS",
+    "descricao": "O pórtico vai fechar e a Reitoria vai quebrar!",
+    "localAtividade": "QUALQUER_LUGAR",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 20,
+        "impactoConhecimento": -20,
+        "impactoMotivacao": -10,
+        "impactoSaude": 20,
+        "impactoDesempenho": -15,
+        "impactoDinheiro": -10.0
+      },
+      {
+        "arquivoAudio": "audio-greve",
+        "tremerTela": true,
+        "escurecerTela": true,
+        "desfocarTela": false,
+        "mudarImagemFundo": "fundogreve",
+        "iconeSobreposicao": "nuvemfumaça"
+      }
+    ]
+  },
+  {
+    "categoria": "OBRIGATORIO",
+    "requisito": "SEMANA1_SEMESTRE1",
+    "nome": "Semana de Integração",
+    "descricao": "Veteranos te fizeram pedir dinheiro no farol.",
+    "localAtividade": "QUALQUER_LUGAR",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": -15,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": 20,
+        "impactoSaude": -5,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": -20.0
+      },
+      {
+        "arquivoAudio": "audio-calourada",
+        "tremerTela": false,
+        "escurecerTela": false,
+        "desfocarTela": false,
+        "mudarImagemFundo": "fundocalourada",
+        "iconeSobreposicao": "confetes"
+      }
+    ]
+  },
+  {
+    "categoria": "OBRIGATORIO",
+    "requisito": "SEMANA4_SEMESTRE2",
+    "nome": "Renovação de Matrícula",
+    "descricao": "O portal do aluno caiu e a sua vaga está em risco.",
+    "localAtividade": "QUALQUER_LUGAR",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": -20,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": -10,
+        "impactoSaude": -10,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      },
+      {
+        "arquivoAudio": "audio-erro-sistema",
+        "tremerTela": true,
+        "escurecerTela": true,
+        "desfocarTela": false,
+        "mudarImagemFundo": "fundomatricula",
+        "iconeSobreposicao": "glitch-tela"
+      }
+    ]
+  },
+  {
+    "categoria": "OBRIGATORIO",
+    "requisito": "SEMANA2_SEMESTRE4",
+    "nome": "Semana Acadêmica",
+    "descricao": "Palestras obrigatórias o dia inteiro. Haja café.",
+    "localAtividade": "COLEGIADO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": -30,
+        "impactoConhecimento": 25,
+        "impactoMotivacao": 0,
+        "impactoSaude": -10,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": -10.0
+      },
+      {
+        "arquivoAudio": "audio-palestra",
+        "tremerTela": false,
+        "escurecerTela": true,
+        "desfocarTela": true,
+        "mudarImagemFundo": "fundoauditorio",
+        "iconeSobreposicao": "luz-palco"
+      }
+    ]
+  },
+  {
+    "categoria": "OBRIGATORIO",
+    "requisito": "SEMANA3_SEMESTRE5",
+    "nome": "Festa da Atlética",
+    "descricao": "A maior festa do ano. Você gastou o que não tinha.",
+    "localAtividade": "BOROGODO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": -25,
+        "impactoConhecimento": -5,
+        "impactoMotivacao": 30,
+        "impactoSaude": -20,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": -40.0
+      },
+      {
+        "arquivoAudio": "audio-festa-grave",
+        "tremerTela": true,
+        "escurecerTela": true,
+        "desfocarTela": true,
+        "mudarImagemFundo": "fundofesta",
+        "iconeSobreposicao": "luzes-neon"
+      }
+    ]
+  },
+  {
+    "categoria": "OBRIGATORIO",
+    "requisito": "SEMANA1_SEMESTRE6",
+    "nome": "Avaliação do ENADE",
+    "descricao": "Os avaliadores chegaram. Professores em colapso nervoso.",
+    "localAtividade": "SALA_DE_AULA",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": -10,
+        "impactoConhecimento": 10,
+        "impactoMotivacao": -15,
+        "impactoSaude": 0,
+        "impactoDesempenho": -10,
+        "impactoDinheiro": 0.0
+      },
+      {
+        "arquivoAudio": "audio-sirene-tensa",
+        "tremerTela": false,
+        "escurecerTela": false,
+        "desfocarTela": false,
+        "mudarImagemFundo": "fundomec",
+        "iconeSobreposicao": "filtro-cinza"
+      }
+    ]
+  },
+  {
+    "categoria": "OBRIGATORIO",
+    "requisito": "SEMANA4_SEMESTRE6",
+    "nome": "Horas Complementares",
+    "descricao": "Caça aos certificados perdidos de 2018. O prazo acaba hoje!",
+    "localAtividade": "COLEGIADO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": -15,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": -20,
+        "impactoSaude": -15,
+        "impactoDesempenho": -10,
+        "impactoDinheiro": 0.0
+      },
+      {
+        "arquivoAudio": "audio-relogio-tique-taque",
+        "tremerTela": true,
+        "escurecerTela": true,
+        "desfocarTela": true,
+        "mudarImagemFundo": "fundorelogio",
+        "iconeSobreposicao": "vinheta-vermelha"
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Sol Escaldante ao Meio-Dia",
+    "descricao": "O trajeto pelo campus sob esse sol derreteu sua vontade de viver.",
+    "localAtividade": "PONTO_DE_ONIBUS",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": -15,
+        "impactoSaude": -10,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      },
+      {
+        "arquivoAudio": "som_cigarra.wav",
+        "tremerTela": false,
+        "escurecerTela": true,
+        "desfocarTela": true,
+        "mudarImagemFundo": "fundo_sol.png",
+        "iconeSobreposicao": "icone_suor.png"
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Surpresa de Cálculo II",
+    "descricao": "O professor decidiu passar um teste relâmpago envolvendo integrais duplas.",
+    "localAtividade": "SALA_DE_AULA",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 5,
+        "impactoMotivacao": -20,
+        "impactoSaude": 0,
+        "impactoDesempenho": -15,
+        "impactoDinheiro": 0.0
+      },
+      {
+        "arquivoAudio": "som_dramatico.wav",
+        "tremerTela": true,
+        "escurecerTela": true,
+        "desfocarTela": false,
+        "mudarImagemFundo": "fundo_quadro.png",
+        "iconeSobreposicao": "icone_desespero.png"
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "NullPointerException Fatal",
+    "descricao": "O código do projeto de Java estava funcionando ontem. Hoje não compila mais.",
+    "localAtividade": "LABORATORIO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 10,
+        "impactoMotivacao": -10,
+        "impactoSaude": 0,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      },
+      {
+        "arquivoAudio": "som_erro_windows.wav",
+        "tremerTela": true,
+        "escurecerTela": false,
+        "desfocarTela": false,
+        "mudarImagemFundo": "fundo_ide.png",
+        "iconeSobreposicao": "icone_bug.png"
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Chuva Torrencial Surpresa",
+    "descricao": "Você não trouxe guarda-chuva e o pátio virou um rio.",
+    "localAtividade": "BOROGODO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": -10,
+        "impactoMotivacao": -15,
+        "impactoSaude": 10,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "A Fila do RU",
+    "descricao": "A fila dava voltas no quarteirão e a carne acabou quando chegou sua vez.",
+    "localAtividade": "CANTINA",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": -5,
+        "impactoMotivacao": -10,
+        "impactoSaude": 15,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Windows Atualizando...",
+    "descricao": "O computador do laboratório decidiu atualizar na hora que você ia salvar.",
+    "localAtividade": "LABORATORIO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": -20,
+        "impactoSaude": 20,
+        "impactoDesempenho": -5,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Xerox Quebrada",
+    "descricao": "A única máquina de xérox do campus engoliu sua moeda.",
+    "localAtividade": "COLEGIADO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": -5,
+        "impactoSaude": 10,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": -5.0
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Vazamento de Dados (Fofoca)",
+    "descricao": "Descobriram o que você falou do professor.",
+    "localAtividade": "BOROGODO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": -10,
+        "impactoSaude": 15,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Ônibus Quebrado",
+    "descricao": "O transporte público te deixou na mão.",
+    "localAtividade": "PONTO_DE_ONIBUS",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": -5,
+        "impactoSaude": 15,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": -20.0
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Ataque de Pombos",
+    "descricao": "Você foi o alvo escolhido. Não havia para onde correr.",
+    "localAtividade": "BOROGODO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": -5,
+        "impactoMotivacao": -15,
+        "impactoSaude": 15,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Mudança de Prazo",
+    "descricao": "O professor antecipou a entrega do trabalho para amanhã.",
+    "localAtividade": "SALA_DE_AULA",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": -15,
+        "impactoSaude": 25,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Café Frio e Amargo",
+    "descricao": "O café tinha gosto de tristeza e decepção.",
+    "localAtividade": "CANTINA",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": -5,
+        "impactoMotivacao": -10,
+        "impactoSaude": 5,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": -5.0
+      }
+    ]
+  },
+  {
+    "categoria": "IMPREVISTO",
+    "requisito": "NENHUM",
+    "nome": "Esqueceu a Senha do Portal",
+    "descricao": "Você bloqueou seu acesso bem no dia de olhar as notas.",
+    "localAtividade": "QUALQUER_LUGAR",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": -5,
+        "impactoSaude": 15,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Brainstorm com o Parceiro",
+    "descricao": "Seu amigo ajudou a formular uma excelente ideia para o projeto.",
+    "localAtividade": "BOROGODO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 10,
+        "impactoConhecimento": 10,
+        "impactoMotivacao": 25,
+        "impactoSaude": 5,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      },
+      {
+        "arquivoAudio": "som_conquista.wav",
+        "tremerTela": false,
+        "escurecerTela": false,
+        "desfocarTela": false,
+        "mudarImagemFundo": "fundo_borogodo.png",
+        "iconeSobreposicao": "icone_lampada.png"
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Professor Preso no Trânsito",
+    "descricao": "A aula foi cancelada! Você ganhou duas horas livres.",
+    "localAtividade": "SALA_DE_AULA",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 10,
+        "impactoConhecimento": 5,
+        "impactoMotivacao": 20,
+        "impactoSaude": -10,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Cachorro Caramelo Caretão",
+    "descricao": "Um cãozinho de rua deixou você fazer carinho na barriga dele.",
+    "localAtividade": "BOROGODO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 5,
+        "impactoMotivacao": 15,
+        "impactoSaude": -10,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Dinheiro no Bolso da Jaqueta",
+    "descricao": "Você achou uma nota amassada em um casaco antigo.",
+    "localAtividade": "QUALQUER_LUGAR",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": 10,
+        "impactoSaude": 0,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 20.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Resumo Mágico",
+    "descricao": "Um veterano te mandou exatamente o que vai cair na prova.",
+    "localAtividade": "BOROGODO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": 15,
+        "impactoSaude": -10,
+        "impactoDesempenho": 15,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Erro a seu Favor",
+    "descricao": "A máquina de salgados derrubou dois salgados pelo preço de um.",
+    "localAtividade": "CANTINA",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 5,
+        "impactoConhecimento": 10,
+        "impactoMotivacao": 10,
+        "impactoSaude": 0,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Bolsa de Extensão Aprovada",
+    "descricao": "Seu projeto foi selecionado e uma grana extra vai entrar.",
+    "localAtividade": "COLEGIADO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": 20,
+        "impactoSaude": -5,
+        "impactoDesempenho": 5,
+        "impactoDinheiro": 50.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Carona Solidária",
+    "descricao": "Um amigo te ofereceu carona até em casa.",
+    "localAtividade": "PONTO_DE_ONIBUS",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 10,
+        "impactoConhecimento": 5,
+        "impactoMotivacao": 10,
+        "impactoSaude": -5,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Bug do Bem",
+    "descricao": "Seu código compilou de primeira e você nem sabe o motivo.",
+    "localAtividade": "LABORATORIO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": 25,
+        "impactoSaude": -10,
+        "impactoDesempenho": 5,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Dica de Ouro",
+    "descricao": "O professor deixou escapar uma questão da prova.",
+    "localAtividade": "SALA_DE_AULA",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 0,
+        "impactoConhecimento": 0,
+        "impactoMotivacao": 10,
+        "impactoSaude": -5,
+        "impactoDesempenho": 15,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  },
+  {
+    "categoria": "OPORTUNIDADE",
+    "requisito": "NENHUM",
+    "nome": "Dormida Restauradora",
+    "descricao": "Você acordou sentindo que reiniciou a vida.",
+    "localAtividade": "BOROGODO",
+    "icone": "interface-icon-novoevento.png",
+    "efeitos": [
+      {
+        "impactoEnergia": 20,
+        "impactoConhecimento": 10,
+        "impactoMotivacao": 5,
+        "impactoSaude": -10,
+        "impactoDesempenho": 0,
+        "impactoDinheiro": 0.0
+      }
+    ]
+  }
+]

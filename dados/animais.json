@@ -1,0 +1,42 @@
+[
+  {
+    "especie": "Cachorro",
+    "nivelFofura": 5,
+    "nome": "Caramelo",
+    "idade": 5,
+    "humor": 95,
+    "aparencia": "src/resources/personagens/animal-cahorro-caramelo.png"
+  },
+  {
+    "especie": "Gato",
+    "nivelFofura": 4,
+    "nome": "Xerox",
+    "idade": 3,
+    "humor": 50,
+    "aparencia": "src/resources/personagens/animal-gato-xerox.png"
+  },
+  {
+    "especie": "Pássaro (Quero-Quero)",
+    "nivelFofura": 1,
+    "nome": "Jubileu",
+    "idade": 2,
+    "humor": 10,
+    "aparencia": "src/resources/personagens/animal-passaro-jubileu.png"
+  },
+  {
+    "especie": "Sagui",
+    "nivelFofura": 5,
+    "nome": "Chico",
+    "idade": 4,
+    "humor": 40,
+    "aparencia": "src/resources/personagens/anima-macaco-chico.png"
+  },
+  {
+    "especie": "Cachorro",
+    "nivelFofura": 4,
+    "nome": "Coxinha",
+    "idade": 7,
+    "humor": 85,
+    "aparencia": "src/resources/personagens/animal-cachorro-coxinha.png"
+  }
+]

@@ -1,0 +1,531 @@
+[
+  {
+    "numero": 1,
+    "disciplinas": [
+      {
+        "nome": "Formação Humanística",
+        "professor": {
+          "credibilidade": 60,
+          "nome": "Roberto",
+          "idade": 30,
+          "humor": 50,
+          "aparencia": "src/resources/personagens/professora-roberto.png"
+        },
+        "frequencia": 0,
+        "local": "SALA_DE_AULA",
+        "mediaFinal": 0,
+        "avaliacao": {
+          "perguntas": [
+            {
+              "enunciado": "Qual habilidade é importante em seminários?",
+              "alternativas": [
+                "Comunicação",
+                "Soldagem",
+                "Digitação"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Uma fonte confiável geralmente é:",
+              "alternativas": [
+                "Artigo científico",
+                "Comentário aleatório",
+                "Meme"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Debate acadêmico exige:",
+              "alternativas": [
+                "Argumentação",
+                "Gritaria",
+                "Chute"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Plágio é:",
+              "alternativas": [
+                "Permitido",
+                "Antiético",
+                "Obrigatório"
+              ],
+              "respostaCorreta": 1
+            }
+          ],
+          "notaMaxima": 4,
+          "notaObtida": 0,
+          "realizada": false,
+          "categoria": "AVALIACAO",
+          "requisito": "SEMANA4",
+          "nome": "Avaliação de Humanística",
+          "descricao": "Vários slides foram feitos para uma turma cansada demais.",
+          "localAtividade": "SALA_DE_AULA",
+          "icone": "src/resources/icones/interface-icon-avaliacao.png",
+          "efeitos": [
+            {
+              "impactoEnergia": -15,
+              "impactoConhecimento": 3,
+              "impactoMotivacao": -6,
+              "impactoSaude": -3,
+              "impactoDesempenho": 18,
+              "impactoDinheiro": 0.0
+            },
+            {
+              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "tremerTela": true,
+              "escurecerTela": false,
+              "desfocarTela": true
+            }
+          ]
+        },
+        "aprovado": false,
+        "icone": "src/resources/icones/disciplina-humanistica.png"
+      }
+    ],
+    "concluido": false,
+    "semanaAtual": 1,
+    "semanaMax": 4,
+    "bancoTasks": []
+  },
+  {
+    "numero": 2,
+    "disciplinas": [
+      {
+        "nome": "Eletrônica Geral",
+        "professor": {
+          "credibilidade": 40,
+          "nome": "Florêncio",
+          "idade": 55,
+          "humor": 35,
+          "aparencia": "src/resources/personagens/professora-florencio.png"
+        },
+        "frequencia": 0,
+        "local": "SALA_DE_AULA",
+        "mediaFinal": 0,
+        "avaliacao": {
+          "perguntas": [
+            {
+              "enunciado": "Qual unidade mede resistência?",
+              "alternativas": [
+                "Volt",
+                "Ohm",
+                "Watt"
+              ],
+              "respostaCorreta": 1
+            },
+            {
+              "enunciado": "Qual componente armazena carga?",
+              "alternativas": [
+                "LED",
+                "Capacitor",
+                "Resistor"
+              ],
+              "respostaCorreta": 1
+            },
+            {
+              "enunciado": "Corrente elétrica é medida em:",
+              "alternativas": [
+                "Ampere",
+                "Kelvin",
+                "Hertz"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Qual lei relaciona tensão e corrente?",
+              "alternativas": [
+                "Newton",
+                "Ohm",
+                "Pascal"
+              ],
+              "respostaCorreta": 1
+            }
+          ],
+          "notaMaxima": 4,
+          "notaObtida": 0,
+          "realizada": false,
+          "categoria": "AVALIACAO",
+          "requisito": "SEMANA4",
+          "nome": "Prova de Eletrônica Geral",
+          "descricao": "O circuito parecia simples até aparecerem resistores suficientes para fritar sua sanidade.",
+          "localAtividade": "SALA_DE_AULA",
+          "efeitos": [
+            {
+              "impactoEnergia": -15,
+              "impactoConhecimento": 4,
+              "impactoMotivacao": -9,
+              "impactoSaude": -7,
+              "impactoDesempenho": 22,
+              "impactoDinheiro": 0.0
+            },
+            {
+              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "tremerTela": true,
+              "escurecerTela": false,
+              "desfocarTela": true
+            }
+          ]
+        },
+        "aprovado": false,
+        "icone": "src/resources/icones/disciplina-eletronica.png"
+      }
+    ],
+    "concluido": false,
+    "semanaAtual": 1,
+    "semanaMax": 4,
+    "bancoTasks": []
+  },
+  {
+    "numero": 3,
+    "disciplinas": [
+      {
+        "nome": "Algortimos e Programação",
+        "professor": {
+          "credibilidade": 75,
+          "nome": "Rocha",
+          "idade": 48,
+          "humor": 70,
+          "aparencia": "src/resources/personagens/professora-rocha.png"
+        },
+        "frequencia": 0,
+        "local": "SALA_DE_AULA",
+        "mediaFinal": 0,
+        "avaliacao": {
+          "perguntas": [
+            {
+              "enunciado": "Um algoritmo deve ser:",
+              "alternativas": [
+                "Finito",
+                "Infinito",
+                "Aleatório"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Qual estrutura toma decisões?",
+              "alternativas": [
+                "if",
+                "for",
+                "print"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Qual estrutura repete ações?",
+              "alternativas": [
+                "while",
+                "break",
+                "case"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Pseudocódigo serve para:",
+              "alternativas": [
+                "Planejar lógica",
+                "Compilar direto",
+                "Editar imagens"
+              ],
+              "respostaCorreta": 0
+            }
+          ],
+          "notaMaxima": 4,
+          "notaObtida": 0,
+          "realizada": false,
+          "categoria": "AVALIACAO",
+          "requisito": "SEMANA4",
+          "nome": "Avaliação de Algoritmos",
+          "descricao": "O professor escreveu um pseudocódigo gigantesco e desapareceu misteriosamente.",
+          "localAtividade": "SALA_DE_AULA",
+          "efeitos": [
+            {
+              "impactoEnergia": -15,
+              "impactoConhecimento": 5,
+              "impactoMotivacao": -9,
+              "impactoSaude": -5,
+              "impactoDesempenho": 21,
+              "impactoDinheiro": 0.0
+            },
+            {
+              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "tremerTela": true,
+              "escurecerTela": false,
+              "desfocarTela": true
+            }
+          ]
+        },
+        "aprovado": false,
+        "icone": "src/resources/icones/disciplina-algoritmos.png"
+      }
+    ],
+    "concluido": false,
+    "semanaAtual": 1,
+    "semanaMax": 4,
+    "bancoTasks": []
+  },
+  {
+    "numero": 4,
+    "disciplinas": [
+      {
+        "nome": "Banco de Dados",
+        "professor": {
+          "credibilidade": 80,
+          "nome": "Analu",
+          "idade": 45,
+          "humor": 90,
+          "aparencia": "src/resources/personagens/professora-analu.png"
+        },
+        "frequencia": 0,
+        "local": "SALA_DE_AULA",
+        "mediaFinal": 0,
+        "avaliacao": {
+          "perguntas": [
+            {
+              "enunciado": "SQL é usada para:",
+              "alternativas": [
+                "Editar imagens",
+                "Gerenciar dados",
+                "Criar circuitos"
+              ],
+              "respostaCorreta": 1
+            },
+            {
+              "enunciado": "Qual comando consulta dados?",
+              "alternativas": [
+                "SELECT",
+                "DELETE",
+                "DROP"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "JOIN serve para:",
+              "alternativas": [
+                "Unir tabelas",
+                "Excluir banco",
+                "Formatar disco"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Um banco relacional usa:",
+              "alternativas": [
+                "Tabelas",
+                "Pixels",
+                "Ondas"
+              ],
+              "respostaCorreta": 0
+            }
+          ],
+          "notaMaxima": 4,
+          "notaObtida": 0,
+          "realizada": false,
+          "categoria": "AVALIACAO",
+          "requisito": "SEMANA4",
+          "nome": "Avaliação de Banco de Dados",
+          "descricao": "A prova possui SELECT, JOIN e traumas relacionais.",
+          "localAtividade": "SALA_DE_AULA",
+          "efeitos": [
+            {
+              "impactoEnergia": -15,
+              "impactoConhecimento": 5,
+              "impactoMotivacao": -8,
+              "impactoSaude": -4,
+              "impactoDesempenho": 23,
+              "impactoDinheiro": 0.0
+            },
+            {
+              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "tremerTela": true,
+              "escurecerTela": false,
+              "desfocarTela": true
+            }
+          ]
+        },
+        "aprovado": false,
+        "icone": "src/resources/icones/disciplina-dados.png"
+      }
+    ],
+    "concluido": false,
+    "semanaAtual": 1,
+    "semanaMax": 4,
+    "bancoTasks": []
+  },
+  {
+    "numero": 5,
+    "disciplinas": [
+      {
+        "nome": "Cálculo I",
+        "professor": {
+          "credibilidade": 40,
+          "nome": "Jaque",
+          "idade": 55,
+          "humor": 35,
+          "aparencia": "src/resources/personagens/professora-jaque.png"
+        },
+        "frequencia": 0,
+        "local": "SALA_DE_AULA",
+        "mediaFinal": 0,
+        "avaliacao": {
+          "perguntas": [
+            {
+              "enunciado": "A derivada representa:",
+              "alternativas": [
+                "Taxa de variação",
+                "Área",
+                "Volume"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "∫ representa:",
+              "alternativas": [
+                "Integral",
+                "Limite",
+                "Matriz"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Qual operação é inversa da derivada?",
+              "alternativas": [
+                "Integral",
+                "Multiplicação",
+                "Potência"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "Limites analisam:",
+              "alternativas": [
+                "Tendências",
+                "Circuitos",
+                "Vetores RGB"
+              ],
+              "respostaCorreta": 0
+            }
+          ],
+          "notaMaxima": 4,
+          "notaObtida": 0,
+          "realizada": false,
+          "categoria": "AVALIACAO",
+          "requisito": "SEMANA4",
+          "nome": "Prova de Cálculo",
+          "descricao": "Você encara a integral enquanto ela lentamente consome sua autoestima.",
+          "localAtividade": "SALA_DE_AULA",
+          "efeitos": [
+            {
+              "impactoEnergia": -15,
+              "impactoConhecimento": 6,
+              "impactoMotivacao": -12,
+              "impactoSaude": -8,
+              "impactoDesempenho": 26,
+              "impactoDinheiro": 0.0
+            },
+            {
+              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "tremerTela": true,
+              "escurecerTela": false,
+              "desfocarTela": true
+            }
+          ]
+        },
+        "aprovado": false,
+        "icone": "src/resources/icones/disciplina-calculo.png"
+      }
+    ],
+    "concluido": false,
+    "semanaAtual": 1,
+    "semanaMax": 4,
+    "bancoTasks": []
+  },
+  {
+    "numero": 6,
+    "disciplinas": [
+      {
+        "nome": "Programação Java",
+        "professor": {
+          "credibilidade": 75,
+          "nome": "Bianca",
+          "idade": 30,
+          "humor": 80,
+          "aparencia": "src/resources/personagens/professora-bianca.png"
+        },
+        "frequencia": 0,
+        "local": "SALA_DE_AULA",
+        "mediaFinal": 0,
+        "avaliacao": {
+          "perguntas": [
+            {
+              "enunciado": "Qual palavra cria um objeto em Java?",
+              "alternativas": [
+                "class",
+                "new",
+                "static"
+              ],
+              "respostaCorreta": 1
+            },
+            {
+              "enunciado": "Qual tipo armazena texto?",
+              "alternativas": [
+                "int",
+                "boolean",
+                "String"
+              ],
+              "respostaCorreta": 2
+            },
+            {
+              "enunciado": "Qual estrutura repete código?",
+              "alternativas": [
+                "for",
+                "if",
+                "break"
+              ],
+              "respostaCorreta": 0
+            },
+            {
+              "enunciado": "O println faz o quê?",
+              "alternativas": [
+                "Exibe texto",
+                "Apaga variável",
+                "Fecha o programa"
+              ],
+              "respostaCorreta": 0
+            }
+          ],
+          "notaMaxima": 4,
+          "notaObtida": 0,
+          "realizada": false,
+          "categoria": "AVALIACAO",
+          "requisito": "SEMANA4",
+          "nome": "Prova Final de Programação Java",
+          "descricao": "O professor apagou o quadro e anunciou: \u0027Sem consulta\u0027. O desespero compilou primeiro.",
+          "localAtividade": "SALA_DE_AULA",
+          "efeitos": [
+            {
+              "impactoEnergia": -15,
+              "impactoConhecimento": 4,
+              "impactoMotivacao": -8,
+              "impactoSaude": -5,
+              "impactoDesempenho": 20,
+              "impactoDinheiro": 0.0
+            },
+            {
+              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "tremerTela": true,
+              "escurecerTela": false,
+              "desfocarTela": true
+            }
+          ]
+        },
+        "aprovado": false,
+        "icone": "src/resources/icones/disciplina-java.png"
+      }
+    ],
+    "concluido": false,
+    "semanaAtual": 1,
+    "semanaMax": 4,
+    "bancoTasks": []
+  }
+]
