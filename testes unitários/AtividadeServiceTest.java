@@ -47,7 +47,7 @@ public class AtividadeServiceTest {
 
         service = new AtividadeService(taskRepoFake, eventoRepoFake);
 
-        jogo = new Game("Partida", jogador, new Semestre(1), new UniversidadeMapa("UEFS", new ArrayList<>(), "img", "audio"));
+        jogo = new Game("Partida", jogador, new Semestre(1));
     }
 
     // Tasks  - - - - - - - - - - - - - - - - - - - - - - - -

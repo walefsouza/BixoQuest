@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.overlays.MenuCantinaController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="262.0" layoutY="302.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../resources/locais/CantinaMenuInterno.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="728.0" fitWidth="690.0" layoutX="319.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/botoes/CardLanches.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="370.0" layoutY="151.0" prefHeight="445.0" prefWidth="538.0">
+         <children>
+            <ImageView fx:id="btnCoxinha" fitHeight="90.0" fitWidth="550.0" onMouseClicked="#clicarCoxinha" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/botoes/CardapioCoxinha.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnCafe" fitHeight="92.0" fitWidth="543.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#clicarCafe" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/botoes/CardapioCafe.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnPastel" fitHeight="94.0" fitWidth="542.0" layoutX="10.0" layoutY="100.0" onMouseClicked="#clicarPastel" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/botoes/CardapioPastel.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnSuco" fitHeight="92.0" fitWidth="542.0" layoutX="10.0" layoutY="189.0" onMouseClicked="#clicarSuco" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/botoes/CardapioSuco.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnBeiju" fitHeight="98.0" fitWidth="540.0" layoutX="10.0" layoutY="279.0" onMouseClicked="#clicarBeiju" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/botoes/CardapioBeiju.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <ImageView fx:id="btnVoltar" fitHeight="116.0" fitWidth="275.0" layoutY="610.0" onMouseClicked="#botaoVoltarMenuInicial" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/botoes/btn-voltar-bixoquest.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -2,6 +2,7 @@ import model.Game;
 import model.academico.Semestre;
 import model.mapa.Local;
 import repository.IRepository;
+import repository.LocalRepository;
 import service.GameService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,8 +36,8 @@ public class GameServiceTest {
 
     @Test
     public void iniciarNovoJogoRetornaObjetoValido() {
-        List<Local> locaisMapa = new ArrayList<>();
-        Game jogo = service.iniciarNovoJogo("Partida1", "Katniss", locaisMapa);
+        List<Local> locaisMapa = new LocalRepository().listar();
+        Game jogo = service.iniciarNovoJogo("Partida1", "Katniss", locaisMapa, "SemAparencia");
 
         assertNotNull(jogo);
         assertEquals("Partida1", jogo.getNome());
@@ -46,8 +47,8 @@ public class GameServiceTest {
 
     @Test
     public void iniciarNovoJogoSalvarNoRepositorio() {
-        List<Local> locaisMapa = new ArrayList<>();
-        Game jogo = service.iniciarNovoJogo("Partida1", "Katniss", locaisMapa);
+        List<Local> locaisMapa = new LocalRepository().listar();
+        Game jogo = service.iniciarNovoJogo("Partida1", "Katniss", locaisMapa, "SemAparência");
 
         // Com o verify, verificamos se o método salvar() do repositório foi chamado
         // pelo menos uma vez passando qualquer objeto do tipo Game.
@@ -61,7 +62,7 @@ public class GameServiceTest {
         when(semestreRepoFake.buscar("1")).thenReturn(null);
 
         RuntimeException exception = assertThrows(RuntimeException.class, () -> {
-            service.iniciarNovoJogo("Partida1", "Katniss", new ArrayList<>());
+            service.iniciarNovoJogo("Partida1", "Katniss", new ArrayList<>(), "SemAP");
         });
 
         assertEquals("Banco de semestres não encontrado!", exception.getMessage());
@@ -69,7 +70,7 @@ public class GameServiceTest {
 
     @Test
     public void iniciarNovoJogoJogadorComAtributosIniciais() {
-        Game jogo = service.iniciarNovoJogo("Partida1", "Katniss", new ArrayList<>());
+        Game jogo = service.iniciarNovoJogo("Partida1", "Katniss", new ArrayList<>(), "SemAparencia");
 
         // Verificando os status iniciais do jogador estão sendo setados
         assertEquals(100, jogo.getJogador().getEnergia());
@@ -154,7 +155,7 @@ public class GameServiceTest {
 
     @Test
     public void consultarProgressoJogo() {
-        Game jogo = service.iniciarNovoJogo("Partida1", "Katniss", new ArrayList<>());
+        Game jogo = service.iniciarNovoJogo("Partida1", "Katniss", new ArrayList<>(), "SemAparencia");
 
         // Semestre 1 / 6 semestres totais = 16% de progresso
         assertEquals(16, service.consultarProgresso(jogo));

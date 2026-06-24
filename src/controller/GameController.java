@@ -25,7 +25,7 @@ public class GameController {
         if (nomeSave == null || nomeSave.trim().isEmpty() || nomeJogador == null || nomeJogador.trim().isEmpty()) {
             return null;
         }
-        return gameService.iniciarNovoJogo(nomeSave, nomeJogador, locaisDoMapa);
+        return gameService.iniciarNovoJogo(nomeSave, nomeJogador, locaisDoMapa, "/jogadores/jogador-opcao-1.png");
     }
 
     // Recebe um jogo e salva no repositório

@@ -65,8 +65,7 @@ public class GamePersistenciaTest {
         Jogador jogador2 = new Jogador("Veterano", 100, 100,
                 100, 50, 50, 100.0, null, "img.png");
 
-        Game jogo2 = new Game("Save2", jogador2, new Semestre(2),
-                new UniversidadeMapa("UEFS", new ArrayList<>(), "img", "audio"));
+        Game jogo2 = new Game("Save2", jogador2, new Semestre(2));
 
         repoSalvar.salvar(jogo2);
 
@@ -133,8 +132,7 @@ public class GamePersistenciaTest {
 
         semestre.getDisciplinas().add(disciplina);
 
-        Game jogoOriginal = new Game("Save1", jogador, semestre, new UniversidadeMapa("UEFS",
-                new ArrayList<>(), "img", "audio"));
+        Game jogoOriginal = new Game("Save1", jogador, semestre);
 
         return jogoOriginal;
     }

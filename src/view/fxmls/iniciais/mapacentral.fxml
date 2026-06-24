@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.locais.MapaCentralController">
+   <children>
+      <ImageView fx:id="btnVoltar" fitHeight="720.0" fitWidth="1280.0" layoutX="-61.0" layoutY="35.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../resources/locais/mapacentraluefs.png" />
+         </image>
+      </ImageView>
+      <Polygon fx:id="laboratorio" fill="DODGERBLUE" layoutX="674.0" layoutY="232.0" onMouseClicked="#clicarNoMapa" opacity="0.0" points="197.7332763671875, -58.933349609375, 197.7332763671875, -144.26666259765625, 74.0, -166.66665649414062, 74.0, -100.5333251953125, 101.7332763671875, -23.733322143554688, 143.33331298828125, -12.0" stroke="BLACK" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Polygon>
+      <Polygon fx:id="colegiado" fill="DODGERBLUE" layoutX="925.0" layoutY="429.0" onMouseClicked="#clicarNoMapa" opacity="0.0" points="314.7332763671875, -54.333343505859375, 305.1334228515625, -212.1999969482422, 21.39996337890625, -276.20001220703125, -68.199951171875, -212.1999969482422, -68.199951171875, -78.86666870117188, 217.666748046875, 16.066650390625" stroke="BLACK" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Polygon>
+      <Polygon fx:id="borogodo" fill="DODGERBLUE" layoutX="657.0" layoutY="652.0" onMouseClicked="#clicarNoMapa" opacity="0.0" points="198.20001220703125, 43.199951171875, 303.79998779296875, 8.0, 345.39996337890625, -97.5999755859375, 324.5999755859375, -164.26669311523438, 179.5333251953125, -214.39999389648438, 67.00006103515625, -214.39999389648438, -24.20001220703125, -112.0, -0.20001220703125, -33.5999755859375" stroke="BLACK" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Polygon>
+      <Polygon fx:id="pontodeonibus" fill="DODGERBLUE" layoutX="-10.0" layoutY="145.0" onMouseClicked="#clicarNoMapa" opacity="0.0" points="299.2666320800781, -29.59998321533203, 271.5333251953125, -90.39999389648438, 233.13330078125, -110.93333435058594, 81.66663360595703, -29.5999755859375, 48.33331298828125, -10.66668701171875, 93.39998626708984, 69.60000610351562" stroke="BLACK" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Polygon>
+      <Polygon fx:id="cantina" fill="DODGERBLUE" layoutX="61.0" layoutY="602.0" onMouseClicked="#clicarNoMapa" opacity="0.0" points="314.7332763671875, -54.333343505859375, 328.5999755859375, -176.13333129882812, 169.93338012695312, -277.4666748046875, -16.73328399658203, -166.5333251953125, -16.73326873779297, -71.60003662109375, 169.9333953857422, 35.066650390625" stroke="BLACK" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Polygon>
+      <Polygon fx:id="saladeaula" fill="DODGERBLUE" layoutX="333.0" layoutY="431.0" onMouseClicked="#clicarNoMapa" opacity="0.0" points="412.86663818359375, -206.7333221435547, 404.3333740234375, -372.0666809082031, 294.4666748046875, -392.3333435058594, -102.33334350585938, -186.4666748046875, -102.33334350585938, -110.73330688476562, 95.00003051757812, 15.133331298828125" stroke="BLACK" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Polygon>
+      <fx:include layoutX="822.0" source="gameHud.fxml" />
+   </children>
+</AnchorPane>

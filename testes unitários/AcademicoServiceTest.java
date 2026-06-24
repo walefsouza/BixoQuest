@@ -59,7 +59,7 @@ public class AcademicoServiceTest {
         Semestre proximoSemestre = new Semestre(2);
         when(semestreRepoFake.buscar("2")).thenReturn(proximoSemestre);
 
-        jogo = new Game("Partida1", jogador, semestre, new UniversidadeMapa("UEFS", new ArrayList<Local>(), "img", "audio"));
+        jogo = new Game("Partida1", jogador, semestre);
 
         service = new AcademicoService(semestreRepoFake, eventoRepoFake);
     }

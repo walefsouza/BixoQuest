@@ -78,6 +78,7 @@ public class AtividadeService {
         ResultadoAcao resultado = task.executar(game);
         game.setTasksRealizadas(task.getNome());
         resultado.setTocarAudio("src/resources/atividades/audio/som-att-realizada.mp3");
+        resultado.setSucesso(true);
 
         return resultado;
     }

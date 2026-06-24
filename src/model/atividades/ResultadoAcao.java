@@ -5,6 +5,7 @@ public class ResultadoAcao {
     // Texto  - - - - - - - - - - - - - - - - - - - - - - - -
 
     private String textoNarrativo;
+    private boolean sucesso;
 
     // Audio  - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -32,6 +33,10 @@ public class ResultadoAcao {
 
     public String getTextoNarrativo() {
         return this.textoNarrativo;
+    }
+
+    public boolean getSucesso() {
+        return this.sucesso;
     }
 
     public String getTocarAudio() {
@@ -86,5 +91,9 @@ public class ResultadoAcao {
 
     public void setTextoNarrativo(String textoNarrativo){
         this.textoNarrativo = textoNarrativo;
+    }
+
+    public void setSucesso(boolean sucesso) {
+        this.sucesso = sucesso;
     }
 }

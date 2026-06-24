@@ -2,13 +2,14 @@ package repository;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import model.atividades.Efeito;
+import repository.adapters.EfeitoTypeAdapter;
 
 public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
@@ -23,7 +24,12 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
     public Repository(String CAMINHOREPO, Type tipoDadoLista) {
 
-        this.gson = new com.google.gson.GsonBuilder().setPrettyPrinting().create(); // gson
+        //this.gson = new com.google.gson.GsonBuilder().setPrettyPrinting().create(); // gson
+        this.gson = new com.google.gson.GsonBuilder()
+            .setPrettyPrinting()
+            .registerTypeAdapter(Efeito.class, new EfeitoTypeAdapter())
+            .create();
+
         this.CAMINHOREPO = CAMINHOREPO; // endereço do repositório. ex: src/dados/semestres.json
         this.tipoDadoLista = tipoDadoLista; // codificação para evento, semestre, locais, etc
         this.repository = carregarArquivo(); // carregar listas do repositório
@@ -42,8 +48,7 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
         }
 
         this.repository.add(t);
-        salvarArquivo();
-        return true;
+        return salvarArquivo(); // retorna true ou false
     }
 
     @Override
@@ -65,7 +70,8 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
     public List<T> listar() {
 
         // Retorna a copia da lista para o Service trabalhar
-        return new ArrayList<>(repository);
+        //return new ArrayList<>(repository);
+        return new ArrayList<>(carregarArquivo());
     }
 
     @Override
@@ -77,23 +83,25 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
         if (objetoRemover != null) {
             repository.remove(objetoRemover);
-            salvarArquivo();
-            return true;
+            return salvarArquivo(); // retorna true ou false
         }
         return false;
     }
 
     // Manipular JSON  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    private void salvarArquivo() {
+    private boolean salvarArquivo() {
 
         // Escreve objetos no repositório pelo caminho definido no construtor
 
         try (FileWriter writer = new FileWriter(CAMINHOREPO)) {
             gson.toJson(repository, writer);
+            return true;
         }
 
-        catch (IOException e) {}
+        catch (IOException e) {
+            return false;
+        }
     }
 
     private List<T> carregarArquivo() {
@@ -109,10 +117,13 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
             if (listaCarregada != null) {
                 return listaCarregada;
             }
+
+            // Se não houver nenhum dado no arquivo, retorna lista vazia
+            return new ArrayList<>();
         }
 
-        catch (IOException e) {}
-
-        return new ArrayList<>();
+        catch (IOException e) {
+            return new ArrayList<>();
+        }
     }
 }

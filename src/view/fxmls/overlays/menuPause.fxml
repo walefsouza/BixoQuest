@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="painelFundo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.overlays.MenuPausaController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.41" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: rgba(35, 20, 10, 0.6);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.77" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: rgba(35, 20, 10, 0.6);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <ImageView fitHeight="504.0" fitWidth="624.0" pickOnBounds="true" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="305.0" AnchorPane.topAnchor="198.0">
+            <image>
+                <Image url="@../../resources/botoes/menuPausaGame.png" />
+            </image>
+        </ImageView>
+        <VBox alignment="CENTER" layoutX="362.0" layoutY="296.0" prefHeight="383.0" prefWidth="602.0">
+            <children>
+                <ImageView fx:id="btnRetornar" fitHeight="147.0" fitWidth="544.0" onMouseClicked="#retornarJogo" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/botoes/menuPauseRetornar.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="btnMenu" fitHeight="138.0" fitWidth="578.0" layoutX="10.0" layoutY="10.0" nodeOrientation="INHERIT" onMouseClicked="#acessarMenuInicial" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/botoes/menuPausePrincipal.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="silenciar" fitHeight="104.0" fitWidth="569.0" layoutX="10.0" layoutY="170.0" onMouseClicked="#silenciarAudio" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/botoes/menuPauseSilenciar.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

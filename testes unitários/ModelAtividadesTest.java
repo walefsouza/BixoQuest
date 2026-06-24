@@ -28,7 +28,7 @@ public class ModelAtividadesTest {
 
         Semestre semestre = new Semestre(1);
         UniversidadeMapa mapa = new UniversidadeMapa("UEFS", new ArrayList<>(), "img", "audio");
-        jogo = new Game("Save", jogador, semestre, mapa);
+        jogo = new Game("Save", jogador, semestre);
 
         pergunta = new Pergunta(
                 "Quanto é 2+2?",

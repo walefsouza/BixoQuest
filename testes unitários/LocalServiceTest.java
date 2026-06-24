@@ -48,7 +48,7 @@ public class LocalServiceTest {
         ponto = new PontoDeOnibus("Ponto", "ponto de ônibus", "img", "audio");
         borogodo = new Borogodo("Borogodó", "Cassino", "img", "audio", 0, true);
 
-        jogo = new Game("Save1", jogador, semestre, new UniversidadeMapa("UEFS", new ArrayList<>(), "img", "audio"));
+        jogo = new Game("Save1", jogador, semestre);
 
         eventoRepoFake = mock(IRepository.class);
         dialogoRepoFake = mock(IRepository.class);
@@ -65,7 +65,7 @@ public class LocalServiceTest {
 
         when(atividadeServiceFake.processarEventosAleatorios(jogo, cantina.getTipo())).thenReturn(null);
 
-        ResultadoAcao resultado = service.viajar(jogo, cantina, atividadeServiceFake);
+        ResultadoAcao resultado = service.viajar(jogo, cantina.getTipo(), atividadeServiceFake);
 
         assertNotNull(resultado);
         assertEquals(45, jogador.getEnergia()); // Gastou 5 de energia na viagem
@@ -76,7 +76,7 @@ public class LocalServiceTest {
     public void viajarSemEnergiaLocalNormal() {
         jogador.decrementarEnergia(50); // Fica com 0
 
-        ResultadoAcao resultado = service.viajar(jogo, cantina, atividadeServiceFake);
+        ResultadoAcao resultado = service.viajar(jogo, cantina.getTipo(), atividadeServiceFake);
 
         assertNotNull(resultado);
         assertNotEquals(cantina, jogador.getLocal()); // Viagem não ocorreu
@@ -86,7 +86,7 @@ public class LocalServiceTest {
     public void viajarSemEnergiaParaPontoDeOnibusEExcecao() {
         jogador.decrementarEnergia(50); // Fica com 0
 
-        ResultadoAcao resultado = service.viajar(jogo, ponto, atividadeServiceFake);
+        ResultadoAcao resultado = service.viajar(jogo, ponto.getTipo(), atividadeServiceFake);
 
         assertNotNull(resultado);
 

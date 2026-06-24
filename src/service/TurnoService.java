@@ -34,6 +34,7 @@ public class TurnoService {
         transicao = new ResultadoAcao("A semana acabou. Você descansou e está pronto para a próxima!");
         transicao.setTocarAudio("src/resources/atividades/audio/som-semana-win.mp3");
         transicao.setEscurecerTela(true);
+        transicao.setSucesso(true);
 
         return transicao;
     }

@@ -33,7 +33,7 @@ public class LocalService {
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     // Navegação pelos locais do mapa
-    public ResultadoAcao viajar(Game game, Local destino, AtividadeService atividadeService) {
+    public ResultadoAcao viajar(Game game, TipoLocal destino, AtividadeService atividadeService) {
 
         Jogador jogador = game.getJogador();
         int custoViagem = 5;
@@ -45,35 +45,39 @@ public class LocalService {
             jogador.mudarLocal(destino);
 
             // Verifica se há algum evento aleatório ao jogador viajar para o local
-            ResultadoAcao evento = atividadeService.processarEventosAleatorios(game, destino.getTipo());
+            ResultadoAcao evento = atividadeService.processarEventosAleatorios(game, destino);
 
             if (evento != null) {
-                evento.setTextoNarrativo("Você chegou em: " + destino.getNome() + ", mas...\n\n" + evento.getTextoNarrativo());
+                evento.setTextoNarrativo("Você chegou em: " + destino.getLocalNome() + ", mas...\n\n" + evento.getTextoNarrativo());
+                evento.setSucesso(true);
                 return evento;
             }
 
             // Se não acontecer nenhum evento, o jogador viaja sem imprevistos.
-            ResultadoAcao viagem = new ResultadoAcao("Você viajou para: " + destino.getNome() + " sem imprevistos.");
+            ResultadoAcao viagem = new ResultadoAcao("Você viajou para: " + destino.getLocalNome() + " sem imprevistos.");
             viagem.setTocarAudio("src/resources/atividades/audio/som-swoosh-transicao.mp3");
+            viagem.setSucesso(true);
             return viagem;
         }
 
         // Se o jogador não possui energia, ele só pode viajar para o ponto de ônibus.
         else {
 
-            if (destino.getTipo() == TipoLocal.PONTO_DE_ONIBUS) {
+            if (destino == TipoLocal.PONTO_DE_ONIBUS) {
 
                 jogador.decrementarEnergia(jogador.getEnergia()); // zera a energia
                 jogador.mudarLocal(destino);
 
                 ResultadoAcao resultado = new ResultadoAcao("Você se arrastou até o Ponto de Ônibus depois de um dia exaustante.");
                 resultado.setTocarAudio("src/resources/atividades/audio/som-sem-energia.mp3");
+                resultado.setSucesso(true);
                 return resultado;
             }
 
             // Se tentar ir pra qualquer outro lugar sem energia
             ResultadoAcao resultado = new ResultadoAcao("Você está exausto! O único lugar que consegue ir agora é o Ponto de Ônibus.");
             resultado.setTocarAudio("src/resources/atividades/audio/som-buzina-onibus.mp3");
+            resultado.setSucesso(false);
             return resultado;
         }
     }

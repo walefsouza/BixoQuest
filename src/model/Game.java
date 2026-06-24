@@ -14,7 +14,6 @@ public class Game implements IGeneralGetNome {
     private boolean formado;
     private Jogador jogador;
     private Semestre semestre;
-    private UniversidadeMapa mapa;
     private static final int TOTAL_SEMESTRES = 6;
     private List<String> eventosRealizados;
     private List<String> tasksRealizadas;
@@ -22,11 +21,10 @@ public class Game implements IGeneralGetNome {
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Game(String nome, Jogador jogador, Semestre semestre, UniversidadeMapa mapa) {
+    public Game(String nome, Jogador jogador, Semestre semestre) {
         this.nome = nome;
         this.jogador = jogador;
         this.semestre = semestre;
-        this.mapa = mapa;
         this.formado = false;
         this.tasksRealizadas = new ArrayList<>();
         this.eventosRealizados = new ArrayList<>();
@@ -82,10 +80,6 @@ public class Game implements IGeneralGetNome {
 
     public Jogador getJogador(){
         return this.jogador;
-    }
-
-    public UniversidadeMapa getMapa(){
-        return this.mapa;
     }
 
     public Semestre getSemestre(){

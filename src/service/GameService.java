@@ -23,7 +23,7 @@ public class GameService {
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public Game iniciarNovoJogo(String nomeSave, String nomeJogador, List<Local> locaisDoMapa) {
+    public Game iniciarNovoJogo(String nomeSave, String nomeJogador, List<Local> locaisDoMapa, String aparencia) {
 
         Semestre semestreInicial = semestreRepository.buscar("1");
 
@@ -41,7 +41,7 @@ public class GameService {
                 100, // Desempenho
                 50.0,// Dinheiro
                 null, // Local
-                "src/resources/personagens/jogador-masculino.png"
+                aparencia
         );
 
         // Cria o Mapa com os locais passados como parâmetro
@@ -50,7 +50,7 @@ public class GameService {
                 "src/resources/locais/mapacentraluefs.png",
                 "src/resources/locais/audio/musica-tema-UEFS.mp3");
 
-        Game jogo = new Game(nomeSave, jogador, semestreInicial, mapa);
+        Game jogo = new Game(nomeSave, jogador, semestreInicial);
 
         gameRepository.salvar(jogo);
 

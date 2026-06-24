@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.setups.CriarNovoJogoController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../resources/setups/bixoquest-criar-jogo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="campoNome" alignment="CENTER" layoutX="272.0" layoutY="109.0" prefHeight="107.0" prefWidth="350.0" promptText="DIGITE SEU NOME" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-font-family: Signwood; -fx-font-size: 28;">
+         <font>
+            <Font size="59.0" />
+         </font></TextField>
+      <TextField fx:id="campoMapa" alignment="CENTER" layoutX="659.0" layoutY="112.0" prefHeight="102.0" prefWidth="346.0" promptText="DIGITE NOME DO MAPA" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-font-family: Signwood; -fx-font-size: 28;">
+         <font>
+            <Font size="59.0" />
+         </font></TextField>
+      <ImageView fx:id="avatar1" fitHeight="178.0" fitWidth="165.0" layoutX="289.0" layoutY="283.0" onMouseClicked="#selecionarAvatar1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/jogadores/jogador-opcao-1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="avatar2" fitHeight="171.0" fitWidth="165.0" layoutX="471.0" layoutY="284.0" onMouseClicked="#selecionarAvatar2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/jogadores/jogador-opcao-2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="avatar3" fitHeight="167.0" fitWidth="165.0" layoutX="651.0" layoutY="283.0" onMouseClicked="#selecionarAvatar3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/jogadores/jogador-opcao-3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="avatar4" fitHeight="172.0" fitWidth="164.0" layoutX="829.0" layoutY="284.0" onMouseClicked="#selecionarAvatar4" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/jogadores/jogador-opcao-4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnContinuar" fitHeight="112.0" fitWidth="348.0" layoutX="475.0" layoutY="505.0" onMouseClicked="#entrarNovoJogo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/botoes/btn-inicial-continuar.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnVoltar" fitHeight="94.0" fitWidth="250.0" layoutX="4.0" layoutY="622.0" onMouseClicked="#botaoVoltarMenuInicial" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/botoes/btn-voltar-bixoquest.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

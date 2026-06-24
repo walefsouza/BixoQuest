@@ -1,11 +1,12 @@
 package model.entidades;
 
 import model.mapa.Local;
+import model.mapa.TipoLocal;
 
 public class Jogador {
 
     private String nome;
-    private Local local;
+    private TipoLocal local;
     private int energia;
     private int levelConhecimento;
     private int motivacao;
@@ -17,7 +18,7 @@ public class Jogador {
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public Jogador(String nome, int energia, int levelConhecimento, int motivacao, int saude,
-                   int desempenhoAcademico, double dinheiro, Local local, String aparencia) {
+                   int desempenhoAcademico, double dinheiro, TipoLocal local, String aparencia) {
 
         this.nome = nome;
         this.energia = energia;
@@ -52,11 +53,11 @@ public class Jogador {
 
     // Local  - - - - - - - - - - - - - - - - - - - - - - - -
 
-    public void mudarLocal(Local l){
+    public void mudarLocal(TipoLocal l){
         this.local = l;
     }
 
-    public Local getLocal(){
+    public TipoLocal getLocal(){
         return this.local;
     }
 

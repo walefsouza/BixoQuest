@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.setups.TelaJogarController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" y="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../resources/setups/bixo-quest-inicial-jogar.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnJogar" fitHeight="172.0" fitWidth="437.0" layoutX="430.0" layoutY="526.0" onMouseClicked="#botaoJogarClicado" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/setups/bixoquest-inicial-btnjogar.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="bixoquest" fitHeight="370.0" fitWidth="927.0" layoutX="211.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/setups/bixoquest-placa-inicial.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -49,7 +49,7 @@ public class LocalRepository implements IRepository<Local> {
         // Criando locais  - - - - - - - - - - - - - - - - - - - - - - - -
 
         Cantina cantina = new Cantina(
-                "Cantina",
+                "CANTINA",
                 "Lanches & Conversa",
                 "src/resources/locais/cantina-modulo-3.png",
                 "src/resources/locais/audio/musica-tema-cantina.mp3",
@@ -58,7 +58,7 @@ public class LocalRepository implements IRepository<Local> {
         lista.add(cantina);
 
         Borogodo borogodo = new Borogodo(
-                "Borogodó",
+                "BOROGODÓ",
                 "Praça de convivência e descanso da galera.",
                 "src/resources/locais/audio/musica-tema-borogodo.mp3",
                 "src/resources/locais/praca-do-borogodo.jpeg",
@@ -70,7 +70,7 @@ public class LocalRepository implements IRepository<Local> {
 
 
         Colegiado colegiado = new Colegiado(
-                "Colegiado",
+                "COLEGIADO",
                 "Onde a burocracia do curso acontece.",
                 "src/resources/locais/colegiado-uefs.jpeg",
                 "src/resources/locais/audio/musica-tema-colegiado.mp3",
@@ -79,7 +79,7 @@ public class LocalRepository implements IRepository<Local> {
         lista.add(colegiado);
 
         Laboratorio laboratorio = new Laboratorio(
-                "Laboratório",
+                "LABORATÓRIO",
                 "Ar condicionado gelado e muitos PCs.",
                 "src/resources/locais/laboratorio-leds.jpeg",
                 "src/resources/locais/audio/musica-tema-LEDS.mp3",
@@ -90,7 +90,7 @@ public class LocalRepository implements IRepository<Local> {
         lista.add(laboratorio);
 
         PontoDeOnibus pontoDeOnibus = new PontoDeOnibus(
-                "Ponto de Ônibus",
+                "PONTO DE ÔNIBUS",
                 "A sua rota de fuga e checkpoint semanal.",
                 "src/resources/locais/ponto-de-onibus.png",
                 "src/resources/locais/audio/ponto-de-onibus.mp3"
@@ -98,7 +98,7 @@ public class LocalRepository implements IRepository<Local> {
         lista.add(pontoDeOnibus);
 
         SalaDeAula salaDeAula = new SalaDeAula(
-                "Sala de Aula",
+                "SALA DE AULA",
                 "Onde a mágica (e às vezes o sono) acontece.",
                 "src/resources/locais/sala-de-aula.png",
                 "src/resources/locais/audio/musica-tema-sala-aula.mp3",

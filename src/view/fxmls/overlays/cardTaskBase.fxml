@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="taskPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#clicarPane" prefHeight="100.0" prefWidth="790.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.setups.TaskItemController">
+   <children>
+      <ImageView fitHeight="94.0" fitWidth="790.0" layoutX="332.0" layoutY="3.0" pickOnBounds="true" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0">
+         <image>
+            <Image url="@../../resources/setups/cardTask.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="nome" layoutX="102.0" layoutY="31.0" prefHeight="42.0" prefWidth="280.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 24;">
+         <tooltip>
+            <Tooltip fx:id="tooltipNome" text="Empty Tooltip" />
+         </tooltip>
+      </Label>
+      <Label fx:id="local" layoutX="436.0" layoutY="31.0" prefHeight="42.0" prefWidth="219.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 24;" />
+      <Label fx:id="custo" layoutX="678.0" layoutY="29.0" prefHeight="42.0" prefWidth="52.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 24;" />
+   </children>
+</AnchorPane>
