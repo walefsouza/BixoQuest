@@ -9,11 +9,15 @@ public enum RotasFixas {
     JOGOSSALVOS("/fxmls/iniciais/listarJogosSalvos.fxml"),
     MAPACENTRAL("/fxmls/iniciais/mapacentral.fxml"),
 
+    // OVERLAYS
+
     MENUPAUSE("/fxmls/overlays/menuPause.fxml"),
     MENUCANTINA("/fxmls/overlays/menuCantina.fxml"),
     STATUSJOGADOR("/fxmls/overlays/playerStatus.fxml"),
     TASKSSEMANAIS("/fxmls/overlays/tasksGroup.fxml"),
+    CAIXADIALOGO("/fxmls/overlays/caixaDialogo.fxml"),
 
+    // LOCAIS
     CANTINA("/fxmls/locais/telaCantina.fxml"),
 
 

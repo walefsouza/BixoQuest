@@ -6,11 +6,13 @@ import application.Utilitarios;
 import controller.command.PassarSemanaCommand;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 public class PontoDeOnibusController {
 
     @FXML private ImageView btnMapa;
     @FXML private ImageView botaoPegarOnibus;
+    @FXML private AnchorPane pane;
 
     public void botaoMapa() {
         Utilitarios.animarClique(btnMapa, () ->
@@ -23,7 +25,7 @@ public class PontoDeOnibusController {
 
         Utilitarios.animarClique(botaoPegarOnibus, () -> {
             javafx.application.Platform.runLater(() -> {
-                new PassarSemanaCommand().executar();
+                new PassarSemanaCommand(pane).executar();
             });
         });
     }

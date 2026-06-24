@@ -1,8 +1,10 @@
 package application;
 
+import controller.overlays.CaixaDialogoController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -66,4 +68,30 @@ public class SceneManager {
             e.printStackTrace();
         }
     }
+
+    public static void mostrarDialogoWarn(AnchorPane telaAtual, String titulo, String mensagem, String caminhoImagem) {
+
+        // Usa o marcador adicionado para substituir a caixa anterior pela nova
+        telaAtual.getChildren().removeIf(node -> "caixaDialogoInjetada".equals(node.getId()));
+
+        try {
+
+            // Carrega fxml e adiciona um marcador para evitar múltiplas caixas
+            FXMLLoader loader = new FXMLLoader(Utilitarios.class.getResource(RotasFixas.CAIXADIALOGO.getRotaFixa()));
+            AnchorPane dialogoNode = loader.load();
+            dialogoNode.setId("caixaDialogoInjetada");
+
+            // Preenche a caixa e adiciona ao pane atual
+            CaixaDialogoController controller = loader.getController();
+            controller.preencherDados(titulo, mensagem, caminhoImagem);
+            telaAtual.getChildren().add(dialogoNode);
+
+        }
+
+        catch (Exception e) {
+            System.out.println("Erro ao executar a sobreposição rápida.");
+            e.printStackTrace();
+        }
+    }
+
 }

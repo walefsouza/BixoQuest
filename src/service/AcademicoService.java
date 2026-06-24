@@ -37,6 +37,7 @@ public class AcademicoService {
             ResultadoAcao resultado = new ResultadoAcao("Você até tentou, mas dormiu  e perdeu a aula de " + disciplina.getNome() + "!");
             resultado.setTocarAudio("src/resources/atividades/audio/som-sem-energia.mp3");
             resultado.setEmbacarTela(true);
+            resultado.setSucesso(false);
             return resultado;
         }
 
@@ -47,6 +48,7 @@ public class AcademicoService {
 
         ResultadoAcao resultado = new ResultadoAcao("Você assistiu à aula de " + disciplina.getNome() + " e fez boas anotações.");
         resultado.setTocarAudio("src/resources/atividades/audio/som-teclado-digitando.mp3");
+        resultado.setSucesso(true);
         return resultado;
     }
 

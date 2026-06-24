@@ -6,7 +6,7 @@
     "nome": "Modo Caverna",
     "descricao": "Você passou horas resolvendo listas enquanto o café substituía sua personalidade.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -25,7 +25,7 @@
     "nome": "Monitor Não Oficial",
     "descricao": "Ao explicar a matéria para um colega, você percebeu que finalmente entendeu o conteúdo.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -44,7 +44,7 @@
     "nome": "Sprint Pré-Prova",
     "descricao": "Você absorveu três semanas de conteúdo em uma única madrugada.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -63,7 +63,7 @@
     "nome": "Modo Econômico",
     "descricao": "Seu corpo compareceu à aula. Sua consciência não.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -82,7 +82,7 @@
     "nome": "Maratona de Estudos",
     "descricao": "Você transformou café em combustível acadêmico e ignorou completamente o conceito de descanso.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -101,7 +101,7 @@
     "nome": "Lista de Exercícios",
     "descricao": "Depois de apagar metade da folha, algumas respostas finalmente começaram a fazer sentido.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -120,7 +120,7 @@
     "nome": "Estudar com Amigos",
     "descricao": "Entre explicações, memes e reclamações, o conteúdo entrou na cabeça de alguém.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -139,7 +139,7 @@
     "nome": "Ler Artigo Científico",
     "descricao": "Você leu quinze páginas para entender duas linhas da conclusão.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -158,7 +158,7 @@
     "nome": "Montar Circuito",
     "descricao": "Após vários fios trocados e faíscas suspeitas, o circuito finalmente funcionou.",
     "localAtividade": "LABORATORIO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -177,7 +177,7 @@
     "nome": "Experimento Elétrico",
     "descricao": "Você saiu do laboratório com conhecimento novo e medo de tomadas.",
     "localAtividade": "LABORATORIO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -196,7 +196,7 @@
     "nome": "Vitamina Encontrada",
     "descricao": "Depois de semanas sobrevivendo de salgado e café, você ingeriu nutrientes reais.",
     "localAtividade": "CANTINA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -215,7 +215,7 @@
     "nome": "Evento Raro",
     "descricao": "Inacreditavelmente você conseguiu dormir antes das 23h.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 5,
@@ -234,7 +234,7 @@
     "nome": "Respirando Ar Não Artificial",
     "descricao": "Você decidiu existir fora de salas fechadas por alguns minutos.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -253,7 +253,7 @@
     "nome": "Compila na Minha Máquina",
     "descricao": "O código funcionou. Seu organismo não.",
     "localAtividade": "LABORATORIO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -272,7 +272,7 @@
     "nome": "Comprar Lanche na Cantina",
     "descricao": "Pela primeira vez na semana você ingeriu algo minimamente parecido com uma refeição.",
     "localAtividade": "CANTINA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -291,7 +291,7 @@
     "nome": "Descansar Pós-Almoço",
     "descricao": "Você fechou os olhos por cinco minutos e quase transcendeu.",
     "localAtividade": "CANTINA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -310,7 +310,7 @@
     "nome": "Acariciar Animal",
     "descricao": "Um cachorro aleatório do campus reduziu drasticamente seu estresse.",
     "localAtividade": "BOROGODO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -329,7 +329,7 @@
     "nome": "Ouvir Música no Caminho",
     "descricao": "A trilha sonora certa fez o semestre parecer menos hostil.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -348,7 +348,7 @@
     "nome": "Dormir a Tarde Inteira",
     "descricao": "Você acordou sem saber em qual semestre estava.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -367,7 +367,7 @@
     "nome": "Só Uma Passadinha",
     "descricao": "Você jurou que ficaria vinte minutos. O tempo perdeu significado.",
     "localAtividade": "BOROGODO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -386,7 +386,7 @@
     "nome": "Inteligência Coletiva",
     "descricao": "Entre dúvidas, memes e reclamações, algo foi aprendido.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -405,7 +405,7 @@
     "nome": "Networking Acidental",
     "descricao": "Uma conversa de cinco minutos virou meia hora de fofoca acadêmica.",
     "localAtividade": "CANTINA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -424,7 +424,7 @@
     "nome": "Lenda do Campus",
     "descricao": "Um veterano compartilhou conhecimentos proibidos sobre professores e sobrevivência.",
     "localAtividade": "CANTINA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -443,7 +443,7 @@
     "nome": "Visitar a Feirinha do Campus",
     "descricao": "Você foi apenas olhar e saiu carregando comida e histórias aleatórias.",
     "localAtividade": "BOROGODO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -462,7 +462,7 @@
     "nome": "Exposição Agrícola",
     "descricao": "Você descobriu que tratores gigantes são surpreendentemente interessantes.",
     "localAtividade": "BOROGODO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -481,7 +481,7 @@
     "nome": "Conversa no Corredor",
     "descricao": "Uma conversa rápida virou uma análise completa da vida universitária.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -500,7 +500,7 @@
     "nome": "Café com Veteranos",
     "descricao": "Você ouviu histórias tão absurdas que começou a temer os próximos semestres.",
     "localAtividade": "CANTINA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -519,7 +519,7 @@
     "nome": "Sessão de Reclamação Coletiva",
     "descricao": "Nada une mais estudantes do que reclamar do mesmo professor.",
     "localAtividade": "BOROGODO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -538,7 +538,7 @@
     "nome": "Milagre Bancário",
     "descricao": "A bolsa finalmente caiu na conta antes da tragédia financeira.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -557,7 +557,7 @@
     "nome": "Inflação da Cantina",
     "descricao": "Você pagou caro por algo claramente retirado de um congelador industrial.",
     "localAtividade": "CANTINA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -576,7 +576,7 @@
     "nome": "Freela de Última Hora",
     "descricao": "Você aceitou um trabalho suspeitamente urgente para evitar a falência.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -595,7 +595,7 @@
     "nome": "Devastação Ambiental",
     "descricao": "Você descobriu tarde demais que o professor aceitava PDF.",
     "localAtividade": "COLEGIADO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -614,7 +614,7 @@
     "nome": "Vender Resumos",
     "descricao": "Seu sofrimento acadêmico finalmente virou fonte de renda.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -633,7 +633,7 @@
     "nome": "Trabalho Temporário",
     "descricao": "Você trocou descanso por estabilidade financeira temporária.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -652,7 +652,7 @@
     "nome": "Comprar Café Caro",
     "descricao": "Financeiramente questionável. Psicologicamente necessário.",
     "localAtividade": "CANTINA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -671,7 +671,7 @@
     "nome": "Livro Acadêmico Importado",
     "descricao": "Você pagou caro por um livro que o professor usará por duas aulas.",
     "localAtividade": "COLEGIADO",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -690,7 +690,7 @@
     "nome": "Cashback Universitário",
     "descricao": "Pela primeira vez um aplicativo realmente devolveu dinheiro.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -709,7 +709,7 @@
     "nome": "Tutorial de 2009",
     "descricao": "Um homem com microfone estourado resolveu exatamente o problema que você tinha.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -728,7 +728,7 @@
     "nome": "Rabbit Hole da Internet",
     "descricao": "Você abriu uma aba inocente e perdeu completamente a noção do tempo.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -747,7 +747,7 @@
     "nome": "Aula Cancelada",
     "descricao": "O professor simplesmente não apareceu e a sala inteira comemorou instantaneamente.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -766,7 +766,7 @@
     "nome": "Apresentação Improvisada",
     "descricao": "Seu grupo desapareceu misteriosamente e você precisou salvar o seminário sozinho.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -785,7 +785,7 @@
     "nome": "Epifania no Banho",
     "descricao": "Do nada você finalmente entendeu um conteúdo que parecia impossível.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -804,7 +804,7 @@
     "nome": "Conhecimento Absolutamente Inútil",
     "descricao": "Você passou vinte minutos lendo sobre os benefícios do leite no combate a pulgões.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -823,7 +823,7 @@
     "nome": "Só Mais Um Link",
     "descricao": "Você começou pesquisando cálculo e terminou lendo sobre a guerra dos emus.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -842,7 +842,7 @@
     "nome": "Plot Twist Acadêmico",
     "descricao": "O professor faltou depois de você atravessar o campus inteiro.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -861,7 +861,7 @@
     "nome": "Transporte Público Simulator",
     "descricao": "Você teve tempo suficiente no ponto de ônibus para questionar todas as escolhas da sua vida.",
     "localAtividade": "PONTO_DE_ONIBUS",
-    "icone": "src/resources/icones/interface-icon-tasks.png",
+    "icone": "/resources/icones/interface-icon-tasks.png",
     "efeitos": [
       {
         "impactoEnergia": 0,

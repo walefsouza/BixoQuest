@@ -56,7 +56,7 @@ public class MapaCentralController implements Initializable {
 
         comandosDoMapa.put("borogodo", new ViajarLocalCommand(
                 "/fxmls/locais/telaBorogodo.fxml",
-                "BOROGODÓ",
+                "BOROGODO",
                 game,
                 localService,
                 atividadeService
@@ -72,7 +72,7 @@ public class MapaCentralController implements Initializable {
 
         comandosDoMapa.put("pontodeonibus", new ViajarLocalCommand(
                 "/fxmls/locais/telaPontoDeOnibus.fxml",
-                "PONTO DE ÔNIBUS",
+                "PONTO DE ONIBUS",
                 game,
                 localService,
                 atividadeService
@@ -88,7 +88,7 @@ public class MapaCentralController implements Initializable {
 
         comandosDoMapa.put("laboratorio", new ViajarLocalCommand(
                 "/fxmls/locais/telaLaboratorio.fxml",
-                "LABORATÓRIO",
+                "LABORATORIO",
                 game,
                 localService,
                 atividadeService

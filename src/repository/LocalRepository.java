@@ -58,7 +58,7 @@ public class LocalRepository implements IRepository<Local> {
         lista.add(cantina);
 
         Borogodo borogodo = new Borogodo(
-                "BOROGODÓ",
+                "BOROGODO",
                 "Praça de convivência e descanso da galera.",
                 "src/resources/locais/audio/musica-tema-borogodo.mp3",
                 "src/resources/locais/praca-do-borogodo.jpeg",
@@ -79,7 +79,7 @@ public class LocalRepository implements IRepository<Local> {
         lista.add(colegiado);
 
         Laboratorio laboratorio = new Laboratorio(
-                "LABORATÓRIO",
+                "LABORATORIO",
                 "Ar condicionado gelado e muitos PCs.",
                 "src/resources/locais/laboratorio-leds.jpeg",
                 "src/resources/locais/audio/musica-tema-LEDS.mp3",
@@ -90,7 +90,7 @@ public class LocalRepository implements IRepository<Local> {
         lista.add(laboratorio);
 
         PontoDeOnibus pontoDeOnibus = new PontoDeOnibus(
-                "PONTO DE ÔNIBUS",
+                "PONTO DE ONIBUS",
                 "A sua rota de fuga e checkpoint semanal.",
                 "src/resources/locais/ponto-de-onibus.png",
                 "src/resources/locais/audio/ponto-de-onibus.mp3"

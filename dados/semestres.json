@@ -9,7 +9,7 @@
           "nome": "Roberto",
           "idade": 30,
           "humor": 50,
-          "aparencia": "src/resources/personagens/professora-roberto.png"
+          "aparencia": "/resources/personagens/professor-roberto.png"
         },
         "frequencia": 0,
         "local": "SALA_DE_AULA",
@@ -61,7 +61,7 @@
           "nome": "Avaliação de Humanística",
           "descricao": "Vários slides foram feitos para uma turma cansada demais.",
           "localAtividade": "SALA_DE_AULA",
-          "icone": "src/resources/icones/interface-icon-avaliacao.png",
+          "icone": "/resources/icones/interface-icon-avaliacao.png",
           "efeitos": [
             {
               "impactoEnergia": -15,
@@ -72,7 +72,7 @@
               "impactoDinheiro": 0.0
             },
             {
-              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "arquivoAudio": "/resources/atividades/audio/tema-prova-disciplina.mp3",
               "tremerTela": true,
               "escurecerTela": false,
               "desfocarTela": true
@@ -80,7 +80,7 @@
           ]
         },
         "aprovado": false,
-        "icone": "src/resources/icones/disciplina-humanistica.png"
+        "icone": "/resources/icones/disciplina-humanistica.png"
       }
     ],
     "concluido": false,
@@ -98,7 +98,7 @@
           "nome": "Florêncio",
           "idade": 55,
           "humor": 35,
-          "aparencia": "src/resources/personagens/professora-florencio.png"
+          "aparencia": "/resources/personagens/professora-florencio.png"
         },
         "frequencia": 0,
         "local": "SALA_DE_AULA",
@@ -160,7 +160,7 @@
               "impactoDinheiro": 0.0
             },
             {
-              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "arquivoAudio": "/resources/atividades/audio/tema-prova-disciplina.mp3",
               "tremerTela": true,
               "escurecerTela": false,
               "desfocarTela": true
@@ -168,7 +168,7 @@
           ]
         },
         "aprovado": false,
-        "icone": "src/resources/icones/disciplina-eletronica.png"
+        "icone": "/resources/icones/disciplina-eletronica.png"
       }
     ],
     "concluido": false,
@@ -186,7 +186,7 @@
           "nome": "Rocha",
           "idade": 48,
           "humor": 70,
-          "aparencia": "src/resources/personagens/professora-rocha.png"
+          "aparencia": "/resources/personagens/professora-rocha.png"
         },
         "frequencia": 0,
         "local": "SALA_DE_AULA",
@@ -248,7 +248,7 @@
               "impactoDinheiro": 0.0
             },
             {
-              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "arquivoAudio": "/resources/atividades/audio/tema-prova-disciplina.mp3",
               "tremerTela": true,
               "escurecerTela": false,
               "desfocarTela": true
@@ -256,7 +256,7 @@
           ]
         },
         "aprovado": false,
-        "icone": "src/resources/icones/disciplina-algoritmos.png"
+        "icone": "/resources/icones/disciplina-algoritmos.png"
       }
     ],
     "concluido": false,
@@ -274,7 +274,7 @@
           "nome": "Analu",
           "idade": 45,
           "humor": 90,
-          "aparencia": "src/resources/personagens/professora-analu.png"
+          "aparencia": "/resources/personagens/professora-analu.png"
         },
         "frequencia": 0,
         "local": "SALA_DE_AULA",
@@ -336,7 +336,7 @@
               "impactoDinheiro": 0.0
             },
             {
-              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "arquivoAudio": "/resources/atividades/audio/tema-prova-disciplina.mp3",
               "tremerTela": true,
               "escurecerTela": false,
               "desfocarTela": true
@@ -344,7 +344,7 @@
           ]
         },
         "aprovado": false,
-        "icone": "src/resources/icones/disciplina-dados.png"
+        "icone": "/resources/icones/disciplina-dados.png"
       }
     ],
     "concluido": false,
@@ -362,7 +362,7 @@
           "nome": "Jaque",
           "idade": 55,
           "humor": 35,
-          "aparencia": "src/resources/personagens/professora-jaque.png"
+          "aparencia": "/resources/personagens/professora-jaque.png"
         },
         "frequencia": 0,
         "local": "SALA_DE_AULA",
@@ -424,7 +424,7 @@
               "impactoDinheiro": 0.0
             },
             {
-              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "arquivoAudio": "/resources/atividades/audio/tema-prova-disciplina.mp3",
               "tremerTela": true,
               "escurecerTela": false,
               "desfocarTela": true
@@ -432,7 +432,7 @@
           ]
         },
         "aprovado": false,
-        "icone": "src/resources/icones/disciplina-calculo.png"
+        "icone": "/resources/icones/disciplina-calculo.png"
       }
     ],
     "concluido": false,
@@ -450,7 +450,7 @@
           "nome": "Bianca",
           "idade": 30,
           "humor": 80,
-          "aparencia": "src/resources/personagens/professora-bianca.png"
+          "aparencia": "/resources/personagens/professora-bianca.png"
         },
         "frequencia": 0,
         "local": "SALA_DE_AULA",
@@ -512,7 +512,7 @@
               "impactoDinheiro": 0.0
             },
             {
-              "arquivoAudio": "src/resources/atividades/audio/tema-prova-disciplina.mp3",
+              "arquivoAudio": "/resources/atividades/audio/tema-prova-disciplina.mp3",
               "tremerTela": true,
               "escurecerTela": false,
               "desfocarTela": true
@@ -520,7 +520,7 @@
           ]
         },
         "aprovado": false,
-        "icone": "src/resources/icones/disciplina-java.png"
+        "icone": "/resources/icones/disciplina-java.png"
       }
     ],
     "concluido": false,

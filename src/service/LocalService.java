@@ -261,7 +261,7 @@ public class LocalService {
 
             ResultadoAcao desistencia = new ResultadoAcao("Você não aguentou a pressão, desistiu da semana e foi para casa...");
             desistencia.setEscurecerTela(true);
-            desistencia.setTocarAudio("src/resources/atividades/audio/som-fim-acabou.mp3");
+            desistencia.setTocarAudio("/resources/atividades/audio/som-fim-acabou.mp3");
 
             return desistencia;
         }
@@ -273,7 +273,7 @@ public class LocalService {
 
             ResultadoAcao sucesso = new ResultadoAcao("O ônibus estava no ponto! Você embarcou e foi para casa.");
             sucesso.setEscurecerTela(true);
-            sucesso.setTocarAudio("src/resources/atividades/audio/som-buzina-onibus.mp3");
+            sucesso.setTocarAudio("/resources/atividades/audio/som-buzina-onibus.mp3");
             return sucesso;
         }
 
@@ -287,13 +287,13 @@ public class LocalService {
 
             ResultadoAcao sucessoAtraso = new ResultadoAcao("O ônibus demorou, você gastou 10 de energia esperando, mas conseguiu embarcar.");
             sucessoAtraso.setEscurecerTela(true);
-            sucessoAtraso.setTocarAudio("src/resources/atividades/audio/som-buzina-onibus.mp3");
+            sucessoAtraso.setTocarAudio("/resources/atividades/audio/som-buzina-onibus.mp3");
             return sucessoAtraso;
         }
 
         // Falhou em tudo
         ResultadoAcao falha = new ResultadoAcao("O ônibus não passou. Você gastou 10 de energia esperando em pé. Tente de novo.");
-        falha.setTocarAudio("src/resources/atividades/audio/som-fim-acabou.mp3");
+        falha.setTocarAudio("/resources/atividades/audio/som-fim-acabou.mp3");
 
         return falha;
     }

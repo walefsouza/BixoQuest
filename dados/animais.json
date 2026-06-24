@@ -5,7 +5,7 @@
     "nome": "Caramelo",
     "idade": 5,
     "humor": 95,
-    "aparencia": "src/resources/personagens/animal-cahorro-caramelo.png"
+    "aparencia": "/resources/personagens/animal-cahorro-caramelo.png"
   },
   {
     "especie": "Gato",
@@ -13,7 +13,7 @@
     "nome": "Xerox",
     "idade": 3,
     "humor": 50,
-    "aparencia": "src/resources/personagens/animal-gato-xerox.png"
+    "aparencia": "/resources/personagens/animal-gato-xerox.png"
   },
   {
     "especie": "Pássaro (Quero-Quero)",
@@ -21,7 +21,7 @@
     "nome": "Jubileu",
     "idade": 2,
     "humor": 10,
-    "aparencia": "src/resources/personagens/animal-passaro-jubileu.png"
+    "aparencia": "/resources/personagens/animal-passaro-jubileu.png"
   },
   {
     "especie": "Sagui",
@@ -29,7 +29,7 @@
     "nome": "Chico",
     "idade": 4,
     "humor": 40,
-    "aparencia": "src/resources/personagens/anima-macaco-chico.png"
+    "aparencia": "/resources/personagens/anima-macaco-chico.png"
   },
   {
     "especie": "Cachorro",
@@ -37,6 +37,6 @@
     "nome": "Coxinha",
     "idade": 7,
     "humor": 85,
-    "aparencia": "src/resources/personagens/animal-cachorro-coxinha.png"
+    "aparencia": "/resources/personagens/animal-cachorro-coxinha.png"
   }
 ]

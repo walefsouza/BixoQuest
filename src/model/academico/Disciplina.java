@@ -18,6 +18,7 @@ public class Disciplina implements IGeneralGetNome {
     private EventoAvaliacao avaliacao;
     private boolean aprovado;
     private String icone;
+    private int aulasAssistidas;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -31,12 +32,17 @@ public class Disciplina implements IGeneralGetNome {
         this.avaliacao = avaliacao;
         this.local = sala;
         this.icone = icone;
+        this.aulasAssistidas = 0;
     }
 
     // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
+    }
+
+    public void setAulasAssistidas(int a){
+        this.aulasAssistidas = a;
     }
 
     // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
@@ -67,6 +73,10 @@ public class Disciplina implements IGeneralGetNome {
 
     public String getIcone(){
         return this.icone;
+    }
+
+    public int getAulasAssistidas(){
+        return this.aulasAssistidas;
     }
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -

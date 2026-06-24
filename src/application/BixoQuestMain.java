@@ -11,6 +11,7 @@ public class BixoQuestMain extends Application {
 
         Font.loadFont(getClass().getResourceAsStream("/resources/fontes/Signwood-Regular.ttf"), 14);
         Font.loadFont(getClass().getResourceAsStream("/resources/fontes/upheavtt.ttf"), 24);
+        //  "Upheaval TT (BRK)" family
 
         SceneManager.iniciar(stage);
         SceneManager.navegar(RotasFixas.TELAJOGAR.getRotaFixa());
