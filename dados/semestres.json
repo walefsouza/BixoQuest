@@ -98,7 +98,7 @@
           "nome": "Florêncio",
           "idade": 55,
           "humor": 35,
-          "aparencia": "/resources/personagens/professora-florencio.png"
+          "aparencia": "/resources/personagens/professor-florencio.png"
         },
         "frequencia": 0,
         "local": "SALA_DE_AULA",

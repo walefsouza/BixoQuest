@@ -16,9 +16,15 @@ public enum RotasFixas {
     STATUSJOGADOR("/fxmls/overlays/playerStatus.fxml"),
     TASKSSEMANAIS("/fxmls/overlays/tasksGroup.fxml"),
     CAIXADIALOGO("/fxmls/overlays/caixaDialogo.fxml"),
+    AVALIACAO("/fxmls/overlays/provaDisciplina.fxml"),
 
     // LOCAIS
     CANTINA("/fxmls/locais/telaCantina.fxml"),
+    SALADEAULA("/fxmls/locais/telaSalaDeAula.fxml"),
+
+    // INFORMS
+
+    NOVOSEMESTRE("/fxmls/informs/novo-semestre.fxml"),
 
 
     FIM("fimmm");

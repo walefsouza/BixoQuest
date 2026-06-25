@@ -1,5 +1,6 @@
 package service;
 
+import model.academico.Disciplina;
 import model.academico.Semestre;
 import model.atividades.ResultadoAcao;
 import model.entidades.Jogador;
@@ -26,6 +27,12 @@ public class TurnoService {
         jogador.aumentarEnergia(100);
         if (jogador.getSaude() < 100) {
             jogador.aumentarSaude(15);
+        }
+
+        // Reseta o contador de aulas para a nova semana
+        if (!semestre.getDisciplinas().isEmpty()) {
+            Disciplina disciplina = semestre.getDisciplinas().get(0);
+            disciplina.setAulasAssistidas(0);
         }
 
         // Avança o calendário semestral

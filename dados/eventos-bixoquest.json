@@ -5,7 +5,7 @@
     "nome": "Greve Geral da UEFS",
     "descricao": "O pórtico vai fechar e a Reitoria vai quebrar!",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 20,
@@ -31,7 +31,7 @@
     "nome": "Semana de Integração",
     "descricao": "Veteranos te fizeram pedir dinheiro no farol.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": -15,
@@ -57,7 +57,7 @@
     "nome": "Renovação de Matrícula",
     "descricao": "O portal do aluno caiu e a sua vaga está em risco.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": -20,
@@ -83,7 +83,7 @@
     "nome": "Semana Acadêmica",
     "descricao": "Palestras obrigatórias o dia inteiro. Haja café.",
     "localAtividade": "COLEGIADO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": -30,
@@ -109,7 +109,7 @@
     "nome": "Festa da Atlética",
     "descricao": "A maior festa do ano. Você gastou o que não tinha.",
     "localAtividade": "BOROGODO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": -25,
@@ -135,7 +135,7 @@
     "nome": "Avaliação do ENADE",
     "descricao": "Os avaliadores chegaram. Professores em colapso nervoso.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": -10,
@@ -161,7 +161,7 @@
     "nome": "Horas Complementares",
     "descricao": "Caça aos certificados perdidos de 2018. O prazo acaba hoje!",
     "localAtividade": "COLEGIADO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": -15,
@@ -187,7 +187,7 @@
     "nome": "Sol Escaldante ao Meio-Dia",
     "descricao": "O trajeto pelo campus sob esse sol derreteu sua vontade de viver.",
     "localAtividade": "PONTO_DE_ONIBUS",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -213,7 +213,7 @@
     "nome": "Surpresa de Cálculo II",
     "descricao": "O professor decidiu passar um teste relâmpago envolvendo integrais duplas.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -239,7 +239,7 @@
     "nome": "NullPointerException Fatal",
     "descricao": "O código do projeto de Java estava funcionando ontem. Hoje não compila mais.",
     "localAtividade": "LABORATORIO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -265,7 +265,7 @@
     "nome": "Chuva Torrencial Surpresa",
     "descricao": "Você não trouxe guarda-chuva e o pátio virou um rio.",
     "localAtividade": "BOROGODO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -283,7 +283,7 @@
     "nome": "A Fila do RU",
     "descricao": "A fila dava voltas no quarteirão e a carne acabou quando chegou sua vez.",
     "localAtividade": "CANTINA",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -301,7 +301,7 @@
     "nome": "Windows Atualizando...",
     "descricao": "O computador do laboratório decidiu atualizar na hora que você ia salvar.",
     "localAtividade": "LABORATORIO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -319,7 +319,7 @@
     "nome": "Xerox Quebrada",
     "descricao": "A única máquina de xérox do campus engoliu sua moeda.",
     "localAtividade": "COLEGIADO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -337,7 +337,7 @@
     "nome": "Vazamento de Dados (Fofoca)",
     "descricao": "Descobriram o que você falou do professor.",
     "localAtividade": "BOROGODO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -355,7 +355,7 @@
     "nome": "Ônibus Quebrado",
     "descricao": "O transporte público te deixou na mão.",
     "localAtividade": "PONTO_DE_ONIBUS",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -373,7 +373,7 @@
     "nome": "Ataque de Pombos",
     "descricao": "Você foi o alvo escolhido. Não havia para onde correr.",
     "localAtividade": "BOROGODO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -391,7 +391,7 @@
     "nome": "Mudança de Prazo",
     "descricao": "O professor antecipou a entrega do trabalho para amanhã.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -409,7 +409,7 @@
     "nome": "Café Frio e Amargo",
     "descricao": "O café tinha gosto de tristeza e decepção.",
     "localAtividade": "CANTINA",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -427,7 +427,7 @@
     "nome": "Esqueceu a Senha do Portal",
     "descricao": "Você bloqueou seu acesso bem no dia de olhar as notas.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -445,7 +445,7 @@
     "nome": "Brainstorm com o Parceiro",
     "descricao": "Seu amigo ajudou a formular uma excelente ideia para o projeto.",
     "localAtividade": "BOROGODO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 10,
@@ -471,7 +471,7 @@
     "nome": "Professor Preso no Trânsito",
     "descricao": "A aula foi cancelada! Você ganhou duas horas livres.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 10,
@@ -489,7 +489,7 @@
     "nome": "Cachorro Caramelo Caretão",
     "descricao": "Um cãozinho de rua deixou você fazer carinho na barriga dele.",
     "localAtividade": "BOROGODO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -507,7 +507,7 @@
     "nome": "Dinheiro no Bolso da Jaqueta",
     "descricao": "Você achou uma nota amassada em um casaco antigo.",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -525,7 +525,7 @@
     "nome": "Resumo Mágico",
     "descricao": "Um veterano te mandou exatamente o que vai cair na prova.",
     "localAtividade": "BOROGODO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -543,7 +543,7 @@
     "nome": "Erro a seu Favor",
     "descricao": "A máquina de salgados derrubou dois salgados pelo preço de um.",
     "localAtividade": "CANTINA",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 5,
@@ -561,7 +561,7 @@
     "nome": "Bolsa de Extensão Aprovada",
     "descricao": "Seu projeto foi selecionado e uma grana extra vai entrar.",
     "localAtividade": "COLEGIADO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -579,7 +579,7 @@
     "nome": "Carona Solidária",
     "descricao": "Um amigo te ofereceu carona até em casa.",
     "localAtividade": "PONTO_DE_ONIBUS",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 10,
@@ -597,7 +597,7 @@
     "nome": "Bug do Bem",
     "descricao": "Seu código compilou de primeira e você nem sabe o motivo.",
     "localAtividade": "LABORATORIO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -615,7 +615,7 @@
     "nome": "Dica de Ouro",
     "descricao": "O professor deixou escapar uma questão da prova.",
     "localAtividade": "SALA_DE_AULA",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 0,
@@ -633,7 +633,7 @@
     "nome": "Dormida Restauradora",
     "descricao": "Você acordou sentindo que reiniciou a vida.",
     "localAtividade": "BOROGODO",
-    "icone": "interface-icon-novoevento.png",
+    "icone": "/resources/icones/icon-evento-pergaminho.png",
     "efeitos": [
       {
         "impactoEnergia": 20,

@@ -36,9 +36,9 @@ public class GameService {
                 nomeJogador,
                 100, // Energia
                 50,   // Conhecimento
-                100, // Motivação
-                100, // Saúde
-                100, // Desempenho
+                50, // Motivação
+                50, // Saúde
+                50, // Desempenho
                 50.0,// Dinheiro
                 null, // Local
                 aparencia

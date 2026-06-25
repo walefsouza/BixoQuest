@@ -1,8 +1,10 @@
 package controller.command;
 
+import application.RotasFixas;
 import application.SceneManager;
 import application.SessaoSingleton;
 import com.google.gson.reflect.TypeToken;
+import controller.locais.TransicaoController;
 import javafx.scene.layout.AnchorPane;
 import model.Game;
 import model.academico.Disciplina;
@@ -38,7 +40,6 @@ public class PassarSemanaCommand implements ICommand {
     public void executar() {
 
         Game game = SessaoSingleton.getInstancia().getGame();
-        if (game == null) return;
 
         // Declaração dos Repositórios - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -104,15 +105,34 @@ public class PassarSemanaCommand implements ICommand {
             return; // ele não embarca e vê o aviso na tela
         }
 
-        // Virando a semana - - - - - - - - - - - - - - - - - - - - - - - -
+        // Se o jogador estiver na semana 4, o command avalia se ele pode avançar semestre
+        if (game.getSemestre().getSemanaAtual() == 4) {
+
+            // O AcademicoService verifica se progressão pode ser feita
+            ResultadoAcao resultadoSemestre = academicoService.avancarSemestre(game, false);
+
+            game.setFlagSemana(false);
+            gameService.salvarProgresso(game);
+
+            SceneManager.mostrarDialogoWarn(
+                    telaDoPonto,
+                    "Fim do Semestre",
+                    resultadoSemestre.getTextoNarrativo(),
+                    "/resources/icones/interface-icon-lore.png"
+            );
+
+            // O próximo clique na tela redireciona para uma tela chamada novo semestre
+            telaDoPonto.setOnMouseClicked(e -> {
+                telaDoPonto.setOnMouseClicked(null);
+                SceneManager.navegar(RotasFixas.NOVOSEMESTRE.getRotaFixa());
+            });
+
+            return;
+        }
+
+        // Virando a semana normal - - - - - - - - - - - - - - - - - - - - - - - -
 
         turnoService.passarSemana(game.getSemestre(), game.getJogador());
-
-        // Reseta o contador de aulas para a nova semana
-        if (!game.getSemestre().getDisciplinas().isEmpty()) {
-            Disciplina disciplina = game.getSemestre().getDisciplinas().get(0);
-            disciplina.setAulasAssistidas(0);
-        }
 
         // Sorteia as tasks da nova semana
         List<Task> novasTasks = atividadeService.escolherTasksDaSemana(game);

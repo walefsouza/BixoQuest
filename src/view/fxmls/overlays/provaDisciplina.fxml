@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.overlays.AvaliacaoController">
+    <children>
+        <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="282.0" layoutY="246.0" pickOnBounds="true" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../resources/setups/telaProva.png" />
+         </image></ImageView>
+      <Label fx:id="disciplinaNome" layoutX="432.0" layoutY="188.0" prefHeight="46.0" prefWidth="330.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 25;" />
+      <Label fx:id="numero" layoutX="837.0" layoutY="188.0" prefHeight="51.0" prefWidth="73.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 35;" />
+      <ImageView fx:id="basea" fitHeight="65.0" fitWidth="704.0" layoutX="285.0" layoutY="445.0" onMouseClicked="#clicarOpcaoA" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/botoes/resosta-a.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="baseb" fitHeight="65.0" fitWidth="703.0" layoutX="284.0" layoutY="520.0" onMouseClicked="#clicarOpcaoB" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/botoes/resposta-b.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="basec" fitHeight="63.0" fitWidth="707.0" layoutX="285.0" layoutY="591.0" onMouseClicked="#clicarOpcaoC" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/botoes/resposta-c.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="opcaoa" layoutX="370.0" layoutY="451.0" onMouseClicked="#clicarOpcaoA" prefHeight="56.0" prefWidth="613.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 35;" />
+      <Label fx:id="opcaob" layoutX="370.0" layoutY="518.0" onMouseClicked="#clicarOpcaoB" prefHeight="56.0" prefWidth="616.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 35;" />
+      <Label fx:id="opcaoc" layoutX="372.0" layoutY="596.0" onMouseClicked="#clicarOpcaoC" prefHeight="51.0" prefWidth="612.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 35;" />
+      <Label fx:id="pergunta" layoutX="309.0" layoutY="283.0" prefHeight="144.0" prefWidth="660.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 25;" textAlignment="CENTER" wrapText="true" />
+    </children>
+</AnchorPane>

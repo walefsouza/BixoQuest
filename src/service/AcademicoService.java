@@ -35,7 +35,7 @@ public class AcademicoService {
         if (jogador.getEnergia() < 10) {
 
             ResultadoAcao resultado = new ResultadoAcao("Você até tentou, mas dormiu  e perdeu a aula de " + disciplina.getNome() + "!");
-            resultado.setTocarAudio("src/resources/atividades/audio/som-sem-energia.mp3");
+            resultado.setTocarAudio("/resources/atividades/audio/som-sem-energia.mp3");
             resultado.setEmbacarTela(true);
             resultado.setSucesso(false);
             return resultado;
@@ -47,7 +47,7 @@ public class AcademicoService {
         jogador.aumentarDesempenhoAcademico(5);
 
         ResultadoAcao resultado = new ResultadoAcao("Você assistiu à aula de " + disciplina.getNome() + " e fez boas anotações.");
-        resultado.setTocarAudio("src/resources/atividades/audio/som-teclado-digitando.mp3");
+        resultado.setTocarAudio("/resources/atividades/audio/som-teclado-digitando.mp3");
         resultado.setSucesso(true);
         return resultado;
     }
@@ -63,7 +63,7 @@ public class AcademicoService {
             ResultadoAcao resultado = new ResultadoAcao("Sua cabeça dói. Você não consegue focar" +
                     " nos livros de " + disciplina.getNome() + ".");
 
-            resultado.setTocarAudio("src/resources/atividades/audio/som-sem-energia.mp3");
+            resultado.setTocarAudio("/resources/atividades/audio/som-sem-energia.mp3");
             return resultado;
         }
 
@@ -74,7 +74,7 @@ public class AcademicoService {
         ResultadoAcao resultado = new ResultadoAcao("Você devorou os livros de " +
                 disciplina.getNome() + "! Seu desempenho acadêmico e sua motivação aumentaram.");
 
-        resultado.setTocarAudio("src/resources/atividades/audio/som-passar-página.mp3");
+        resultado.setTocarAudio("/resources/atividades/audio/som-passar-página.mp3");
 
         return resultado;
     }
@@ -107,7 +107,7 @@ public class AcademicoService {
         // Loop de correção
         for (int i = 0; i < respostasDoJogador.size(); i++) {
             int respostaEscolhida = respostasDoJogador.get(i);
-            acertos = avaliacao.corrigirResposta(i, respostaEscolhida);
+            acertos += avaliacao.corrigirResposta(i, respostaEscolhida);
         }
 
         ResultadoAcao resultadoFinal = avaliacao.executar(game);
@@ -139,13 +139,13 @@ public class AcademicoService {
 
             if (temProximo) {
                 resultado = new ResultadoAcao("Espertinho! Passando os semestres sem jogar?");
-                resultado.setTocarAudio("src/resources/atividades/audio/som-swoosh-transicao.mp3");
+                resultado.setTocarAudio("/resources/atividades/audio/som-swoosh-transicao.mp3");
             }
 
             else {
                 resultado = new ResultadoAcao("INACREDITÁVEL! VOCÊ VENCEU A UEFS HACKEANDO A MATRIX!");
                 resultado.setMudarImagemFundo("imagem_formatura.png");
-                resultado.setTocarAudio("src/resources/atividades/audio/som-ihaaaaaa.mp3");
+                resultado.setTocarAudio("/resources/atividades/audio/som-ihaaaaaa.mp3");
                 jogoAtual.formarJogador();
             }
 
@@ -175,14 +175,14 @@ public class AcademicoService {
             if (proximo) {
                 semestreAtual.setConcluido(true);
                 resultado = new ResultadoAcao("Parabéns! Você sobreviveu ao Semestre " + semestreAtual.capturarNome() + "!");
-                resultado.setTocarAudio("src/resources/atividades/audio/som-att-realizada.mp3");
+                resultado.setTocarAudio("/resources/atividades/audio/som-att-realizada.mp3");
             }
 
             // Se não, acontece a formatura do jogador
             else {
                 resultado = new ResultadoAcao("INACREDITÁVEL! VOCÊ VENCEU A UEFS E SE FORMOU!");
                 resultado.setMudarImagemFundo("imagem_formatura.png");
-                resultado.setTocarAudio("src/resources/atividades/audio/som-ihaaaaaa.mp3");
+                resultado.setTocarAudio("/resources/atividades/audio/som-ihaaaaaa.mp3");
                 jogoAtual.formarJogador();
             }
         }
@@ -191,7 +191,7 @@ public class AcademicoService {
         else {
             aplicarReprovacao(jogador, semestreAtual);
             resultado = new ResultadoAcao("Você rodou hahaha! Estude mais infeliz. Reprovado no Semestre " + semestreAtual.capturarNome() + ".");
-            resultado.setTocarAudio("src/resources/atividades/audio/som-end-reprovado.mp3");
+            resultado.setTocarAudio("/resources/atividades/audio/som-end-reprovado.mp3");
             resultado.setEscurecerTela(true);
         }
 
