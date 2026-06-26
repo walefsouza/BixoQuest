@@ -6,6 +6,7 @@ public class ResultadoAcao {
 
     private String textoNarrativo;
     private boolean sucesso;
+    private String titulo;
 
     // Audio  - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -63,6 +64,10 @@ public class ResultadoAcao {
         return this.iconeSobreposicao;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
     // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setTocarAudio(String tocarAudio) {
@@ -95,5 +100,9 @@ public class ResultadoAcao {
 
     public void setSucesso(boolean sucesso) {
         this.sucesso = sucesso;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 }

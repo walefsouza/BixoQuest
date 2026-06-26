@@ -94,4 +94,23 @@ public class SceneManager {
         }
     }
 
+    public static void mostrarCardNotificacao(AnchorPane pane, String titulo, String mensagem, String caminhoIcone) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource("/fxmls/overlays/caixaEvento.fxml"));
+            Parent avisoVisual = loader.load();
+
+            // Preenche a caixa e adiciona ao pane atual
+            CaixaDialogoController controller = loader.getController();
+            controller.preencherDados(titulo, mensagem, caminhoIcone);
+            pane.getChildren().add(avisoVisual);
+
+        }
+
+        catch (Exception e) {
+            System.out.println("Erro ao executar a sobreposição rápida.");
+            e.printStackTrace();
+        }
+    }
+
 }

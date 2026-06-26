@@ -186,7 +186,7 @@
           "nome": "Rocha",
           "idade": 48,
           "humor": 70,
-          "aparencia": "/resources/personagens/professora-rocha.png"
+          "aparencia": "/resources/personagens/professor-rocha.png"
         },
         "frequencia": 0,
         "local": "SALA_DE_AULA",

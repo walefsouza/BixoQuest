@@ -20,7 +20,7 @@
         "tremerTela": true,
         "escurecerTela": true,
         "desfocarTela": false,
-        "mudarImagemFundo": "fundogreve",
+        "mudarImagemFundo": "/resources/locais/uefsmapagrevegeral.png",
         "iconeSobreposicao": "nuvemfumaça"
       }
     ]
@@ -29,9 +29,9 @@
     "categoria": "OBRIGATORIO",
     "requisito": "SEMANA1_SEMESTRE1",
     "nome": "Semana de Integração",
-    "descricao": "Veteranos te fizeram pedir dinheiro no farol.",
+    "descricao": "Veteranos te fizeram pedir dinheiro no farol. Teria coisa melhor do que começar o curso com um trote?",
     "localAtividade": "QUALQUER_LUGAR",
-    "icone": "/resources/icones/icon-evento-pergaminho.png",
+    "icone": "/resources/icones/interface-icon-novoevento.png",
     "efeitos": [
       {
         "impactoEnergia": -15,
@@ -46,7 +46,7 @@
         "tremerTela": false,
         "escurecerTela": false,
         "desfocarTela": false,
-        "mudarImagemFundo": "fundocalourada",
+        "mudarImagemFundo": "/resources/locais/mapaSemanaIntegracao.png",
         "iconeSobreposicao": "confetes"
       }
     ]

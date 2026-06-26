@@ -48,14 +48,14 @@ public class LocalService {
             ResultadoAcao evento = atividadeService.processarEventosAleatorios(game, destino);
 
             if (evento != null) {
-                evento.setTextoNarrativo("Você chegou em: " + destino.getLocalNome() + ", mas...\n\n" + evento.getTextoNarrativo());
+                evento.setTextoNarrativo("Você chegou em: " + destino.getLocalNome() + ", mas... " + evento.getTextoNarrativo());
                 evento.setSucesso(true);
                 return evento;
             }
 
             // Se não acontecer nenhum evento, o jogador viaja sem imprevistos.
-            ResultadoAcao viagem = new ResultadoAcao("Você viajou para: " + destino.getLocalNome() + " sem imprevistos.");
-            viagem.setTocarAudio("src/resources/atividades/audio/som-swoosh-transicao.mp3");
+            ResultadoAcao viagem = new ResultadoAcao("");
+            viagem.setTocarAudio("/resources/atividades/audio/som-swoosh-transicao.mp3");
             viagem.setSucesso(true);
             return viagem;
         }
@@ -69,14 +69,14 @@ public class LocalService {
                 jogador.mudarLocal(destino);
 
                 ResultadoAcao resultado = new ResultadoAcao("Você se arrastou até o Ponto de Ônibus depois de um dia exaustante.");
-                resultado.setTocarAudio("src/resources/atividades/audio/som-sem-energia.mp3");
+                resultado.setTocarAudio("/resources/atividades/audio/som-sem-energia.mp3");
                 resultado.setSucesso(true);
                 return resultado;
             }
 
             // Se tentar ir pra qualquer outro lugar sem energia
             ResultadoAcao resultado = new ResultadoAcao("Você está exausto! O único lugar que consegue ir agora é o Ponto de Ônibus.");
-            resultado.setTocarAudio("src/resources/atividades/audio/som-buzina-onibus.mp3");
+            resultado.setTocarAudio("/resources/atividades/audio/som-buzina-onibus.mp3");
             resultado.setSucesso(false);
             return resultado;
         }

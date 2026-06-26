@@ -18,6 +18,8 @@ public class Game implements IGeneralGetNome {
     private List<String> eventosRealizados;
     private List<String> tasksRealizadas;
     private boolean flagSemana;
+    private String imagemFundoAtual;
+
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -72,6 +74,10 @@ public class Game implements IGeneralGetNome {
         this.flagSemana = flagSemana;
     }
 
+    public void setImagemFundoAtual(String imagemFundoAtual) {
+        this.imagemFundoAtual = imagemFundoAtual;
+    }
+
     // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome(){
@@ -101,4 +107,10 @@ public class Game implements IGeneralGetNome {
     public boolean getFlagSemana() {
         return this.flagSemana;
     }
+
+    public String getImagemFundoAtual() {
+        return imagemFundoAtual;
+    }
+
+
 }

@@ -105,6 +105,9 @@ public class PassarSemanaCommand implements ICommand {
             return; // ele não embarca e vê o aviso na tela
         }
 
+        // Antes de virar a semana oficialmente, temos que resetar a imagem de fundo para o padrão sem eventos
+        game.setImagemFundoAtual(null);
+
         // Se o jogador estiver na semana 4, o command avalia se ele pode avançar semestre
         if (game.getSemestre().getSemanaAtual() == 4) {
 

@@ -97,6 +97,8 @@ public class AtividadeService {
                 if (!jogoAtual.getEventoRealizado(evento.getNome())) {
 
                     ResultadoAcao resultado = evento.executar(jogoAtual);
+                    resultado.setTitulo(evento.getNome());
+                    resultado.setIconeSobreposicao(evento.getIcone());
                     jogoAtual.setEventoRealizado(evento.getNome());
                     return resultado;
                 }
