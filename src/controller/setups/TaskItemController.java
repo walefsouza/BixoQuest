@@ -1,5 +1,6 @@
 package controller.setups;
 
+import application.SceneManager;
 import application.SessaoSingleton;
 import application.Utilitarios;
 import javafx.fxml.FXML;
@@ -45,7 +46,7 @@ public class TaskItemController {
         this.custo.setText(String.valueOf(task.getCustoEnergia()));
     }
 
-    @FXML
+    /*@FXML
     public void clicarPane(MouseEvent event) {
         Utilitarios.animarClique(taskPane, () -> {
 
@@ -56,5 +57,37 @@ public class TaskItemController {
                 controller.renderizarTarefas();
             }
         });
+    }*/
+
+    @FXML
+    public void clicarPane(MouseEvent event) {
+        Utilitarios.animarClique(taskPane, () -> {
+
+            ResultadoAcao resultado = controller.getAtividadeService().executarTask(task, game);
+
+            if (resultado != null) {
+
+                if (resultado.getSucesso()) {
+                    SceneManager.mostrarCardNotificacao(
+                            controller.getPainelFundo(),
+                            resultado.getTitulo(),
+                            resultado.getTextoNarrativo(),
+                            "/resources/icones/interface-icon-task.png"
+                    );
+                }
+
+                else {
+                    SceneManager.mostrarCardNotificacao(
+                            controller.getPainelFundo(),
+                            resultado.getTitulo(),
+                            resultado.getTextoNarrativo(),
+                            "/resources/icones/interface-icon-erro.png"
+                    );
+                }
+
+                controller.renderizarTarefas();
+            }
+        });
     }
+
 }

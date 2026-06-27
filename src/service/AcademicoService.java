@@ -140,12 +140,14 @@ public class AcademicoService {
             if (temProximo) {
                 resultado = new ResultadoAcao("Espertinho! Passando os semestres sem jogar?");
                 resultado.setTocarAudio("/resources/atividades/audio/som-swoosh-transicao.mp3");
+                resultado.setSucesso(true);
             }
 
             else {
                 resultado = new ResultadoAcao("INACREDITÁVEL! VOCÊ VENCEU A UEFS HACKEANDO A MATRIX!");
                 resultado.setMudarImagemFundo("imagem_formatura.png");
                 resultado.setTocarAudio("/resources/atividades/audio/som-ihaaaaaa.mp3");
+                resultado.setSucesso(true);
                 jogoAtual.formarJogador();
             }
 
@@ -176,6 +178,7 @@ public class AcademicoService {
                 semestreAtual.setConcluido(true);
                 resultado = new ResultadoAcao("Parabéns! Você sobreviveu ao Semestre " + semestreAtual.capturarNome() + "!");
                 resultado.setTocarAudio("/resources/atividades/audio/som-att-realizada.mp3");
+                resultado.setSucesso(true);
             }
 
             // Se não, acontece a formatura do jogador
@@ -183,6 +186,7 @@ public class AcademicoService {
                 resultado = new ResultadoAcao("INACREDITÁVEL! VOCÊ VENCEU A UEFS E SE FORMOU!");
                 resultado.setMudarImagemFundo("imagem_formatura.png");
                 resultado.setTocarAudio("/resources/atividades/audio/som-ihaaaaaa.mp3");
+                resultado.setSucesso(true);
                 jogoAtual.formarJogador();
             }
         }
@@ -192,6 +196,7 @@ public class AcademicoService {
             aplicarReprovacao(jogador, semestreAtual);
             resultado = new ResultadoAcao("Você rodou hahaha! Estude mais infeliz. Reprovado no Semestre " + semestreAtual.capturarNome() + ".");
             resultado.setTocarAudio("/resources/atividades/audio/som-end-reprovado.mp3");
+            resultado.setSucesso(false);
             resultado.setEscurecerTela(true);
         }
 

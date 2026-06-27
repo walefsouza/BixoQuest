@@ -96,4 +96,8 @@ public class TasksSemanaisController implements Initializable {
         Stage stage = (Stage) painelFundo.getScene().getWindow();
         stage.close();
     }
+
+    public AnchorPane getPainelFundo() {
+        return this.painelFundo;
+    }
 }

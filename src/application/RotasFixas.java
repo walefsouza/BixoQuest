@@ -25,6 +25,9 @@ public enum RotasFixas {
     // INFORMS
 
     NOVOSEMESTRE("/fxmls/informs/novo-semestre.fxml"),
+    PCQUEBRADO("/fxmls/informs/pc-quebrado.fxml"),
+    NOVASEMANA("/fxmls/informs/nova-semana.fxml"),
+    PERDEUSEMESTRE("/fxmls/informs/perdeu-semestre.fxml"),
 
 
     FIM("fimmm");

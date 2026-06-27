@@ -70,14 +70,16 @@ public class AtividadeService {
             // Se não tiver energia, sobrescreve o texto do DTO e não executa a task.
             ResultadoAcao erro;
             erro = new ResultadoAcao("Você está exausto demais para " + task.getNome() + ".");
-            erro.setTocarAudio("src/resources/atividades/audio/som-sem-energia.mp3");
+            erro.setTocarAudio("/resources/atividades/audio/som-sem-energia.mp3");
+            erro.setTitulo("Não foi dessa vez");
             return erro;
         }
 
         // Aplicando efeitos nos atributos do jogador e enviando DTO para interface
         ResultadoAcao resultado = task.executar(game);
+        resultado.setTitulo(task.getNome());
         game.setTasksRealizadas(task.getNome());
-        resultado.setTocarAudio("src/resources/atividades/audio/som-att-realizada.mp3");
+        resultado.setTocarAudio("/resources/atividades/audio/som-att-realizada.mp3");
         resultado.setSucesso(true);
 
         return resultado;

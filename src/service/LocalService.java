@@ -91,13 +91,15 @@ public class LocalService {
         // Verificando se o local realmente é uma cantina
         if (localAtual.getTipo() != TipoLocal.CANTINA) {
             resultado = new ResultadoAcao("Não há onde comprar lanches aqui!");
+            resultado.setSucesso(false);
             return resultado;
         }
 
         // Verificando saldo do jogador
         if (jogador.getDinheiro() < lanche.getPreco()) {
             resultado = new ResultadoAcao("Você não tem dinheiro suficiente para o " + lanche.getNome() + ".");
-            resultado.setTocarAudio("som_erro.mp3");
+            resultado.setTocarAudio("/resources/atividades/audio/som-sem-energia.mp3");
+            resultado.setSucesso(false);
             return resultado;
         }
 
@@ -111,6 +113,7 @@ public class LocalService {
             cantina.setTamanhoFila(fila - 1);
             resultado = new ResultadoAcao("Você enfrentou uma fila terrível, " +
                     "perdeu energia, mas comprou: " + lanche.getNome() + "!");
+            resultado.setSucesso(true);
         }
 
         // Se não tiver fila ele recebe um bônus
@@ -118,15 +121,17 @@ public class LocalService {
             jogador.aumentarEnergia(5);
             resultado = new ResultadoAcao("Sorte grande! A cantina estava vazia. " +
                     "Você comprou: " + lanche.getNome() + "!");
+            resultado.setSucesso(true);
         }
 
         jogador.decrementarDinheiro(lanche.getPreco());
         jogador.aumentarSaude(5);
-        resultado.setTocarAudio("src/resources/atividades/audio/som-caixa-registradora.mp3");
+        resultado.setTocarAudio("/resources/atividades/audio/som-caixa-registradora.mp3");
 
         return resultado;
     }
 
+    // Estudar no laboratório faz com que você ganhe muito conhecimento e perca energia
     // Estudar no laboratório faz com que você ganhe muito conhecimento e perca energia
     public ResultadoAcao usarComputadorLab(Game game, Local localAtual) {
 
@@ -134,30 +139,36 @@ public class LocalService {
         Jogador jogador = game.getJogador();
 
         if (localAtual.getTipo() != TipoLocal.LABORATORIO) {
-            return new ResultadoAcao("Não há computadores aqui.");
+            resultado = new ResultadoAcao("Não há computadores aqui.");
+            resultado.setSucesso(false); // Adicionado
+            return resultado;
         }
 
         Laboratorio lab = (Laboratorio) localAtual;
 
         if (jogador.getEnergia() < 15) {
-            return new ResultadoAcao("Você está exausto demais para olhar para uma tela agora.");
+            resultado = new ResultadoAcao("Você está exausto demais para olhar para uma tela agora.");
+            resultado.setSucesso(false); // Adicionado
+            return resultado;
         }
 
         if (lab.getComputadoresDisponiveis() <= 0) {
             resultado = new ResultadoAcao("Todos os computadores estão ocupados por pessoas jogando Rocket League.");
-            resultado.setTocarAudio("src/resources/atividades/audio/som-sem-energia.mp3");
+            resultado.setTocarAudio("/resources/atividades/audio/som-sem-energia.mp3");
+            resultado.setSucesso(false); // Adicionado
             return resultado;
         }
 
         lab.setComputadoresDisponiveis(lab.getComputadoresDisponiveis() - 1);
         jogador.decrementarEnergia(15);
 
-        double ganho = 10.0 * lab.getMultiplicadorEstudo(); // bôns de estudo do laboratório
+        double ganho = 10.0 * lab.getMultiplicadorEstudo(); // bônus de estudo do laboratório
         jogador.aumentarLevelConhecimento((int) ganho);
 
         resultado = new ResultadoAcao("Você conseguiu um PC! Rendeu bastante, mas seus olhos estão ardendo.");
-        resultado.setTocarAudio("src/resources/atividades/audio/som-teclado-digitando.mp3");
+        resultado.setTocarAudio("/resources/atividades/audio/som-teclado-digitando.mp3");
         resultado.setEmbacarTela(true);
+        resultado.setSucesso(true); // Adicionado
 
         return resultado;
     }
@@ -165,18 +176,18 @@ public class LocalService {
     // O jogador usa o colegiado para resolver burocracias, isso cansa muito!
     public ResultadoAcao resolverBurocracia(Jogador jogador, Local localAtual) {
 
-        ResultadoAcao resultado;
-
-
         if (localAtual.getTipo() != TipoLocal.COLEGIADO) {
-            return new ResultadoAcao("Não há como resolver burocracias sem Maeli!");
+            ResultadoAcao erroLocal = new ResultadoAcao("Não há como resolver burocracias sem Maeli!");
+            erroLocal.setSucesso(false);
+            return erroLocal;
         }
 
         Colegiado colegiado = (Colegiado) localAtual;
 
         if (jogador.getEnergia() < 10) {
             ResultadoAcao exausto = new ResultadoAcao("Você está exausto demais para resolver seu problema.");
-            exausto.setTocarAudio("src/resources/atividades/audio/som-sem-energia.mp3");
+            exausto.setTocarAudio("/resources/atividades/audio/som-sem-energia.mp3");
+            exausto.setSucesso(false);
             return exausto;
         }
 
@@ -185,22 +196,20 @@ public class LocalService {
         // Se o sistema estiver funcionando, ele ganha um bônus de conhecimento pela perda de energia
         int chanceSistema = random.nextInt(100);
 
-        if (chanceSistema < 50) {
-
-            jogador.aumentarLevelConhecimento(15);
-            ResultadoAcao sucesso = new ResultadoAcao("Você conseguiu ser atendido por Maeli e recebeu 15 pontos de conhecimento pelo empenho!");
-            sucesso.setTocarAudio("src/resources/atividades/audio/som-att-realizada.mp3");
+        if (chanceSistema < 70) {
+            jogador.aumentarLevelConhecimento(10);
+            ResultadoAcao sucesso = new ResultadoAcao("Você conseguiu ser atendido por Maeli e recebeu 10 pontos de conhecimento pelo empenho!");
+            sucesso.setTocarAudio("/resources/atividades/audio/som-att-realizada.mp3");
+            sucesso.setSucesso(true);
             return sucesso;
-
         }
-
         // Se o sistema cair, retorna mensagem de erro
         else {
-
             ResultadoAcao erro = new ResultadoAcao("Não foi dessa vez... o sistema do colegiado CAIU! Volte depois.");
             erro.setEscurecerTela(true);
             erro.setTremerTela(true);
-            erro.setTocarAudio("src/resources/atividades/audio/som-erro-sistema.mp3");
+            erro.setTocarAudio("/resources/atividades/audio/som-erro-sistema.mp3");
+            erro.setSucesso(false);
             return erro;
         }
     }
@@ -209,13 +218,17 @@ public class LocalService {
     public ResultadoAcao apostarNoBorogodo(Jogador jogador, Local localAtual) {
 
         if (localAtual.getTipo() != TipoLocal.BOROGODO) {
-            return new ResultadoAcao("Shhh! Não procure apostadores fora do Borogodó.");
+            ResultadoAcao erroLocal = new ResultadoAcao("Shhh! Não procure apostadores fora do Borogodó.");
+            erroLocal.setSucesso(false);
+            return erroLocal;
         }
 
         double valorAposta = 10.0;
 
         if (jogador.getDinheiro() < valorAposta) {
-            return new ResultadoAcao("Os veteranos não deixam você jogar fiado. Faltou dinheiro!");
+            ResultadoAcao semDinheiro = new ResultadoAcao("Os veteranos não deixam você jogar fiado. Faltou dinheiro!");
+            semDinheiro.setSucesso(false);
+            return semDinheiro;
         }
 
         jogador.decrementarDinheiro(valorAposta);
@@ -224,19 +237,21 @@ public class LocalService {
         int sorteio = random.nextInt(100);
 
         if (sorteio < 30) {
-
             jogador.aumentarDinheiro(valorAposta * 2); // Ganha o dobro
             jogador.aumentarMotivacao(10);
+
             ResultadoAcao vitoria = new ResultadoAcao("SHOW! Você ganhou R$ 20,00 na aposta!");
-            vitoria.setTocarAudio("src/resources/atividades/audio/som-caixa-registradora.mp3");
+            vitoria.setTocarAudio("/resources/atividades/audio/som-caixa-registradora.mp3"); // Caminho ajustado sem o "src"
+            vitoria.setSucesso(true);
             return vitoria;
         }
-
         // Aqui você perde a aposta
         else {
-
             jogador.decrementarMotivacao(10);
-            return new ResultadoAcao("LAZARENTO! Você perdeu R$ 10,00 no jogo. Que vergonha...");
+
+            ResultadoAcao derrota = new ResultadoAcao("LAZARENTO! Você perdeu R$ 10,00 no jogo. Que vergonha...");
+            derrota.setSucesso(false); // Derrota no jogo reflete como alerta na interface
+            return derrota;
         }
     }
 

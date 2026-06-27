@@ -114,6 +114,9 @@ public class PassarSemanaCommand implements ICommand {
             // O AcademicoService verifica se progressão pode ser feita
             ResultadoAcao resultadoSemestre = academicoService.avancarSemestre(game, false);
 
+            List<Task> novasTasks = atividadeService.escolherTasksDaSemana(game);
+            game.getSemestre().setBancoTasks(novasTasks);
+
             game.setFlagSemana(false);
             gameService.salvarProgresso(game);
 
@@ -124,11 +127,21 @@ public class PassarSemanaCommand implements ICommand {
                     "/resources/icones/interface-icon-lore.png"
             );
 
-            // O próximo clique na tela redireciona para uma tela chamada novo semestre
-            telaDoPonto.setOnMouseClicked(e -> {
-                telaDoPonto.setOnMouseClicked(null);
-                SceneManager.navegar(RotasFixas.NOVOSEMESTRE.getRotaFixa());
-            });
+            if (resultadoSemestre.getSucesso()) {
+                // O próximo clique na tela redireciona para uma tela chamada novo semestre
+                telaDoPonto.setOnMouseClicked(e -> {
+                    telaDoPonto.setOnMouseClicked(null);
+                    SceneManager.navegar(RotasFixas.NOVOSEMESTRE.getRotaFixa());
+                });
+            }
+
+            else {
+                // O próximo clique na tela redireciona para uma tela chamada perdeu semestre
+                telaDoPonto.setOnMouseClicked(e -> {
+                    telaDoPonto.setOnMouseClicked(null);
+                    SceneManager.navegar(RotasFixas.PERDEUSEMESTRE.getRotaFixa());
+                });
+            }
 
             return;
         }
@@ -152,5 +165,10 @@ public class PassarSemanaCommand implements ICommand {
                 resultadoEmbarque.getTextoNarrativo(),
                 "/resources/icones/interface-icon-lore.png"
         );
+
+        telaDoPonto.setOnMouseClicked(e -> {
+            telaDoPonto.setOnMouseClicked(null);
+            SceneManager.navegar(RotasFixas.NOVASEMANA.getRotaFixa());
+        });
     }
 }
