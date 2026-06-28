@@ -167,21 +167,21 @@ public class AcademicoService {
 
         boolean desempenhoOk = jogador.getDesempenhoAcademico() >= 70;
 
-        // Aprovando semestre
-        if (todasAprovadas && desempenhoOk) {
+        // Aprovando semestre a partir da verificação do fim de semana
+        if (todasAprovadas && desempenhoOk && semestreAtual.getSemanaAtual() == 4) {
 
+            semestreAtual.setConcluido(true);
 
             boolean proximo = conduzirTransicao(jogoAtual, semestreAtual);
 
-            // Se houver próximo semestre
+            // Se tem próximo semestre, o jogador recebe uma mensagem de avanço
             if (proximo) {
-                semestreAtual.setConcluido(true);
-                resultado = new ResultadoAcao("Parabéns! Você sobreviveu ao Semestre " + semestreAtual.capturarNome() + "!");
+                resultado = new ResultadoAcao("Parabéns! Você sobreviveu e avançou de semestre!");
                 resultado.setTocarAudio("/resources/atividades/audio/som-att-realizada.mp3");
                 resultado.setSucesso(true);
             }
 
-            // Se não, acontece a formatura do jogador
+            // Se não tem, setamos como finalizado e formamos o jogador
             else {
                 resultado = new ResultadoAcao("INACREDITÁVEL! VOCÊ VENCEU A UEFS E SE FORMOU!");
                 resultado.setMudarImagemFundo("imagem_formatura.png");

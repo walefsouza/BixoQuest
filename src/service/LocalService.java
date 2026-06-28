@@ -215,19 +215,21 @@ public class LocalService {
     }
 
     // Mecânica de apostas no Borogodó
-    public ResultadoAcao apostarNoBorogodo(Jogador jogador, Local localAtual) {
+    public ResultadoAcao apostarNoBorogodo(Jogador jogador, Local localAtual, double valorAposta) {
 
         if (localAtual.getTipo() != TipoLocal.BOROGODO) {
             ResultadoAcao erroLocal = new ResultadoAcao("Shhh! Não procure apostadores fora do Borogodó.");
             erroLocal.setSucesso(false);
+            erroLocal.setTitulo("LOCAL INCORRETO");
             return erroLocal;
         }
 
-        double valorAposta = 10.0;
+        //double valorAposta = 10.0;
 
         if (jogador.getDinheiro() < valorAposta) {
             ResultadoAcao semDinheiro = new ResultadoAcao("Os veteranos não deixam você jogar fiado. Faltou dinheiro!");
             semDinheiro.setSucesso(false);
+            semDinheiro.setTitulo("A POBREZA FALA MAIS ALTO");
             return semDinheiro;
         }
 
@@ -240,17 +242,19 @@ public class LocalService {
             jogador.aumentarDinheiro(valorAposta * 2); // Ganha o dobro
             jogador.aumentarMotivacao(10);
 
-            ResultadoAcao vitoria = new ResultadoAcao("SHOW! Você ganhou R$ 20,00 na aposta!");
+            ResultadoAcao vitoria = new ResultadoAcao("SHOW! Você ganhou R$ " + valorAposta*2 +" na aposta!");
             vitoria.setTocarAudio("/resources/atividades/audio/som-caixa-registradora.mp3"); // Caminho ajustado sem o "src"
             vitoria.setSucesso(true);
+            vitoria.setTitulo("EAE CAMPEÃO. PARABÉNS!");
             return vitoria;
         }
         // Aqui você perde a aposta
         else {
             jogador.decrementarMotivacao(10);
 
-            ResultadoAcao derrota = new ResultadoAcao("LAZARENTO! Você perdeu R$ 10,00 no jogo. Que vergonha...");
+            ResultadoAcao derrota = new ResultadoAcao("LAZARENTO! Você perdeu R$ "+ valorAposta +" no jogo. Que vergonha...");
             derrota.setSucesso(false); // Derrota no jogo reflete como alerta na interface
+            derrota.setTitulo("TINHA QUE SER VOCÊ");
             return derrota;
         }
     }

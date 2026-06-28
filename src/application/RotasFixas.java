@@ -21,6 +21,8 @@ public enum RotasFixas {
     // LOCAIS
     CANTINA("/fxmls/locais/telaCantina.fxml"),
     SALADEAULA("/fxmls/locais/telaSalaDeAula.fxml"),
+    BOROGODO("/fxmls/locais/telaBorogodo.fxml"),
+    CASSINO("/fxmls/locais/telaCassino.fxml"),
 
     // INFORMS
 

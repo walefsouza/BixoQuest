@@ -222,7 +222,7 @@ public class LocalServiceTest {
     public void apostarNoBorogodoSemDinheiroSuficiente() {
         jogador.decrementarDinheiro(95.0); // 5 de saldo
 
-        ResultadoAcao resultado = service.apostarNoBorogodo(jogador, borogodo);
+        ResultadoAcao resultado = service.apostarNoBorogodo(jogador, borogodo, 10);
 
         assertNotNull(resultado);
         assertEquals(5.0, jogador.getDinheiro()); // A aposta não foi realizada

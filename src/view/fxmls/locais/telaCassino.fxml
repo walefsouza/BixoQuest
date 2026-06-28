@@ -4,11 +4,50 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.overlays.ApostasController">
     <children>
         <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="282.0" layoutY="246.0" pickOnBounds="true" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../../resources/locais/borogodo-cassino.png" />
          </image></ImageView>
+      <AnchorPane fx:id="paneRoleta" layoutX="18.0" layoutY="129.0" onMouseClicked="#clicarRoleta" prefHeight="530.0" prefWidth="480.0">
+         <children>
+            <ImageView fitHeight="530.0" fitWidth="480.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/botoes/baseRoleta.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgRoleta" fitHeight="384.0" fitWidth="400.0" layoutX="50.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, rgba(26,15,8,0.55), 20, 0.1, -4, 8);">
+               <image>
+                  <Image url="@../../resources/botoes/cardRoleta.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="119.0" fitWidth="123.0" layoutX="188.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/botoes/setaRoleta.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="btnAposta5" fitHeight="152.0" fitWidth="338.0" layoutX="546.0" layoutY="129.0" onMouseClicked="#clicarAposta5" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, rgba(26,15,8,0.55), 20, 0.1, -4, 8);">
+         <image>
+            <Image url="@../../resources/botoes/cassinoFicha5.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnAposta10" fitHeight="141.0" fitWidth="331.0" layoutX="914.0" layoutY="131.0" onMouseClicked="#clicarAposta10" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, rgba(26,15,8,0.55), 20, 0.1, -4, 8);">
+         <image>
+            <Image url="@../../resources/botoes/cassinoFicha10.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnAposta15" fitHeight="138.0" fitWidth="331.0" layoutX="552.0" layoutY="296.0" onMouseClicked="#clicarAposta15" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, rgba(26,15,8,0.55), 20, 0.1, -4, 8);">
+         <image>
+            <Image url="@../../resources/botoes/cassinoFicha15.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnSair" fitHeight="137.0" fitWidth="331.0" layoutX="914.0" layoutY="293.0" onMouseClicked="#clicarSair" pickOnBounds="true" style="-fx-effect: dropshadow(gaussian, rgba(26,15,8,0.55), 20, 0.1, -4, 8);">
+         <image>
+            <Image url="@../../resources/botoes/cassinoSair.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
