@@ -200,6 +200,8 @@ public class AcademicoService {
             resultado.setEscurecerTela(true);
         }
 
+        jogador.aumentarEnergia(100);
+
         return resultado;
     }
 

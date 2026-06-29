@@ -27,6 +27,11 @@
                   <Image url="@../../resources/icones/laboratorio-computador-icon.png" />
                </image>
             </ImageView>
+                <ImageView fx:id="btnInteragir" fitHeight="91.0" fitWidth="83.0" layoutX="50.0" layoutY="380.0" onMouseClicked="#botaoInteragir" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../resources/icones/colegiado-icon-atendimento.png" />
+                    </image>
+                </ImageView>
             </children>
         </AnchorPane>
         <fx:include layoutX="822.0" source="../iniciais/gameHud.fxml" />

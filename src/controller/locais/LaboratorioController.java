@@ -5,6 +5,7 @@ import application.SceneManager;
 import application.SessaoSingleton;
 import application.Utilitarios;
 import com.google.gson.reflect.TypeToken;
+import controller.command.PosicionarNPCsCommand;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -13,14 +14,18 @@ import model.atividades.Evento;
 import model.atividades.ResultadoAcao;
 import model.interacao.Dialogo;
 import model.mapa.Laboratorio;
+import model.mapa.TipoLocal;
 import repository.IRepository;
 import repository.LocalRepository;
 import repository.Repository;
+import service.InteracaoService;
 import service.LocalService;
 
 import javax.print.DocFlavor;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class LaboratorioController implements Initializable {
@@ -28,7 +33,10 @@ public class LaboratorioController implements Initializable {
     @FXML private ImageView btnMapa;
     @FXML private ImageView btnComputador;
     @FXML private AnchorPane pane;
+    @FXML private ImageView btnInteragir;
+
     private LocalService localService;
+    private InteracaoService interacaoService;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -38,6 +46,22 @@ public class LaboratorioController implements Initializable {
         IRepository locaisRepo = new LocalRepository();
 
         this.localService = new LocalService(eventosRepo, dialogoRepo, locaisRepo);
+        this.interacaoService = new InteracaoService();
+
+        double[][] pontosDeSpawn = {
+                {440, 220},
+                {630, 260},
+                {800, 230},
+        };
+
+        PosicionarNPCsCommand comando = new PosicionarNPCsCommand(
+                this.pane,
+                TipoLocal.LABORATORIO,
+                pontosDeSpawn,
+                interacaoService
+        );
+
+        comando.executar();
     }
 
     public void botaoMapa() {
@@ -80,6 +104,36 @@ public class LaboratorioController implements Initializable {
                             "/resources/icones/interface-icon-erro.png"
                     );
                 }
+            }
+        });
+    }
+
+    @FXML
+    public void botaoInteragir() {
+        Utilitarios.animarClique(btnInteragir, () -> {
+            List<Dialogo> falas = interacaoService.buscarFalasDoLocal(TipoLocal.BOROGODO);
+
+            if (!falas.isEmpty()) {
+
+                Collections.shuffle(falas);
+                Dialogo falaSorteada = falas.get(0);
+
+                SceneManager.mostrarDialogoWarn(
+                        this.pane,
+                        "Alguém diz...",
+                        falaSorteada.getTexto(),
+                        "/resources/icones/interface-icon-colegas.png"
+                );
+            }
+
+            else {
+
+                SceneManager.mostrarDialogoWarn(
+                        this.pane,
+                        "Silêncio",
+                        "Parece que não há muito sobre o que conversar aqui agora.",
+                        "/resources/icones/interface-icon-erro.png"
+                );
             }
         });
     }

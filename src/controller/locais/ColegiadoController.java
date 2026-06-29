@@ -5,6 +5,7 @@ import application.SceneManager;
 import application.SessaoSingleton;
 import application.Utilitarios;
 import com.google.gson.reflect.TypeToken;
+import controller.command.PosicionarNPCsCommand;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -15,13 +16,17 @@ import model.atividades.Evento;
 import model.atividades.ResultadoAcao;
 import model.interacao.Dialogo;
 import model.mapa.Colegiado;
+import model.mapa.TipoLocal;
 import repository.IRepository;
 import repository.LocalRepository;
 import repository.Repository;
+import service.InteracaoService;
 import service.LocalService;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ColegiadoController implements Initializable {
@@ -29,17 +34,37 @@ public class ColegiadoController implements Initializable {
     @FXML private ImageView btnMapa;
     @FXML private Node btnBurocracia;
     @FXML private AnchorPane pane;
+    @FXML private ImageView btnInteragir;
 
+    private InteracaoService interacaoService;
     private LocalService localService;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         IRepository eventosRepo = new Repository("dados/eventos-bixoquest.json", new TypeToken<ArrayList<Evento>>(){}.getType());
         IRepository dialogoRepo = new Repository("dados/dialogos.json", new TypeToken<ArrayList<Dialogo>>(){}.getType());
         IRepository locaisRepo = new LocalRepository();
 
         this.localService = new LocalService(eventosRepo, dialogoRepo, locaisRepo);
+        this.interacaoService = new InteracaoService();
+
+        double[][] pontosDeSpawn = {
+                {250, 270},
+                {670, 200},
+                {850, 260},
+        };
+
+        PosicionarNPCsCommand comando = new PosicionarNPCsCommand(
+                this.pane,
+                TipoLocal.COLEGIADO,
+                pontosDeSpawn,
+                interacaoService
+        );
+
+        comando.executar();
     }
+
 
     @FXML
     public void botaoMapa() {
@@ -77,6 +102,36 @@ public class ColegiadoController implements Initializable {
                             "/resources/personagens/secretaria-maeli.png"
                     );
                 }
+            }
+        });
+    }
+
+    @FXML
+    public void botaoInteragir() {
+        Utilitarios.animarClique(btnInteragir, () -> {
+            List<Dialogo> falas = interacaoService.buscarFalasDoLocal(TipoLocal.BOROGODO);
+
+            if (!falas.isEmpty()) {
+
+                Collections.shuffle(falas);
+                Dialogo falaSorteada = falas.get(0);
+
+                SceneManager.mostrarDialogoWarn(
+                        this.pane,
+                        "Alguém diz...",
+                        falaSorteada.getTexto(),
+                        "/resources/icones/interface-icon-colegas.png"
+                );
+            }
+
+            else {
+
+                SceneManager.mostrarDialogoWarn(
+                        this.pane,
+                        "Silêncio",
+                        "Parece que não há muito sobre o que conversar aqui agora.",
+                        "/resources/icones/interface-icon-erro.png"
+                );
             }
         });
     }

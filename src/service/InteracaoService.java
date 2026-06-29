@@ -1,5 +1,6 @@
 package service;
 
+import com.google.gson.reflect.TypeToken;
 import model.atividades.ResultadoAcao;
 import model.entidades.Jogador;
 import model.entidades.Animal;
@@ -8,6 +9,7 @@ import model.mapa.Local;
 import model.mapa.TipoLocal;
 import model.interacao.Dialogo;
 import repository.IRepository;
+import repository.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,21 +17,32 @@ import java.util.Random;
 
 public class InteracaoService {
 
-    private IRepository<Dialogo> dialogoRepository;
+    private static IRepository<Dialogo> dialogoRepository;
     private Random random;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public InteracaoService(IRepository<Dialogo> dialogoRepository) {
-        this.dialogoRepository = dialogoRepository;
+
+        InteracaoService.dialogoRepository = dialogoRepository;
         this.random = new Random();
+
+    }
+
+    public InteracaoService() {
+
+        this.random = new Random();
+
+        if (dialogoRepository == null) {
+            dialogoRepository = new Repository<>("dados/dialogos.json", new TypeToken<ArrayList<Dialogo>>(){}.getType());
+        }
     }
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
     // Método base para buscar todas as falas de determinado local
-    private List<Dialogo> buscarFalasDoLocal(Local localAtual) {
-        TipoLocal tipoAtual = localAtual.getTipo();
+    public List<Dialogo> buscarFalasDoLocal(TipoLocal localAtual) {
+        TipoLocal tipoAtual = localAtual;
         List<Dialogo> falasDoLocal = new ArrayList<>();
 
         for (Dialogo d : dialogoRepository.listar()) {
@@ -43,7 +56,7 @@ public class InteracaoService {
     // Gera diálogos aleatórios sobre aquele local
     public ResultadoAcao conversar(Local localAtual) {
 
-        List<Dialogo> falas = buscarFalasDoLocal(localAtual);
+        List<Dialogo> falas = buscarFalasDoLocal(localAtual.getTipo());
 
         // Se não houver ninguém para conversar
         if (falas.isEmpty()) {
@@ -63,7 +76,7 @@ public class InteracaoService {
     public ResultadoAcao conversarPorCategoria(Local localAtual, CategoriaDialogo categoria) {
         List<Dialogo> falas = new ArrayList<>();
 
-        for (Dialogo d : buscarFalasDoLocal(localAtual)) {
+        for (Dialogo d : buscarFalasDoLocal(localAtual.getTipo())) {
             if (d.getCategoria() == categoria) {
                 falas.add(d);
             }

@@ -17,7 +17,7 @@
             <Image url="@../../resources/setups/painelTaskSemanal.png" />
          </image>
       </ImageView>
-      <ScrollPane layoutX="247.0" layoutY="224.0" prefHeight="426.0" prefWidth="780.0">
+      <ScrollPane layoutX="247.0" layoutY="224.0" prefHeight="426.0" prefWidth="780.0" style="-fx-background-color: transparent;">
          <content>
             <VBox fx:id="vboxTarefas" prefHeight="411.0" prefWidth="765.0" style="-fx-background-color: transparent;" />
          </content>
