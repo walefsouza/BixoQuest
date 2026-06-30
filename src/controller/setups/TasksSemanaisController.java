@@ -1,9 +1,6 @@
 package controller.setups; // Ajuste conforme seu pacote
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
 import controller.setups.TaskItemController;
 import javafx.application.Platform;
@@ -47,6 +44,8 @@ public class TasksSemanaisController implements Initializable {
         this.game = SessaoSingleton.getInstancia().getGame();
 
         Platform.runLater(() -> renderizarTarefas());
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-geral-game.mp3");
     }
 
     public void renderizarTarefas() {

@@ -1,9 +1,6 @@
 package controller.locais;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
 import controller.command.ICommand;
 import controller.command.ViajarLocalCommand;
@@ -62,24 +59,13 @@ public class MapaCentralController implements Initializable {
         // Processamento de eventos obrigatórios dentro do mapa - - -  -  - -  - - - - - - - -
         ResultadoAcao resultado = atividadeService.processarEventosObrigatorios(game);
 
-        if (resultado != null) {
+        processarEventosMapa(resultado);
 
-            // card com texto do evento
-            SceneManager.mostrarCardNotificacao(
-                    this.pane,
-                    resultado.getTitulo(),
-                    resultado.getTextoNarrativo(),
-                    resultado.getIconeSobreposicao()
-            );
-
-            // Se o evento trouxe modificação de cenário, salva no Game e aplica na hora
-            String caminhoImagem = resultado.getMudarImagemFundo();
-
-            if (caminhoImagem != null && !caminhoImagem.trim().isEmpty()) {
-                game.setImagemFundoAtual(caminhoImagem);
-                aplicarImagemFundo(caminhoImagem);
-            }
+        if (game.verificarFormado()){
+            game.setImagemFundoAtual("/resources/locais/mapaFormatura.png");
         }
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-UEFS.mp3");
     }
 
     @FXML
@@ -108,7 +94,7 @@ public class MapaCentralController implements Initializable {
 
         try {
 
-            Image novaImagem = new Image(getClass().getResourceAsStream(caminhoImagem));
+            Image novaImagem = CacheManager.getInstancia().getImagem(caminhoImagem);
             if (!novaImagem.isError()) {
                 imagemMapa.setImage(novaImagem);
             }
@@ -116,6 +102,31 @@ public class MapaCentralController implements Initializable {
 
         catch (Exception e) {
             System.out.println("[DEBUG] Imagem de fundo vazia: " + caminhoImagem);
+        }
+    }
+
+    private void processarEventosMapa(ResultadoAcao resultado){
+        if (resultado != null) {
+
+            // card com texto do evento
+            SceneManager.mostrarCardNotificacao(
+                    this.pane,
+                    resultado.getTitulo(),
+                    resultado.getTextoNarrativo(),
+                    resultado.getIconeSobreposicao()
+            );
+
+            // Se o evento trouxe modificação de cenário, salva no Game e aplica na hora
+            String caminhoImagem = resultado.getMudarImagemFundo();
+
+            if (caminhoImagem != null && !caminhoImagem.trim().isEmpty()) {
+                game.setImagemFundoAtual(caminhoImagem);
+                aplicarImagemFundo(caminhoImagem);
+            }
+
+            if (resultado.getTocarAudio() != null) {
+                AudioManager.getInstancia().tocarEfeito(resultado.getTocarAudio());
+            }
         }
     }
 

@@ -14,6 +14,6 @@
         </ImageView>
         <ImageView fx:id="icone" fitHeight="135.0" fitWidth="123.0" layoutX="494.0" layoutY="485.0" pickOnBounds="true" />
         <Label fx:id="texto" layoutX="648.0" layoutY="449.0" lineSpacing="1.0" prefHeight="233.0" prefWidth="580.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 37;" textAlignment="JUSTIFY" wrapText="true" />
-        <Label fx:id="nome" layoutX="707.0" layoutY="363.0" prefHeight="60.0" prefWidth="307.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 25;" />
+        <Label fx:id="nome" layoutX="707.0" layoutY="363.0" prefHeight="60.0" prefWidth="307.0" style="-fx-font-family: &quot;Upheaval TT (BRK)&quot;; -fx-font-size: 25;" textAlignment="CENTER" />
     </children>
 </AnchorPane>

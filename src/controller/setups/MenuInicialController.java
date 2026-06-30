@@ -1,40 +1,66 @@
 package controller.setups;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.Utilitarios;
+import application.*;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 
-public class MenuInicialController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import static application.Utilitarios.configurarClique;
+
+public class MenuInicialController implements Initializable {
 
     @FXML private ImageView btnNovoJogo;
     @FXML private ImageView btnJogosSalvos;
     @FXML private ImageView btnOpcoes;
-    @FXML private ImageView btnCreditos;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        configurarClique(btnNovoJogo);
+        configurarClique(btnJogosSalvos);
+        configurarClique(btnOpcoes);
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-geral-game.mp3");
+
+        if(AudioManager.getInstancia().isMutado()) {
+            btnOpcoes.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/inicial-opcoes-mutar.png"));
+        }
+
+        else {
+            btnOpcoes.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/inicial-opcoes.png"));
+        }
+    }
 
     @FXML
-    public void botaoNovoJogo(){
+    public void botaoNovoJogo() {
         Utilitarios.animarClique(btnNovoJogo, () ->
                 SceneManager.navegar(RotasFixas.NOVOJOGO.getRotaFixa())
         );
     }
 
     @FXML
-    public void botaoJogosSalvos(){
+    public void botaoJogosSalvos() {
         Utilitarios.animarClique(btnJogosSalvos, () ->
                 SceneManager.navegar(RotasFixas.JOGOSSALVOS.getRotaFixa())
         );
     }
 
     @FXML
-    public void botaoOpcoes(){
+    public void silenciarAudio() {
 
-    }
+        Utilitarios.animarClique(btnOpcoes, () -> {
+            AudioManager.getInstancia().alternarMute();
 
-    @FXML
-    public void botaoCreditos(){
+            if (AudioManager.getInstancia().isMutado()) {
+                btnOpcoes.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/inicial-opcoes-mutar.png"));
+            }
 
+            else {
+                btnOpcoes.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/inicial-opcoes.png"));
+            }
+        });
     }
 }

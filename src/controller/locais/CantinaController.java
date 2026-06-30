@@ -1,8 +1,11 @@
 package controller.locais;
 
+import application.AudioManager;
 import application.RotasFixas;
 import application.SceneManager;
 import application.Utilitarios;
+import controller.command.ICommand;
+import controller.command.InteragirSocialmenteCommand;
 import controller.command.LancheComprarCommand;
 import controller.command.PosicionarNPCsCommand;
 import javafx.fxml.FXML;
@@ -26,6 +29,7 @@ public class CantinaController implements Initializable {
     @FXML private ImageView btnComprar;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
+    @FXML private ImageView btnColega;
 
     private InteracaoService interacaoService;
 
@@ -53,6 +57,8 @@ public class CantinaController implements Initializable {
 
         comando.executar();
 
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-cantina.mp3");
+
     }
 
     // Barra Lateral - - - - - - - - - - - - - - - - - - - - - - - -
@@ -67,6 +73,14 @@ public class CantinaController implements Initializable {
         Utilitarios.animarClique(btnComprar, () ->
                 SceneManager.navegar(RotasFixas.MENUCANTINA.getRotaFixa())
         );
+    }
+
+    @FXML
+    public void botaoColega() {
+        Utilitarios.animarClique(btnColega, () -> {
+            ICommand comando = new InteragirSocialmenteCommand(this.pane);
+            comando.executar();
+        });
     }
 
     @FXML

@@ -72,7 +72,7 @@
         "tremerTela": true,
         "escurecerTela": true,
         "desfocarTela": false,
-        "mudarImagemFundo": "fundomatricula",
+        "mudarImagemFundo": "/resources/locais/mapaMatricula.png",
         "iconeSobreposicao": "glitch-tela"
       }
     ]
@@ -98,7 +98,7 @@
         "tremerTela": false,
         "escurecerTela": true,
         "desfocarTela": true,
-        "mudarImagemFundo": "fundoauditorio",
+        "mudarImagemFundo": "/resources/locais/mapaSemanaAcademica.png",
         "iconeSobreposicao": "luz-palco"
       }
     ]
@@ -124,7 +124,7 @@
         "tremerTela": true,
         "escurecerTela": true,
         "desfocarTela": true,
-        "mudarImagemFundo": "fundofesta",
+        "mudarImagemFundo": "/resources/locais/mapaFestaAtletica.png",
         "iconeSobreposicao": "luzes-neon"
       }
     ]
@@ -150,7 +150,7 @@
         "tremerTela": false,
         "escurecerTela": false,
         "desfocarTela": false,
-        "mudarImagemFundo": "fundomec",
+        "mudarImagemFundo": "/resources/locais/mapaAvaliacaoEnade.png",
         "iconeSobreposicao": "filtro-cinza"
       }
     ]
@@ -176,7 +176,7 @@
         "tremerTela": true,
         "escurecerTela": true,
         "desfocarTela": true,
-        "mudarImagemFundo": "fundorelogio",
+        "mudarImagemFundo": "/resources/locais/mapaHorasComplementares.png",
         "iconeSobreposicao": "vinheta-vermelha"
       }
     ]

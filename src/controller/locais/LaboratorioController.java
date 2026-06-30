@@ -1,11 +1,10 @@
 package controller.locais;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
+import controller.command.ICommand;
 import controller.command.PosicionarNPCsCommand;
+import controller.command.RevisarMateriaCommand;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -34,6 +33,7 @@ public class LaboratorioController implements Initializable {
     @FXML private ImageView btnComputador;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
+    @FXML private ImageView btnRevisao;
 
     private LocalService localService;
     private InteracaoService interacaoService;
@@ -62,12 +62,22 @@ public class LaboratorioController implements Initializable {
         );
 
         comando.executar();
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-LEDS.mp3");
     }
 
     public void botaoMapa() {
         Utilitarios.animarClique(btnMapa, () ->
                 SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa())
         );
+    }
+
+    @FXML
+    public void botaoRevisao() {
+        Utilitarios.animarClique(btnRevisao, () -> {
+            ICommand comando = new RevisarMateriaCommand(this.pane);
+            comando.executar();
+        });
     }
 
     @FXML

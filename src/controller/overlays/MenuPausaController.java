@@ -1,11 +1,9 @@
 package controller.overlays;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -15,9 +13,11 @@ import repository.IRepository;
 import repository.Repository;
 import service.GameService;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class MenuPausaController {
+public class MenuPausaController implements Initializable {
 
     @FXML private AnchorPane painelFundo;
     @FXML private ImageView btnRetornar;
@@ -30,6 +30,16 @@ public class MenuPausaController {
 
     // Instância do GameService
     GameService gameService = new GameService(saves, semestres);
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if (AudioManager.getInstancia().isMutado()) {
+            silenciar.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/menuPauseDesmutar.png"));
+        }
+        else {
+            silenciar.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/menuPauseSilenciar.png"));
+        }
+    }
 
     @FXML
     public void retornarJogo() {
@@ -54,8 +64,18 @@ public class MenuPausaController {
 
     @FXML
     public void silenciarAudio() {
-        Utilitarios.animarClique(silenciar, () -> System.out.println("Audio mutado")
-        );
+
+        Utilitarios.animarClique(silenciar, () -> {
+            AudioManager.getInstancia().alternarMute();
+
+            if (AudioManager.getInstancia().isMutado()) {
+                silenciar.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/menuPauseDesmutar.png"));
+            }
+
+            else {
+                silenciar.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/menuPauseSilenciar.png"));
+            }
+        });
     }
 
     // Método utilitário para fechar a janelinha

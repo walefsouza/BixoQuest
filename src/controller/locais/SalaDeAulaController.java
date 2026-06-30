@@ -1,10 +1,9 @@
 package controller.locais;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
+import controller.command.ICommand;
 import controller.command.PosicionarNPCsCommand;
+import controller.command.RevisarMateriaCommand;
 import controller.command.VerAulaCommand;
 import javafx.fxml.FXML;
 import javafx.scene.effect.DropShadow;
@@ -27,6 +26,7 @@ public class SalaDeAulaController {
     @FXML private ImageView btnQuadro;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
+    @FXML private ImageView btnRevisao;
 
     private InteracaoService interacaoService;
 
@@ -68,12 +68,22 @@ public class SalaDeAulaController {
         );
 
         comando.executar();
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-sala-aula.mp3");
     }
 
     public void botaoMapa() {
         Utilitarios.animarClique(btnMapa, () ->
                 SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa())
         );
+    }
+
+    @FXML
+    public void botaoRevisao() {
+        Utilitarios.animarClique(btnRevisao, () -> {
+            ICommand comando = new RevisarMateriaCommand(this.pane);
+            comando.executar();
+        });
     }
 
     @FXML

@@ -1,13 +1,9 @@
 package controller.command;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
+import application.*;
 import com.google.gson.reflect.TypeToken;
-import controller.locais.TransicaoController;
 import javafx.scene.layout.AnchorPane;
 import model.Game;
-import model.academico.Disciplina;
 import model.academico.Semestre;
 import model.atividades.Evento;
 import model.atividades.Task;
@@ -32,6 +28,15 @@ public class PassarSemanaCommand implements ICommand {
 
     private AnchorPane telaDoPonto;
 
+    // Dados em memória RAM - - - - - - - - - - - - - - - - - - - - - - - -
+    private static AtividadeService atividadeService = null;
+    private static AcademicoService academicoService = null;
+    private static TurnoService turnoService = null;
+    private static GameService gameService = null;
+    private static LocalService localService = null;
+    private static IRepository locaisRepo = null;
+
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - -
     public PassarSemanaCommand(AnchorPane telaDoPonto) {
         this.telaDoPonto = telaDoPonto;
     }
@@ -41,40 +46,36 @@ public class PassarSemanaCommand implements ICommand {
 
         Game game = SessaoSingleton.getInstancia().getGame();
 
-        // Declaração dos Repositórios - - - - - - - - - - - - - - - - - - - - - - - -
+        if (atividadeService == null) {
 
-        IRepository tasksRepo = new Repository("dados/bancotasks.json", new TypeToken<ArrayList<Task>>(){}.getType());
-        IRepository eventosRepo = new Repository("dados/eventos-bixoquest.json", new TypeToken<ArrayList<Evento>>(){}.getType());
-        IRepository semestreRepo = new Repository("dados/semestres.json", new TypeToken<ArrayList<Semestre>>(){}.getType());
-        IRepository savesRepo = new Repository("dados/saves.json", new TypeToken<ArrayList<Game>>(){}.getType());
-        IRepository dialogoRepo = new Repository("dados/dialogos.json", new TypeToken<ArrayList<Dialogo>>(){}.getType());
-        IRepository locaisRepo = new LocalRepository();
+            // Declaração dos Repositórios - - - - - - - - - - - - - - - - - - - - - - - -
+            IRepository tasksRepo = new Repository("dados/bancotasks.json", new TypeToken<ArrayList<Task>>(){}.getType());
+            IRepository eventosRepo = new Repository("dados/eventos-bixoquest.json", new TypeToken<ArrayList<Evento>>(){}.getType());
+            IRepository semestreRepo = new Repository("dados/semestres.json", new TypeToken<ArrayList<Semestre>>(){}.getType());
+            IRepository savesRepo = new Repository("dados/saves.json", new TypeToken<ArrayList<Game>>(){}.getType());
+            IRepository dialogoRepo = new Repository("dados/dialogos.json", new TypeToken<ArrayList<Dialogo>>(){}.getType());
+            locaisRepo = new LocalRepository();
 
-        // Instâncias dos Services - - - - - - - - - - - - - - - - - - - - - - - -
-
-        AtividadeService atividadeService = new AtividadeService(tasksRepo, eventosRepo);
-        AcademicoService academicoService = new AcademicoService(semestreRepo, eventosRepo);
-        TurnoService turnoService = new TurnoService(academicoService);
-        GameService gameService = new GameService(savesRepo, semestreRepo);
-        LocalService localService = new LocalService(eventosRepo,dialogoRepo,locaisRepo);
+            // Instâncias dos Services - - - - - - - - - - - - - - - - - - - - - - - -
+            atividadeService = new AtividadeService(tasksRepo, eventosRepo);
+            academicoService = new AcademicoService(semestreRepo, eventosRepo);
+            turnoService = new TurnoService(academicoService);
+            gameService = new GameService(savesRepo, semestreRepo);
+            localService = new LocalService(eventosRepo, dialogoRepo, locaisRepo);
+        }
 
         // Obtendo objeto local real - - - - - - - - - - - - - - - - - - - - - - - -
         // Porque o método tentar embacar necessida desse objeto para funcionar
-
         TipoLocal tipoLocalJogador = game.getJogador().getLocal();
         String localJogador = tipoLocalJogador.toString().replace("_", " ");
         Local pontoDeOnibus = null;
 
         if (tipoLocalJogador == TipoLocal.PONTO_DE_ONIBUS) {
-
             pontoDeOnibus = (PontoDeOnibus) locaisRepo.buscar("PONTO DE ONIBUS");
         }
         else {
             pontoDeOnibus = (Local) locaisRepo.buscar(localJogador);
         }
-
-        // Passei muito perrengue com null aqui, vamos manter para caso o erro volte
-        // mesmo com a correção do problema
 
         if (pontoDeOnibus == null) {
             SceneManager.mostrarDialogoWarn(
@@ -87,13 +88,12 @@ public class PassarSemanaCommand implements ICommand {
         }
 
         // Flags do Jogo - - - - - - - - - - - - - - - - - - - - - - - -
-        boolean desistiuDaSemana = false; // sempre falsa para esse command
-        game.setFlagSemana(false); // reseta flag por segurança
+        boolean desistiuDaSemana = false;
+        game.setFlagSemana(false);
 
         // Embacar no Onibus - - - - - - - - - - - - - - - - - - - - - - - -
         ResultadoAcao resultadoEmbarque = localService.tentarEmbarcar(game, pontoDeOnibus, desistiuDaSemana);
 
-        // Se a flag não mudou para true, o jogador NÃO embarcou
         if (!game.getFlagSemana()) {
             SceneManager.mostrarDialogoWarn(
                     telaDoPonto,
@@ -102,7 +102,11 @@ public class PassarSemanaCommand implements ICommand {
                     "/resources/icones/interface-icon-alerta.png"
             );
 
-            return; // ele não embarca e vê o aviso na tela
+            if (resultadoEmbarque.getTocarAudio() != null) {
+                AudioManager.getInstancia().tocarEfeito(resultadoEmbarque.getTocarAudio());
+            }
+
+            return;
         }
 
         // Antes de virar a semana oficialmente, temos que resetar a imagem de fundo para o padrão sem eventos
@@ -111,12 +115,10 @@ public class PassarSemanaCommand implements ICommand {
         // Se o jogador estiver na semana 4, o command avalia se ele pode avançar semestre
         if (game.getSemestre().getSemanaAtual() == 4) {
 
-            // O AcademicoService verifica se progressão pode ser feita
             ResultadoAcao resultadoSemestre = academicoService.avancarSemestre(game, false);
 
             List<Task> novasTasks = atividadeService.escolherTasksDaSemana(game);
             game.getSemestre().setBancoTasks(novasTasks);
-
             game.setFlagSemana(false);
             gameService.salvarProgresso(game);
 
@@ -128,26 +130,29 @@ public class PassarSemanaCommand implements ICommand {
             );
 
             if (resultadoSemestre.getSucesso()) {
-                // O próximo clique na tela redireciona para uma tela chamada novo semestre
                 telaDoPonto.setOnMouseClicked(e -> {
                     telaDoPonto.setOnMouseClicked(null);
                     SceneManager.navegar(RotasFixas.NOVOSEMESTRE.getRotaFixa());
                 });
+
+                if (resultadoSemestre.getTocarAudio() != null) {
+                    AudioManager.getInstancia().tocarEfeito(resultadoSemestre.getTocarAudio());
+                }
             }
 
             else {
-                // O próximo clique na tela redireciona para uma tela chamada perdeu semestre
                 telaDoPonto.setOnMouseClicked(e -> {
                     telaDoPonto.setOnMouseClicked(null);
                     SceneManager.navegar(RotasFixas.PERDEUSEMESTRE.getRotaFixa());
                 });
             }
 
+            CacheManager.getInstancia().limparCache();
+
             return;
         }
 
         // Virando a semana normal - - - - - - - - - - - - - - - - - - - - - - - -
-
         turnoService.passarSemana(game.getSemestre(), game.getJogador());
 
         // Sorteia as tasks da nova semana
@@ -158,7 +163,6 @@ public class PassarSemanaCommand implements ICommand {
         game.setFlagSemana(false);
         gameService.salvarProgresso(game);
 
-        // Mensagem de passagem de semana
         SceneManager.mostrarDialogoWarn(
                 telaDoPonto,
                 "Nova Semana!",
@@ -166,9 +170,15 @@ public class PassarSemanaCommand implements ICommand {
                 "/resources/icones/interface-icon-lore.png"
         );
 
+        if (resultadoEmbarque.getTocarAudio() != null) {
+            AudioManager.getInstancia().tocarEfeito(resultadoEmbarque.getTocarAudio());
+        }
+
         telaDoPonto.setOnMouseClicked(e -> {
             telaDoPonto.setOnMouseClicked(null);
             SceneManager.navegar(RotasFixas.NOVASEMANA.getRotaFixa());
         });
+
+        CacheManager.getInstancia().limparCache();
     }
 }

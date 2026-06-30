@@ -45,6 +45,21 @@ public class AtividadeService {
             }
         }
 
+        // Se todas as tasks foram feitas, o jogo reinicia a lista de tasks realizadas
+        if (mapTasks.isEmpty()) {
+
+            // limpa o histórico de tasks do jogador
+            game.limparTasksRealizadas();
+
+            // preenche o mapa de novo
+            for (Task task : repositoryTasks) {
+                if (!mapTasks.containsKey(task.getCategoria())) {
+                    mapTasks.put(task.getCategoria(), new ArrayList<>());
+                }
+                mapTasks.get(task.getCategoria()).add(task);
+            }
+        }
+
         // Lista para receber as tasks da semana (uma por categoria)
         List<Task> tasksDaSemana = new ArrayList<>();
 

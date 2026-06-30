@@ -1,5 +1,6 @@
 package controller.command;
 
+import application.AudioManager;
 import application.SceneManager;
 import application.SessaoSingleton;
 import com.google.gson.reflect.TypeToken;
@@ -65,6 +66,10 @@ public class VerAulaCommand implements ICommand {
                     resultado.getTextoNarrativo(),
                     disciplina.getProfessor().getAparencia()
             );
+
+            if (resultado.getTocarAudio() != null) {
+                AudioManager.getInstancia().tocarEfeito(resultado.getTocarAudio());
+            }
         }
 
         // Se não, também retorna texto do DTO. Normalmente não assiste quando tá sem energia
@@ -75,6 +80,10 @@ public class VerAulaCommand implements ICommand {
                     resultado.getTextoNarrativo(),
                     disciplina.getProfessor().getAparencia()
             );
+
+            if (resultado.getTocarAudio() != null) {
+                AudioManager.getInstancia().tocarEfeito(resultado.getTocarAudio());
+            }
         }
     }
 }

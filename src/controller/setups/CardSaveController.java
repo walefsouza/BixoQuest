@@ -1,9 +1,6 @@
 package controller.setups;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
 import controller.setups.TelaSaveController;
 import javafx.animation.ScaleTransition;
@@ -63,16 +60,16 @@ public class CardSaveController {
         numeroSemestre.setText(String.valueOf(numero));
 
         String caminhoAvatar = jogador.getAparencia();
-        Image imagemAvatar = new Image(getClass().getResourceAsStream(caminhoAvatar));
+        Image imagemAvatar = CacheManager.getInstancia().getImagem(caminhoAvatar);
         iconJogador.setImage(imagemAvatar);
 
         if (game.getSemestre().getNumero() >= 6) {
-            Image formado = new Image(getClass().getResourceAsStream("/resources/botoes/jogos-salvos-formado.png"));
+            Image formado = CacheManager.getInstancia().getImagem("/resources/botoes/jogos-salvos-formado.png");
             iconFormado.setImage(formado);
         }
 
         else {
-            Image formado = new Image(getClass().getResourceAsStream("/resources/botoes/jogos-salvos-formado-cinza.png"));
+            Image formado = CacheManager.getInstancia().getImagem("/resources/botoes/jogos-salvos-formado-cinza.png");
             iconFormado.setImage(formado);
         }
 

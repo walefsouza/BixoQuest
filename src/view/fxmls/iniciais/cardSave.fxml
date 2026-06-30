@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="cardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#entrarNovoJogo" prefHeight="129.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.setups.CardSaveController">
+<AnchorPane fx:id="cardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#entrarNovoJogo" prefHeight="129.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.setups.CardSaveController">
    <children>
       <ImageView fitHeight="129.0" fitWidth="847.0" layoutX="41.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -14,9 +14,9 @@
          </image>
       </ImageView>
       <ImageView fx:id="iconJogador" fitHeight="74.0" fitWidth="73.0" layoutX="77.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="nomeJogador" layoutX="185.0" layoutY="19.0" prefHeight="41.0" prefWidth="262.0" style="-fx-font-family: Singwood; -fx-font-size: 28;" />
-      <Label fx:id="nomeMapa" layoutX="184.0" layoutY="70.0" prefHeight="42.0" prefWidth="269.0" style="-fx-font-family: Singwood; -fx-font-size: 28;" />
-      <Label fx:id="numeroSemestre" layoutX="525.0" layoutY="45.0" prefHeight="42.0" prefWidth="59.0" style="-fx-font-family: Singwood; -fx-font-size: 28;" />
+      <Label fx:id="nomeJogador" layoutX="191.0" layoutY="19.0" prefHeight="41.0" prefWidth="256.0" style="-fx-font-family: Signwood; -fx-font-size: 28;" />
+      <Label fx:id="nomeMapa" layoutX="189.0" layoutY="70.0" prefHeight="42.0" prefWidth="264.0" style="-fx-font-family: Signwood; -fx-font-size: 28;" />
+      <Label fx:id="numeroSemestre" layoutX="541.0" layoutY="45.0" prefHeight="42.0" prefWidth="43.0" style="-fx-font-family: Signwood; -fx-font-size: 28;" />
       <ImageView fx:id="iconFormado" fitHeight="92.0" fitWidth="89.0" layoutX="615.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="btnDeletar" fitHeight="62.0" fitWidth="59.0" layoutX="730.0" layoutY="33.0" onMouseClicked="#deletarJogoSalvo" pickOnBounds="true" preserveRatio="true">
          <image>

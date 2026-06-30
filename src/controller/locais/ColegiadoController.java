@@ -1,11 +1,11 @@
 package controller.locais;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
+import controller.command.ICommand;
+import controller.command.InteragirSocialmenteCommand;
 import controller.command.PosicionarNPCsCommand;
+import controller.command.RevisarMateriaCommand;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -35,6 +35,7 @@ public class ColegiadoController implements Initializable {
     @FXML private Node btnBurocracia;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
+    @FXML private ImageView btnRevisao;
 
     private InteracaoService interacaoService;
     private LocalService localService;
@@ -63,6 +64,8 @@ public class ColegiadoController implements Initializable {
         );
 
         comando.executar();
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-colegiado.mp3");
     }
 
 
@@ -71,6 +74,14 @@ public class ColegiadoController implements Initializable {
         Utilitarios.animarClique(btnMapa, () ->
                 SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa())
         );
+    }
+
+    @FXML
+    public void botaoRevisao() {
+        Utilitarios.animarClique(btnRevisao, () -> {
+            ICommand comando = new RevisarMateriaCommand(this.pane);
+            comando.executar();
+        });
     }
 
     @FXML

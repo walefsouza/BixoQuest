@@ -33,6 +33,11 @@
                         <Image url="@../../resources/icones/colegiado-icon-atendimento.png" />
                     </image>
                 </ImageView>
+                <ImageView fx:id="btnColega" fitHeight="164.0" fitWidth="170.0" layoutX="7.0" layoutY="200.0" onMouseClicked="#botaoColega" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/icones/interface-icon-colegas.png" />
+                    </image>
+                </ImageView>
             </children>
         </AnchorPane>
         <fx:include layoutX="822.0" source="../iniciais/gameHud.fxml" />

@@ -1,5 +1,6 @@
 package controller.overlays;
 
+import application.CacheManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -22,7 +23,7 @@ public class CaixaDialogoController {
         if (caminhoImagemIcone != null && !caminhoImagemIcone.isEmpty()) {
 
             try {
-                Image imagem = new Image(getClass().getResourceAsStream(caminhoImagemIcone));
+                Image imagem = CacheManager.getInstancia().getImagem(caminhoImagemIcone);
                 this.icone.setImage(imagem);
             }
 

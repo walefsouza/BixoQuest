@@ -78,6 +78,10 @@ public class Game implements IGeneralGetNome {
         this.imagemFundoAtual = imagemFundoAtual;
     }
 
+    public void limparTasksRealizadas() {
+        this.tasksRealizadas.clear();
+    }
+
     // Getters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome(){

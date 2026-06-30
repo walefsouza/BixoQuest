@@ -1,9 +1,6 @@
 package controller.setups;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -66,6 +63,8 @@ public class CriarNovoJogoController {
 
         campoMapa.textProperty().addListener((
                 observador, valorAntigo, valorNovo) -> verificarEscolhas());
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-geral-game.mp3");
     }
 
     // Seleção de Avatares - - - - - - - - - - - - - - - - - - - - - - - -
@@ -132,14 +131,14 @@ public class CriarNovoJogoController {
         // Se tudo estiver preenchido, o botão de continuar fica verde para ele clicar
         if (nomeOk && mapaOk && personagemOk) {
             btnContinuar.setDisable(false);
-            btnContinuar.setImage(new Image("/resources/botoes/btn-inicial-continuar-verde.png"));
+            btnContinuar.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/btn-inicial-continuar-verde.png"));
         }
 
         // Se não, continua desativado e o botão permanece cinza
         else {
             btnContinuar.setDisable(true);
             btnContinuar.setStyle("");
-            btnContinuar.setImage(new Image("/resources/botoes/btn-inicial-continuar.png"));
+            btnContinuar.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/btn-inicial-continuar.png"));
         }
     }
 

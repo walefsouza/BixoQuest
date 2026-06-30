@@ -1,5 +1,6 @@
 package controller.setups;
 
+import application.AudioManager;
 import application.RotasFixas;
 import application.SceneManager;
 import application.Utilitarios;
@@ -16,8 +17,11 @@ public class TelaJogarController {
 
     @FXML
     public void initialize() {
+
         configurarClique(bixoquest);
         configurarClique(btnJogar);
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-geral-game.mp3");
     }
     @FXML
     public void botaoJogarClicado() {

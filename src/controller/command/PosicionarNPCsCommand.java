@@ -1,8 +1,6 @@
 package controller.command;
 
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
 import javafx.animation.TranslateTransition;
 import javafx.scene.image.Image;
@@ -22,9 +20,7 @@ import repository.IRepository;
 import repository.Repository;
 import service.InteracaoService;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class PosicionarNPCsCommand {
 
@@ -71,6 +67,8 @@ public class PosicionarNPCsCommand {
                                 "Eu não aguento mais.",
                                 jogador.getAparencia()
                         );
+
+                        AudioManager.getInstancia().tocarEfeito("/resources/atividades/som-nao-aguento-mais.mp3");
             });
 
             posicaoNPC++;
@@ -211,8 +209,10 @@ public class PosicionarNPCsCommand {
     // Cria, posiciona, anima e configura o clique de qualquer Entidade do jogo
     private void desenharEntidade(AnchorPane pane, String caminhoImg, double[] coordenada, Runnable acaoClique) {
 
+        // Busca a imagem diretamente no cache global
+        Image img = CacheManager.getInstancia().getImagem(caminhoImg);
+
         // Registra sprite como image view
-        Image img = new Image(getClass().getResourceAsStream(caminhoImg));
         ImageView npcVisual = new ImageView(img);
 
         // Seta npc na coordenada definindo um teto de altura

@@ -1,5 +1,6 @@
 package controller.setups;
 
+import application.AudioManager;
 import application.RotasFixas;
 import application.SceneManager;
 import application.Utilitarios;
@@ -38,6 +39,8 @@ public class TelaSaveController implements Initializable {
 
         List<Game> jogosSalvos = gameService.listarJogos();
         carregarJogosSalvos(jogosSalvos);
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-geral-game.mp3");
     }
 
     public void carregarJogosSalvos(List<Game> jogosSalvos) {

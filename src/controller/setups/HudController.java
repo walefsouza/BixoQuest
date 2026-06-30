@@ -1,5 +1,6 @@
 package controller.setups;
 
+import application.CacheManager;
 import application.SessaoSingleton;
 import application.Utilitarios;
 import controller.command.JogadorStatusCommand;
@@ -46,7 +47,7 @@ public class HudController implements Initializable {
             String caminhoImagem = jogoAtual.getJogador().getAparencia();
 
             try {
-                Image avatar = new Image(getClass().getResourceAsStream(caminhoImagem));
+                Image avatar = CacheManager.getInstancia().getImagem(caminhoImagem);
                 iconJogador.setImage(avatar);
             }
 

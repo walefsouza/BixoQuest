@@ -1,5 +1,6 @@
 package controller.command;
 
+import application.AudioManager;
 import application.SceneManager;
 import application.SessaoSingleton;
 import javafx.scene.layout.AnchorPane;
@@ -43,7 +44,9 @@ public class LancheComprarCommand implements ICommand {
                     "/resources/icones/interface-icon-sucesso.png"
             );
 
-            //resultado som criar o som aqui
+            if (resultado.getTocarAudio() != null) {
+                AudioManager.getInstancia().tocarEfeito(resultado.getTocarAudio());
+            }
 
         }
 
@@ -55,7 +58,9 @@ public class LancheComprarCommand implements ICommand {
                     "/resources/icones/interface-icon-erro.png"
             );
 
-            // resultado som
+            if (resultado.getTocarAudio() != null) {
+                AudioManager.getInstancia().tocarEfeito(resultado.getTocarAudio());
+            }
         }
     }
 }

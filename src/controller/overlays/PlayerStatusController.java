@@ -1,8 +1,6 @@
 package controller.overlays;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.Utilitarios;
+import application.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -15,7 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Game;
 import model.entidades.Jogador;
-import application.SessaoSingleton;
 
 public class PlayerStatusController implements Initializable {
 
@@ -67,7 +64,7 @@ public class PlayerStatusController implements Initializable {
             // Icone do jogador
             try {
                 String caminhoAvatar = jogador.getAparencia();
-                Image imgAparencia = new Image(getClass().getResourceAsStream(caminhoAvatar));
+                Image imgAparencia = CacheManager.getInstancia().getImagem(caminhoAvatar);
                 aparencia.setImage(imgAparencia);
             }
 

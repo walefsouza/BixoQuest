@@ -15,6 +15,8 @@ public class Utilitarios {
         st.setCycleCount(2);
         st.setOnFinished(e -> runnable.run());
         st.play();
+
+        AudioManager.getInstancia().tocarEfeito("/resources/atividades/som-clique-allgame.mp3");
     }
 
     // Classe utilitária para lógica de zoom in e zoom out ao passar o mouse

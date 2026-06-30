@@ -1,9 +1,6 @@
 package controller.overlays;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
@@ -60,6 +57,8 @@ public class ApostasController implements Initializable {
         aplicarSombraRoleta(btnAposta10);
         aplicarSombraRoleta(btnAposta15);
         aplicarSombraRoleta(btnSair);
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-cassino.mp3");
     }
 
     @FXML
@@ -117,6 +116,8 @@ public class ApostasController implements Initializable {
 
             if (resultado != null) {
                 animacaoRoleta(resultado);
+
+                AudioManager.getInstancia().tocarEfeito("/resources/atividades/som-roleta-cassino.mp3");
             }
 
         });

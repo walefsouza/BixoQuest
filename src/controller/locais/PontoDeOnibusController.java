@@ -1,8 +1,11 @@
 package controller.locais;
 
+import application.AudioManager;
 import application.RotasFixas;
 import application.SceneManager;
 import application.Utilitarios;
+import controller.command.ICommand;
+import controller.command.InteragirSocialmenteCommand;
 import controller.command.PassarSemanaCommand;
 import controller.command.PosicionarNPCsCommand;
 import javafx.fxml.FXML;
@@ -24,6 +27,7 @@ public class PontoDeOnibusController implements Initializable {
     @FXML private ImageView botaoPegarOnibus;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
+    @FXML private ImageView btnColega;
 
     private InteracaoService interacaoService;
 
@@ -47,6 +51,8 @@ public class PontoDeOnibusController implements Initializable {
         );
 
         comando.executar();
+
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/ponto-de-onibus.mp3");
     }
 
     public void botaoMapa() {
@@ -62,6 +68,14 @@ public class PontoDeOnibusController implements Initializable {
             javafx.application.Platform.runLater(() -> {
                 new PassarSemanaCommand(pane).executar();
             });
+        });
+    }
+
+    @FXML
+    public void botaoColega() {
+        Utilitarios.animarClique(btnColega, () -> {
+            ICommand comando = new InteragirSocialmenteCommand(this.pane);
+            comando.executar();
         });
     }
 

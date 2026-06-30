@@ -4,8 +4,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane fx:id="HudBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="458.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.setups.HudController">
+<AnchorPane fx:id="HudBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="458.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.setups.HudController">
    <children>
       <ImageView fitHeight="258.0" fitWidth="472.0" layoutX="-7.0" layoutY="-52.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,7 +16,7 @@
             <Image url="@../../resources/botoes/hudBtnTasks.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="iconJogador" fitHeight="74.0" fitWidth="75.0" layoutX="191.0" layoutY="40.0" onMouseClicked="#clicarAvatar" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="iconJogador" fitHeight="76.0" fitWidth="80.0" layoutX="189.0" layoutY="39.0" onMouseClicked="#clicarAvatar" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="botaoMenu" fitHeight="78.0" fitWidth="76.0" layoutX="296.0" layoutY="39.0" onMouseClicked="#clicarMenu" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/botoes/hudBtnConfig.png" />

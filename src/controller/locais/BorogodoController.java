@@ -1,11 +1,11 @@
 package controller.locais;
 
-import application.RotasFixas;
-import application.SceneManager;
-import application.SessaoSingleton;
-import application.Utilitarios;
+import application.*;
 import com.google.gson.reflect.TypeToken;
+import controller.command.ICommand;
+import controller.command.InteragirSocialmenteCommand;
 import controller.command.PosicionarNPCsCommand;
+import controller.command.RevisarMateriaCommand;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -29,6 +29,7 @@ public class BorogodoController implements Initializable {
     @FXML private ImageView btnApostar;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
+    @FXML private ImageView btnColega;
 
     private InteracaoService interacaoService;
 
@@ -56,6 +57,8 @@ public class BorogodoController implements Initializable {
 
         comando.executar();
 
+        AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-borogodo.mp3");
+
     }
 
 
@@ -70,6 +73,15 @@ public class BorogodoController implements Initializable {
                 SceneManager.navegar(RotasFixas.CASSINO.getRotaFixa())
         );
     }
+
+    @FXML
+    public void botaoColega() {
+        Utilitarios.animarClique(btnColega, () -> {
+            ICommand comando = new InteragirSocialmenteCommand(this.pane);
+            comando.executar();
+        });
+    }
+
 
     @FXML
     public void botaoInteragir() {

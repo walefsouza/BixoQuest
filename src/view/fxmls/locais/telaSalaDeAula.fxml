@@ -40,5 +40,10 @@
             <Image url="@../../resources/botoes/btnQuadro.png" />
          </image>
       </ImageView>
+        <ImageView fx:id="btnRevisao" fitHeight="113.0" fitWidth="107.0" layoutX="37.0" layoutY="88.0" onMouseClicked="#botaoRevisao" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/icones/botaoRevisao.png" />
+            </image>
+        </ImageView>
     </AnchorPane>
 </AnchorPane>
