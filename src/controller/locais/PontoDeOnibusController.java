@@ -4,10 +4,7 @@ import application.AudioManager;
 import application.RotasFixas;
 import application.SceneManager;
 import application.Utilitarios;
-import controller.command.ICommand;
-import controller.command.InteragirSocialmenteCommand;
-import controller.command.PassarSemanaCommand;
-import controller.command.PosicionarNPCsCommand;
+import controller.command.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -28,6 +25,7 @@ public class PontoDeOnibusController implements Initializable {
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
     @FXML private ImageView btnColega;
+    @FXML private ImageView btnSemestre;
 
     private InteracaoService interacaoService;
 
@@ -76,6 +74,15 @@ public class PontoDeOnibusController implements Initializable {
         Utilitarios.animarClique(btnColega, () -> {
             ICommand comando = new InteragirSocialmenteCommand(this.pane);
             comando.executar();
+        });
+    }
+
+    @FXML
+    public void clicarAvancarSemestre() {
+        Utilitarios.animarClique(btnSemestre, () -> {
+            AudioManager.getInstancia().tocarEfeito("/resources/atividades/audio/som-swoosh-transicao.mp3");
+            ICommand avancar = new TimeskipSemestreCommand(pane);
+            avancar.executar();
         });
     }
 

@@ -40,5 +40,10 @@
             </children>
         </AnchorPane>
         <fx:include layoutX="822.0" source="../iniciais/gameHud.fxml" />
+      <ImageView fitHeight="127.0" fitWidth="127.0" layoutX="1151.0" layoutY="571.0" onMouseClicked="#clicarAvancarSemestre" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/botoes/semestreIcone.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

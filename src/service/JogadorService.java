@@ -42,7 +42,7 @@ public class JogadorService {
             resultado = new ResultadoAcao("Você bateu um papo legal com " + colega.getNome() + ". Sua motivação aumentou!");
             resultado.setTocarAudio("/resources/atividades/audio/som-ihaaaaaa.mp3");
             resultado.setSucesso(true);
-            resultado.setTitulo("CONVERSA BOA SÓ COM OS AMIGOS");
+            resultado.setTitulo("CONVERSA BOA SÓ COM AMIGOS");
         }
 
         // Se o impacto for negativo, subtrai da motivação do jogador
