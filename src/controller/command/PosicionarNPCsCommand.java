@@ -92,7 +92,9 @@ public class PosicionarNPCsCommand {
                         () -> acionarDialogoHumano(
                                 panePrincipal,
                                 interacaoService,
-                                localAtual
+                                localAtual,
+                                professor.getAparencia(),
+                                professor.getNome()
                         ));
 
                 posicaoNPC++;
@@ -114,7 +116,9 @@ public class PosicionarNPCsCommand {
                         () -> acionarDialogoHumano(
                                 panePrincipal,
                                 interacaoService,
-                                localAtual
+                                localAtual,
+                                maeli.getAparencia(),
+                                maeli.getNome()
                         ));
 
                 posicaoNPC++;
@@ -160,7 +164,10 @@ public class PosicionarNPCsCommand {
                         () -> acionarDialogoHumano(
                                 panePrincipal,
                                 interacaoService,
-                                localAtual)
+                                localAtual,
+                                colega.getAparencia(),
+                                colega.getNome()
+                        )
                 );
 
                 posicaoColega++;
@@ -180,9 +187,10 @@ public class PosicionarNPCsCommand {
 
                     SceneManager.mostrarDialogoWarn(
                             panePrincipal,
-                            "Interação",
+                            "Interação com Animal",
                             resultado.getTextoNarrativo(),
-                            "/resources/icones/interface-icon-animal.png");
+                            animal.getAparencia()
+                    );
                 });
 
                 posicaoAnimal++;
@@ -249,7 +257,7 @@ public class PosicionarNPCsCommand {
     }
 
     // Usa o método do service para pegar um diálogo no local
-    private void acionarDialogoHumano(AnchorPane pane, InteracaoService interacaoService, TipoLocal local) {
+    private void acionarDialogoHumano(AnchorPane pane, InteracaoService interacaoService, TipoLocal local, String icone, String nome) {
 
         // Lista de diálogos naquele cenário
         List<Dialogo> falas = interacaoService.buscarFalasDoLocal(local);
@@ -261,9 +269,10 @@ public class PosicionarNPCsCommand {
 
             SceneManager.mostrarDialogoWarn(
                     pane,
-                    falaSorteada.capturarNome(),
+                    nome +" disse que...",
                     falaSorteada.getTexto(),
-                    "/resources/icones/interface-icon-saudacao.png");
+                    icone
+            );
         }
     }
 }

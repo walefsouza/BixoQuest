@@ -132,7 +132,7 @@ public class LaboratorioController implements Initializable {
                         this.pane,
                         "Alguém diz...",
                         falaSorteada.getTexto(),
-                        "/resources/icones/interface-icon-colegas.png"
+                        falaSorteada.getCategoria().getIcone()
                 );
             }
 
