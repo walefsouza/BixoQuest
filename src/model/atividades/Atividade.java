@@ -1,14 +1,13 @@
 package model.atividades;
 
 import model.Game;
-import model.entidades.Jogador;
-import model.mapa.Local;
 import model.mapa.TipoLocal;
 import repository.IGeneralGetNome;
 import java.util.List;
 
 public abstract class Atividade implements IGeneralGetNome {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
     private String nome;
     private String descricao;
     private TipoLocal localAtividade;

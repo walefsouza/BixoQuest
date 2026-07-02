@@ -2,12 +2,12 @@ package model.atividades;
 
 import model.Game;
 import model.entidades.Jogador;
-import model.mapa.Local;
 import model.mapa.TipoLocal;
-
 import java.util.List;
 
 public class Task extends Atividade {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private boolean realizada;
     private CategoriaTask categoria;

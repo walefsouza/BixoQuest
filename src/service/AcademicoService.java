@@ -8,11 +8,12 @@ import model.entidades.Jogador;
 import model.academico.Semestre;
 import model.academico.Disciplina;
 import repository.IRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class AcademicoService {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private IRepository<Semestre> semestreRepository;
     private IRepository<Evento> eventoRepository;

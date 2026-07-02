@@ -1,7 +1,6 @@
 package repository;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,6 +12,7 @@ import repository.adapters.EfeitoTypeAdapter;
 
 public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
     private List<T> repository;
     private final String CAMINHOREPO;
     private Gson gson;
@@ -30,7 +30,7 @@ public class Repository<T extends IGeneralGetNome> implements IRepository<T> {
             .registerTypeAdapter(Efeito.class, new EfeitoTypeAdapter())
             .create();
 
-        this.CAMINHOREPO = CAMINHOREPO; // endereço do repositório. ex: src/dados/semestres.json
+        this.CAMINHOREPO = CAMINHOREPO; // endereço do repositório. ex: /dados/semestres.json
         this.tipoDadoLista = tipoDadoLista; // codificação para evento, semestre, locais, etc
         this.repository = carregarArquivo(); // carregar listas do repositório
     }

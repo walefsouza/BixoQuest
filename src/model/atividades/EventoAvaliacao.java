@@ -1,13 +1,12 @@
 package model.atividades;
 
-import model.entidades.Jogador;
-import model.mapa.Local;
-import model.Game; // Assumindo que você mudou para receber Game
+import model.Game;
 import model.mapa.TipoLocal;
-
 import java.util.List;
 
 public class EventoAvaliacao extends Evento {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private List<Pergunta> perguntas;
     private int notaMaxima;

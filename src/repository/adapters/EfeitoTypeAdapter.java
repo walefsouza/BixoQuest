@@ -4,7 +4,6 @@ import com.google.gson.*;
 import model.atividades.Efeito;
 import model.atividades.EfeitoAtributos;
 import model.atividades.EfeitoMidia;
-
 import java.lang.reflect.Type;
 
 public class EfeitoTypeAdapter implements JsonDeserializer<Efeito> {

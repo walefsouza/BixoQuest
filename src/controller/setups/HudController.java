@@ -6,17 +6,14 @@ import application.Utilitarios;
 import controller.command.JogadorStatusCommand;
 import controller.command.MenuPausaCommand;
 import controller.command.TasksSemanaisCommand;
-import controller.overlays.PlayerStatusController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import model.Game;
-import model.atividades.Task;
 
 import static application.Utilitarios.configurarClique;
 

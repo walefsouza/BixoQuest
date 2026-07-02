@@ -1,17 +1,22 @@
 package repository;
 
 import model.mapa.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class LocalRepository implements IRepository<Local> {
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private List<Local> mapaDaUefs;
+
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - -
 
     public LocalRepository() {
         this.mapaDaUefs = gerarLocais();
     }
+
+    // Métodos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     // Pesquisa os locais na lista ignorando os cases
     @Override

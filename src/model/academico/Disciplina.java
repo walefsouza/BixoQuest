@@ -3,12 +3,12 @@ package model.academico;
 import model.atividades.EventoAvaliacao;
 import model.entidades.Jogador;
 import model.entidades.Professor;
-import model.mapa.Local;
-import model.mapa.SalaDeAula;
 import model.mapa.TipoLocal;
 import repository.IGeneralGetNome;
 
 public class Disciplina implements IGeneralGetNome {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private String nome;
     private Professor professor;

@@ -2,6 +2,8 @@ package model.mapa;
 
 public class SalaDeAula extends Local {
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private boolean salaLivre;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -

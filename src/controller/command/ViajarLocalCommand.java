@@ -2,19 +2,10 @@ package controller.command;
 
 import application.RotasFixas;
 import application.SceneManager;
-import com.google.gson.reflect.TypeToken;
-import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import model.Game;
-import model.academico.Semestre;
-import model.atividades.Evento;
 import model.atividades.ResultadoAcao;
-import model.atividades.Task;
-import model.interacao.Dialogo;
 import model.mapa.Local;
-import repository.IRepository;
-import repository.LocalRepository;
-import repository.Repository;
 import service.AtividadeService;
 import service.LocalService;
 
@@ -22,6 +13,7 @@ import java.util.ArrayList;
 
 public class ViajarLocalCommand implements ICommand {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private String destino;
     private String localNome;
 
@@ -31,6 +23,7 @@ public class ViajarLocalCommand implements ICommand {
     private LocalService localService;
     private AtividadeService atividadeService;
 
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     public ViajarLocalCommand(String destino, String localNome, Game game, LocalService localService, AtividadeService atividadeService, AnchorPane node) {
         this.destino = destino;
         this.localNome = localNome;
@@ -40,14 +33,17 @@ public class ViajarLocalCommand implements ICommand {
         this.pane = node;
     }
 
+    // Implementação - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void executar() {
 
+        // Verificando se o destino é válido
         if (destino == null || destino.isEmpty()) {
             SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa());
             return;
         }
 
+        // Acessando objeto de viajem no repositório e viajando via service
         Local localDestino = localService.buscarLocal(this.localNome);
         ResultadoAcao resultado = localService.viajar(this.game, localDestino.getTipo(), this.atividadeService);
 
@@ -62,11 +58,10 @@ public class ViajarLocalCommand implements ICommand {
             return;
         }
 
-        // ainda preciso pensar no sistema de som
-
         // Exibe card informativo
         boolean mensagem = resultado.getTextoNarrativo() != null && !resultado.getTextoNarrativo().trim().isEmpty();
 
+        // Exibindo mensagem e viajando
         if (mensagem) {
 
             SceneManager.mostrarCardNotificacao(
@@ -83,11 +78,9 @@ public class ViajarLocalCommand implements ICommand {
 
         }
 
+        // Se não tem mensagem, apenas viaja
         else {
-
             SceneManager.navegar(destino);
-            // pensar na lógica de audio tbm
-            // pensar em escurecer tela/piscar/algo visual
         }
     }
 }

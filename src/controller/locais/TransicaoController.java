@@ -7,6 +7,8 @@ import javafx.scene.input.MouseEvent;
 
 public class TransicaoController {
 
+    // Método - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // Consiste em abrir uma tela nova e permitir voltar para anterior ao fim
     @FXML
     public void transferirTelaRota(MouseEvent event) {
 

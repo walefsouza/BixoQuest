@@ -14,7 +14,6 @@ import model.entidades.Colega;
 import model.entidades.Jogador;
 import model.entidades.Professor;
 import model.interacao.Dialogo;
-import model.mapa.Local;
 import model.mapa.TipoLocal;
 import repository.IRepository;
 import repository.Repository;
@@ -22,16 +21,19 @@ import service.InteracaoService;
 
 import java.util.*;
 
-public class PosicionarNPCsCommand {
+public class PosicionarNPCsCommand implements ICommand{
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private AnchorPane panePrincipal;
     private TipoLocal localAtual;
     private double[][] pontosDeSpawn;
     private InteracaoService interacaoService;
 
+    // Dados em Cache - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private static List<Colega> cacheColegas = null;
     private static List<Animal> cacheAnimais = null;
 
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     public PosicionarNPCsCommand(AnchorPane panePrincipal, TipoLocal localAtual,
                                  double[][] pontosDeSpawn, InteracaoService interacaoService){
 
@@ -41,9 +43,11 @@ public class PosicionarNPCsCommand {
         this.interacaoService = interacaoService;
     }
 
-
+    // Implementação - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    @Override
     public void executar() {
 
+        // Capturando dados da sessão atual
         Jogador jogador = SessaoSingleton.getInstancia().getGame().getJogador();
         Semestre semestreAtual = SessaoSingleton.getInstancia().getGame().getSemestre();
 
@@ -267,6 +271,7 @@ public class PosicionarNPCsCommand {
             Collections.shuffle(falas);
             Dialogo falaSorteada = falas.get(0);
 
+            // Apresentando fala
             SceneManager.mostrarDialogoWarn(
                     pane,
                     nome +" disse que...",

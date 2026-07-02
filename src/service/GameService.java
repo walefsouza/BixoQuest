@@ -5,11 +5,10 @@ import model.academico.Semestre;
 import model.entidades.Jogador;
 import model.mapa.*;
 import repository.IRepository;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class GameService {
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private IRepository<Game> gameRepository;
     private IRepository<Semestre> semestreRepository;

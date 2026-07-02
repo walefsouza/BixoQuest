@@ -2,6 +2,8 @@ package model.mapa;
 
 public class Cantina extends Local {
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private int tamanhoFila;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -

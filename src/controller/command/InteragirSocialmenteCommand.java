@@ -12,22 +12,26 @@ import model.entidades.Jogador;
 import repository.IRepository;
 import repository.Repository;
 import service.JogadorService;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class InteragirSocialmenteCommand implements ICommand {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private AnchorPane pane;
     private JogadorService jogadorService;
-
     private static List<Colega> cacheColegas = null;
 
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     public InteragirSocialmenteCommand(AnchorPane pane) {
         this.pane = pane;
         this.jogadorService = new JogadorService();
     }
+
+    // Implementação - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // Consiste em uma função que usa o método interagir socialmente do jogador
+    // service. Esse método usa coleegas e instancia eles na memória cache
 
     @Override
     public void executar() {
@@ -37,6 +41,7 @@ public class InteragirSocialmenteCommand implements ICommand {
             cacheColegas = colegaRepo.listar();
         }
 
+        // Lista colegas do repositório, embaralha e pega o primeiro do arraylist.
         List<Colega> colegas = new ArrayList<>(cacheColegas);
         Collections.shuffle(colegas);
         Colega colegaSorteado = colegas.get(0);
@@ -46,6 +51,7 @@ public class InteragirSocialmenteCommand implements ICommand {
 
         ResultadoAcao resultado = jogadorService.interagirSocialmente(jogador, colegaSorteado);
 
+        // Exibe mensagem com resultado da interação
         SceneManager.mostrarDialogoWarn(
                 pane,
                 resultado.getTitulo(),

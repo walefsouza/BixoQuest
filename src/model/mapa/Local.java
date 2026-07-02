@@ -4,11 +4,12 @@ import model.atividades.Evento;
 import model.atividades.Task;
 import model.entidades.Entidade;
 import repository.IGeneralGetNome;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Local implements IGeneralGetNome {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private String nome;
     private List<Task> tasks;
@@ -94,29 +95,8 @@ public abstract class Local implements IGeneralGetNome {
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
 
-
     @Override
     public String capturarNome() {
         return this.getNome();
-    }
-
-    public void adicionarTask(Task t) {
-        if (tasks != null)
-            tasks.add(t);
-    }
-
-    public void removerTask(Task t) {
-        if (tasks != null)
-            tasks.remove(t);
-    }
-
-    public void adicionarEvento(Evento e) {
-        if (eventos != null)
-            eventos.add(e);
-    }
-
-    public void removerEvento(Evento e) {
-        if (eventos != null)
-            eventos.remove(e);
     }
 }

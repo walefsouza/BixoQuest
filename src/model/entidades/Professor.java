@@ -4,6 +4,8 @@ import model.academico.Disciplina;
 
 public class Professor extends Entidade {
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private int credibilidade;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -

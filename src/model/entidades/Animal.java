@@ -2,6 +2,8 @@ package model.entidades;
 
 public class Animal extends Entidade {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private String especie;
     private int nivelFofura; // 0 a 5
 
@@ -10,16 +12,6 @@ public class Animal extends Entidade {
     public Animal(String nome, int idade, int humor, String aparencia, String especie, int nivelFofura) {
         super(nome, idade, humor, aparencia);
         this.especie = especie;
-        this.nivelFofura = nivelFofura;
-    }
-
-    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void setEspecie(String especie) {
-        this.especie = especie;
-    }
-
-    public void setNivelFofura(int nivelFofura) {
         this.nivelFofura = nivelFofura;
     }
 

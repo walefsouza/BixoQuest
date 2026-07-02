@@ -19,34 +19,40 @@ import java.util.List;
 
 public class RevisarMateriaCommand implements ICommand {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private AnchorPane pane;
     private JogadorService jogadorService;
 
     // Cache estático para evitar leitura de disco dupla
     private static List<Colega> cacheColegas = null;
 
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     public RevisarMateriaCommand(AnchorPane pane) {
         this.pane = pane;
         this.jogadorService = new JogadorService();
     }
 
+    // Implementação - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void executar() {
 
+        // Verificando se já existe uma instância ativa
         if (cacheColegas == null) {
             IRepository<Colega> colegaRepo = new Repository<>("dados/colegas.json", new TypeToken<ArrayList<Colega>>(){}.getType());
             cacheColegas = colegaRepo.listar();
         }
 
+        // Sorteando colega para revisar matéria
         List<Colega> colegas = new ArrayList<>(cacheColegas);
         Collections.shuffle(colegas);
         Colega colegaSorteado = colegas.get(0);
 
+        // Pegando dados da sessão atual e usando o service
         Game game = SessaoSingleton.getInstancia().getGame();
         Jogador jogador = game.getJogador();
-
         ResultadoAcao resultado = jogadorService.estudarComColega(jogador, colegaSorteado);
 
+        // Exibindo resultado final da ação para o usuário
         SceneManager.mostrarDialogoWarn(
                 pane,
                 resultado.getTitulo(),

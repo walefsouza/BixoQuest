@@ -2,11 +2,11 @@ package application;
 
 import javafx.animation.ScaleTransition;
 import javafx.scene.Node;
-import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 public class Utilitarios {
 
+    // Método utilitário com a finalidade de simular um clique de botão em um node qualquer
     public static void animarClique(Node botao, Runnable runnable) {
         ScaleTransition st = new ScaleTransition(Duration.millis(80), botao);
         st.setToX(0.9);
@@ -19,7 +19,7 @@ public class Utilitarios {
         AudioManager.getInstancia().tocarEfeito("/resources/atividades/som-clique-allgame.mp3");
     }
 
-    // Classe utilitária para lógica de zoom in e zoom out ao passar o mouse
+    // Método utilitário para lógica de zoom in e zoom out ao passar o mouse por cima de um node
     public static void configurarClique(Node node) {
 
         node.setOnMouseEntered(e -> {

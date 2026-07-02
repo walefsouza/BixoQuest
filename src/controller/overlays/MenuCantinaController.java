@@ -23,6 +23,7 @@ import static application.Utilitarios.configurarClique;
 
 public class MenuCantinaController {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private AnchorPane pane;
 
     @FXML private ImageView btnVoltar;
@@ -32,17 +33,21 @@ public class MenuCantinaController {
     @FXML private ImageView btnSuco;
     @FXML private ImageView btnPastel;
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private LocalService localService;
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML
     public void initialize() {
 
+        // Configura animação de clique
         configurarClique(btnCoxinha);
         configurarClique(btnPastel);
         configurarClique(btnSuco);
         configurarClique(btnBeiju);
         configurarClique(btnCafe);
 
+        // Criando repositório e service
         IRepository eventos = new Repository("dados/eventos-bixoquest.json", new TypeToken<ArrayList<Evento>>(){}.getType());
         IRepository dialogos = new Repository("dados/dialogos.json", new TypeToken<ArrayList<Dialogo>>(){}.getType());
         IRepository locais = new LocalRepository();

@@ -12,7 +12,6 @@ import javafx.scene.layout.AnchorPane;
 import model.interacao.Dialogo;
 import model.mapa.TipoLocal;
 import service.InteracaoService;
-
 import java.net.URL;
 import java.util.Collections;
 import java.util.List;
@@ -20,6 +19,7 @@ import java.util.ResourceBundle;
 
 public class PontoDeOnibusController implements Initializable {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private ImageView btnMapa;
     @FXML private ImageView botaoPegarOnibus;
     @FXML private AnchorPane pane;
@@ -27,8 +27,10 @@ public class PontoDeOnibusController implements Initializable {
     @FXML private ImageView btnColega;
     @FXML private ImageView btnSemestre;
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private InteracaoService interacaoService;
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -53,12 +55,16 @@ public class PontoDeOnibusController implements Initializable {
         AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/ponto-de-onibus.mp3");
     }
 
+    // Barra lateral - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Botão com a finalidade abrir mapa central
     public void botaoMapa() {
         Utilitarios.animarClique(btnMapa, () ->
                 SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa())
         );
     }
 
+    // Botão com finalidade de avançar semana
     @FXML
     public void clicarPegarOnibus() {
 
@@ -69,6 +75,7 @@ public class PontoDeOnibusController implements Initializable {
         });
     }
 
+    // Conversa com colegas no ponto
     @FXML
     public void botaoColega() {
         Utilitarios.animarClique(btnColega, () -> {
@@ -77,6 +84,7 @@ public class PontoDeOnibusController implements Initializable {
         });
     }
 
+    // "Hack" para pular os semestres do jogo automaticamente
     @FXML
     public void clicarAvancarSemestre() {
         Utilitarios.animarClique(btnSemestre, () -> {
@@ -86,6 +94,7 @@ public class PontoDeOnibusController implements Initializable {
         });
     }
 
+    // Interação (random)
     @FXML
     public void botaoInteragir() {
         Utilitarios.animarClique(btnInteragir, () -> {

@@ -20,13 +20,13 @@ import model.atividades.ResultadoAcao;
 import repository.IRepository;
 import repository.Repository;
 import service.AcademicoService;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static application.Utilitarios.configurarClique;
 
 public class AvaliacaoController {
+
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     @FXML private Label disciplinaNome;
     @FXML private Label numero;
@@ -42,6 +42,8 @@ public class AvaliacaoController {
 
     @FXML private AnchorPane pane;
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private Disciplina disciplina;
     private List<Pergunta> perguntas;
     private int indiceAtual = 0;
@@ -51,6 +53,7 @@ public class AvaliacaoController {
     IRepository eventosRepo = new Repository("dados/eventos-bixoquest.json", new TypeToken<ArrayList<Evento>>(){}.getType());
     IRepository semestreRepo = new Repository("dados/semestres.json", new TypeToken<ArrayList<Semestre>>(){}.getType());
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML
     public void initialize() {
 
@@ -76,6 +79,9 @@ public class AvaliacaoController {
         carregarPergunta(indiceAtual);
     }
 
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Pega avaliação, captura a pergunta com base no indice e atualiza o quiz
     private void carregarPergunta(int indice) {
 
         Pergunta p = avaliacao.getPerguntas().get(indice);
@@ -88,7 +94,7 @@ public class AvaliacaoController {
         opcaoc.setText(p.getAlternativas()[2]);
     }
 
-
+    // Botões - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     @FXML
     void clicarOpcaoA(MouseEvent event) {
@@ -105,6 +111,9 @@ public class AvaliacaoController {
         Utilitarios.animarClique(basec, () -> coletarResposta(2));
     }
 
+    // Auxiliares - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Armazena a resposta em um vetor que será processado pela correção
     private void coletarResposta(int opcao) {
 
         respostas.add(opcao);
@@ -119,7 +128,7 @@ public class AvaliacaoController {
         }
     }
 
-
+    // Finaliza avaliação, mostra resultado e volta a tela da sala de aula
     private void finalizarProva() {
 
         AcademicoService academicoService = new AcademicoService(semestreRepo, eventosRepo);

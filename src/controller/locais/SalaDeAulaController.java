@@ -16,27 +16,31 @@ import model.atividades.EventoAvaliacao;
 import model.interacao.Dialogo;
 import model.mapa.TipoLocal;
 import service.InteracaoService;
-
 import java.util.Collections;
 import java.util.List;
 
 public class SalaDeAulaController {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private ImageView btnMapa;
     @FXML private ImageView btnQuadro;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
     @FXML private ImageView btnRevisao;
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private InteracaoService interacaoService;
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML
     public void initialize() {
 
+        // Puxa informações e verifica se temos uma avaliação na semana
         Game game = SessaoSingleton.getInstancia().getGame();
         Disciplina disciplina = game.getSemestre().getDisciplinas().get(0);
         EventoAvaliacao avaliacao = disciplina.getAvaliacao();
 
+        // Se for semana de avaliação, o quadro fica com contorno vermelho
         if (game.getSemestre().getSemanaAtual() == 4 && !avaliacao.getRealizada()) {
             DropShadow alertaVermelho = new DropShadow();
             alertaVermelho.setColor(Color.RED);
@@ -72,12 +76,16 @@ public class SalaDeAulaController {
         AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-sala-aula.mp3");
     }
 
+    // Barra lateral - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Botão mapa central
     public void botaoMapa() {
         Utilitarios.animarClique(btnMapa, () ->
                 SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa())
         );
     }
 
+    // Estudar para disciplina do semestre
     @FXML
     public void botaoRevisao() {
         Utilitarios.animarClique(btnRevisao, () -> {
@@ -86,6 +94,7 @@ public class SalaDeAulaController {
         });
     }
 
+    // Assistir aula da disciplina o fazer avaliação
     @FXML
     public void assistirAula() {
 
@@ -93,6 +102,7 @@ public class SalaDeAulaController {
         Disciplina disciplina = game.getSemestre().getDisciplinas().get(0);
         EventoAvaliacao avaliacao = disciplina.getAvaliacao();
 
+        // Se for evento de avaliação, somos direcionados a interface de quiz
         if (game.getSemestre().getSemanaAtual() == 4 && !avaliacao.getRealizada()) {
 
             SceneManager.mostrarDialogoWarn(
@@ -108,11 +118,13 @@ public class SalaDeAulaController {
             });
         }
 
+        // Se não, marca como assistir uma aula normal
         else {
             new VerAulaCommand(pane).executar();
         }
     }
 
+    // Interagir (random)
     @FXML
     public void botaoInteragir() {
         Utilitarios.animarClique(btnInteragir, () -> {

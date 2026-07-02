@@ -21,20 +21,26 @@ import java.util.List;
 
 public class TimeskipSemestreCommand implements ICommand {
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private AnchorPane telaDoPonto;
 
+    // Dados em RAM - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private static AtividadeService atividadeService = null;
     private static AcademicoService academicoService = null;
     private static GameService gameService = null;
 
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     public TimeskipSemestreCommand(AnchorPane telaDoPonto) {
         this.telaDoPonto = telaDoPonto;
     }
 
+    // Implementação - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void executar() {
+
         Game game = SessaoSingleton.getInstancia().getGame();
 
+        // Se a sessão não for válida, criamos uma nova real
         if (atividadeService == null) {
             IRepository tasksRepo = new Repository("dados/bancotasks.json", new TypeToken<ArrayList<Task>>(){}.getType());
             IRepository eventosRepo = new Repository("dados/eventos-bixoquest.json", new TypeToken<ArrayList<Evento>>(){}.getType());
@@ -46,17 +52,21 @@ public class TimeskipSemestreCommand implements ICommand {
             gameService = new GameService(savesRepo, semestreRepo);
         }
 
+        // Definindo condição de timeskip como true
         ResultadoAcao resultadoSemestre = academicoService.avancarSemestre(game, true);
 
+        // Executando sorteio de tasks
         if (resultadoSemestre.getSucesso()) {
             List<Task> novasTasks = atividadeService.escolherTasksDaSemana(game);
             game.getSemestre().setBancoTasks(novasTasks);
         }
 
+        // Setando flags
         game.setFlagSemana(false);
         game.setImagemFundoAtual(null);
         gameService.salvarProgresso(game);
 
+        // Exibindo mensagem de resultado
         SceneManager.mostrarDialogoWarn(
                 telaDoPonto,
                 "Avanço Rápido (Timeskip)",
@@ -64,7 +74,7 @@ public class TimeskipSemestreCommand implements ICommand {
                 "/resources/icones/interface-icon-lore.png"
         );
 
-
+        // Direcionando para tela de novo semestre
         if (resultadoSemestre.getSucesso()) {
             telaDoPonto.setOnMouseClicked(e -> {
                 telaDoPonto.setOnMouseClicked(null);
@@ -72,6 +82,7 @@ public class TimeskipSemestreCommand implements ICommand {
             });
         }
 
+        // Direcionando para tela de perdeu semestre
         else {
             telaDoPonto.setOnMouseClicked(e -> {
                 telaDoPonto.setOnMouseClicked(null);

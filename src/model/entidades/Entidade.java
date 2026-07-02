@@ -4,6 +4,8 @@ import repository.IGeneralGetNome;
 
 public abstract class Entidade implements IGeneralGetNome {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private String nome;
     private int idade;
     private int humor;

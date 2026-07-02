@@ -8,14 +8,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import model.Game;
 import model.entidades.Jogador;
 
 public class PlayerStatusController implements Initializable {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private Label nome;
     @FXML private Label mapa;
     @FXML private Label semana;
@@ -32,6 +30,7 @@ public class PlayerStatusController implements Initializable {
     @FXML private Label motivacao;
     @FXML private Label dinheiro;
 
+    // Implementação - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         carregarStatus();
@@ -74,6 +73,7 @@ public class PlayerStatusController implements Initializable {
         }
     }
 
+    // Retorna a tela que o jogado estava antes de clicar na HUD
     public void botaoVoltarMenuInicial() {
         Utilitarios.animarClique(btnVoltar, () ->
                 SceneManager.navegar(SessaoSingleton.getInstancia().getUltimaRota())

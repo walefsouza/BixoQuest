@@ -3,7 +3,6 @@ package controller.locais;
 import application.*;
 import com.google.gson.reflect.TypeToken;
 import controller.command.ICommand;
-import controller.command.InteragirSocialmenteCommand;
 import controller.command.PosicionarNPCsCommand;
 import controller.command.RevisarMateriaCommand;
 import javafx.fxml.FXML;
@@ -22,7 +21,6 @@ import repository.LocalRepository;
 import repository.Repository;
 import service.InteracaoService;
 import service.LocalService;
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,15 +29,18 @@ import java.util.ResourceBundle;
 
 public class ColegiadoController implements Initializable {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private ImageView btnMapa;
     @FXML private Node btnBurocracia;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
     @FXML private ImageView btnRevisao;
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private InteracaoService interacaoService;
     private LocalService localService;
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -68,6 +69,8 @@ public class ColegiadoController implements Initializable {
         AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-colegiado.mp3");
     }
 
+    // Barra lateral - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // Acessar mapa central
 
     @FXML
     public void botaoMapa() {
@@ -76,6 +79,7 @@ public class ColegiadoController implements Initializable {
         );
     }
 
+    // Revisar disciplina atual
     @FXML
     public void botaoRevisao() {
         Utilitarios.animarClique(btnRevisao, () -> {
@@ -84,6 +88,7 @@ public class ColegiadoController implements Initializable {
         });
     }
 
+    // Resolver burocracia com Maeli
     @FXML
     public void clicarResolverBurocracia() {
 
@@ -117,6 +122,7 @@ public class ColegiadoController implements Initializable {
         });
     }
 
+    // Interagir (random)
     @FXML
     public void botaoInteragir() {
         Utilitarios.animarClique(btnInteragir, () -> {

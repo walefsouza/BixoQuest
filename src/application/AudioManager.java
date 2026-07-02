@@ -8,13 +8,16 @@ import java.net.URL;
 
 public class AudioManager {
 
+    // Atributos  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private static AudioManager instancia;
     private MediaPlayer mediaPlayerFundo;
     private String caminhoMusicaAtual;
-    private boolean isMutado = false;
+    private boolean mutado = false;
 
     private static final String MUSICA_PADRAO = "/resources/locais/audio/musica-geral-game.mp3";
 
+    // Construtor  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // No Singleton o construtor é privado e usamos o getInstancia()
 
     private AudioManager() {}
 
@@ -25,19 +28,24 @@ public class AudioManager {
         return instancia;
     }
 
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Muta/desmuta a sonorização do game
     public void alternarMute() {
-        this.isMutado = !this.isMutado;
+        this.mutado = !this.mutado;
 
         // Se a música de fundo estiver ativa, altera o mute dela instantaneamente
         if (mediaPlayerFundo != null) {
-            mediaPlayerFundo.setMute(this.isMutado);
+            mediaPlayerFundo.setMute(this.mutado);
         }
     }
 
-    public boolean isMutado() {
-        return this.isMutado;
+    // Retorna se está mutado ou não
+    public boolean getMutado() {
+        return this.mutado;
     }
 
+    // Toca música de fundo em determinado cenário
     public void tocarMusicaDeFundo(String caminhoCenario) {
 
         // Se não tem música, usa a padrão
@@ -66,7 +74,7 @@ public class AudioManager {
             mediaPlayerFundo.setCycleCount(MediaPlayer.INDEFINITE);
             mediaPlayerFundo.setVolume(0.3);
 
-            mediaPlayerFundo.setMute(this.isMutado);
+            mediaPlayerFundo.setMute(this.mutado);
 
             mediaPlayerFundo.play();
             caminhoMusicaAtual = caminhoTocar;
@@ -78,9 +86,11 @@ public class AudioManager {
         }
     }
 
+    // Toca efeitos sonoros como clique do botão, eventos, etc
     public void tocarEfeito(String caminhoEfeito) {
+
         // Se estiver mutado ou o caminho for inválido, ignora o efeito
-        if (this.isMutado || caminhoEfeito == null || caminhoEfeito.trim().isEmpty()) {
+        if (this.mutado || caminhoEfeito == null || caminhoEfeito.trim().isEmpty()) {
             return;
         }
 
@@ -104,6 +114,7 @@ public class AudioManager {
         }
     }
 
+    // Para de tocar a música em determinado contexto
     public void pararMusica() {
         if (mediaPlayerFundo != null) {
             mediaPlayerFundo.stop();

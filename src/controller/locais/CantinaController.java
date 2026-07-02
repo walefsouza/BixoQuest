@@ -6,18 +6,14 @@ import application.SceneManager;
 import application.Utilitarios;
 import controller.command.ICommand;
 import controller.command.InteragirSocialmenteCommand;
-import controller.command.LancheComprarCommand;
 import controller.command.PosicionarNPCsCommand;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.interacao.Dialogo;
-import model.mapa.Cardapio;
 import model.mapa.TipoLocal;
 import service.InteracaoService;
-
 import java.net.URL;
 import java.util.Collections;
 import java.util.List;
@@ -25,18 +21,19 @@ import java.util.ResourceBundle;
 
 public class CantinaController implements Initializable {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private ImageView btnMapa;
     @FXML private ImageView btnComprar;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
     @FXML private ImageView btnColega;
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private InteracaoService interacaoService;
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        // fit height 482
 
         this.interacaoService = new InteracaoService();
 
@@ -63,18 +60,21 @@ public class CantinaController implements Initializable {
 
     // Barra Lateral - - - - - - - - - - - - - - - - - - - - - - - -
 
+    // Acessar mapa principal
     public void botaoMapa() {
         Utilitarios.animarClique(btnMapa, () ->
                 SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa())
         );
     }
 
+    // Comprar lanche na cantina
     public void botaoComprar() {
         Utilitarios.animarClique(btnComprar, () ->
                 SceneManager.navegar(RotasFixas.MENUCANTINA.getRotaFixa())
         );
     }
 
+    // Interagir com colega
     @FXML
     public void botaoColega() {
         Utilitarios.animarClique(btnColega, () -> {
@@ -83,6 +83,7 @@ public class CantinaController implements Initializable {
         });
     }
 
+    // Interagir (random)
     @FXML
     public void botaoInteragir() {
         Utilitarios.animarClique(btnInteragir, () -> {

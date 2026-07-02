@@ -4,9 +4,14 @@ import model.Game;
 
 public class SessaoSingleton {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private static SessaoSingleton instancia;
     private String ultimaRota;
     private Game game;
+
+    // Singleton - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // A sessão singleton tem a finalidade de resgistrar em qual jogo o usuário
+    // está no momento. Ajuda no controle e acesso aos atributos do jogador ativo
 
     private SessaoSingleton() {}
 
@@ -19,6 +24,7 @@ public class SessaoSingleton {
         return instancia;
     }
 
+    // Métodos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     public Game getGame() {
         return game;
     }

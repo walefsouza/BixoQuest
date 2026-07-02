@@ -5,6 +5,8 @@ import java.util.List;
 
 public class UniversidadeMapa implements IGeneralGetNome {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private String nome;
     private List<Local> locais;
     private String imagemMapa;
@@ -19,20 +21,6 @@ public class UniversidadeMapa implements IGeneralGetNome {
         this.musicaTema = musicaTema;
     }
 
-    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void adicionarLocal(Local l) {
-        if (this.locais != null) {
-            this.locais.add(l);
-        }
-    }
-
-    public void removerLocal(Local l) {
-        if (this.locais != null) {
-            this.locais.remove(l);
-        }
-    }
-
     // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
 
     public void setNome(String nome) {
@@ -41,10 +29,6 @@ public class UniversidadeMapa implements IGeneralGetNome {
 
     public void setLocais(List<Local> locais) {
         this.locais = locais;
-    }
-
-    public void setImagemMapa(String imagemMapa) {
-        this.imagemMapa = imagemMapa;
     }
 
     public void setMusicaTema(String musicaTema) {
@@ -59,10 +43,6 @@ public class UniversidadeMapa implements IGeneralGetNome {
 
     public List<Local> getLocais() {
         return this.locais;
-    }
-
-    public String getImagemMapa() {
-        return this.imagemMapa;
     }
 
     public String getMusicaTema() {

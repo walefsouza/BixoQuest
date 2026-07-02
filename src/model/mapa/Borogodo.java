@@ -2,6 +2,8 @@ package model.mapa;
 
 public class Borogodo extends Local {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private int nivelAglomeracao;
     private boolean atividadeAtiva;
 

@@ -2,6 +2,7 @@ package model.mapa;
 
 public enum TipoLocal {
 
+    // Tipos Locais - - - - - - - - - - - - - - - - - - - - - - -
     CANTINA("Cantina"),
     LABORATORIO("Laboratório"),
     SALA_DE_AULA("Sala de Aula"),
@@ -10,6 +11,8 @@ public enum TipoLocal {
     COLEGIADO("Colegiado"),
     MAPA("UEFS MAPA"),
     QUALQUER_LUGAR("qualquer lugar");
+
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private String local;
 

@@ -23,26 +23,31 @@ import repository.IRepository;
 import repository.Repository;
 import service.GameService;
 
-
 public class TelaSaveController implements Initializable {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private VBox vboxListaSaves;
     @FXML private ImageView btnVoltar;
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     IRepository saves = new Repository("dados/saves.json", new TypeToken<ArrayList<Game>>(){}.getType());
     IRepository semestres = new Repository("dados/semestres.json", new TypeToken<ArrayList<Semestre>>(){}.getType());
-
     GameService gameService = new GameService(saves, semestres);
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        // Atualiza lista de jogos salvos e carrega na tela após qualquer mudança/delete
         List<Game> jogosSalvos = gameService.listarJogos();
         carregarJogosSalvos(jogosSalvos);
 
         AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-geral-game.mp3");
     }
 
+    // Métodos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Carrega os jogos salvos do repositório e adiciona ao scrool pane
     public void carregarJogosSalvos(List<Game> jogosSalvos) {
 
         vboxListaSaves.getChildren().clear();
@@ -64,7 +69,9 @@ public class TelaSaveController implements Initializable {
                 vboxListaSaves.getChildren().add(cardVisual);
             }
 
-        } catch (Exception e) {
+        }
+
+        catch (Exception e) {
 
             e.printStackTrace();
 
@@ -78,12 +85,14 @@ public class TelaSaveController implements Initializable {
         }
     }
 
+    // Recarrega os saves do repositório por meio de uma lista atualizada
     public void recarregarSaves() {
 
         List<Game> listaAtualizada = gameService.listarJogos();
         carregarJogosSalvos(listaAtualizada);
     }
 
+    // Retorna ao menu inicial do jogo
     public void botaoVoltarMenuInicial() {
         Utilitarios.animarClique(btnVoltar, () ->
                 SceneManager.navegar(RotasFixas.MENUINICIAL.getRotaFixa())

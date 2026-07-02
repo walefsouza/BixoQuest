@@ -3,6 +3,8 @@ package model.entidades;
 // remoção do random e inclusão de inteligência e carisma
 public class Colega extends Entidade {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private int nivelInteligencia; // 1 a 5
     private int nivelCarisma; //0 a 5
 
@@ -37,16 +39,6 @@ public class Colega extends Entidade {
 
     public int getNivelCarisma() {
         return this.nivelCarisma;
-    }
-
-    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    public void setNivelCarisma(int nivelCarisma) {
-        this.nivelCarisma = nivelCarisma;
-    }
-
-    public void setNivelInteligencia(int nivelInteligencia) {
-        this.nivelInteligencia = nivelInteligencia;
     }
 
     // Tipo Entidade  - - - - - - - - - - - - - - - - - - - - - - - -

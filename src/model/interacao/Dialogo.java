@@ -1,11 +1,12 @@
 package model.interacao;
 
-import model.entidades.Entidade;
 import model.entidades.TipoEntidade;
 import model.mapa.TipoLocal;
 import repository.IGeneralGetNome;
 
 public class Dialogo implements IGeneralGetNome {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private String id;
     private TipoEntidade tipo;
@@ -52,9 +53,5 @@ public class Dialogo implements IGeneralGetNome {
 
     public void setCategoria(CategoriaDialogo categoria) {
         this.categoria = categoria;
-    }
-
-    public void setLocalDialogo(TipoLocal localDialogo) {
-        this.localDialogo = localDialogo;
     }
 }

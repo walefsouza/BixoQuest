@@ -2,7 +2,6 @@ package controller.setups;
 
 import application.*;
 import com.google.gson.reflect.TypeToken;
-import controller.setups.TelaSaveController;
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -15,36 +14,40 @@ import model.Game;
 import model.academico.Semestre;
 import model.entidades.Jogador;
 import repository.IRepository;
-import repository.LocalRepository;
 import repository.Repository;
 import service.GameService;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class CardSaveController {
 
-    @FXML private ImageView iconJogador;
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private Label nomeJogador;
     @FXML private Label nomeMapa;
     @FXML private Label numeroSemestre;
+
+    @FXML private ImageView iconJogador;
     @FXML private ImageView iconFormado;
     @FXML private ImageView btnDeletar;
     @FXML private AnchorPane cardPane;
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private IRepository saves = new Repository("dados/saves.json", new TypeToken<ArrayList<Game>>(){}.getType());
     private IRepository semestres = new Repository("dados/semestres.json", new TypeToken<ArrayList<Semestre>>(){}.getType());
-
     private GameService gameService = new GameService(saves, semestres);
     private TelaSaveController telaJogosSalvos;
     private String gameName;
     private Game gameCard;
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML
     public void initialize() {
         configurarClique();
     }
 
+    // Métodos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Monta card de jogo salvo com as informações do jogo salvo no repositório
     public void templateSave(Game game, TelaSaveController telaJogosSalvos) {
 
         this.telaJogosSalvos = telaJogosSalvos;
@@ -63,6 +66,7 @@ public class CardSaveController {
         Image imagemAvatar = CacheManager.getInstancia().getImagem(caminhoAvatar);
         iconJogador.setImage(imagemAvatar);
 
+        // Se o jogador estiver formado, altera icone da medalha
         if (game.getSemestre().getNumero() >= 6) {
             Image formado = CacheManager.getInstancia().getImagem("/resources/botoes/jogos-salvos-formado.png");
             iconFormado.setImage(formado);
@@ -75,12 +79,14 @@ public class CardSaveController {
 
     }
 
+    // Quando o jogador clica no card, entra no jogo selecionado e seta o game no sessão singleton
     public void entrarNovoJogo() {
 
         SessaoSingleton.getInstancia().setGame(this.gameCard);
         SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa());
     }
 
+    // Caso clique na lixeira, o jogo será deletado do repositório
     public void deletarJogoSalvo(MouseEvent clique) {
         clique.consume(); // para o botão funcionar
         Utilitarios.animarClique(btnDeletar, () -> {
@@ -89,6 +95,7 @@ public class CardSaveController {
         });
     }
 
+    // Animação  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private void configurarClique() {
 
         cardPane.setOnMouseEntered(e -> {

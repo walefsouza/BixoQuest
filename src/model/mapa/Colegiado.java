@@ -2,6 +2,8 @@ package model.mapa;
 
 public class Colegiado extends Local {
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private boolean sistemaAtivo;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -

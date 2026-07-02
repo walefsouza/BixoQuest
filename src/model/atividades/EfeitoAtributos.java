@@ -5,6 +5,8 @@ import model.entidades.Jogador;
 
 public class EfeitoAtributos implements Efeito {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private int impactoEnergia;
     private int impactoConhecimento;
     private int impactoMotivacao;

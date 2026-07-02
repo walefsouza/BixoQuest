@@ -1,7 +1,8 @@
 package model.mapa;
-import model.entidades.Jogador;
 
 public class PontoDeOnibus extends Local{
+
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private int energiaPegarOnibus;
 

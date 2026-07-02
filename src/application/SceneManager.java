@@ -12,15 +12,23 @@ import javafx.stage.StageStyle;
 
 public class SceneManager {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private static Stage palcoPrincipal;
     private static String telaAtual;
+
+    // Stage - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // Inicia palco e seta como não redimensionável
 
     public static void iniciar(Stage stage) {
         palcoPrincipal = stage;
         palcoPrincipal.setResizable(false);
     }
 
+    // Métodos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // Abstrai a lógica de mudança de cena por meio do padrão facade
+    // Registra a última rota do cenário com finalidade de possibitar
+    // o retorno do jogador caso ele vá para outra cena
+
     public static boolean navegar(String destino) {
 
         try {
@@ -40,7 +48,11 @@ public class SceneManager {
         }
     }
 
+    // Abre tela de sobreposição que impede cliques na tela inferior até
+    // o jogador apertar no botão de sair.
+
     public static void abrirModal(String caminhoFxml) {
+
         try {
             FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource(caminhoFxml));
             Parent root = loader.load();
@@ -63,12 +75,15 @@ public class SceneManager {
             modalStage.setScene(scene);
             modalStage.showAndWait();
 
-        } catch (Exception e) {
+        }
+
+        catch (Exception e) {
             System.out.println("Erro ao carregar o modal: " + caminhoFxml);
             e.printStackTrace();
         }
     }
 
+    // Abre sobreposição de diálogo que ao receber um clique some da tela
     public static void mostrarDialogoWarn(AnchorPane telaAtual, String titulo, String mensagem, String caminhoImagem) {
 
         // Usa o marcador adicionado para substituir a caixa anterior pela nova
@@ -94,6 +109,7 @@ public class SceneManager {
         }
     }
 
+    // Mesma aplicação do anterior, porém com layout diferente
     public static void mostrarCardNotificacao(AnchorPane pane, String titulo, String mensagem, String caminhoIcone) {
         try {
 

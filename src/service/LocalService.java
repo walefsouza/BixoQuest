@@ -7,12 +7,12 @@ import model.interacao.Dialogo;
 import model.mapa.*;
 import model.atividades.Evento;
 import repository.IRepository;
-
 import java.util.List;
 import java.util.Random;
 
 public class LocalService {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
     private IRepository<Evento> eventoRepository;
     private IRepository<Dialogo> dialogoRepository;
     private IRepository<Local> localRepository;

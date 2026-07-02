@@ -2,6 +2,8 @@ package model.atividades;
 
 public class Pergunta {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private String enunciado;
     private String[] alternativas;
     private int respostaCorreta;
@@ -11,22 +13,6 @@ public class Pergunta {
     public Pergunta(String enunciado, String[] alternativas, int respostaCorreta) {
         this.enunciado = enunciado;
         this.alternativas = alternativas;
-        this.respostaCorreta = respostaCorreta;
-    }
-
-    // Setters  - - - - - - - - - - - - - - - - - - - - - - - -
-
-    // Avaliar se esses setters precisam continuar existindo
-
-    public void setEnunciado(String enunciado) {
-        this.enunciado = enunciado;
-    }
-
-    public void setAlternativas(String[] alternativas) {
-        this.alternativas = alternativas;
-    }
-
-    public void setRespostaCorreta(int respostaCorreta) {
         this.respostaCorreta = respostaCorreta;
     }
 

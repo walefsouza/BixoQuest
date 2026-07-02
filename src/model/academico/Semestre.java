@@ -2,11 +2,12 @@ package model.academico;
 
 import model.atividades.Task;
 import repository.IGeneralGetNome;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Semestre implements IGeneralGetNome {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private int numero;
     private List<Disciplina> disciplinas;

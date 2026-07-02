@@ -2,6 +2,7 @@ package model.atividades;
 
 public enum RequisitoEvento {
 
+        // Requisitos - - - - -
         NENHUM,  // Eventos aleatórios
         SEMANA4, // Avaliações semestrais
 

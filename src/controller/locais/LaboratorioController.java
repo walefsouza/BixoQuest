@@ -19,8 +19,6 @@ import repository.LocalRepository;
 import repository.Repository;
 import service.InteracaoService;
 import service.LocalService;
-
-import javax.print.DocFlavor;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,15 +27,18 @@ import java.util.ResourceBundle;
 
 public class LaboratorioController implements Initializable {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private ImageView btnMapa;
     @FXML private ImageView btnComputador;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
     @FXML private ImageView btnRevisao;
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private LocalService localService;
     private InteracaoService interacaoService;
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -66,12 +67,14 @@ public class LaboratorioController implements Initializable {
         AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-LEDS.mp3");
     }
 
+    // Botão do mapa central
     public void botaoMapa() {
         Utilitarios.animarClique(btnMapa, () ->
                 SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa())
         );
     }
 
+    // Estudar para disciplina do semestre
     @FXML
     public void botaoRevisao() {
         Utilitarios.animarClique(btnRevisao, () -> {
@@ -80,6 +83,7 @@ public class LaboratorioController implements Initializable {
         });
     }
 
+    // Usar computador do laboratório
     @FXML
     public void clicarUsarComputador() {
 
@@ -118,6 +122,7 @@ public class LaboratorioController implements Initializable {
         });
     }
 
+    // Interagir (random)
     @FXML
     public void botaoInteragir() {
         Utilitarios.animarClique(btnInteragir, () -> {

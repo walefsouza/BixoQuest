@@ -2,10 +2,12 @@ package application;
 
 public enum RotasFixas {
 
-    //TELAJOGAR("/fxmls/iniciais/telaJogar.fxml"), // tela inicial
+    // CONSTANTES - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // INICIAIS
+
     TELAJOGAR("/fxmls/iniciais/telaBixoquestJogar.fxml"),
-    MENUINICIAL("/fxmls/iniciais/telaInicial.fxml"), // nojo jogo/salvos
-    NOVOJOGO("/fxmls/iniciais/criarNovoJogo.fxml"), // criar novo jogo
+    MENUINICIAL("/fxmls/iniciais/telaInicial.fxml"),
+    NOVOJOGO("/fxmls/iniciais/criarNovoJogo.fxml"),
     JOGOSSALVOS("/fxmls/iniciais/listarJogosSalvos.fxml"),
     MAPACENTRAL("/fxmls/iniciais/mapacentral.fxml"),
 
@@ -29,11 +31,9 @@ public enum RotasFixas {
     NOVOSEMESTRE("/fxmls/informs/novo-semestre.fxml"),
     PCQUEBRADO("/fxmls/informs/pc-quebrado.fxml"),
     NOVASEMANA("/fxmls/informs/nova-semana.fxml"),
-    PERDEUSEMESTRE("/fxmls/informs/perdeu-semestre.fxml"),
+    PERDEUSEMESTRE("/fxmls/informs/perdeu-semestre.fxml");
 
-
-    FIM("fimmm");
-
+    // Métodos  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private String caminhoFxml;
 

@@ -20,12 +20,12 @@ import service.AtividadeService;
 import service.TurnoService;
 import service.LocalService;
 import service.GameService;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class PassarSemanaCommand implements ICommand {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private AnchorPane telaDoPonto;
 
     // Dados em memória RAM - - - - - - - - - - - - - - - - - - - - - - - -
@@ -44,8 +44,10 @@ public class PassarSemanaCommand implements ICommand {
     @Override
     public void executar() {
 
+        // Pegando instância do jogo atual via sessão singleton
         Game game = SessaoSingleton.getInstancia().getGame();
 
+        // Se não houver instâncias ativas, cria services com base nos repositórios
         if (atividadeService == null) {
 
             // Declaração dos Repositórios - - - - - - - - - - - - - - - - - - - - - - - -

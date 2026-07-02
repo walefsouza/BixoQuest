@@ -6,7 +6,6 @@ import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -21,37 +20,43 @@ import repository.IRepository;
 import repository.LocalRepository;
 import repository.Repository;
 import service.LocalService;
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ApostasController implements Initializable {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private AnchorPane paneRoleta;
     @FXML private AnchorPane pane;
     @FXML private ImageView imgRoleta;
     @FXML private ImageView apostaSelecionada = null;
     @FXML private ImageView btnAposta5, btnAposta10, btnAposta15, btnSair;
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private double valorAposta = 0;
     private LocalService localService;
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        // Repositórios
         IRepository eventosRepo = new Repository("dados/eventos-bixoquest.json", new TypeToken<ArrayList<Evento>>(){}.getType());
         IRepository dialogoRepo = new Repository("dados/dialogos.json", new TypeToken<ArrayList<Dialogo>>(){}.getType());
         IRepository locaisRepo = new LocalRepository();
 
+        // Service
         this.localService = new LocalService(eventosRepo, dialogoRepo, locaisRepo);
 
+        // Animação
         Utilitarios.configurarClique(btnAposta5);
         Utilitarios.configurarClique(btnAposta10);
         Utilitarios.configurarClique(btnAposta15);
         Utilitarios.configurarClique(paneRoleta);
         Utilitarios.configurarClique(btnSair);
 
+        // Sombra abaixo do elemento visual
         aplicarSombraRoleta(imgRoleta);
         aplicarSombraRoleta(btnAposta5);
         aplicarSombraRoleta(btnAposta10);
@@ -61,6 +66,9 @@ public class ApostasController implements Initializable {
         AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-cassino.mp3");
     }
 
+    // Botões - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Apostar 5 moedas
     @FXML
     public void clicarAposta5() {
         Utilitarios.animarClique(btnAposta5, () -> {
@@ -69,6 +77,7 @@ public class ApostasController implements Initializable {
         });
     }
 
+    // Apsostar 10 moedas
     @FXML
     public void clicarAposta10() {
         Utilitarios.animarClique(btnAposta10, () -> {
@@ -77,6 +86,7 @@ public class ApostasController implements Initializable {
         });
     }
 
+    // Apostar 15 moedas
     @FXML
     public void clicarAposta15() {
         Utilitarios.animarClique(btnAposta15, () -> {
@@ -85,6 +95,7 @@ public class ApostasController implements Initializable {
         });
     }
 
+    // Sair da tela de apostas
     @FXML
     public void clicarSair() {
         Utilitarios.animarClique(btnSair, () -> {
@@ -94,12 +105,14 @@ public class ApostasController implements Initializable {
     }
 
 
+    // Após definir um valor, o usuário pode girar a roleta
     @FXML
     public void clicarRoleta() {
         Utilitarios.animarClique(paneRoleta, () -> {
 
             if (valorAposta == 0) {
 
+                // Se ele não selecionar um valor, exibe essa mensagem
                 SceneManager.mostrarDialogoWarn(
                         this.pane,
                         "LADRÃO! TRAPACEIRO",
@@ -110,10 +123,12 @@ public class ApostasController implements Initializable {
                 return;
             }
 
+            // Busca uma instância da praça no repositório e usa método do service
             Local local = localService.buscarLocal("BOROGODO");
             Jogador jogador = SessaoSingleton.getInstancia().getGame().getJogador();
             ResultadoAcao resultado = localService.apostarNoBorogodo(jogador, local, valorAposta);
 
+            // Se houver resultado, ativa animação da roleta
             if (resultado != null) {
                 animacaoRoleta(resultado);
 
@@ -124,6 +139,7 @@ public class ApostasController implements Initializable {
     }
 
 
+    // Atualiza visualmente qual valor está selecionado
     private void atualizarDestaque(ImageView clicado) {
 
         ImageView[] botoesAposta = {btnAposta5, btnAposta10, btnAposta15};
@@ -155,6 +171,7 @@ public class ApostasController implements Initializable {
         apostaSelecionada = clicado;
     }
 
+    // Gira a roleta em 90 ou 270 graus
     private void animacaoRoleta(ResultadoAcao resultado) {
 
         paneRoleta.setDisable(true);
@@ -167,6 +184,7 @@ public class ApostasController implements Initializable {
         animacao.setByAngle(anguloFinal);
         animacao.setInterpolator(Interpolator.EASE_OUT);
 
+        // Quando a animação acaba, mostra o resultado
         animacao.setOnFinished(evento -> {
 
             SceneManager.mostrarDialogoWarn(
@@ -182,9 +200,8 @@ public class ApostasController implements Initializable {
         animacao.play();
     }
 
+    // Aplica uma sombra nas imagens para variar do fundo
     private void aplicarSombraRoleta(ImageView imagem){
-
-        //ColorAdjust ajusteCor = new ColorAdjust(0.0, -0.12, -0.05, 0.0);
 
         DropShadow sombra = new DropShadow();
         sombra.setRadius(20);
@@ -192,8 +209,6 @@ public class ApostasController implements Initializable {
         sombra.setOffsetX(-4);
         sombra.setOffsetY(8);
         sombra.setColor(Color.rgb(26, 15, 8, 0.55));
-
-        //ajusteCor.setInput(sombra);
 
         imagem.setEffect(sombra);
     }

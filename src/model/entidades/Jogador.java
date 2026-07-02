@@ -1,9 +1,10 @@
 package model.entidades;
 
-import model.mapa.Local;
 import model.mapa.TipoLocal;
 
 public class Jogador {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private String nome;
     private TipoLocal local;

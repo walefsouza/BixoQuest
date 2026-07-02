@@ -1,42 +1,36 @@
 package controller.locais;
 
 import application.*;
-import com.google.gson.reflect.TypeToken;
 import controller.command.ICommand;
 import controller.command.InteragirSocialmenteCommand;
 import controller.command.PosicionarNPCsCommand;
-import controller.command.RevisarMateriaCommand;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import model.interacao.Dialogo;
-import model.mapa.Local;
 import model.mapa.TipoLocal;
-import repository.IRepository;
-import repository.Repository;
 import service.InteracaoService;
-
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class BorogodoController implements Initializable {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private ImageView btnMapa;
     @FXML private ImageView btnApostar;
     @FXML private AnchorPane pane;
     @FXML private ImageView btnInteragir;
     @FXML private ImageView btnColega;
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private InteracaoService interacaoService;
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        // fit height 482
 
         this.interacaoService = new InteracaoService();
 
@@ -48,6 +42,7 @@ public class BorogodoController implements Initializable {
 
         };
 
+        // Posicionando NPCs no local
         PosicionarNPCsCommand comando = new PosicionarNPCsCommand(
                 this.pane,
                 TipoLocal.BOROGODO,
@@ -61,19 +56,23 @@ public class BorogodoController implements Initializable {
 
     }
 
+    // Botões - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    // Mapa
     public void botaoMapa() {
         Utilitarios.animarClique(btnMapa, () ->
                 SceneManager.navegar(RotasFixas.MAPACENTRAL.getRotaFixa())
         );
     }
 
+    // Cassino
     public void botaoAposta() {
         Utilitarios.animarClique(btnApostar, () ->
                 SceneManager.navegar(RotasFixas.CASSINO.getRotaFixa())
         );
     }
 
+    // Conversar com colega
     @FXML
     public void botaoColega() {
         Utilitarios.animarClique(btnColega, () -> {
@@ -82,7 +81,7 @@ public class BorogodoController implements Initializable {
         });
     }
 
-
+    // Interagir (random)
     @FXML
     public void botaoInteragir() {
         Utilitarios.animarClique(btnInteragir, () -> {

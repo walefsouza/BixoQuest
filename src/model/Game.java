@@ -2,24 +2,25 @@ package model;
 
 import model.academico.Semestre;
 import model.entidades.Jogador;
-import model.mapa.UniversidadeMapa;
 import repository.IGeneralGetNome;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Game implements IGeneralGetNome {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private String nome;
     private boolean formado;
     private Jogador jogador;
+
     private Semestre semestre;
     private static final int TOTAL_SEMESTRES = 6;
     private List<String> eventosRealizados;
+
     private List<String> tasksRealizadas;
     private boolean flagSemana;
     private String imagemFundoAtual;
-
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -31,7 +32,6 @@ public class Game implements IGeneralGetNome {
         this.tasksRealizadas = new ArrayList<>();
         this.eventosRealizados = new ArrayList<>();
         this.flagSemana = false;
-
     }
 
     // Métodos  - - - - - - - - - - - - - - - - - - - - - - - -

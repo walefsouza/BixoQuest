@@ -4,6 +4,8 @@ import model.Game;
 
 public class EfeitoMidia implements Efeito {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private String arquivoAudio;
     private boolean tremerTela;
     private boolean escurecerTela;

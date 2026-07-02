@@ -11,11 +11,15 @@ import javafx.scene.layout.Pane;
 
 public class CaixaDialogoController {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private AnchorPane caixa;
     @FXML private ImageView icone;
     @FXML private Label nome;
     @FXML private Label texto;
 
+    // Método - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Preenche as caixas de avisos ou diálogos com as informações via parâmetro
     public void preencherDados(String titulo, String mensagem, String caminhoImagemIcone) {
         this.nome.setText(titulo);
         this.texto.setText(mensagem);
@@ -33,12 +37,13 @@ public class CaixaDialogoController {
         }
     }
 
-
+    // Quando a caixa é clicada, fecha e podemos voltar a usar o pane base
     @FXML
     public void fecharCaixa(MouseEvent event) {
 
         Pane telaPai = (Pane) caixa.getParent();
 
+        // remove caixa do pane atual
         if (telaPai != null) {
             telaPai.getChildren().remove(caixa);
         }

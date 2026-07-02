@@ -18,15 +18,17 @@ import java.util.ArrayList;
 
 public class VerAulaCommand implements ICommand {
 
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private AnchorPane telaDaSala;
     IRepository eventosRepo = new Repository("dados/eventos-bixoquest.json", new TypeToken<ArrayList<Evento>>(){}.getType());
     IRepository semestreRepo = new Repository("dados/semestres.json", new TypeToken<ArrayList<Semestre>>(){}.getType());
 
-
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     public VerAulaCommand(AnchorPane telaDaSala) {
         this.telaDaSala = telaDaSala;
     }
 
+    // Implementação - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void executar() {
 

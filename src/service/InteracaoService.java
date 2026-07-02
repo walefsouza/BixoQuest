@@ -10,12 +10,13 @@ import model.mapa.TipoLocal;
 import model.interacao.Dialogo;
 import repository.IRepository;
 import repository.Repository;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class InteracaoService {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private static IRepository<Dialogo> dialogoRepository;
     private Random random;
@@ -29,6 +30,7 @@ public class InteracaoService {
 
     }
 
+    // Sobrecarga do construtor com endereço nos repositórios
     public InteracaoService() {
 
         this.random = new Random();

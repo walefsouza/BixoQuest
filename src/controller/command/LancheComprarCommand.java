@@ -8,12 +8,11 @@ import model.Game;
 import model.atividades.ResultadoAcao;
 import model.mapa.Cantina;
 import model.mapa.Cardapio;
-import model.mapa.TipoLocal;
-import repository.IRepository;
 import service.LocalService;
 
 public class LancheComprarCommand implements ICommand {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private String nomeLanche;
     private int preco;
     private Game game;
@@ -21,6 +20,7 @@ public class LancheComprarCommand implements ICommand {
     private Cardapio item;
     private AnchorPane pane;
 
+    // Construtor - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     public LancheComprarCommand(Cardapio item, LocalService localService, AnchorPane pane) {
         this.nomeLanche = item.getNome();
         this.preco = item.getPreco();
@@ -30,12 +30,17 @@ public class LancheComprarCommand implements ICommand {
         this.pane = pane;
     }
 
+    // Implementação - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void executar() {
 
+        // Buscando objeto cantina no repositório e fazendo casting para cantina
         Cantina cantina = (Cantina) localService.buscarLocal("CANTINA");
+
+        // Usando o service para comprar o lanche escolhido na cantina
         ResultadoAcao resultado = localService.comprarLanche(this.game, cantina, this.item);
 
+        // Retornando resultado da ação para o usuário
         if (resultado.getSucesso()) {
             SceneManager.mostrarCardNotificacao(
                     this.pane,

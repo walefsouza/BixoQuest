@@ -10,10 +10,13 @@ import java.util.List;
 
 public class Evento extends Atividade {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private CategoriaEvento categoria;
     private RequisitoEvento requisito;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public Evento(String nome, String descricao, TipoLocal localAtividade,
                   CategoriaEvento categoria, RequisitoEvento requisito,
                   String icone, List<Efeito> efeitos) {

@@ -2,8 +2,10 @@ package model.mapa;
 
 public class Laboratorio extends Local {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
+
     private int nComputadores;
-    private double multiplicadorEstudo; // LEMBRAR DE FAZER CASTING QUANDO USAR NO SERVICE
+    private double multiplicadorEstudo;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
 

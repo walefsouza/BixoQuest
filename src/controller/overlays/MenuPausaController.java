@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 
 public class MenuPausaController implements Initializable {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private AnchorPane painelFundo;
     @FXML private ImageView btnRetornar;
     @FXML private ImageView btnMenu;
@@ -31,9 +32,11 @@ public class MenuPausaController implements Initializable {
     // Instância do GameService
     GameService gameService = new GameService(saves, semestres);
 
+    // Inicialização - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (AudioManager.getInstancia().isMutado()) {
+
+        if (AudioManager.getInstancia().getMutado()) {
             silenciar.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/menuPauseDesmutar.png"));
         }
         else {
@@ -41,11 +44,15 @@ public class MenuPausaController implements Initializable {
         }
     }
 
+    // Métodos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Fecha tela modal e retorna a tela anterior
     @FXML
     public void retornarJogo() {
         Utilitarios.animarClique(btnRetornar, () -> fecharModal());
     }
 
+    // Direciona o jogador ao menu inicial do jogo
     @FXML
     public void acessarMenuInicial() {
 
@@ -62,13 +69,14 @@ public class MenuPausaController implements Initializable {
         SceneManager.navegar(RotasFixas.MENUINICIAL.getRotaFixa());
     }
 
+    // Silencia todos os sons do jogo
     @FXML
     public void silenciarAudio() {
 
         Utilitarios.animarClique(silenciar, () -> {
             AudioManager.getInstancia().alternarMute();
 
-            if (AudioManager.getInstancia().isMutado()) {
+            if (AudioManager.getInstancia().getMutado()) {
                 silenciar.setImage(CacheManager.getInstancia().getImagem("/resources/botoes/menuPauseDesmutar.png"));
             }
 

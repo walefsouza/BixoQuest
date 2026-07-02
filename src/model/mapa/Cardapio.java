@@ -1,11 +1,16 @@
 package model.mapa;
 
 public enum Cardapio {
+
+    // Cardápio - - - - - - - - - - - - - - - - - - - - - - - - -
+
     COXINHA("Coxinha", 10),
     PASTEL("Pastel", 15),
     SUCO("Suco", 6),
     CAFE("Cafe", 4),
     BEIJU("Beiju", 12);
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private final String nome;
     private final int preco;
@@ -17,7 +22,7 @@ public enum Cardapio {
         this.preco = preco;
     }
 
-    // Getter  - - - - - - - - - - - - - - - - - - - - - - - -
+    // Getters  - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     public String getNome() {
         return nome;

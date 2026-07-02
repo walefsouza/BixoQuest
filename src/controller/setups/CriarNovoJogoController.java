@@ -24,6 +24,7 @@ import java.util.List;
 
 public class CriarNovoJogoController {
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private TextField campoNome;
     @FXML private TextField campoMapa;
     @FXML private ImageView btnContinuar;
@@ -165,6 +166,7 @@ public class CriarNovoJogoController {
         selecionado.setOpacity(1.0);
     }
 
+    // Retorna a aparência do jogador selecionado
     private String AparenciaJogador(){
 
         switch (this.personagemEscolhido) {

@@ -21,7 +21,6 @@ import repository.LocalRepository;
 import repository.Repository;
 import service.AtividadeService;
 import service.LocalService;
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,12 +29,15 @@ import java.util.ResourceBundle;
 
 public class MapaCentralController implements Initializable {
 
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private Map<String, ICommand> comandosDoMapa = new HashMap<>();
     private Game game;
 
+    // Interface - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @FXML private AnchorPane pane;
     @FXML private ImageView imagemMapa;
 
+    // Implementação - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -68,6 +70,9 @@ public class MapaCentralController implements Initializable {
         AudioManager.getInstancia().tocarMusicaDeFundo("/resources/locais/audio/musica-tema-UEFS.mp3");
     }
 
+    // Barra Lateral - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    // Botão mapa central
     @FXML
     public void clicarNoMapa(MouseEvent event) {
 
@@ -79,13 +84,9 @@ public class MapaCentralController implements Initializable {
             comando.executar();
             event.consume();
         }
-
-        else {
-            System.out.println("Área sem comando mapeado: " + idObjeto);
-            //não faz sentido um print aqui, remover?
-        }
     }
 
+    // Método privado para trocar a imagem de fundo caso seja um evento obrigatório
     private void aplicarImagemFundo(String caminhoImagem) {
 
         if (caminhoImagem == null || caminhoImagem.trim().isEmpty()) {
@@ -95,20 +96,23 @@ public class MapaCentralController implements Initializable {
         try {
 
             Image novaImagem = CacheManager.getInstancia().getImagem(caminhoImagem);
+
             if (!novaImagem.isError()) {
                 imagemMapa.setImage(novaImagem);
             }
         }
 
         catch (Exception e) {
-            System.out.println("[DEBUG] Imagem de fundo vazia: " + caminhoImagem);
+            System.out.println("Imagem de fundo vazia: " + caminhoImagem);
         }
     }
 
+    // Método com a finalidade de notificar o acontecimento de um evento do jogo
     private void processarEventosMapa(ResultadoAcao resultado){
+
         if (resultado != null) {
 
-            // card com texto do evento
+            // Card com texto do evento
             SceneManager.mostrarCardNotificacao(
                     this.pane,
                     resultado.getTitulo(),
@@ -129,6 +133,10 @@ public class MapaCentralController implements Initializable {
             }
         }
     }
+
+    // Map de Locais - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // Tem a finalidade de guardar os fxmls de cada local do mapa para o usuário
+    // ser direcionado logo após clicar em cima do local
 
     private void adicionarComandos(LocalService localService, AtividadeService atividadeService){
 

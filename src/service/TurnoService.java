@@ -4,14 +4,15 @@ import model.academico.Disciplina;
 import model.academico.Semestre;
 import model.atividades.ResultadoAcao;
 import model.entidades.Jogador;
-import model.atividades.EventoAvaliacao;
-import java.util.List;
 
 public class TurnoService {
+
+    // Atributo - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private AcademicoService academicoService;
 
     // Construtor  - - - - - - - - - - - - - - - - - - - - - - - -
+
     public TurnoService(AcademicoService academicoService) {
         this.academicoService = academicoService;
     }

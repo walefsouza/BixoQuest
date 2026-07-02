@@ -5,10 +5,11 @@ import model.atividades.*;
 import model.entidades.Jogador;
 import model.mapa.TipoLocal;
 import repository.IRepository;
-
 import java.util.*;
 
 public class AtividadeService {
+
+    // Atributos - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private IRepository<Task> taskRepository;
     private IRepository<Evento> eventoRepository;
