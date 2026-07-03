@@ -152,6 +152,8 @@ public class AcademicoService {
                 jogoAtual.formarJogador();
             }
 
+            jogador.aumentarEnergia(100);
+
             return resultado;
         }
 

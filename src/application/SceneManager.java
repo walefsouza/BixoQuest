@@ -1,6 +1,7 @@
 package application;
 
 import controller.overlays.CaixaDialogoController;
+import javafx.animation.Animation;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,11 +11,15 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class SceneManager {
 
     // Atributos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     private static Stage palcoPrincipal;
     private static String telaAtual;
+    private static Set<Animation> animacoesAtivas = new HashSet<>();
 
     // Stage - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // Inicia palco e seta como não redimensionável
@@ -32,6 +37,12 @@ public class SceneManager {
     public static boolean navegar(String destino) {
 
         try {
+            // Para todas as animações da tela anterior
+            for (Animation anim : animacoesAtivas) {
+                anim.stop();
+            }
+            animacoesAtivas.clear();
+
             Parent tela = FXMLLoader.load(SceneManager.class.getResource(destino));
             SessaoSingleton.getInstancia().setUltimaRota(telaAtual);
 
@@ -127,6 +138,11 @@ public class SceneManager {
             System.out.println("Erro ao executar a sobreposição rápida.");
             e.printStackTrace();
         }
+    }
+
+    // Set de animações via JavaFX
+    public static void registrarAnimacao(Animation anim) {
+        animacoesAtivas.add(anim);
     }
 
 }

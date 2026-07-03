@@ -251,6 +251,9 @@ public class PosicionarNPCsCommand implements ICommand{
         respiracao.setAutoReverse(true);
         respiracao.play();
 
+        // Adiciona animação no hash do scene manager
+        SceneManager.registrarAnimacao(respiracao);
+
         // Configura a animação de clique
         Utilitarios.configurarClique(npcVisual);
         npcVisual.setOnMouseClicked(evento -> {

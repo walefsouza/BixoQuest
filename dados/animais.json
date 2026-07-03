@@ -29,7 +29,7 @@
     "nome": "Chico",
     "idade": 4,
     "humor": 40,
-    "aparencia": "/resources/personagens/anima-macaco-chico.png"
+    "aparencia": "/resources/personagens/animal-macaco-chico.png"
   },
   {
     "especie": "Cachorro",

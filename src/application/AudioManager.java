@@ -58,6 +58,7 @@ public class AudioManager {
         // Se tinha outra música tocando de outro cenário, para ela antes de começar a nova
         if (mediaPlayerFundo != null) {
             mediaPlayerFundo.stop();
+            mediaPlayerFundo.dispose();
         }
 
         try {
@@ -118,6 +119,8 @@ public class AudioManager {
     public void pararMusica() {
         if (mediaPlayerFundo != null) {
             mediaPlayerFundo.stop();
+            mediaPlayerFundo.dispose();
+            mediaPlayerFundo = null;
             caminhoMusicaAtual = null;
         }
     }
