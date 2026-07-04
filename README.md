@@ -2,7 +2,7 @@
 
 O **BixoQuest** é um RPG de simulação acadêmica desenvolvido em Java com interface gráfica em JavaFX. O jogador assume o papel de um universitário e deve gerenciar seu tempo, energia e saúde ao longo de 6 semestres letivos, lidando com tarefas, provas, eventos aleatórios e a rotina do campus.
 
-> O projeto foi desenvolvido como atividade de **Problema Baseado em Aprendizagem (PBL)** na Universidade Estadual de Feira de Santana (UEFS), ao longo de 3 fases evolutivas: modelagem, persistência de dados e interface gráfica.
+> O projeto foi desenvolvido como atividade de **Problem Based Learning (PBL)** ao longo de 3 fases evolutivas: modelagem, persistência de dados e interface gráfica.
 
 ---
 ## Tecnologias
