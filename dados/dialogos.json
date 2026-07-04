@@ -1,0 +1,842 @@
+[
+  {
+    "id": "colegaSAUDACAO00",
+    "tipo": "COLEGA",
+    "texto": "Bom te ver por aqui! Pronto para mais um dia de sobrevivência?",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO01",
+    "tipo": "COLEGA",
+    "texto": "Ainda bem que hoje consegui chegar no horário.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaSAUDACAO02",
+    "tipo": "COLEGA",
+    "texto": "O campus já está cheio... parece que hoje promete.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO03",
+    "tipo": "COLEGA",
+    "texto": "Bom dia! Espero que nenhum professor resolva aplicar prova surpresa.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaSAUDACAO04",
+    "tipo": "COLEGA",
+    "texto": "Finalmente um rostinho conhecido!",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO05",
+    "tipo": "COLEGA",
+    "texto": "Vai passar na cantina depois? Estou morrendo de fome.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaSAUDACAO06",
+    "tipo": "COLEGA",
+    "texto": "Se encontrar uma sala vazia para estudar, me avisa.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO07",
+    "tipo": "COLEGA",
+    "texto": "Bom te encontrar antes da aula começar.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaSAUDACAO08",
+    "tipo": "COLEGA",
+    "texto": "Hoje o Borogodó está mais movimentado que o normal.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaSAUDACAO09",
+    "tipo": "COLEGA",
+    "texto": "Você parece mais descansado que eu.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO10",
+    "tipo": "COLEGA",
+    "texto": "Ainda bem que o ônibus não atrasou tanto hoje.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "PONTO_DE_ONIBUS"
+  },
+  {
+    "id": "colegaSAUDACAO11",
+    "tipo": "COLEGA",
+    "texto": "Espero que hoje seja um daqueles dias tranquilos.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO12",
+    "tipo": "COLEGA",
+    "texto": "Já tomou água hoje? O calor está pesado.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO13",
+    "tipo": "COLEGA",
+    "texto": "Nada melhor que encontrar alguém antes da correria começar.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaSAUDACAO14",
+    "tipo": "COLEGA",
+    "texto": "Boa sorte nas aulas de hoje!",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO15",
+    "tipo": "COLEGA",
+    "texto": "Ainda temos forças para mais um semestre... eu acho.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO16",
+    "tipo": "COLEGA",
+    "texto": "Cheguei cedo hoje. Nem eu estou acreditando.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaSAUDACAO17",
+    "tipo": "COLEGA",
+    "texto": "Tomara que a aula termine no horário hoje.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaSAUDACAO18",
+    "tipo": "COLEGA",
+    "texto": "O campus fica bonito quando está cheio de gente.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO19",
+    "tipo": "COLEGA",
+    "texto": "Sempre encontro alguém conhecido caminhando por aqui.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaSAUDACAO20",
+    "tipo": "COLEGA",
+    "texto": "Que bom que o laboratório abriu cedo hoje.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaSAUDACAO21",
+    "tipo": "COLEGA",
+    "texto": "Bom dia! Espero que sua mochila esteja menos pesada que a minha.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO22",
+    "tipo": "COLEGA",
+    "texto": "Parece que hoje todo mundo resolveu aparecer.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaSAUDACAO23",
+    "tipo": "COLEGA",
+    "texto": "Mais um dia tentando equilibrar estudos e sanidade.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO24",
+    "tipo": "COLEGA",
+    "texto": "Se sobreviver até sexta-feira, já considero uma vitória.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO25",
+    "tipo": "COLEGA",
+    "texto": "Tomara que a fila da cantina esteja pequena hoje.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaSAUDACAO26",
+    "tipo": "COLEGA",
+    "texto": "Ainda bem que encontrei alguém para conversar um pouco.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaSAUDACAO27",
+    "tipo": "COLEGA",
+    "texto": "Você também sente que o semestre passou voando?",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaSAUDACAO28",
+    "tipo": "COLEGA",
+    "texto": "Espero que hoje renda bastante estudo.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaSAUDACAO29",
+    "tipo": "COLEGA",
+    "texto": "Vamos nessa! Ainda tem muito campus para explorar.",
+    "categoria": "SAUDACAO",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE00",
+    "tipo": "COLEGA",
+    "texto": "Dizem que todo veterano conhece um atalho secreto pelo campus.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE01",
+    "tipo": "COLEGA",
+    "texto": "Tem quem jure que o Borogodó resolve mais trabalhos que a biblioteca.",
+    "categoria": "LORE",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaLORE02",
+    "tipo": "COLEGA",
+    "texto": "Já ouvi falar de um aluno que nunca perdeu o ônibus da UEFS.",
+    "categoria": "LORE",
+    "localDialogo": "PONTO_DE_ONIBUS"
+  },
+  {
+    "id": "colegaLORE03",
+    "tipo": "COLEGA",
+    "texto": "Sempre aparece alguém dizendo que viu um escorpião perto dos laboratórios.",
+    "categoria": "LORE",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaLORE04",
+    "tipo": "COLEGA",
+    "texto": "Existe uma lenda de que um professor já terminou todo o conteúdo antes do calendário.",
+    "categoria": "LORE",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaLORE05",
+    "tipo": "COLEGA",
+    "texto": "Todo semestre nasce um boato diferente sobre as provas finais.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE06",
+    "tipo": "COLEGA",
+    "texto": "Há quem diga que a cantina já salvou mais alunos que qualquer monitoria.",
+    "categoria": "LORE",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaLORE07",
+    "tipo": "COLEGA",
+    "texto": "O Borogodó já foi palco de amizades, bandas e muitos trabalhos em grupo.",
+    "categoria": "LORE",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaLORE08",
+    "tipo": "COLEGA",
+    "texto": "Dizem que sempre existe uma sala vazia... só ninguém consegue encontrá-la.",
+    "categoria": "LORE",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaLORE09",
+    "tipo": "COLEGA",
+    "texto": "Tem gente que conhece cada árvore do campus pelo nome.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE10",
+    "tipo": "COLEGA",
+    "texto": "Todo mundo conhece alguém que virou a noite estudando e dormiu na prova.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE11",
+    "tipo": "COLEGA",
+    "texto": "Alguns dizem que os laboratórios têm vida própria depois que escurece.",
+    "categoria": "LORE",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaLORE12",
+    "tipo": "COLEGA",
+    "texto": "Existe o mito de que um aluno terminou todas as listas antes do prazo.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE13",
+    "tipo": "COLEGA",
+    "texto": "O colegiado sempre parece mais movimentado quando chega o fim do semestre.",
+    "categoria": "LORE",
+    "localDialogo": "COLEGIADO"
+  },
+  {
+    "id": "colegaLORE14",
+    "tipo": "COLEGA",
+    "texto": "Reza a lenda que alguns veteranos ainda aparecem por aqui só para matar a saudade.",
+    "categoria": "LORE",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaLORE15",
+    "tipo": "COLEGA",
+    "texto": "Dizem que quem se perde no primeiro semestre acaba encontrando um lugar favorito no campus.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE16",
+    "tipo": "COLEGA",
+    "texto": "Tem gente que passa mais tempo esperando o ônibus do que assistindo aula.",
+    "categoria": "LORE",
+    "localDialogo": "PONTO_DE_ONIBUS"
+  },
+  {
+    "id": "colegaLORE17",
+    "tipo": "COLEGA",
+    "texto": "O cheiro de café costuma anunciar que alguém passou a noite estudando.",
+    "categoria": "LORE",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaLORE18",
+    "tipo": "COLEGA",
+    "texto": "Ninguém sabe ao certo quem começou as histórias sobre escorpiões nos laboratórios.",
+    "categoria": "LORE",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaLORE19",
+    "tipo": "COLEGA",
+    "texto": "Há quem diga que toda turma tem um colega que salva os trabalhos em grupo.",
+    "categoria": "LORE",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaLORE20",
+    "tipo": "COLEGA",
+    "texto": "O Borogodó já foi cenário de amizades que duraram muito além da faculdade.",
+    "categoria": "LORE",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaLORE21",
+    "tipo": "COLEGA",
+    "texto": "Sempre existe alguém disposto a explicar a matéria embaixo de uma árvore.",
+    "categoria": "LORE",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaLORE22",
+    "tipo": "COLEGA",
+    "texto": "No começo do semestre todo mundo promete não deixar matéria acumular.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE23",
+    "tipo": "COLEGA",
+    "texto": "Já ouvi dizer que alguns bancos do campus conhecem mais segredos que muita gente.",
+    "categoria": "LORE",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaLORE24",
+    "tipo": "COLEGA",
+    "texto": "O laboratório parece silencioso... até alguém esquecer de desligar um equipamento.",
+    "categoria": "LORE",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaLORE25",
+    "tipo": "COLEGA",
+    "texto": "Quem frequenta a cantina acaba conhecendo metade da universidade.",
+    "categoria": "LORE",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaLORE26",
+    "tipo": "COLEGA",
+    "texto": "Dizem que o semestre acelera depois da primeira avaliação.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE27",
+    "tipo": "COLEGA",
+    "texto": "Os corredores ficam estranhamente silenciosos durante as provas.",
+    "categoria": "LORE",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaLORE28",
+    "tipo": "COLEGA",
+    "texto": "Todo veterano tem uma história engraçada sobre o primeiro dia de aula.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaLORE29",
+    "tipo": "COLEGA",
+    "texto": "A universidade muda a cada semestre, mas sempre parece familiar para quem volta.",
+    "categoria": "LORE",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA00",
+    "tipo": "COLEGA",
+    "texto": "Não deixe o conteúdo acumular. O semestre passa mais rápido do que parece.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA01",
+    "tipo": "COLEGA",
+    "texto": "Resolver a lista de exercícios costuma valer mais do que decorar a teoria.",
+    "categoria": "DICA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaDICA02",
+    "tipo": "COLEGA",
+    "texto": "Leve sempre uma garrafa de água. Parece besteira até o calor apertar.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA03",
+    "tipo": "COLEGA",
+    "texto": "Dormir bem antes da prova ajuda mais do que virar a noite estudando.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA04",
+    "tipo": "COLEGA",
+    "texto": "Se tiver dúvida, pergunte cedo. Deixar para a véspera quase nunca funciona.",
+    "categoria": "DICA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaDICA05",
+    "tipo": "COLEGA",
+    "texto": "Sempre reserve um dinheiro para um lanche. Você vai agradecer depois.",
+    "categoria": "DICA",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaDICA06",
+    "tipo": "COLEGA",
+    "texto": "Não subestime trabalhos em grupo. Eles costumam dar mais trabalho que o nome sugere.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA07",
+    "tipo": "COLEGA",
+    "texto": "Chegar alguns minutos antes evita correr pelos corredores.",
+    "categoria": "DICA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaDICA08",
+    "tipo": "COLEGA",
+    "texto": "Aproveite os intervalos para descansar um pouco a cabeça.",
+    "categoria": "DICA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaDICA09",
+    "tipo": "COLEGA",
+    "texto": "Nem todo problema precisa ser resolvido sozinho. Conversar ajuda bastante.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA10",
+    "tipo": "COLEGA",
+    "texto": "Guardar os materiais organizados economiza muito tempo depois.",
+    "categoria": "DICA",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaDICA11",
+    "tipo": "COLEGA",
+    "texto": "Uma pequena revisão por dia vale mais do que horas de desespero antes da prova.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA12",
+    "tipo": "COLEGA",
+    "texto": "Se o ônibus demora, aproveite para revisar alguma anotação.",
+    "categoria": "DICA",
+    "localDialogo": "PONTO_DE_ONIBUS"
+  },
+  {
+    "id": "colegaDICA13",
+    "tipo": "COLEGA",
+    "texto": "Fazer amizades na universidade torna tudo um pouco mais fácil.",
+    "categoria": "DICA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaDICA14",
+    "tipo": "COLEGA",
+    "texto": "Nem todo dia rende igual. O importante é continuar avançando.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA15",
+    "tipo": "COLEGA",
+    "texto": "Não tenha vergonha de pedir ajuda. Todo mundo já foi iniciante um dia.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA16",
+    "tipo": "COLEGA",
+    "texto": "Às vezes uma pausa de dez minutos rende mais que uma hora sem foco.",
+    "categoria": "DICA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaDICA17",
+    "tipo": "COLEGA",
+    "texto": "Revise suas anotações antes de ir embora. Amanhã você agradece.",
+    "categoria": "DICA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaDICA18",
+    "tipo": "COLEGA",
+    "texto": "Sempre confira a sala da próxima aula. Evita muita correria.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA19",
+    "tipo": "COLEGA",
+    "texto": "Levar um caderno organizado economiza mais tempo do que parece.",
+    "categoria": "DICA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaDICA20",
+    "tipo": "COLEGA",
+    "texto": "Nem todo conteúdo cai na prova, mas todo conteúdo pode fazer falta.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA21",
+    "tipo": "COLEGA",
+    "texto": "Se encontrar um bom lugar para estudar, aproveite enquanto está vazio.",
+    "categoria": "DICA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaDICA22",
+    "tipo": "COLEGA",
+    "texto": "Salvar seus arquivos com frequência evita dores de cabeça desnecessárias.",
+    "categoria": "DICA",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaDICA23",
+    "tipo": "COLEGA",
+    "texto": "Não pule refeições. Seu cérebro também precisa de combustível.",
+    "categoria": "DICA",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaDICA24",
+    "tipo": "COLEGA",
+    "texto": "Leia o enunciado com calma. A pressa costuma esconder detalhes importantes.",
+    "categoria": "DICA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaDICA25",
+    "tipo": "COLEGA",
+    "texto": "Ter um grupo de estudos faz diferença quando a matéria aperta.",
+    "categoria": "DICA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaDICA26",
+    "tipo": "COLEGA",
+    "texto": "Nem toda conversa no intervalo precisa ser sobre prova.",
+    "categoria": "DICA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaDICA27",
+    "tipo": "COLEGA",
+    "texto": "Organizar sua semana evita aquela sensação de estar sempre atrasado.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaDICA28",
+    "tipo": "COLEGA",
+    "texto": "Antes de imprimir um trabalho, confira se o arquivo está certo.",
+    "categoria": "DICA",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaDICA29",
+    "tipo": "COLEGA",
+    "texto": "A universidade não é uma corrida. Cada um aprende no seu ritmo.",
+    "categoria": "DICA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA00",
+    "tipo": "COLEGA",
+    "texto": "Você já estudou hoje ou só está passeando pelo campus?",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA01",
+    "tipo": "COLEGA",
+    "texto": "A prova não vai remarcar só porque você esqueceu dela.",
+    "categoria": "BRONCA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaBRONCA02",
+    "tipo": "COLEGA",
+    "texto": "Ficar olhando o celular não faz o conteúdo entrar na cabeça.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA03",
+    "tipo": "COLEGA",
+    "texto": "O Borogodó é ótimo... mas você também tem aula, lembra?",
+    "categoria": "BRONCA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaBRONCA04",
+    "tipo": "COLEGA",
+    "texto": "Você vive dizendo que começa a estudar amanhã.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA05",
+    "tipo": "COLEGA",
+    "texto": "Se continuar chegando atrasado, vai conhecer só o final das aulas.",
+    "categoria": "BRONCA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaBRONCA06",
+    "tipo": "COLEGA",
+    "texto": "Trabalho em grupo não significa deixar tudo para os outros.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA07",
+    "tipo": "COLEGA",
+    "texto": "Você já tomou café demais por hoje.",
+    "categoria": "BRONCA",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaBRONCA08",
+    "tipo": "COLEGA",
+    "texto": "Dormir na aula não conta como presença ativa.",
+    "categoria": "BRONCA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaBRONCA09",
+    "tipo": "COLEGA",
+    "texto": "Nem todo problema se resolve cinco minutos antes do prazo.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA10",
+    "tipo": "COLEGA",
+    "texto": "Você passa mais tempo reclamando da matéria do que estudando.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA11",
+    "tipo": "COLEGA",
+    "texto": "Não adianta culpar o professor por esquecer de estudar.",
+    "categoria": "BRONCA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaBRONCA12",
+    "tipo": "COLEGA",
+    "texto": "A fila da cantina é longa, mas a fila das pendências é maior.",
+    "categoria": "BRONCA",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaBRONCA13",
+    "tipo": "COLEGA",
+    "texto": "Você prometeu organizar seus horários... lembra disso?",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA14",
+    "tipo": "COLEGA",
+    "texto": "Até os veteranos precisam abrir o caderno de vez em quando.",
+    "categoria": "BRONCA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaBRONCA15",
+    "tipo": "COLEGA",
+    "texto": "Você já percebeu que reclamar da prova não aumenta a nota?",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA16",
+    "tipo": "COLEGA",
+    "texto": "Se continuar adiando tudo, o semestre vai te atropelar.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA17",
+    "tipo": "COLEGA",
+    "texto": "O ônibus pode atrasar, mas você não precisa fazer o mesmo.",
+    "categoria": "BRONCA",
+    "localDialogo": "PONTO_DE_ONIBUS"
+  },
+  {
+    "id": "colegaBRONCA18",
+    "tipo": "COLEGA",
+    "texto": "Você entrou no laboratório para estudar ou só para aproveitar o ar-condicionado?",
+    "categoria": "BRONCA",
+    "localDialogo": "LABORATORIO"
+  },
+  {
+    "id": "colegaBRONCA19",
+    "tipo": "COLEGA",
+    "texto": "Se continuar acumulando tarefas, nem um clone vai dar conta.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA20",
+    "tipo": "COLEGA",
+    "texto": "Não vale dizer que \u0027esqueceu\u0027. O calendário estava lá o tempo todo.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA21",
+    "tipo": "COLEGA",
+    "texto": "Você conhece a cantina melhor do que a própria sala de aula.",
+    "categoria": "BRONCA",
+    "localDialogo": "CANTINA"
+  },
+  {
+    "id": "colegaBRONCA22",
+    "tipo": "COLEGA",
+    "texto": "Toda semana você promete começar a estudar mais cedo.",
+    "categoria": "BRONCA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaBRONCA23",
+    "tipo": "COLEGA",
+    "texto": "O professor explicou isso três vezes... presta mais atenção!",
+    "categoria": "BRONCA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaBRONCA24",
+    "tipo": "COLEGA",
+    "texto": "Não adianta correr no último dia. Conhecimento não baixa por atualização.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA25",
+    "tipo": "COLEGA",
+    "texto": "Você vive dizendo que está sem tempo... mas sempre sobra tempo para conversar.",
+    "categoria": "BRONCA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaBRONCA26",
+    "tipo": "COLEGA",
+    "texto": "Seu caderno está mais limpo do que deveria.",
+    "categoria": "BRONCA",
+    "localDialogo": "SALA_DE_AULA"
+  },
+  {
+    "id": "colegaBRONCA27",
+    "tipo": "COLEGA",
+    "texto": "Nem todo trabalho pode ser feito na noite anterior.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  },
+  {
+    "id": "colegaBRONCA28",
+    "tipo": "COLEGA",
+    "texto": "Você precisa de férias ou de vergonha na cara? Talvez um pouco dos dois.",
+    "categoria": "BRONCA",
+    "localDialogo": "BOROGODO"
+  },
+  {
+    "id": "colegaBRONCA29",
+    "tipo": "COLEGA",
+    "texto": "Vai estudar um pouco. O semestre não tem piedade de ninguém.",
+    "categoria": "BRONCA",
+    "localDialogo": "QUALQUER_LUGAR"
+  }
+]
