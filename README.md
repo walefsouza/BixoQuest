@@ -29,7 +29,7 @@ Este projeto não foca apenas na jogabilidade, mas em manter um alto rigor técn
 ### Padrão MVC
 A estrutura de pastas e a organização do código respeitam estritamente o padrão **Model-View-Controller**, isolando completamente a lógica de negócios da camada de apresentação visual.
 
-### Padrões de Projeto (GoF) Implementados:
+### Padrões de Projeto Implementados:
 * **Command:** Isolamento da lógica de ações da interface (ex: `PassarSemanaCommand`, `ViajarLocalCommand`). Permite o encapsulamento e injeção de dependências sem inflar os Controllers.
 * **Singleton:** Controle de instâncias globais únicas para evitar sobrecarga, aplicado no `SessaoManager`, `AudioManager` e no sistema de cache.
 * **Facade:** Encapsulamento da complexidade do framework JavaFX através de classes de serviço visual (ex: `SceneManager`, `Utilitarios`).
